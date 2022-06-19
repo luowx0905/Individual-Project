@@ -5,6 +5,10 @@ Fandango, A. (2017).
 \newblock {\em Python Data Analysis}.
 \newblock Packt Publishing Ltd.
 
+\bibitem[Godoy, 2021]{RN5}
+Godoy, D.~V. (2021).
+\newblock {\em Deep Learning with PyTorch Step-by-Step: A Beginner’s Guide}.
+
 \bibitem[McKinney, 2012]{RN6}
 McKinney, W. (2012).
 \newblock {\em Python for data analysis: Data wrangling with Pandas, NumPy, and
