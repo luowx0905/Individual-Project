@@ -1,0 +1,14 @@
+\begin{thebibliography}{}
+
+\bibitem[Fandango, 2017]{RN4}
+Fandango, A. (2017).
+\newblock {\em Python Data Analysis}.
+\newblock Packt Publishing Ltd.
+
+\bibitem[McKinney, 2012]{RN6}
+McKinney, W. (2012).
+\newblock {\em Python for data analysis: Data wrangling with Pandas, NumPy, and
+  IPython}.
+\newblock " O'Reilly Media, Inc.".
+
+\end{thebibliography}
