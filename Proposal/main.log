@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  19 JUN 2022 17:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  19 JUN 2022 17:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -584,10 +584,25 @@ es/imperial.pdf>]) (./main.toc)
 
 ]
 Chapter 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--68
+
+ []
+
 [1
 
 ]
 Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--78
+
+ []
+
 [2
 
 ]
@@ -613,16 +628,16 @@ Here is how much of TeX's memory you used:
  31142 multiletter control sequences out of 15000+600000
  497003 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,5n,80p,875b,426s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,5n,80p,618b,426s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/local/texl
 ive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchbi8a.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb>
-Output written on main.pdf (7 pages, 64775 bytes).
+Output written on main.pdf (7 pages, 64620 bytes).
 PDF statistics:
- 146 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
+ 145 PDF objects out of 1000 (max. 8388607)
+ 125 compressed objects within 2 object streams
  25 named destinations out of 1000 (max. 500000)
  110 words of extra memory for PDF output out of 10000 (max. 10000000)
 
