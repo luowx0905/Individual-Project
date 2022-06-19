@@ -31,7 +31,7 @@
 \pagenumbering{roman}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \setcounter{page}{1}
-\pagestyle{fancy}
+\pagestyle{plain}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{abstract}
@@ -70,16 +70,19 @@ In this project, machine learning (ML) techniques are used on property and demog
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Literal Review}
-Python is one of the most popular programming languages in the world as it is easy to develop and its extensive packages for various functionalities. In this project, Python would be used for loading data, preprocessing data, building and evaluating ML models. 
+Python is one of the most popular programming languages in the world as it is easy to develop and there are extensive packages for various functionalities. In this project, Python and its several packages would be used for loading data, preprocessing data, building and evaluating ML models. 
 
 \section{NumPy}
-Numerical Python (\textit{\textbf{NumPy}}) is a scientific computing package utilizing an optimized C/C++ API to use less computation time than pure Python calculations \citep{RN6}. It provides some data structures, one of the most important structures is \textbf{\emph{ndarray}}. Unlike Python lists, NumPy arrays are homogenous, meaning all the elements in them are of the same type, and the size is fixed \citep{RN4}.  Moreover, NumPy provides various built-in functions for different purposes, for example, statistics, linear algebra,  transforms, and element-wise operation. 
+Numerical Python (\textit{\textbf{NumPy}}) is a scientific computing package utilizing an optimized C/C++ API to use less computation time than pure Python calculations \citep{RN6}. It provides some data structures, one of the most important structures is \textbf{\emph{ndarray}}. Unlike Python lists, NumPy arrays are homogenous, meaning all the elements in them are of the same type, and their sizes are fixed \citep{RN4}.  Moreover, NumPy provides various built-in functions for different purposes, such as statistics, linear algebra,  transforms, and element-wise operation. 
 \\
 
-In this project, Numpy is used for part of data preprocessing. For example, converting categorical data into integers as ML models can only use numerical as inputs or standardizing features so that they are in the range of 0 and 1. 
+In this project, \textit{\textbf{Numpy}} is used as part of data preprocessing. For example, converting categorical data into integers as ML models can only use numerical as inputs or standardizing features so that they are in the range of 0 and 1. 
 
 \section{Pandas}
-The \textbf{\textit{pandas}} is a fast and productive package which is designed to handle tabular data whose contents could be numerical values, strings and time \citep{RN4}.  
+The \textbf{\textit{pandas}} is a fast and compelling package capable of handling data of various types (numerical values, strings, and time) and from multiple sources (CSV, Excel, and MqSQL database). One of the \textbf{\textit{pandas}} data structures is \textbf{\textit{DataFrame}} which is appropriate to handle tabular data whose columns are of different types. Also, it could manage various operations, such as manipulating missing values, creating pivot tables (summary of the table), and grouping data from different columns \citep{RN4}. 
+\\
+
+In this project, \textbf{\textit{pandas}} is used for data loading and preprocessing. First, data is loaded, and it is represented as \textbf{\textit{DataFrame}}. Then the attributes of the data, such as distribution, should be inspected before preprocessing. Finally, the data is preprocessed, and one of the steps is handling missing values. For example, they can be dropped or filled with the mean values. 
 
 \section{Scikit-learn}
 
