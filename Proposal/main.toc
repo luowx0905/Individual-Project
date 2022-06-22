@@ -8,8 +8,11 @@
 \contentsline {section}{\numberline {2.5}PyTorch}{3}{section.8}%
 \contentsline {section}{\numberline {2.6}Matplotlib}{3}{section.9}%
 \contentsline {chapter}{\numberline {3}Project Plan}{4}{chapter.10}%
-\contentsline {section}{\numberline {3.1}Data Preprocessing}{4}{section.11}%
-\contentsline {section}{\numberline {3.2}Build Model with PyTorch}{4}{section.12}%
-\contentsline {subsection}{\numberline {3.2.1}Model architecture}{4}{subsection.13}%
-\contentsline {subsection}{\numberline {3.2.2}Hyperparameters Tuning}{4}{subsection.14}%
-\contentsline {section}{\numberline {3.3}Evaluation}{4}{section.15}%
+\contentsline {section}{\numberline {3.1}Data Preparation}{4}{section.11}%
+\contentsline {section}{\numberline {3.2}Data Preprocessing}{4}{section.15}%
+\contentsline {subsection}{\numberline {3.2.1}Handling Missing Values}{4}{subsection.16}%
+\contentsline {subsection}{\numberline {3.2.2}Standardization}{5}{subsection.19}%
+\contentsline {section}{\numberline {3.3}Build Model with PyTorch}{5}{section.20}%
+\contentsline {subsection}{\numberline {3.3.1}Model architecture}{5}{subsection.21}%
+\contentsline {subsection}{\numberline {3.3.2}Hyperparameters Tuning}{5}{subsection.22}%
+\contentsline {section}{\numberline {3.4}Evaluation}{5}{section.23}%

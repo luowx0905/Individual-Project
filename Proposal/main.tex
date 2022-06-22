@@ -66,29 +66,26 @@ Nowadays, there are a significant amount of data generated every second. The dai
 However, this extensive data can be one of the main obstacles for analysis as it is approximately impossible for humans to obtain insights into the data manually. Under this circumstance, artificial intelligence (AI), a technique that empowers the computer to imitate human intelligence and manner,  could be one of the methods to mitigate this problem. It can extract patterns from large datasets and use them to make predictions based on future data and even distinguish which parts of data cause the results.
 \\
 
-In this project, some AI techniques are used on property and demographic data to gain insights and understand the factors that impact a homeowner's propensity to sell. The factors could be the distance to schools, hospitals, or supermarkets, the accessibility to public transport, and the types of the properties (flats or houses). It could be highly advantageous to estate agents who would discover homeowners with more potential to become clients and provide them with business. 
+In this project, some AI techniques will be used on property and demographic data to gain insights and understand the factors that impact a homeowner's propensity to sell. The factors could be the distance to schools, hospitals, or supermarkets, the accessibility to public transport, and the types of the properties (flats or houses). It could be highly advantageous to estate agents who would discover homeowners with more potential to become clients and provide them with business. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Literal Review}
 Python is one of the most popular programming languages in the world as it is easy to develop and there are extensive packages for various functionalities. In this project, Python and its several packages would be used for loading data, preprocessing data, building and evaluating machine learning models. 
 
 \section{Machine Learning}
-Machine Learning (ML), a subset of AI, is a technique that the computer can learn and improve from data without explicit programming. The reason for using ML is that its performance is better than the traditional approach sometimes. For example, ML techniques would simplify the solution to a problem that comprises a long list of rules (spam mail detection).
-\\
-
-Supervised learning is one of the ML categories, and a model of this type is implemented for analyzing data. 
+Machine Learning (ML), a subset of AI, is a technique that the computer can learn and improve from data without explicit programming. The reason for using ML is that its performance is sometimes better than the traditional approach. For example, ML techniques would simplify the solution to a problem that comprises a long list of rules (spam mail detection). ML can be divided into three categories supervised learning, unsupervised learning, and reinforcement learning. In this project, a supervised learning model will be implemented for analyzing data.
 
 \section{NumPy}
 Numerical Python (\textit{\textbf{NumPy}}) is a scientific computing package utilizing an optimized C/C++ API to use less computation time than pure Python calculations \citep{RN6}. It provides some data structures, one of the most important structures is \textbf{\emph{ndarray}}. Unlike Python lists, NumPy arrays are homogenous, meaning all the elements in them are of the same type, and their sizes are fixed \citep{RN4}.  Moreover, NumPy provides various built-in functions for different purposes, such as statistics, linear algebra,  transforms, and element-wise operation. 
 \\
 
-In this project, \textit{\textbf{Numpy}} is used as part of data preprocessing. For example, converting categorical data into integers as ML models can only use numerical as inputs or standardizing features so that they are in the range of 0 and 1. 
+In this project, \textit{\textbf{Numpy}} will be used as part of data preprocessing. For example, converting categorical data into integers as ML models can only use numerical as inputs or standardizing features so that they are in the range of 0 and 1. 
 
 \section{Pandas}
 The \textbf{\textit{pandas}} is a fast and compelling package capable of handling data of various types (numerical values, strings, and time) and from multiple sources (CSV, Excel, and MqSQL database). One of the \textbf{\textit{pandas}} data structures is \textbf{\textit{DataFrame}} which is appropriate to handle tabular data whose columns are of different types. Also, it could manage various operations, such as manipulating missing values, creating pivot tables (summary of the table), and grouping data from different columns \citep{RN4}. 
 \\
 
-In this project, \textbf{\textit{pandas}} is used for data loading and preprocessing. First, data is loaded, and it is represented as \textbf{\textit{DataFrame}}. Then the attributes of the data, such as distribution, should be inspected. Finally, the data is preprocessed, and one of the steps is handling missing values. For example, they can be dropped or filled with the mean values. 
+In this project, \textbf{\textit{pandas}} would be used for data loading and preprocessing. First, data is loaded, and it is represented as \textbf{\textit{DataFrame}}. Then the attributes of the data, such as distribution, should be inspected. Finally, the data is preprocessed, and one of the steps is handling missing values. For example, they can be dropped or filled with the mean values. 
 
 \section{Scikit-learn}
 
@@ -96,7 +93,7 @@ In this project, \textbf{\textit{pandas}} is used for data loading and preproces
 \textbf{\textit{PyTorch}} was developed by Facebook, and it is one of the popular libraries for building ML models. It is also the basis of numerous packages that the developers could take advantage of \citep{RN5}. Moreover, this library could perform auto differentiation by using graphic processing unit (GPU) acceleration, which results in less training and evaluation time. 
 \\
 
-In this project, some of the components provided by \textbf{\textit{PyTorch}} are utilized.
+In this project, some of the components provided by \textbf{\textit{PyTorch}} will be utilized.
 \begin{itemize}
 	\item \textbf{\textit{nn.Sequential}} is the container that contains all the layers of the ML model
 	\item An appropriate loss function would be selected to compute the loss and perform backpropagation. 
@@ -104,14 +101,29 @@ In this project, some of the components provided by \textbf{\textit{PyTorch}} ar
 \end{itemize}
 
 \section{Matplotlib}
-\textbf{\textit{Matplotlib}} is one of the Python plotting packages that can plot different types of figures, such as histograms, pie plots, and line plots. In this project, this library is primarily used for data visualization. For instance, the distribution of the raw data should be visualized to determine the procedures of preprocessing and plotting the training loss and validation loss during model evaluation. 
+\textbf{\textit{Matplotlib}} is one of the Python plotting packages that can plot different types of figures, such as histograms, pie plots, and line plots. In this project, this library will be primarily used for data visualization. For instance, the distribution of the raw data should be visualized to determine the procedures of preprocessing and plotting the training loss and validation loss during model evaluation. 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Project Plan}
 
+\section{Data Preparation}
+\begin{enumerate}
+	\item Obtain the information related to postcodes, such as restaurants and parks. Integrate these data and the resulting \textit{\textbf{dataset (A)}}, whose primary key is postcode. 
+	\item Download the data, such as accessibility to public transport, for Greater London and then generate the \textit{\textbf{dataset (B)}}.
+	\item Download the \textbf{\textit{dataset (C)}} for the property whose primary key is the location. 
+\end{enumerate}
+
 \section{Data Preprocessing}
+\subsection{Handling Missing Values}
+Some data from the dataset might be missing, and these values should be treated appropriately before passing to the model. In this project, two methods will be attempted to preprocess the missing values.
+\begin{enumerate}
+	\item Drop missing values: This method deletes the messing values for data analysis.
+	\item Fill the missing values: In this approach, the missing values are filled with mean, median, or default values, for example, zero or some constants.
+\end{enumerate}
+
+\subsection{Standardization}
 
 \section{Build Model with PyTorch}
 \subsection{Model architecture}
