@@ -70,22 +70,34 @@ In this project, some AI techniques will be used on property and demographic dat
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Literal Review}
-Python is one of the most popular programming languages in the world as it is easy to develop and there are extensive packages for various functionalities. In this project, Python and its several packages would be used for loading data, preprocessing data, building and evaluating machine learning models. 
+Python is one of the most popular programming languages in the world as it is easy to develop, and there are extensive packages for various functionalities. In this project, Python and its several packages would be used for loading data, preprocessing data, and building and evaluating machine learning models. 
 
 \section{Machine Learning}
-Machine Learning (ML), a subset of AI, is a technique that the computer can learn and improve from data without explicit programming. The reason for using ML is that its performance is sometimes better than the traditional approach. For example, ML techniques would simplify the solution to a problem that comprises a long list of rules (spam mail detection). ML can be divided into three categories supervised learning, unsupervised learning, and reinforcement learning. In this project, a supervised learning model will be implemented for analyzing data.
+Machine Learning (ML), a subset of AI, is a technique that the computer can learn and improve from data without explicit programming. The reason for using ML is that its performance is sometimes better than the traditional approach. For example, ML techniques would simplify the solution to a problem that comprises a long list of rules (spam mail detection). 
+\\
+
+ML can be divided into three categories, and supervised learning is one of them. In supervised learning, the dataset contains features (input to the model) and targets (ground truth of the output), and the model's parameters are randomly initialized. Then the features are passed to the model, and the differences between the current output and the ground truth are used to update the parameters until the differences are acceptable. 
+\\
+
+In this project, a supervised learning model will be implemented for data analysis, and the steps are listed below.
+\begin{enumerate}
+	\item Data Preprocessing: Some data from the dataset might be missing, and these values should be treated appropriately before passing to the model. 
+	\item Standardization: In real lif, different features usually have different ranges, and this will cause a problem in ML, which is that high magnitude features would have more weight than low magnitude features \citep{RN4}. Standardization, which could scale all the features to the same magnitude, is one of the solutions.
+	\item Feature encoding: ML models require numerical values, whereas the categorical features in the dataset do not meet the requirement. Therefore, these features should be converted into numerical values. 
+	\item Training \& Testing: The parameters of the model are updated, and the loss is expected to converge during training. The performance of the model is validated when testing.
+\end{enumerate}
 
 \section{NumPy}
 Numerical Python (\textit{\textbf{NumPy}}) is a scientific computing package utilizing an optimized C/C++ API to use less computation time than pure Python calculations \citep{RN6}. It provides some data structures, one of the most important structures is \textbf{\emph{ndarray}}. Unlike Python lists, NumPy arrays are homogenous, meaning all the elements in them are of the same type, and their sizes are fixed \citep{RN4}.  Moreover, NumPy provides various built-in functions for different purposes, such as statistics, linear algebra,  transforms, and element-wise operation. 
 \\
 
-In this project, \textit{\textbf{Numpy}} will be used as part of data preprocessing. For example, converting categorical data into integers as ML models can only use numerical as inputs or standardizing features so that they are in the range of 0 and 1. 
+In this project, \textit{\textbf{Numpy}} will be used as part of data preprocessing. For example, converting categorical data into integers.
 
 \section{Pandas}
 The \textbf{\textit{pandas}} is a fast and compelling package capable of handling data of various types (numerical values, strings, and time) and from multiple sources (CSV, Excel, and MqSQL database). One of the \textbf{\textit{pandas}} data structures is \textbf{\textit{DataFrame}} which is appropriate to handle tabular data whose columns are of different types. Also, it could manage various operations, such as manipulating missing values, creating pivot tables (summary of the table), and grouping data from different columns \citep{RN4}. 
 \\
 
-In this project, \textbf{\textit{pandas}} would be used for data loading and preprocessing. First, data is loaded, and it is represented as \textbf{\textit{DataFrame}}. Then the attributes of the data, such as distribution, should be inspected. Finally, the data is preprocessed, and one of the steps is handling missing values. For example, they can be dropped or filled with the mean values. 
+In this project, \textbf{\textit{pandas}} would be used for data loading and preprocessing. First, data is loaded, and it is represented as \textbf{\textit{DataFrame}}. Then the attributes of the data, such as distribution, should be inspected. Finally, the data is preprocessed.
 
 \section{Scikit-learn}
 
@@ -117,17 +129,40 @@ In this project, some of the components provided by \textbf{\textit{PyTorch}} wi
 
 \section{Data Preprocessing}
 \subsection{Handling Missing Values}
-Some data from the dataset might be missing, and these values should be treated appropriately before passing to the model. In this project, two methods will be attempted to preprocess the missing values.
+In this project, two methods will be attempted to preprocess the missing values.
 \begin{enumerate}
 	\item Drop missing values: This method deletes the messing values for data analysis.
 	\item Fill the missing values: In this approach, the missing values are filled with mean, median, or default values, for example, zero or some constants.
 \end{enumerate}
 
 \subsection{Standardization}
+In this project, two different approaches will be attempted. 
+\begin{enumerate}
+	\item Standard scaling: By applying this method, the mean of the feature is removed and then divided by the standard deviation. 
+	\item Min-max scaling: For this approach, the minimum and maximum of the raw data is used to transformed it into a specific range.
+\end{enumerate}
+
+\subsection{Feature Encoding}
+In this project, label encoding will be applied for this goal. It would converted the categrical values into a sequence of integer values. 
+
 
 \section{Build Model with PyTorch}
 \subsection{Model architecture}
+\subsubsection{Basic Model}
+\begin{itemize}
+	\item Layers: linear layers and activation functions, the output layer is sigmoid function as the result of the model should be the probability of selling.
+	\item Loss function: MSE loss since this is a regression problem.
+	\item Optimizer: Adam or SGD
+\end{itemize}
+\subsubsection{Advance model}
+To enhance the accuracy of the model, some advanced features could be inserted into the basic model, such as batch normalization and dropout. 
+
 \subsection{Hyperparameters Tuning}
+\begin{itemize}
+	\item Learning rate
+	\item Number of layers
+	\item Activation functions
+\end{itemize}
 
 \section{Evaluation}
 
