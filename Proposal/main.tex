@@ -120,13 +120,6 @@ In this project, some of the components provided by \textbf{\textit{PyTorch}} wi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Project Plan}
 
-\section{Data Preparation}
-\begin{enumerate}
-	\item Obtain the information related to postcodes, such as restaurants and parks. Integrate these data and the resulting \textit{\textbf{dataset (A)}}, whose primary key is postcode. 
-	\item Download the data, such as accessibility to public transport, for Greater London and then generate the \textit{\textbf{dataset (B)}}.
-	\item Download the \textbf{\textit{dataset (C)}} for the property whose primary key is the location. 
-\end{enumerate}
-
 \section{Data Preprocessing}
 \subsection{Handling Missing Values}
 In this project, two methods will be attempted to preprocess the missing values.
@@ -139,29 +132,36 @@ In this project, two methods will be attempted to preprocess the missing values.
 In this project, two different approaches will be attempted. 
 \begin{enumerate}
 	\item Standard scaling: By applying this method, the mean of the feature is removed and then divided by the standard deviation. 
-	\item Min-max scaling: For this approach, the minimum and maximum of the raw data is used to transformed it into a specific range.
+	\item Min-max scaling: For this approach, the minimum and maximum of the raw data are used to transforme it into a specific range.
 \end{enumerate}
 
 \subsection{Feature Encoding}
-In this project, label encoding will be applied for this goal. It would converted the categrical values into a sequence of integer values. 
+In this project, label encoding will be applied for this goal. It would convert the categorical values into a sequence of integer values. 
+
+\subsection{Separating Dataset}
+The origional dataset should be shuffled and divided into three parts which will be used for training, validation and testing. 
 
 
 \section{Build Model with PyTorch}
 \subsection{Model architecture}
-\subsubsection{Basic Model}
 \begin{itemize}
-	\item Layers: linear layers and activation functions, the output layer is sigmoid function as the result of the model should be the probability of selling.
-	\item Loss function: MSE loss since this is a regression problem.
-	\item Optimizer: Adam or SGD
+	\item \textbf{Basic Model}: The number of the input neural of the model should be the same as the number of features, then there are hidden layers. Finally the output layer is a sigmoid function as the this model should outputs the possibility of the selling. 
+	\item \textbf{Advanced Model}: The advanced model contains more conponents, such as dropout or batch normalization, these additional layers might reduce overfitting and enhance accuracy. 
 \end{itemize}
-\subsubsection{Advance model}
-To enhance the accuracy of the model, some advanced features could be inserted into the basic model, such as batch normalization and dropout. 
+
+\subsection{Training}
+\begin{enumerate}
+	\item Use \textbf{\textit{DataLoader}} to feath baches of data for training, and the batch  size could be set to 128 if there are sufficient memory. 
+	\item The loss finction used for model training is \textbf{\textit{MSELoss}} as the output is a continuous value. 
+	\item The optimizer for updating parameters could be \textbf{\textit{SGD}} or \textbf{\textit{Adam}}.
+	\item Train the model iteratively and the number of iteration (epochs) will be set to 500 and will be updated if necessary. 
+\end{enumerate}
 
 \subsection{Hyperparameters Tuning}
 \begin{itemize}
-	\item Learning rate
-	\item Number of layers
-	\item Activation functions
+	\item Learning rate: The inintial learning rate will be set to 0.001 and it will be increased/decreased depending on the performance. Moreover, learning rate schedulers, for example, \textbf{\textit{LambdaLR}} and \textbf{\textit{StepLR}} could be applied during training. 
+	\item Number of epochs: If the initial value cause overfitting or underfitting then the epochs should be decreasd or increased. 
+	\item Activation functions: The inintial activation function will be ReLU, but other activation functions, such as TanH and Parametric ReLU will also be tested to enhance the performance. 
 \end{itemize}
 
 \section{Evaluation}

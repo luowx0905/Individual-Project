@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  23 JUN 2022 01:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  25 JUN 2022 23:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -551,7 +551,7 @@ LaTeX Info: Redefining \nameref on input line 24.
 \openout3 = `main.out'.
 
  (./titlepage.tex
-<./figures/imperial.pdf, id=76, 362.35374pt x 95.35625pt>
+<./figures/imperial.pdf, id=80, 362.35374pt x 95.35625pt>
 File: ./figures/imperial.pdf Graphic file (type pdf)
 <use ./figures/imperial.pdf>
 Package pdftex.def Info: ./figures/imperial.pdf  used on input line 11.
@@ -648,21 +648,15 @@ Chapter 3.
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 80093F70F092EAD9600F381BCB194D28;2691.
-
-
-Package rerunfilecheck Warning: File `main.brf' has changed.
-(rerunfilecheck)                Rerun to get bibliographical references right.
-
-Package rerunfilecheck Info: Checksums for `main.brf':
-(rerunfilecheck)             Before: A502DAC9945A5C92F54C7EFC718882F6;182
-(rerunfilecheck)             After:  D5DDA5890F4DA04CD7A69DCADDA57AA6;182.
+(rerunfilecheck)             Checksum: 0179CE993A743636D74FDFA0C2EF5776;2844.
+Package rerunfilecheck Info: File `main.brf' has not changed.
+(rerunfilecheck)             Checksum: D5DDA5890F4DA04CD7A69DCADDA57AA6;182.
  ) 
 Here is how much of TeX's memory you used:
- 13243 strings out of 478268
- 215632 string characters out of 5846347
+ 13244 strings out of 478268
+ 215651 string characters out of 5846347
  518360 words of memory out of 5000000
- 31181 multiletter control sequences out of 15000+600000
+ 31182 multiletter control sequences out of 15000+600000
  497320 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,5n,80p,617b,426s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -671,10 +665,10 @@ exlive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/local/texl
 ive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchbi8a.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb>
-Output written on main.pdf (10 pages, 80411 bytes).
+Output written on main.pdf (10 pages, 81274 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 183 compressed objects within 2 object streams
+ 210 PDF objects out of 1000 (max. 8388607)
+ 187 compressed objects within 2 object streams
  48 named destinations out of 1000 (max. 500000)
- 150 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 158 words of extra memory for PDF output out of 10000 (max. 10000000)
 
