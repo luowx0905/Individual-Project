@@ -60,53 +60,53 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Introduction}
 
-Nowadays, there is a substantial amount of data generated every second. The daily lives of humans are producing it, and some other fields, such as research, health care, economic activities, and environmental information from various sensors, also generate a vast amount of data. Obtaining the relationship between some features or the patterns underlying these massive amounts of data might benefit the entire world. For instance, new causes of diseases might be identified, and technological advancement could be accelerated.
+Nowadays, there are a significant amount of data generated every second. The daily lives of humans are producing it, and some other fields are generating numerous data, such as research, health care, commercial activities, and environmental information from all kinds of sensors. With these considerable amounts of data,  acquiring the relationship between some aspects of records or obtaining the patterns behind these data would benefit the whole world. For instance, new causes of diseases might be discovered, and technology development could be accelerated.
 \\
 
-However, this extensive data can be one of the main obstacles for analysis as it is approximately impossible for humans to obtain insights into the data manually. Under this circumstance, artificial intelligence (AI), a technique that empowers the computer to imitate human intelligence and manner,  could be one of the methods to mitigate this issue. It can extract patterns from large datasets and use them to make predictions based on future data and even identify which data components are responsible for the results.
+However, this extensive data can be one of the main obstacles for analysis as it is approximately impossible for humans to obtain insights into the data manually. Under this circumstance, artificial intelligence (AI), a technique that empowers the computer to imitate human intelligence and manner,  could be one of the methods to mitigate this problem. It can extract patterns from large datasets and use them to make predictions based on future data and even distinguish which parts of data cause the results.
 \\
 
-In this project, some AI techniques will be applied to property and demographic data to gain insights and understand the factors influencing a homeowner's likelihood to sell. The factors might include the proximity to schools, hospitals, or supermarkets, the accessibility to public transportation, and the property types (flats or houses). It could be highly advantageous to estate agents who would discover homeowners with more potential to become clients and provide them with business. 
+In this project, some AI techniques will be used on property and demographic data to gain insights and understand the factors that impact a homeowner's propensity to sell. The factors could be the distance to schools, hospitals, or supermarkets, the accessibility to public transport, and the types of the properties (flats or houses). It could be highly advantageous to estate agents who would discover homeowners with more potential to become clients and provide them with business. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Literal Review}
-Python is one of the most popular programming languages in the world since it is simple to develop, and there are extensive packages for various functionalities. In this project, Python and its packages would be used for loading data, preprocessing data, and constructing and evaluating machine learning models. 
+Python is one of the most popular programming languages in the world as it is easy to develop, and there are extensive packages for various functionalities. In this project, Python and its several packages would be used for loading data, preprocessing data, and building and evaluating machine learning models. 
 
 \section{Machine Learning}
-Machine Learning (ML), a subset of AI, is a technique that the computer can learn and improve from data without explicit programming. The reason for utilizing ML is that its performance is sometimes better than the conventional approach. For example, ML techniques would simplify the solution to a problem that comprises a long list of rules (spam mail detection). 
+Machine Learning (ML), a subset of AI, is a technique that the computer can learn and improve from data without explicit programming. The reason for using ML is that its performance is sometimes better than the traditional approach. For example, ML techniques would simplify the solution to a problem that comprises a long list of rules (spam mail detection). 
 \\
 
-ML can be divided into three categories, one of which is supervised learning. In supervised learning, the dataset contains features (input to the model) and targets (ground truth of the output), and the model's parameters are randomly initialized. Then the features are passed to the model, and the differences between the current output and the ground truth are used to update the parameters until the differences are acceptable. 
+ML can be divided into three categories, and supervised learning is one of them. In supervised learning, the dataset contains features (input to the model) and targets (ground truth of the output), and the model's parameters are randomly initialized. Then the features are passed to the model, and the differences between the current output and the ground truth are used to update the parameters until the differences are acceptable. 
 \\
 
 In this project, a supervised learning model will be implemented for data analysis, and the steps are listed below.
 \begin{enumerate}
-	\item Data Preprocessing: Some data from the dataset may be missing, and these values must be handled appropriately before being passed to the model. 
-	\item Standardization: In real life, different features usually have different ranges, and this will cause a problem in ML, which is that high magnitude features would have more weight than low magnitude features \citep{RN4}. One of the solutions is standardization, which could scale all the features to the same magnitude.
-	\item Feature encoding: ML models require numerical values, whereas the categorical features in the dataset do not satisfy this requirement. Therefore, these features should be converted into numerical values. 
-	\item Training \& Testing: The parameters of the model are updated, and it is expected that the loss will converge during training. The performance of the model is validated when testing.
+	\item Data Preprocessing: Some data from the dataset might be missing, and these values should be treated appropriately before passing to the model. 
+	\item Standardization: In real lif, different features usually have different ranges, and this will cause a problem in ML, which is that high magnitude features would have more weight than low magnitude features \citep{RN4}. Standardization, which could scale all the features to the same magnitude, is one of the solutions.
+	\item Feature encoding: ML models require numerical values, whereas the categorical features in the dataset do not meet the requirement. Therefore, these features should be converted into numerical values. 
+	\item Training \& Testing: The parameters of the model are updated, and the loss is expected to converge during training. The performance of the model is validated when testing.
 \end{enumerate}
 
 \section{NumPy}
-Numerical Python (\textit{\textbf{NumPy}}) is a scientific computing package utilizing an optimized C/C++ API to reduce computation time compared to pure Python computations \citep{RN6}. It provides some data structures, one of the most important structures is \textbf{\emph{ndarray}}. Unlike Python lists, NumPy arrays are homogenous, meaning all the elements in them are of the same type, and their sizes are constant \citep{RN4}.  In addition, NumPy provides various built-in functions for a variety of purposes, including statistics, linear algebra,  transforms, and element-wise operation. 
+Numerical Python (\textit{\textbf{NumPy}}) is a scientific computing package utilizing an optimized C/C++ API to use less computation time than pure Python calculations \citep{RN6}. It provides some data structures, one of the most important structures is \textbf{\emph{ndarray}}. Unlike Python lists, NumPy arrays are homogenous, meaning all the elements in them are of the same type, and their sizes are fixed \citep{RN4}.  Moreover, NumPy provides various built-in functions for different purposes, such as statistics, linear algebra,  transforms, and element-wise operation. 
 \\
 
-In this project, \textit{\textbf{Numpy}} will be used for data preprocessing. For example, converting categorical data into integers.
+In this project, \textit{\textbf{Numpy}} will be used as part of data preprocessing. For example, converting categorical data into integers.
 
 \section{Pandas}
-The \textbf{\textit{pandas}} is a fast and compelling package capable of handling data of various types (numerical values, strings, and time) and from multiple sources (CSV, Excel, and MqSQL database). One of the \textbf{\textit{pandas}} data structures is \textbf{\textit{DataFrame}} which is appropriate for handling tabular data with columns of different types. In addition, it could manage various operations, such as manipulating missing values, creating pivot tables (table summaries), and grouping data from different columns \citep{RN4}. 
+The \textbf{\textit{pandas}} is a fast and compelling package capable of handling data of various types (numerical values, strings, and time) and from multiple sources (CSV, Excel, and MqSQL database). One of the \textbf{\textit{pandas}} data structures is \textbf{\textit{DataFrame}} which is appropriate to handle tabular data whose columns are of different types. Also, it could manage various operations, such as manipulating missing values, creating pivot tables (summary of the table), and grouping data from different columns \citep{RN4}. 
 \\
 
-\textbf{\textit{Pandas}} would be used for data loading and preprocessing in this project. Data is initially loaded and represented as a \textbf{\textit{DataFrame}}. Then the attributes of the data, such as distribution, should be inspected. Finally, the data is preprocessed.
+In this project, \textbf{\textit{pandas}} would be used for data loading and preprocessing. First, data is loaded, and it is represented as \textbf{\textit{DataFrame}}. Then the attributes of the data, such as distribution, should be inspected. Finally, the data is preprocessed.
 
 \section{Scikit-learn}
-Scikit-learn is a Python ML package that provides various techniques for data mining, modeling, and analyzing. It could be commonly used in multiple ML tasks, such as classification, regression, and clustering. This project will use the package to analyze the performance of the models.
+Scikit-learn is a Python ML package which provides various techniques for data mininig, modeling and analysising. It could be commonly used in multiple ML tasks, such as classification, regression and clustering. In this project, the package will be used for analysising the performance of the models. 
 
 \section{PyTorch}
-\textbf{\textit{PyTorch}} was developed by Facebook, and it is one of the popular libraries for constructing ML models. It is also the basis of numerous packages that the developers could take advantage of \citep{RN5}. In addition, this library is capable of performing auto differentiation by using graphic processing unit (GPU) acceleration, resulting in a reduction in training time. 
+\textbf{\textit{PyTorch}} was developed by Facebook, and it is one of the popular libraries for building ML models. It is also the basis of numerous packages that the developers could take advantage of \citep{RN5}. Moreover, this library could perform auto differentiation by using graphic processing unit (GPU) acceleration, which results in less training and evaluation time. 
 \\
 
-In this project, some of the \textbf{\textit{PyTorch}} components will be utilized.
+In this project, some of the components provided by \textbf{\textit{PyTorch}} will be utilized.
 \begin{itemize}
 	\item \textbf{\textit{nn.Sequential}} is the container that contains all the layers of the ML model
 	\item An appropriate loss function would be selected to compute the loss and perform backpropagation. 
@@ -114,7 +114,7 @@ In this project, some of the \textbf{\textit{PyTorch}} components will be utiliz
 \end{itemize}
 
 \section{Matplotlib}
-\textbf{\textit{Matplotlib}} is one of the Python plotting packages for plotting different types of figures, including histograms, pie plots, and line plots. This library will be utilized primarily for data visualization in this project. For instance, the distribution of the raw data should be visualized to determine the procedures of preprocessing and plotting the training loss and validation loss during model evaluation. 
+\textbf{\textit{Matplotlib}} is one of the Python plotting packages that can plot different types of figures, such as histograms, pie plots, and line plots. In this project, this library will be primarily used for data visualization. For instance, the distribution of the raw data should be visualized to determine the procedures of preprocessing and plotting the training loss and validation loss during model evaluation. 
 
 
 
@@ -133,40 +133,40 @@ In this project, two methods will be attempted to preprocess the missing values.
 In this project, two different approaches will be attempted. 
 \begin{enumerate}
 	\item Standard scaling: By applying this method, the mean of the feature is removed and then divided by the standard deviation. 
-	\item Min-max scaling: For this approach, the minimum and maximum of the raw data are used to transform it into a specific range.
+	\item Min-max scaling: For this approach, the minimum and maximum of the raw data are used to transforme it into a specific range.
 \end{enumerate}
 
 \subsection{Feature Encoding}
 In this project, label encoding will be applied for this goal. It would convert the categorical values into a sequence of integer values. 
 
 \subsection{Separating Dataset}
-The original dataset should be shuffled and divided into three parts which will be used for training, validation, and testing. 
+The origional dataset should be shuffled and divided into three parts which will be used for training, validation and testing. 
 
 
 \section{Build Model with PyTorch}
 \subsection{Model architecture}
 \begin{itemize}
-	\item \textbf{Basic Model}: The number of the input neural of the model should be the same as the number of features, and then there are hidden layers. Finally, the output layer is a sigmoid function as this model should output the possibility of the selling. 
-	\item \textbf{Advanced Model}: The advanced model contains more components, such as dropout or batch normalization, and these additional layers might reduce overfitting and enhance accuracy. 
+	\item \textbf{Basic Model}: The number of the input neural of the model should be the same as the number of features, then there are hidden layers. Finally the output layer is a sigmoid function as the this model should outputs the possibility of the selling. 
+	\item \textbf{Advanced Model}: The advanced model contains more conponents, such as dropout or batch normalization, these additional layers might reduce overfitting and enhance accuracy. 
 \end{itemize}
 
 \subsection{Training}
 \begin{enumerate}
-	\item Use \textbf{\textit{DataLoader}} to fetch batches of data for training, and the batch  size could be set to 128 if there is sufficient memory. 
-	\item The loss function used for model training is \textbf{\textit{MSELoss}} since this is a regression problem. 
+	\item Use \textbf{\textit{DataLoader}} to feath baches of data for training, and the batch  size could be set to 128 if there are sufficient memory. 
+	\item The loss finction used for model training is \textbf{\textit{MSELoss}} as the output is a continuous value. 
 	\item The optimizer for updating parameters could be \textbf{\textit{SGD}} or \textbf{\textit{Adam}}.
-	\item Train the model iteratively, and the number of iterations (epochs) will be set to 500 and updated if necessary. 
+	\item Train the model iteratively and the number of iteration (epochs) will be set to 500 and will be updated if necessary. 
 \end{enumerate}
 
 \subsection{Hyperparameters Tuning}
 \begin{itemize}
-	\item Learning rate: The initial learning rate will be set to 0.001, and it will be increased/decreased depending on the performance. Moreover, learning rate schedulers, for example, \textbf{\textit{LambdaLR}} and \textbf{\textit{StepLR}}, could be applied during training. 
-	\item The number of epochs: If the initial value causes overfitting or underfitting, then the epochs should be decreased or increased. 
-	\item Activation functions: The initial activation function will be ReLU, but other activation functions, such as TanH and Parametric ReLU, will also be tested to enhance the performance. 
+	\item Learning rate: The inintial learning rate will be set to 0.001 and it will be increased/decreased depending on the performance. Moreover, learning rate schedulers, for example, \textbf{\textit{LambdaLR}} and \textbf{\textit{StepLR}} could be applied during training. 
+	\item Number of epochs: If the initial value cause overfitting or underfitting then the epochs should be decreasd or increased. 
+	\item Activation functions: The inintial activation function will be ReLU, but other activation functions, such as TanH and Parametric ReLU will also be tested to enhance the performance. 
 \end{itemize}
 
 \section{Evaluation}
-After constructing and training models, the next step is to evaluate their performance. The mean squared error (MSE) could be used to evaluate performance numerically. The lower the MSE, the higher the performance. In addition, a line plot containing the training loss and validation loss against epochs should be produced. This figure could determine if the model is overfitting/underfitting. The optimal best model is then selected and tested using the test dataset to generate the final result. 
+After constructing and training models, the next step is testing the performance of these models. The mean squared error (MSE) could be used to test the performance numerically, the less the MSE, the better the performance. Moreover, a line plot contains the training loss and validation loss against epochs should be generated, this plot could be used to determing which the model is overfitting/underfitting. Finally, an optimal best model is selected and it is tested using the test dataset to produce the final result. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
