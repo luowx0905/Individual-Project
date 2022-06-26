@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  25 JUN 2022 23:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  26 JUN 2022 15:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -627,34 +627,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--99
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--107
+Underfull \hbox (badness 10000) in paragraph at lines 106--108
 
  []
 
 [3]
 LaTeX Font Info:    Trying to load font information for TS1+bch on input line 1
-10.
+11.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1bch.fd
 File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
 ) [4]
 Chapter 3.
 [5
 
-] (./main.bbl (./main.brf)
+] [6] (./main.bbl (./main.brf)
 \tf@brf=\write5
 \openout5 = `main.brf'.
 
- [6]) [7
+ [7]) [8
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 0179CE993A743636D74FDFA0C2EF5776;2844.
 Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: D5DDA5890F4DA04CD7A69DCADDA57AA6;182.
+(rerunfilecheck)             Checksum: A502DAC9945A5C92F54C7EFC718882F6;182.
  ) 
 Here is how much of TeX's memory you used:
- 13244 strings out of 478268
- 215651 string characters out of 5846347
+ 13245 strings out of 478268
+ 215658 string characters out of 5846347
  518360 words of memory out of 5000000
  31182 multiletter control sequences out of 15000+600000
  497320 words of font info for 70 fonts, out of 8000000 for 9000
@@ -665,10 +665,10 @@ exlive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/local/texl
 ive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchbi8a.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb>
-Output written on main.pdf (10 pages, 81274 bytes).
+Output written on main.pdf (11 pages, 82216 bytes).
 PDF statistics:
- 210 PDF objects out of 1000 (max. 8388607)
- 187 compressed objects within 2 object streams
- 48 named destinations out of 1000 (max. 500000)
+ 215 PDF objects out of 1000 (max. 8388607)
+ 191 compressed objects within 2 object streams
+ 49 named destinations out of 1000 (max. 500000)
  158 words of extra memory for PDF output out of 10000 (max. 10000000)
 

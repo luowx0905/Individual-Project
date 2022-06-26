@@ -5,7 +5,7 @@
 \contentsline {section}{\numberline {2.2}NumPy}{3}{section.9}%
 \contentsline {section}{\numberline {2.3}Pandas}{3}{section.10}%
 \contentsline {section}{\numberline {2.4}Scikit-learn}{3}{section.11}%
-\contentsline {section}{\numberline {2.5}PyTorch}{3}{section.12}%
+\contentsline {section}{\numberline {2.5}PyTorch}{4}{section.12}%
 \contentsline {section}{\numberline {2.6}Matplotlib}{4}{section.13}%
 \contentsline {chapter}{\numberline {3}Project Plan}{5}{chapter.14}%
 \contentsline {section}{\numberline {3.1}Data Preprocessing}{5}{section.15}%
