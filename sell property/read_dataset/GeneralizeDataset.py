@@ -6,18 +6,17 @@ class GeneralizeDataset:
     def __init__(self, data: pd.DataFrame):
         self.data = data
 
-        self.parking_types = None
-        self.parking_num = None
-
-        self.outside_space_types = None
-        self.outside_space_num = None
+        self.features = ["parking", "outside_space", "heating", "accessibility"]
 
     def get_feature_types(self, feature: str):
         """
         Obtain feature types for every property
         :param feature: parking, outside_space
-        :return: None
+        :return: dict
         """
+        if feature not in self.features:
+            raise ValueError("{} is invalid".format(feature))
+
         # Select all the columns related to the feature
         names = list(filter(lambda s: feature in s, self.data.columns))
         raw_data = self.data[names].copy()
@@ -27,42 +26,32 @@ class GeneralizeDataset:
         types = np.unique(raw_data.to_numpy().flatten())
 
         # Create a dict for every feature types except None
-        result = None
-        if feature.lower() == "parking":
-            self.parking_types = {key: [] for key in types if key != "None"}
-            result = self.parking_types
-        elif feature.lower() == "outside_space":
-            self.outside_space_types = {key: [] for key in types if key != "None"}
-            result = self.outside_space_types
-        else:
-            raise ValueError("{} is invalid".format(feature))
+        result = {key: [] for key in types if key != "None"}
 
         # Obtain parking types for every property
         for i in range(len(raw_data)):
-            types = {key: 0 for key in types if key != "None"}
+            temp = {key: 0 for key in types if key != "None"}
 
             first = raw_data.iloc[i, 0]
             second = raw_data.iloc[i, 1]
             third = raw_data.iloc[i, 2]
-            types = self.record_types(first, second, third, types)
+            temp = self.record_types(first, second, third, temp)
 
-            list(map(lambda d: result[d].append(types[d]), types.keys()))
+            list(map(lambda d: result[d].append(temp[d]), temp.keys()))
+
+        return result
 
     def get_feature_num(self, feature: str):
+        if feature not in self.features:
+            raise ValueError("{} is invalid".format(feature))
+
         names = list(filter(lambda s: feature in s, self.data.columns))
         raw_data = self.data[names]
 
-        result = None
-        if feature.lower() == "parking":
-            self.parking_num = []
-            result = self.parking_num
-        elif feature.lower() == "outside_space":
-            self.outside_space_num = []
-            result = self.outside_space_num
-        else:
-            raise ValueError("{} is invalid".format(feature))
-
+        result = []
         list(map(lambda d: result.append(raw_data.iloc[d].count()), range(len(raw_data))))
+
+        return result
 
     @staticmethod
     def record_types(first: str, second: str, third: str, types: dict):
@@ -81,6 +70,6 @@ if __name__ == '__main__':
     data = pd.read_csv(filename, encoding="ISO8859-1")
     generalize = GeneralizeDataset(data)
 
-    generalize.get_outside_space_num()
-    for k, v in enumerate(generalize.outside_space_num):
-        print("{:15d}{:5d}".format(k, v))
+    types = generalize.get_feature_types("accessibility")
+    for k, v in types.items():
+        print("{:20s}{:5d}".format(k, sum(v)))

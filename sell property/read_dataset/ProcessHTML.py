@@ -5,7 +5,7 @@ import os
 from bs4 import BeautifulSoup
 
 
-class HandleHTML:
+class ProcessHTML:
     def __init__(self):
         self.s1_description = []
         self.s3_rooms_set = set()
@@ -84,7 +84,7 @@ class HandleHTML:
 if __name__ == '__main__':
     filename = "../datasets/PropertyData_wDesc.csv"
     data = pd.read_csv(filename, encoding="ISO8859-1")
-    handler = HandleHTML()
+    handler = ProcessHTML()
 
     description = data["EweMove Description S1 Features"]
     rooms = data["EweMove Description S3 Rooms"]
