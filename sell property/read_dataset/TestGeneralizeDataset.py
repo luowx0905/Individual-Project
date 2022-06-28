@@ -22,7 +22,7 @@ class TestGeneralizeDataset(TestCase):
 
     def test_get_parking_num(self):
         generalize = GeneralizeDataset(self.data)
-        generalize.get_parking_num()
+        generalize.get_feature_num("parking")
 
         self.assertEqual(sum(generalize.parking_num), 4760)
 
@@ -39,7 +39,7 @@ class TestGeneralizeDataset(TestCase):
 
     def test_get_outside_space_num(self):
         generalize = GeneralizeDataset(self.data)
-        generalize.get_outside_space_num()
+        generalize.get_feature_num("outside_space")
 
         self.assertEqual(sum(generalize.outside_space_num), 4935)
 
