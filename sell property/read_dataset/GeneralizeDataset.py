@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import parse
 
 
 class GeneralizeDataset:
@@ -7,6 +8,7 @@ class GeneralizeDataset:
         self.data = data
 
         self.features = ["parking", "outside_space", "heating", "accessibility"]
+        self.extract_area = parse.compile("{} ({} sqm){}")
 
     def get_feature_types(self, feature: str):
         """
