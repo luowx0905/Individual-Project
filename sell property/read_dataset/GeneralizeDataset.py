@@ -4,9 +4,12 @@ import parse
 
 
 class GeneralizeDataset:
-    def __init__(self, data: pd.DataFrame):
+    def __init__(self, data: pd.DataFrame, rooms: dict, room_set: set):
         self.data = data
+        self.rooms = rooms
+        self.room_set = room_set
 
+        self.current_rooms = set()
         self.features = ["parking", "outside_space", "heating", "accessibility"]
         self.extract_area = parse.compile("{} ({} sqm){}")
 
@@ -54,6 +57,19 @@ class GeneralizeDataset:
         list(map(lambda d: result.append(raw_data.iloc[d].count()), range(len(raw_data))))
 
         return result
+
+    def get_rooms(self, *args):
+        room_names = [i for i in self.room_set if j in i.lower() for j in args]
+        average_room_area = None
+
+    def get_room_areas(self, room_names):
+        areas = []
+        for rooms in self.rooms:
+            for room, area in rooms.items():
+                if room in room_names and isinstance(area, str):
+                    areas.append(float(self.extract_area(area)[1]))
+
+        return sum(areas) / len(areas)
 
     @staticmethod
     def record_types(first: str, second: str, third: str, types: dict):
