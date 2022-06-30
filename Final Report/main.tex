@@ -189,14 +189,36 @@ The data that was retrieved for this project originated from two different sourc
 \subsection{Extract values}
 There are two types of data in the raw dataset: HTML texts containing the name and area of a property's rooms and categorical keywords describing a particular feature.
 
-\subsubsection{Handle HTML texts}
-The structure of the HTML texts containing the room information in a property is shown in figure \ref{html_structure}. The rooms are separated by tag $<$li$>$, the room name and its dimension is is marked by $<$strong$>$ and $<$i$>$ respectively. Therefore, 
+\subsubsection{Handle Room Descriptions (HTML)}
+The structure of the HTML texts containing the room information in a property is shown in figure \ref{html_structure}. The rooms are separated by tag \textit{$<$li$>$}, and the room name and its dimension is denoted by \textit{$<$strong$>$} and \textit{$<$i$>$} tags, respectively. Therefore, a function was implemented to split the HTML text by utilizing \textit{\textbf{Beautiful soup}}, and its flowchart is shown in figure \ref{html_room_info}.
 \begin{figure}[h]
+	\centering
 	\includegraphics[width=15cm, height=6cm]{html_structure}
 	\caption{The layout of HTML texts}
 	\label{html_structure}
-	\centering
 \end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm, height=5cm]{html_room_info}
+	\caption{HTML room info}
+	\label{html_room_info}
+\end{figure}
+
+The names of rooms are analyzed after the room descriptions in the dataset have been processed. As a consequence, there are over 200 unique room names for approximately 3600 records, some of which are exceptionally uncommon across the entire dataset. For instance, only two properties have cinema rooms and one has a lift, which is less than 0.1\% of all entries.  
+\\
+
+Due to the large number of room names, it is impossible to use it as the input of the model. Therefore, the rooms are divided into seven categories: bedrooms, bathrooms, kitchens, living/reception rooms, dining rooms, work areas, and other rooms so that the data can be generalized. 
+\\
+
+In this case, a class, \textit{\textbf{ExtractRooms}} was developed to extrace and generalize the room information, its UML diagram is shown figure \ref{uml_extract_rooms}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=10cm, height=5cm]{uml_extract_rooms}
+	\caption{The UML diagram of the class (\textit{ExtractRoome})}
+	\label{uml_extract_rooms}
+\end{figure}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
