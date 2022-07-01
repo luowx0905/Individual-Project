@@ -206,16 +206,23 @@ Comprehensive testing was conducted throughout the implementation but it is docu
 There were two tests for this objective, the first test examing if the room name and its dimension can be acquiare from HTML texts and the second test focuses on whether the room areas can be obtained and integrated correctly. 
 \\
 
-\textbf{\textit{\underline{Extract Information from HTML texts}}} \\
-Two HTML text snippets were utilized in this test and they are shonw in figure \ref{html_room_info_test}. By invoking function \textit{\textbf{EweMove\_Description\_S3\_Rooms}} with two snippets, it can be verified that all the room names and dimensions can be extracted without error and if the dimension is not available then it is set to one. 
+\textbf{\textit{\underline{Acquire room name and dimension}}} \\
+Two HTML text snippets were utilized in this test and they are shonw in figure \ref{html_room_info_test}. By invoking function \textit{\textbf{EweMove\_Description\_S3\_Rooms}} with two snippets. It can be verified that all the room names and dimensions can be extracted without error and if the dimension is not available then it is set to one. 
+\\
 \begin{figure*}[h]
 	\centering
-	\subfigure[Snippte 1]{\includegraphics[width=7.5cm, height=7cm]{html_room_info_1}\label{html_room_info_test_1}}
+	\subfigure[Snippte 1]{\includegraphics[width=7.5cm, height=8cm]{html_room_info_1}\label{html_room_info_test_1}}
 	\hfill
-	\subfigure[Snippet 2]{\includegraphics[width=7.5cm, height=7cm]{html_room_info_2}\label{html_room_info_test_2}}
+	\subfigure[Snippet 2]{\includegraphics[width=7.5cm, height=8cm]{html_room_info_2}\label{html_room_info_test_2}}
 	\caption{The HTML snippets for testing}
 	\label{html_room_info_test}
 \end{figure*}
+
+\textbf{\textit{\underline{Generalize room information}}} \\
+The information obtained from HTML texts (\ref{html_room_info_test}) were utilized to access the beahviour of \textit{ExtractRooms}, especially its member functions, \textit{get\_rooms}. During testing, the selected type is bedroom and all the operations of \textit{get\_room} were examed. In addition, the other rooms were applied to test \textit{get\_rest\_rooms}. 
+\\
+
+It is guaranteed that if the operation is  "split", then all the bedroom areas can be listed; the sum and average of areas, and the number of bedrooms will be returned if corresponding parameters are input to the function. Moreover, the number of other rooms and their total area will be computed correctly. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Performance}
@@ -225,10 +232,11 @@ Two HTML text snippets were utilized in this test and they are shonw in figure \
 \subsection{Extract Values}
 
 \subsubsection{Obtaining Room Information}
-\textbf{\textit{\underline{Extract Information from HTML texts}}} \\
+\textbf{\textit{\underline{Acquire room name and dimension}}} \\
 After calling the function and retrieving the results (shown in tables \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2}), it is evident that the room names in two HTML snippets could be obtained, and the dimensions were acquired if available otherwise, the value was set to one, hence this function can pass the test.
 \begin{table}[h]
 	\centering
+	\caption{Information from HTML snippet in figure \ref{html_room_info_test_1}}
 	\begin{tabular} {| l | l |}
 		\hline
 		Entrance Hall & 1\\
@@ -248,12 +256,12 @@ After calling the function and retrieving the results (shown in tables \ref{html
 		Parking & 1\\
 		\hline
 	\end{tabular}
-	\caption{Information from HTML snippet in figure \ref{html_room_info_test_1}}
 	\label{html_room_info_expect_1}
 \end{table}
 
 \begin{table}[h]
 	\centering
+	\caption{Information from HTML snippet in figure \ref*{html_room_info_test_2}}
 	\begin{tabular} {| l | l |}
 		\hline
 		Entrance Porch & 1\\
@@ -273,10 +281,71 @@ After calling the function and retrieving the results (shown in tables \ref{html
 		Bathroom & 1\\
 		\hline
 	\end{tabular}
-	\caption{Information from HTML snippet in figure \ref*{html_room_info_test_2}}
 	\label{html_room_info_expect_2}
 \end{table}
 
+\textbf{\textit{\underline{Generalize room information}}} \\
+The result 
+\\
+
+\begin{table}[h]
+	\centering
+	\captionof{table}{Room information ("split")}
+	\label{bedroom_info_split}
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+		& Bedroom 1 & Bedroom 2 & Bedroom 3 \\
+		\hline
+		0 & 8.2 & 6.2 & 0.0 \\
+		\hline
+		1 & 13.1 & 7.7 & 10.4 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table*}[h]
+	\centering
+	\caption{Bedroom information integrated by different operations}
+	\label{bedroom_info_all}
+	\subtable[Mean]{
+		\begin{tabular}{| c | c |}
+			\hline
+			& Average area \\ 
+			\hline
+			0 & 7.2 \\
+			\hline
+			1 & 10.4 \\ 
+			\hline
+		\end{tabular}
+		\label{bedroom_info_mean}
+	}
+	\hfill
+	\subtable[Sum]{
+		\begin{tabular}{| c | c |}
+			\hline
+			& Total area \\ 
+			\hline
+			0 & 14.4 \\
+			\hline
+			1 & 31.2 \\ 
+			\hline
+		\end{tabular}
+		\label{bedroom_info_sum}
+	}
+	\hfill
+	\subtable[Number]{
+		\begin{tabular}{| c | c |}
+			\hline
+			& Number of rooms \\ 
+			\hline
+			0 & 2 \\
+			\hline
+			1 & 3 \\ 
+			\hline
+		\end{tabular}
+		\label{bedroom_info_number}
+	}
+\end{table*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Experimental Results}
