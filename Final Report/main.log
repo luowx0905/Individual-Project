@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  30 JUN 2022 23:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  1 JUL 2022 00:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -646,27 +646,32 @@ Chapter 4.
 <./figures//html_structure.png, id=253, 598.235pt x 216.81pt>
 File: ./figures//html_structure.png Graphic file (type png)
 <use ./figures//html_structure.png>
-Package pdftex.def Info: ./figures//html_structure.png  used on input line 196.
+Package pdftex.def Info: ./figures//html_structure.png  used on input line 197.
 
-(pdftex.def)             Requested size: 426.79456pt x 170.72554pt.
+(pdftex.def)             Requested size: 426.79134pt x 154.67722pt.
 <./figures//html_room_info.png, id=255, 924.45375pt x 259.97125pt>
 File: ./figures//html_room_info.png Graphic file (type png)
 <use ./figures//html_room_info.png>
-Package pdftex.def Info: ./figures//html_room_info.png  used on input line 203.
+Package pdftex.def Info: ./figures//html_room_info.png  used on input line 204.
 
-(pdftex.def)             Requested size: 426.79144pt x 142.26266pt.
+(pdftex.def)             Requested size: 426.79134pt x 120.0206pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--210
+Underfull \hbox (badness 10000) in paragraph at lines 209--211
 
  []
 
 [9
 
  <./figures//html_structure.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 211--213
+Underfull \hbox (badness 10000) in paragraph at lines 212--214
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--218
 
  []
 
@@ -674,19 +679,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 211--213
 File: ./figures//uml_extract_rooms.png Graphic file (type png)
 <use ./figures//uml_extract_rooms.png>
 Package pdftex.def Info: ./figures//uml_extract_rooms.png  used on input line 2
-17.
-(pdftex.def)             Requested size: 284.54442pt x 142.26836pt.
+21.
+(pdftex.def)             Requested size: 284.52756pt x 137.88846pt.
+<./figures//extract_room_get_rooms.png, id=268, 207.77625pt x 523.9575pt>
+File: ./figures//extract_room_get_rooms.png Graphic file (type png)
+<use ./figures//extract_room_get_rooms.png>
+Package pdftex.def Info: ./figures//extract_room_get_rooms.png  used on input l
+ine 232.
+(pdftex.def)             Requested size: 112.83157pt x 284.52756pt.
 [10 <./figures//html_room_info.png> <./figures//uml_extract_rooms.png>]
+[11 <./figures//extract_room_get_rooms.png>]
 Chapter 5.
-[11
-
-]
-Chapter 6.
 [12
 
 ]
-Chapter 7.
+Chapter 6.
 [13
+
+]
+Chapter 7.
+[14
 
 ]
 Chapter 8.
@@ -694,34 +706,34 @@ Chapter 8.
 \tf@brf=\write5
 \openout5 = `main.brf'.
 
- [14
+ [15
 
-]) [15
+]) [16
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: ED7B9030B6AABA1AE67F23D48C210311;4352.
+(rerunfilecheck)             Checksum: D5A4AD0F0F540749658936ADC9B4B33A;4352.
 Package rerunfilecheck Info: File `main.brf' has not changed.
 (rerunfilecheck)             Checksum: 60711DAAEC584BA613591B0A4767B66D;228.
  ) 
 Here is how much of TeX's memory you used:
- 13330 strings out of 478268
- 217307 string characters out of 5846347
- 522561 words of memory out of 5000000
- 31236 multiletter control sequences out of 15000+600000
+ 13345 strings out of 478268
+ 217788 string characters out of 5846347
+ 522658 words of memory out of 5000000
+ 31249 multiletter control sequences out of 15000+600000
  502820 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,7n,80p,633b,426s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,7n,80p,633b,462s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/local/texl
 ive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchbi8a.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/local/texlive/202
 2/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-Output written on main.pdf (22 pages, 219771 bytes).
+Output written on main.pdf (23 pages, 246433 bytes).
 PDF statistics:
- 340 PDF objects out of 1000 (max. 8388607)
- 296 compressed objects within 3 object streams
- 75 named destinations out of 1000 (max. 500000)
- 253 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 349 PDF objects out of 1000 (max. 8388607)
+ 301 compressed objects within 4 object streams
+ 77 named destinations out of 1000 (max. 500000)
+ 258 words of extra memory for PDF output out of 10000 (max. 10000000)
 

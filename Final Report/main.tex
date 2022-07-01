@@ -190,18 +190,19 @@ The data that was retrieved for this project originated from two different sourc
 There are two types of data in the raw dataset: HTML texts containing the name and area of a property's rooms and categorical keywords describing a particular feature.
 
 \subsubsection{Handle Room Descriptions (HTML)}
-The structure of the HTML texts containing the room information in a property is shown in figure \ref{html_structure}. The rooms are separated by tag \textit{$<$li$>$}, and the room name and its dimension is denoted by \textit{$<$strong$>$} and \textit{$<$i$>$} tags, respectively. Therefore, a function was implemented to split the HTML text by utilizing \textit{\textbf{Beautiful soup}}, and its flowchart is shown in figure \ref{html_room_info}.
+\textbf{\textit{\underline{Acquire room name and dimension}}} \\
+The structure of the HTML texts containing the room information in a property is shown in figure \ref{html_structure}. The rooms are separated by tag \textit{$<$li$>$}, and the room name and its dimension is denoted by \textit{$<$strong$>$} and \textit{$<$i$>$} tags, respectively. Therefore, a function (\textit{\textbf{EweMove\_Description\_S3\_Rooms}}) was implemented to split the HTML text by utilizing \textit{\textbf{Beautiful soup}}, and its flowchart is shown in figure \ref{html_room_info}.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=15cm, height=6cm]{html_structure}
+	\includegraphics[width=15cm]{html_structure}
 	\caption{The layout of HTML texts}
 	\label{html_structure}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=15cm, height=5cm]{html_room_info}
-	\caption{HTML room info}
+	\includegraphics[width=15cm]{html_room_info}
+	\caption{Flowchart for extracting room information from HTML}
 	\label{html_room_info}
 \end{figure}
 
@@ -211,14 +212,28 @@ The names of rooms are analyzed after the room descriptions in the dataset have 
 Due to the large number of room names, it is impossible to use it as the input of the model. Therefore, the rooms are divided into seven categories: bedrooms, bathrooms, kitchens, living/reception rooms, dining rooms, work areas, and other rooms so that the data can be generalized. 
 \\
 
-In this case, a class, \textit{\textbf{ExtractRooms}} was developed to extrace and generalize the room information, its UML diagram is shown figure \ref{uml_extract_rooms}.
+\textbf{\textit{\underline{Generalize room information}}} \\
+A class, \textit{\textbf{ExtractRooms}}, was developed to acquire and integrate the room information, especially the area in square meters, and its UML diagram is shown in figure \ref{uml_extract_rooms}. The member variable \textit{rooms} is a list containing the result of invoking \textit{EweMove\_Description\_S3\_Rooms}, \textit{room\_set} comprises all the room names, \textit{current\_rooms} consists of the room names that have been processed, and \textit{extract\_area} is a formatted string for acquiring room area. 
+\\
+
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=10cm, height=5cm]{uml_extract_rooms}
-	\caption{The UML diagram of the class (\textit{ExtractRoome})}
+	\includegraphics[width=10cm]{uml_extract_rooms}
+	\caption{The UML diagram of the class (\textit{ExtractRooms})}
 	\label{uml_extract_rooms}
 \end{figure}
 
+Member functions
+\begin{itemize}
+	\item get\_rooms \\
+	This is the core of the class, and its flow diagram is shown in figure \ref{extract_room_get_rooms}. It should be noted that \textit{\textbf{*args}} is a variable-length argument, which means that it can accept as many arguments as possible, and it is used to select room names from \textit{room\_set}. For instance, all the names containing "living" or "reception" will be selected if \textit{*args = ["living", "reception"]}. 
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=10cm]{extract_room_get_rooms}
+		\caption{Flowchart of \textit{get\_rooms}}
+		\label{extract_room_get_rooms}
+	\end{figure}
+\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
