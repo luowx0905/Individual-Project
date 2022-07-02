@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  2 JUL 2022 01:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  2 JUL 2022 01:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -707,12 +707,6 @@ Package pdftex.def Info: ./figures//html_room_info_2.png  used on input line 21
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (5.59846pt too wide) in paragraph at lines 221--224
-\OT1/bch/m/n/12 The in-for-ma-tion ob-tained from HTML texts ([][]4.1[][]) were
- uti-lized to ac-cess the beahviour
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 221--224
 
  []
@@ -775,7 +769,7 @@ ive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchbi8a.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/local/texlive/202
 2/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-Output written on main.pdf (22 pages, 742315 bytes).
+Output written on main.pdf (22 pages, 742286 bytes).
 PDF statistics:
  340 PDF objects out of 1000 (max. 8388607)
  289 compressed objects within 3 object streams

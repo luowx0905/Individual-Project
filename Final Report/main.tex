@@ -207,7 +207,7 @@ There were two tests for this objective, the first test examing if the room name
 \\
 
 \textbf{\textit{\underline{Acquire room name and dimension}}} \\
-Two HTML text snippets were utilized in this test and they are shonw in figure \ref{html_room_info_test}. By invoking function \textit{\textbf{EweMove\_Description\_S3\_Rooms}} with two snippets. It can be verified that all the room names and dimensions can be extracted without error and if the dimension is not available then it is set to one. 
+This test utilized two HTML texts, which are illustrated in figure \ref{html_room_info_test}. By invoking the function \textit{\textbf{EweMove\_Description\_S3\_Rooms}} with two snippets, it can be verified that all the room names and dimensions can be extracted without error, and if the dimension is unavailable, it is set to one. 
 \\
 \begin{figure*}[h]
 	\centering
@@ -219,10 +219,10 @@ Two HTML text snippets were utilized in this test and they are shonw in figure \
 \end{figure*}
 
 \textbf{\textit{\underline{Generalize room information}}} \\
-The information obtained from HTML texts (\ref{html_room_info_test}) were utilized to access the beahviour of \textit{ExtractRooms}, especially its member functions, \textit{get\_rooms}. During testing, the selected type is bedroom and all the operations of \textit{get\_room} were examed. In addition, the other rooms were applied to test \textit{get\_rest\_rooms}. 
+The information obtained from HTML texts (figure \ref{html_room_info_test}) was used to access the behavior of \textit{ExtractRooms}, especially its member functions, \textit{get\_rooms}. During testing, the selected type is the bedroom, and all the operations of \textit{get\_room} were inspected. Additionally, the other rooms were used to test \textit{get\_rest\_rooms}. 
 \\
 
-It is guaranteed that if the operation is  "split", then all the bedroom areas can be listed; the sum and average of areas, and the number of bedrooms will be returned if corresponding parameters are input to the function. Moreover, the number of other rooms and their total area will be computed correctly. 
+It is guaranteed that if the operation is  "split", then all the bedroom areas can be listed; the sum and average of areas as well as the number of bedrooms will be returned if the function is invoked with corresponding parameters. In addition, the number of other rooms and their total area will be computed correctly. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Experimental Results}
@@ -285,13 +285,13 @@ After calling the function and retrieving the results (shown in tables \ref{html
 \end{table}
 
 \textbf{\textit{\underline{Generalize room information}}} \\
-The results of calling function \textit{get\_rooms} are shown in table \ref{bedroom_info_split} and \ref{bedroom_info_all}. It is obvious that all the bedrooms and their areas in table \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2} were extracted successfully. In addition, if the operation was set to "mean", "sum" and "number", the numerical values could be obtained without error. These behaviours indicated that the functionalities are the same as the design. 
+The results of calling \textit{get\_rooms} are displayed in tables \ref{bedroom_info_split} and \ref{bedroom_info_all}. It is obvious that all the bedrooms and their areas in tables \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2} were successfully extracted. In addition, the numerical values could also be obtained without error if the operations were configured appropriately. These behaviors demonstrated that the functionality and the design are identical. 
 \\
 
-Moreover, the result of invoking function \textit{get\_rest\_rooms} is shown in table \ref{other_room_info}. By applying the information from table \ref{bedroom_info_split}, \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2}, it is clear that all the numerical values were matching which means this function can pass the test. 
+Furthermore, the result of invoking \textit{get\_rest\_rooms} is shown in table \ref{other_room_info}. It is clear that there is no statistical inconsistency using the information from tables \ref{bedroom_info_split}, \ref{html_room_info_expect_1}, and \ref{html_room_info_expect_2}, hence this function can pass the test. 
 \\ 
 
-In summary, the manners of the two critical member functions in class \textit{ExtractRooms} meet the expections and the implementation is correct. 
+In conclusion, the performance of the two crucial member functions in class \textit{ExtractRooms} meets expectations.
 \\
 
 \begin{table}[h]
