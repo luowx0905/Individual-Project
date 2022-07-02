@@ -6,7 +6,6 @@ import parse
 class GeneralizeDataset:
     def __init__(self, data: pd.DataFrame):
         self.data = data
-
         self.features = ["parking", "outside_space", "heating", "accessibility"]
 
     def get_feature_types(self, feature: str):

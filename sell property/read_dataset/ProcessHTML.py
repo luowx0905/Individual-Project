@@ -1,7 +1,7 @@
 import pandas as pd
 import re
 import parse
-import os
+import random
 from bs4 import BeautifulSoup
 
 
@@ -12,6 +12,8 @@ class ProcessHTML:
         self.s3_rooms = []
         self.s4_summary = []
         self.price_or_rent = []
+
+        self.extract_numeric = "[-+]?[.]?[\d]+(?:,\d\d\d)*[\.]?\d*(?:[eE][-+]?\d+)?"
 
     def EweMove_Description_S1_Features(self, info: str) -> None:
         if pd.isna(info):
@@ -38,12 +40,18 @@ class ProcessHTML:
         result = {}
         for room in rooms:
             name = room.strong.string.split('-')[-1].strip()
+            # In case there are two rooms with the same name
+            if name in result.keys():
+                name = "{}{}".format(name, random.randint(0, 100))
             self.s3_rooms_set.add(name)
+
             try:
-                area = room.i.string
+                area_or_number = room.i.string
             except AttributeError:
-                area = 1
-            result[name] = area
+                area_or_number = 1
+
+            # In case there are two rooms with the same name
+            result[name] = area_or_number
 
         self.s3_rooms.append(result)
 
@@ -74,9 +82,7 @@ class ProcessHTML:
             return
 
         price_qualifier = info.split("<br>")[-1]
-
-        pattern = "[-+]?[.]?[\d]+(?:,\d\d\d)*[\.]?\d*(?:[eE][-+]?\d+)?"
-        price = re.findall(pattern, info)[0]
+        price = re.findall(self.extract_numeric, info)[0]
 
         self.price_or_rent.append((price, price_qualifier))
 
@@ -91,14 +97,21 @@ if __name__ == '__main__':
     summary = data["EweMove Description S4 Summary"]
     price = data["Price / Rent"]
 
+    count = 0
     for d, r, s, p in zip(description, rooms, summary, price):
-        handler.EweMove_Description_S1_Features(d)
+        print(count)
+        count += 1
+        #handler.EweMove_Description_S1_Features(d)
         handler.EweMove_Description_S3_Rooms(r)
-        handler.EweMove_Description_S4_Summary(s)
-        handler.price_rent(p)
+        #handler.EweMove_Description_S4_Summary(s)
+        #handler.price_rent(p)
 
-    index = 0
-    print(handler.s1_description[index])
-    print(handler.s3_rooms[index])
-    print(handler.s4_summary[index])
-    print(handler.price_or_rent[index])
+    for room in handler.s3_rooms:
+        if room is None:
+            print("None\n\n")
+            continue
+
+        for k, v in rooms.items():
+            print("{:30s}{}".format(k, v))
+
+        print("\n\n")
