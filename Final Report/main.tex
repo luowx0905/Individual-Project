@@ -225,7 +225,7 @@ The information obtained from HTML texts (\ref{html_room_info_test}) were utiliz
 It is guaranteed that if the operation is  "split", then all the bedroom areas can be listed; the sum and average of areas, and the number of bedrooms will be returned if corresponding parameters are input to the function. Moreover, the number of other rooms and their total area will be computed correctly. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Performance}
+\chapter{Experimental Results}
 
 \section{Data Preprocessing}
 
@@ -285,7 +285,13 @@ After calling the function and retrieving the results (shown in tables \ref{html
 \end{table}
 
 \textbf{\textit{\underline{Generalize room information}}} \\
-The result 
+The results of calling function \textit{get\_rooms} are shown in table \ref{bedroom_info_split} and \ref{bedroom_info_all}. It is obvious that all the bedrooms and their areas in table \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2} were extracted successfully. In addition, if the operation was set to "mean", "sum" and "number", the numerical values could be obtained without error. These behaviours indicated that the functionalities are the same as the design. 
+\\
+
+Moreover, the result of invoking function \textit{get\_rest\_rooms} is shown in table \ref{other_room_info}. By applying the information from table \ref{bedroom_info_split}, \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2}, it is clear that all the numerical values were matching which means this function can pass the test. 
+\\ 
+
+In summary, the manners of the two critical member functions in class \textit{ExtractRooms} meet the expections and the implementation is correct. 
 \\
 
 \begin{table}[h]
@@ -347,9 +353,20 @@ The result
 	}
 \end{table*}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Experimental Results}
-
+\begin{table}[h]
+	\centering
+	\caption{The number and total area of other rooms}
+	\label{other_room_info}
+	\begin{tabular}{| c | c | c |}
+		\hline
+		 & Number & Area \\
+		 \hline
+		 0 & 6 & 34.8 \\
+		 \hline
+		 1 & 5 & 34.3 \\
+		 \hline
+	\end{tabular}
+\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion}

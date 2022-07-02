@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  2 JUL 2022 00:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  2 JUL 2022 01:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -551,7 +551,7 @@ LaTeX Info: Redefining \nameref on input line 24.
 \openout3 = `main.out'.
 
  (./titlepage.tex
-<./figures/imperial.pdf, id=100, 362.35374pt x 95.35625pt>
+<./figures/imperial.pdf, id=96, 362.35374pt x 95.35625pt>
 File: ./figures/imperial.pdf Graphic file (type pdf)
 <use ./figures/imperial.pdf>
 Package pdftex.def Info: ./figures/imperial.pdf  used on input line 11.
@@ -639,13 +639,13 @@ LaTeX Font Info:    Trying to load font information for TS1+bch on input line 1
 File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
 ) [4] [5]
 Chapter 3.
-<./figures//html_structure.png, id=207, 598.235pt x 216.81pt>
+<./figures//html_structure.png, id=202, 598.235pt x 216.81pt>
 File: ./figures//html_structure.png Graphic file (type png)
 <use ./figures//html_structure.png>
 Package pdftex.def Info: ./figures//html_structure.png  used on input line 148.
 
 (pdftex.def)             Requested size: 426.79134pt x 154.67722pt.
-<./figures//html_room_info.png, id=209, 924.45375pt x 259.97125pt>
+<./figures//html_room_info.png, id=204, 924.45375pt x 259.97125pt>
 File: ./figures//html_room_info.png Graphic file (type png)
 <use ./figures//html_room_info.png>
 Package pdftex.def Info: ./figures//html_room_info.png  used on input line 155.
@@ -671,14 +671,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--169
 
  []
 
-<./figures//uml_extract_rooms.png, id=221, 358.33875pt x 173.64874pt>
+<./figures//uml_extract_rooms.png, id=216, 358.33875pt x 173.64874pt>
 File: ./figures//uml_extract_rooms.png Graphic file (type png)
 <use ./figures//uml_extract_rooms.png>
 Package pdftex.def Info: ./figures//uml_extract_rooms.png  used on input line 1
 72.
 (pdftex.def)             Requested size: 284.52756pt x 137.88846pt.
 [7 <./figures//html_room_info.png> <./figures//uml_extract_rooms.png>]
-<./figures//extract_room_get_rooms.png, id=230, 207.77625pt x 523.9575pt>
+<./figures//extract_room_get_rooms.png, id=225, 207.77625pt x 523.9575pt>
 File: ./figures//extract_room_get_rooms.png Graphic file (type png)
 <use ./figures//extract_room_get_rooms.png>
 Package pdftex.def Info: ./figures//extract_room_get_rooms.png  used on input l
@@ -691,13 +691,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 206--208
 
  []
 
-<./figures//html_room_info_1.png, id=241, 825.0825pt x 770.88pt>
+<./figures//html_room_info_1.png, id=236, 825.0825pt x 770.88pt>
 File: ./figures//html_room_info_1.png Graphic file (type png)
 <use ./figures//html_room_info_1.png>
 Package pdftex.def Info: ./figures//html_room_info_1.png  used on input line 21
 4.
 (pdftex.def)             Requested size: 213.3959pt x 227.61935pt.
-<./figures//html_room_info_2.png, id=242, 595.22375pt x 701.62125pt>
+<./figures//html_room_info_2.png, id=237, 595.22375pt x 701.62125pt>
 File: ./figures//html_room_info_2.png Graphic file (type png)
 <use ./figures//html_room_info_2.png>
 Package pdftex.def Info: ./figures//html_room_info_2.png  used on input line 21
@@ -730,19 +730,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 287--290
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 291--293
+
+ []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 294--296
+
+ []
 
 [11
 
-] [12]
-Chapter 6.
-[13
-
 ]
-Chapter 7.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12] [13]
+Chapter 6.
 (./main.bbl (./main.brf)
 \tf@brf=\write5
 \openout5 = `main.brf'.
@@ -753,14 +757,14 @@ Chapter 7.
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 364013F2E5D65B89ACB8DF3FE78C2EB8;3467.
+(rerunfilecheck)             Checksum: D50D4F3E110E60DCAD7650664A29250B;3355.
 Package rerunfilecheck Info: File `main.brf' has not changed.
 (rerunfilecheck)             Checksum: 96F54466549B569587A87019364CD10E;228.
  ) 
 Here is how much of TeX's memory you used:
  13383 strings out of 478268
- 218863 string characters out of 5846347
- 522548 words of memory out of 5000000
+ 218874 string characters out of 5846347
+ 523622 words of memory out of 5000000
  31285 multiletter control sequences out of 15000+600000
  504551 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -771,10 +775,10 @@ ive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchbi8a.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/local/texlive/202
 2/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-Output written on main.pdf (22 pages, 741197 bytes).
+Output written on main.pdf (22 pages, 742315 bytes).
 PDF statistics:
- 336 PDF objects out of 1000 (max. 8388607)
- 285 compressed objects within 3 object streams
+ 340 PDF objects out of 1000 (max. 8388607)
+ 289 compressed objects within 3 object streams
  78 named destinations out of 1000 (max. 500000)
- 228 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 220 words of extra memory for PDF output out of 10000 (max. 10000000)
 
