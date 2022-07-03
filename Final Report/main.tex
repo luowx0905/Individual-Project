@@ -70,7 +70,7 @@ However, this extensive data can be one of the main obstacles for analysis as it
 In this project, some AI techniques will be applied to property and demographic data to gain insights and understand the factors influencing a homeowner's likelihood to sell. The factors might include the proximity to schools, hospitals, or supermarkets, the accessibility to public transportation, and the property types (flats or houses). It could be highly advantageous to estate agents who would discover homeowners with more potential to become clients and provide them with business. 
 
 \section{Aim \& Objective}
-\section{Layout of Thesis}
+\section{Layout of the Report}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Literal Review}
@@ -194,7 +194,7 @@ Key member functions
 \end{itemize}
 
 \subsection{Manipulate Categorical Keywords}
-In the dataset, four features are characterized by categorical keywords, including parking, heating, accessibility, and outdoor spaces. Figure \ref{parking_dataset} is a screenshot of \textit{parking}, which is used as an example to demonstrate the manipulation of the keywords. It indicates that there is one parking space for the first property, which is allocated off-street parking for residents, the second row has none, and the third property has one on-street parking space.
+In the dataset, four features are characterized by categorical keywords, including parking, heating, accessibility, and outdoor spaces. Figure \ref{parking_dataset} is a snippet of the parking dataset that is used as an example to demonstrate the manipulation of the keywords. The first three rows indicate that there is one parking space for the first property, which is allocated off-street parking for residents, the second row has none, and the third property has one on-street parking space.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=15cm]{parking_dataset}
@@ -202,7 +202,7 @@ In the dataset, four features are characterized by categorical keywords, includi
 	\label{parking_dataset}
 \end{figure}
 
-A class, \textit{\textbf{GeneralizeDataset}}, was developed to obtain the number of  keywords in each row, and its UML diagram is illstrated in figure \ref{uml_generalize_dataset}. The core of this class is member function \textit{\textbf{get\_feature\_types}}, and its flowchart is displayed in figure \ref{generalize_dataset_get_feature_types}.
+Figure \ref{uml_generalize_dataset} illustrates the UML diagram of the class \textit{\textbf{GeneralizeDataset}}, which was developed to determine how these features of each property are described and the number of keywords within the description. The core of this class is member function \textit{\textbf{get\_feature\_types}}, and its flowchart is displayed in figure \ref{generalize_dataset_get_feature_types}. In addition, function \textbf{\textit{get\_feature\_num}} can be used to determine the number of keywords for each property. 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=5cm]{uml_generalize_dataset}
@@ -246,6 +246,9 @@ The information obtained from HTML texts (figure \ref{html_room_info_test}) was 
 \\
 
 It is guaranteed that if the operation is  "split", then all the bedroom areas can be listed; the sum and average of areas as well as the number of bedrooms will be returned if the function is invoked with corresponding parameters. In addition, the number of other rooms and their total area will be computed correctly. 
+
+\subsection{Manipulate Categorical Keywords}
+The data utilized for this test is displayed in figure \ref{parking_dataset}. Initially, an invalid feature, "Distance to School" was input into function \textit{get\_feature\_types}, and it can be assured that an exception would be thrown. The feature was then set to "parking", and the result should be a table with ten rows and six columns, as there are ten properties in the snippet and six keywords in total. In addition, it could be verified that \textit{get\_feature\_num} will return the number of keywords for each property when invoked.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Experimental Results}
@@ -390,6 +393,44 @@ In conclusion, the performance of the two crucial member functions in class \tex
 		 \hline
 	\end{tabular}
 \end{table}
+
+\subsection{Manipulate Categorical Keywords}
+For the initial test, an exception was thrown if an invalid feature, in this case "Distance to School", was entered. Next, the result of calling function \textit{get\_feature\_types} is shown in table \ref{parking_types}. Apparently, the shape of the table is correct, and its elements are consistent with the dataset snippet. For the first property with an \textbf{allocated} \textbf{off-street} parking space for \textbf{residents}, the three keywords in the first row are set to one while the others are zero, and this conclusion holds true for the remaining properties. In addition, the number of keywords associated with each property can be obtained accurately by calling \textit{get\_feature\_num}. 
+\\
+
+In summary,  the member functions in this class are capable to determine the types and number of keywords, hence the implementation can pass the tests.
+
+\begin{table}[h]
+	\centering
+	\caption{The keywords for each property}
+	\label{parking_types}
+	\begin{tabular}{| c | c | c | c | c | c | c |}
+		\hline
+		& Allocated & Driveway & Garage & Off Street & On Street & Residents\\
+		\hline
+		0 & 1 & 0 & 0 & 1 & 0 & 1 \\ 
+		\hline
+		1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		\hline
+		2 & 0 & 0 & 0 & 0 & 1 & 0 \\
+		\hline
+		3 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		\hline
+		4 & 0 & 1 & 1 & 1 & 0 & 0 \\
+		\hline
+		5 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		\hline
+		6 & 0 & 1 & 1 & 1 & 0 & 0 \\
+		\hline
+		7 & 0 & 1 & 0 & 0 & 0 & 0 \\
+		\hline
+		8 & 0 & 1 & 1 & 0 & 0 & 0 \\
+		\hline
+		9 & 0 & 1 & 1 & 0 & 0 & 0 \\
+		\hline
+	\end{tabular}
+\end{table}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion}
