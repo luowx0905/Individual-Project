@@ -142,7 +142,7 @@ There are two types of data in the raw dataset: HTML texts containing the proper
 
 \subsubsection{Handle Room Descriptions (HTML)}
 \textbf{\textit{\underline{Acquire room name and dimension}}} \\
-The structure of the HTML texts containing the room information in a property is shown in figure \ref{html_structure}. The rooms are separated by tag \textit{$<$li$>$}, and the room name and its dimension is denoted by \textit{$<$strong$>$} and \textit{$<$i$>$} tags, respectively. Therefore, a function (\textit{\textbf{EweMove\_Description\_S3\_Rooms}}) was implemented to split the HTML text by utilizing \textit{\textbf{Beautiful soup}}, and its flowchart is shown in figure \ref{html_room_info}.
+The structure of the HTML texts containing the room information in a property is shown in figure \ref{html_structure}. The rooms are separated by tag \textit{$<$li$>$}, and the room name and its dimension is denoted by \textit{$<$strong$>$} and \textit{$<$i$>$} tags, respectively. Therefore, a function (\textit{\textbf{EweMove\_Description\_S3\_Rooms}}) was implemented to split the HTML text by utilizing \textit{Beautiful soup}, and its flowchart is shown in figure \ref{html_room_info}.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=15cm]{html_structure}
@@ -185,7 +185,7 @@ Key member functions
 	\end{enumerate} 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[height=10cm]{extract_room_get_rooms}
+		\includegraphics[height=11cm]{extract_room_get_rooms}
 		\caption{Flowchart of \textit{get\_rooms}}
 		\label{extract_room_get_rooms}
 	\end{figure}
@@ -193,6 +193,29 @@ Key member functions
 	This method is identical to \textit{\textbf{get\_room}} with two exceptions. The parameter \textit{\textbf{*args}} is used to disgard the room names containing the keywords, and only the number and the total areas of other rooms are returned. 
 \end{itemize}
 
+\subsection{Manipulate Categorical Keywords}
+In the dataset, four features are characterized by categorical keywords, including parking, heating, accessibility, and outdoor spaces. Figure \ref{parking_dataset} is a screenshot of \textit{parking}, which is used as an example to demonstrate the manipulation of the keywords. It indicates that there is one parking space for the first property, which is allocated off-street parking for residents, the second row has none, and the third property has one on-street parking space.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm]{parking_dataset}
+	\caption{The parking spaces in the first five properties}
+	\label{parking_dataset}
+\end{figure}
+
+A class, \textit{\textbf{GeneralizeDataset}}, was developed to obtain the number of  keywords in each row, and its UML diagram is illstrated in figure \ref{uml_generalize_dataset}. The core of this class is member function \textit{\textbf{get\_feature\_types}}, and its flowchart is displayed in figure \ref{generalize_dataset_get_feature_types}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=5cm]{uml_generalize_dataset}
+	\caption{The UML diagram of \textit{GeneralizeDataset}}
+	\label{uml_generalize_dataset}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm]{generalize_dataset_get_feature_types}
+	\caption{Flowchart of \textit{get\_feature\_types}}
+	\label{generalize_dataset_get_feature_types}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Testing the Implementation}

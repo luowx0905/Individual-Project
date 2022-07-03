@@ -9,13 +9,14 @@ class GetFacilityNum:
         self.s1_features = s1_features
         self.s3_rooms = s3_rooms
 
-        self.facility = ["parking", "outside_space", "heating", "accessibility"]
         self.extract_numeric = "[-+]?[.]?[\d]+(?:,\d\d\d)*[\.]?\d*(?:[eE][-+]?\d+)?"
         self.mapping = {"one": 1, "two": 2, "single": 1, "double": 2}
 
+        self.facility = {"parking": ["car ", "parking ", "garage"]}
+
     def get_parking_num(self, search_index: list):
         result = {str(i): -1 for i in search_index}
-        keywords = ["car ", "parking ", "garage"]
+        keywords = self.facility["parking"]
 
         for i in search_index:
             found = False
