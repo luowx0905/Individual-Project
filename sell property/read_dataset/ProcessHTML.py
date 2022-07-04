@@ -83,6 +83,7 @@ class ProcessHTML:
 
         price_qualifier = info.split("<br>")[-1]
         price = re.findall(self.extract_numeric, info)[0]
+        price = float(price.replace(',', ''))
 
         self.price_or_rent.append((price, price_qualifier))
 
