@@ -5,7 +5,7 @@ from ProcessHTML import ProcessHTML
 
 
 class ExtractRooms:
-    def __init__(self, rooms: dict, room_set: set, extract_rule: str):
+    def __init__(self, rooms: list, room_set: set, extract_rule: str):
         self.rooms = rooms
         self.room_set = room_set
 
@@ -57,7 +57,10 @@ class ExtractRooms:
             if operation.lower() == "sum":
                 all_room_info.append(total_room_area)
             elif operation.lower() == "mean":
-                all_room_info.append(total_room_area / count)
+                try:
+                    all_room_info.append(total_room_area / count)
+                except ZeroDivisionError:
+                    all_room_info.append(0)
             elif operation.lower() == "split":
                 all_room_info.append(room_info_per_property)
             elif operation.lower() == "number":
@@ -144,7 +147,41 @@ if __name__ == '__main__':
         #handler.EweMove_Description_S3_Rooms(r)
         pass
 
-    info1 = """This home includes:<ul><li><strong>01 - Entrance Hall</strong><br><br></li><li><strong>02 - Living/Dining Room</strong><br><br><i>6.58m x 3.78m (24.8 sqm) - 21' 7" x 12' 4" (267 sqft)</i><br><br></li><li><strong>03 - Kitchen</strong><br><br><i>2.68m x 2.14m (5.7 sqm) - 8' 9" x 7' (61 sqft)</i><br><br></li><li><strong>04 - Bedroom 1</strong><br><br><i>3.37m x 2.45m (8.2 sqm) - 11' x 8' (88 sqft)</i><br><br></li><li><strong>05 - Bedroom 2</strong><br><br><i>2.54m x 2.45m (6.2 sqm) - 8' 4" x 8' (67 sqft)</i><br><br>The second double bedroom is bright and well-sized, with room for all required furniture.<br><br></li><li><strong>06 - Bathroom</strong><br><br><i>2.14m x 2.04m (4.3 sqm) - 7' x 6' 8" (46 sqft)</i><br><br></li><li><strong>07 - Garden</strong><br><br>Communal Gardens.<br><br></li><li><strong>08 - Parking</strong><br><br>2 allocated parking spaces.<br><br></li></ul>"""
+    info1 = """This home includes:
+<ul>
+    <li>
+        <strong>01 - Entrance Hall</strong><br><br>
+    </li>
+    <li>
+        <strong>02 - Living/Dining Room</strong><br><br>
+        <i>6.58m x 3.78m (24.8 sqm) - 21' 7" x 12' 4" (267 sqft)</i><br><br>
+    </li>
+    <li>
+        <strong>03 - Kitchen</strong><br><br>
+        <i>2.68m x 2.14m (5.7 sqm) - 8' 9" x 7' (61 sqft)</i><br><br>
+    </li>
+    <li>
+        <strong>04 - Bedroom 1</strong><br><br>
+        <i>3.37m x 2.45m (8.2 sqm) - 11' x 8' (88 sqft)</i><br><br>
+    </li>
+    <li>
+        <strong>05 - Bedroom 2</strong><br><br>
+        <i>2.54m x 2.45m (6.2 sqm) - 8' 4" x 8' (67 sqft)</i><br><br>
+        The second double bedroom is bright and well-sized, with room for all required furniture.<br><br>
+    </li>
+    <li>
+        <strong>06 - Bathroom</strong><br><br>
+        <i>2.14m x 2.04m (4.3 sqm) - 7' x 6' 8" (46 sqft)</i><br><br>
+    </li>
+    <li>
+        <strong>07 - Garden</strong><br><br>
+        Communal Gardens.<br><br>
+    </li>
+    <li>
+        <strong>08 - Parking</strong><br><br>
+        2 allocated parking spaces.<br><br>
+    </li>
+</ul>"""
     info2 = """This home includes:
     <ul>
         <li>
@@ -182,5 +219,9 @@ if __name__ == '__main__':
     handler.EweMove_Description_S3_Rooms(info2)
 
     extract = ExtractRooms(handler.s3_rooms, handler.s3_rooms_set, "{} ({} sqm){}")
-    result = extract.get_rooms("bedroom")
+
+    result = extract.get_rooms("bedroom", operation="split")
+    result = extract.get_rest_rooms()
+
     print(result)
+

@@ -54,7 +54,7 @@ class TestHandleHTML(TestCase):
         handler = ProcessHTML()
         handler.price_rent(info)
 
-        truth = ('140,000', 'Offers In Excess Of')
+        truth = (140000, 'Offers In Excess Of')
 
         self.assertEqual(len(truth), len(handler.price_or_rent[0]))
         for t, result in zip(truth, handler.price_or_rent[0]):
