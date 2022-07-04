@@ -4,45 +4,45 @@ The top-level auxiliary file: main.aux
 The style file: apalike.bst
 Database file #1: proposal.bib
 Warning--empty publisher in RN5
-You've used 4 entries,
+You've used 5 entries,
             1935 wiz_defined-function locations,
-            496 strings with 4113 characters,
-and the built_in function-call counts, 1108 in all, are:
-= -- 99
-> -- 28
-< -- 4
-+ -- 8
-- -- 8
-* -- 71
-:= -- 210
-add.period$ -- 11
-call.type$ -- 4
-change.case$ -- 21
-chr.to.int$ -- 4
-cite$ -- 5
-duplicate$ -- 55
-empty$ -- 90
-format.name$ -- 12
-if$ -- 212
+            500 strings with 4240 characters,
+and the built_in function-call counts, 1383 in all, are:
+= -- 124
+> -- 35
+< -- 5
++ -- 10
+- -- 10
+* -- 88
+:= -- 261
+add.period$ -- 14
+call.type$ -- 5
+change.case$ -- 26
+chr.to.int$ -- 5
+cite$ -- 6
+duplicate$ -- 69
+empty$ -- 113
+format.name$ -- 15
+if$ -- 266
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 7
-newline$ -- 22
-num.names$ -- 12
-pop$ -- 30
+missing$ -- 9
+newline$ -- 27
+num.names$ -- 15
+pop$ -- 38
 preamble$ -- 1
-purify$ -- 24
+purify$ -- 30
 quote$ -- 0
-skip$ -- 42
+skip$ -- 52
 stack$ -- 0
-substring$ -- 48
-swap$ -- 4
+substring$ -- 60
+swap$ -- 5
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 18
+type$ -- 22
 warning$ -- 1
-while$ -- 8
+while$ -- 10
 width$ -- 0
-write$ -- 48
+write$ -- 60
 (There was 1 warning)

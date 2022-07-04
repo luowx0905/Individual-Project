@@ -92,16 +92,20 @@ In this project, a supervised learning model will be implemented for data analys
 \end{enumerate}
 
 \section{Handle Text Information}
-The format of texts in this project could be classified as HTML and plain text. Although Python standard libraries provide some string processing capabilities, they are insufficient for this situation. Therefore, \textit{\textbf{Beautiful Soup}} and \textit{\textbf{parse}}, two third-party packages, will be used to extract information from multiple texts.
+The format of texts in this project could be classified as HTML and plaintext. Although Python standard libraries provide some string processing capabilities, they are insufficient for this situation. 
 
 \subsection{Beautiful Soup}
 \textit{\textbf{Beautiful Soup}} is a Python library for extracting data from markup languages, such as HTML and XML. It can accomplish this with a user-specified parser, for example, \textbf{\textit{html.parser}}, to navigate, search and modify the parse tree, which would save considerable time \citep{RN10}. 
-\\
-
-In this project, this library will be used primarily to obtain a property's room information, including names and dimensions. In addition, other information in HTML format will be processed to acquire other features, such as council tax band and price. 
 
 \subsection{parse}
-The \textit{\textbf{format}} function in the Python standard library formats a string, whereas the \textit{\textbf{parse}} module provides functions with an oppositse effect, i.e., extract information. In this project, this module will be applied to acquire information such as numerical values from various strings.
+The \textit{\textbf{format}} function in the Python standard library formats a string, whereas the \textit{\textbf{parse}} module provides functions with an oppositse effect, i.e., extract information from formatted strings.
+
+\subsection{Regular Expression}
+A regular expression is a sequence of ordinary and special characters representing textual patterns. The ordinary characters are identical throughout the expressions and texts, while the special characters specify the pattern, including number, location, and type of characters  \citep{RN14}. One of the primary disadvantages of the regular expression is its obscure syntax, which results in difficulty specifying a pattern. 
+
+\subsection{Library Usage}
+In this project, HTML texts are used extensively in the raw dataset to describe property summaries, property layouts, and council tax. This is the optimal scenario for \textit{Beautiful Soup} which is employed to extract plaintext by specifying tags. Then, \textit{parse} is applied to obtain the information, such as room names, from the plaintexts since they are in the same format. In addition, due to its limitations, the regular expression is only used to acquire numerical values in this project. 
+
 
 \section{NumPy}
 Numerical Python (\textit{\textbf{NumPy}}) is a scientific computing package utilizing an optimized C/C++ API to reduce computation time compared to pure Python computations \citep{RN6}. It provides some data structures, one of the most important structures is \textbf{\emph{ndarray}}. Unlike Python lists, NumPy arrays are homogenous, meaning all the elements in them are of the same type, and their sizes are constant \citep{RN4}.  In addition, NumPy provides various built-in functions for a variety of purposes, including statistics, linear algebra,  transforms, and element-wise operation. 
