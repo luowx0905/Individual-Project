@@ -15,22 +15,24 @@
 \contentsline {subsection}{\numberline {2.3.3}Library Usage}{4}{subsection.20}%
 \contentsline {section}{\numberline {2.4}ML Frameworks}{4}{section.21}%
 \contentsline {subsection}{\numberline {2.4.1}Scikit-learn}{4}{subsection.22}%
-\contentsline {subsection}{\numberline {2.4.2}PyTorch}{5}{subsection.23}%
-\contentsline {section}{\numberline {2.5}Data Visualization}{5}{section.24}%
-\contentsline {subsection}{\numberline {2.5.1}Matplotlib}{5}{subsection.25}%
-\contentsline {chapter}{\numberline {3}Implementation}{6}{chapter.26}%
-\contentsline {section}{\numberline {3.1}Data Preprocessing}{6}{section.27}%
-\contentsline {subsection}{\numberline {3.1.1}Extract Values}{6}{subsection.28}%
-\contentsline {subsubsection}{Handle Room Descriptions (HTML)}{6}{section*.29}%
-\contentsline {subsection}{\numberline {3.1.2}Manipulate Categorical Keywords}{9}{subsection.37}%
-\contentsline {chapter}{\numberline {4}Testing the Implementation}{11}{chapter.41}%
-\contentsline {section}{\numberline {4.1}Data Preprocessing}{11}{section.42}%
-\contentsline {subsection}{\numberline {4.1.1}Extract Values}{11}{subsection.43}%
-\contentsline {subsubsection}{Obtaining Room Information}{11}{section*.44}%
-\contentsline {subsection}{\numberline {4.1.2}Manipulate Categorical Keywords}{12}{subsection.48}%
-\contentsline {chapter}{\numberline {5}Experimental Results}{13}{chapter.49}%
-\contentsline {section}{\numberline {5.1}Data Preprocessing}{13}{section.50}%
-\contentsline {subsection}{\numberline {5.1.1}Extract Values}{13}{subsection.51}%
-\contentsline {subsubsection}{Obtaining Room Information}{13}{section*.52}%
-\contentsline {subsection}{\numberline {5.1.2}Manipulate Categorical Keywords}{14}{subsection.61}%
-\contentsline {chapter}{\numberline {6}Conclusion}{16}{chapter.63}%
+\contentsline {subsection}{\numberline {2.4.2}TensorFlow}{5}{subsection.23}%
+\contentsline {subsection}{\numberline {2.4.3}PyTorch}{5}{subsection.24}%
+\contentsline {section}{\numberline {2.5}Data Visualization}{5}{section.25}%
+\contentsline {subsection}{\numberline {2.5.1}Matplotlib}{5}{subsection.26}%
+\contentsline {section}{\numberline {2.6}Methodology}{5}{section.27}%
+\contentsline {chapter}{\numberline {3}Implementation}{6}{chapter.28}%
+\contentsline {section}{\numberline {3.1}Data Preprocessing}{6}{section.29}%
+\contentsline {subsection}{\numberline {3.1.1}Extract Values}{6}{subsection.30}%
+\contentsline {subsubsection}{Handle Room Descriptions (HTML)}{6}{section*.31}%
+\contentsline {subsection}{\numberline {3.1.2}Manipulate Categorical Keywords}{9}{subsection.39}%
+\contentsline {chapter}{\numberline {4}Testing the Implementation}{11}{chapter.43}%
+\contentsline {section}{\numberline {4.1}Data Preprocessing}{11}{section.44}%
+\contentsline {subsection}{\numberline {4.1.1}Extract Values}{11}{subsection.45}%
+\contentsline {subsubsection}{Obtaining Room Information}{11}{section*.46}%
+\contentsline {subsection}{\numberline {4.1.2}Manipulate Categorical Keywords}{12}{subsection.50}%
+\contentsline {chapter}{\numberline {5}Experimental Results}{13}{chapter.51}%
+\contentsline {section}{\numberline {5.1}Data Preprocessing}{13}{section.52}%
+\contentsline {subsection}{\numberline {5.1.1}Extract Values}{13}{subsection.53}%
+\contentsline {subsubsection}{Obtaining Room Information}{13}{section*.54}%
+\contentsline {subsection}{\numberline {5.1.2}Manipulate Categorical Keywords}{14}{subsection.63}%
+\contentsline {chapter}{\numberline {6}Conclusion}{16}{chapter.65}%

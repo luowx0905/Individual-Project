@@ -9,6 +9,12 @@ Fandango, A. (2017).
 Godoy, D.~V. (2021).
 \newblock {\em Deep Learning with PyTorch Step-by-Step: A Beginner’s Guide}.
 
+\bibitem[Géron, 2019]{RN7}
+Géron, A. (2019).
+\newblock {\em Hands-on machine learning with Scikit-Learn, Keras, and
+  TensorFlow: Concepts, tools, and techniques to build intelligent systems}.
+\newblock " O'Reilly Media, Inc.".
+
 \bibitem[McKinney, 2012]{RN6}
 McKinney, W. (2012).
 \newblock {\em Python for data analysis: Data wrangling with Pandas, NumPy, and
