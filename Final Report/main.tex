@@ -134,15 +134,21 @@ Furthermore, it can be beneficial to construct and train a model with \textit{Py
 \subsection{TensorFlow}
 \textit{\textbf{TensorFlow}} is another ML framework produced by Google that specializes in deep learning and neural networks. It provides approximately the same components as \textit{PyTorch} and also supports automatic differentiation and GPU acceleration. One of the appealing characteristics of \textit{TensorFlow} is called \textit{\textbf{TensorBoard}}, which is an interactive visualization system that can display the flowchart of the data manipulation and plot the tendency of the performance \citep{RN15}. 
 
-\subsection{Library usage}
+\subsection{Library Usage}
 This project aims to construct a neural network which means \textit{scikit-learn} is not applicable at this stage. Although \textit{TensorFlow} provides the same capabilities as \textit{PyTorch} and is superior in visualization, the model construction and training will use \textit{PyTorch} due to its Pythonic syntax and compatibility with \textit{TensorBoard}. 
 \\
 
 However, \textit{scikit-learn} can be used to preprocess datasets and evaluate performance. It provides various utilities that can be helpful before training, for example, encoding categorical features and splitting the dataset into training and validation. In addition, it offers features for model evaluation, such as confusion matrix, accuracy, and recall. 
 
 \section{Data Visualization}
-\subsection{Matplotlib}
-\textbf{\textit{Matplotlib}} is one of the Python plotting packages for plotting different types of figures, including histograms, pie plots, and line plots. This library will be utilized primarily for data visualization in this project. For instance, the distribution of the raw data should be visualized to determine the procedures of preprocessing and plotting the training loss and validation loss during model evaluation. 
+\subsection{Matplotlib \& Seaborn}
+\textbf{\textit{Matplotlib}} is a Python package for 2D plotting that produces high-quality figures. It supports both interactive and non-interactive plotting and can save images in multiple formats, including PNG and JPEG. It can also generate numerous types of graphs, such as line plots, scatter plots, and pie plots.
+
+\subsection{Seaborn}
+\textbf{\textit{Seaborn}} is a Python library for creating statistical graphs that integrates with \textit{pandas} to offer a high-level interface to \textit{matploblib}. If a dataset is provided, \textit{seaborn} can automatically generate the figure with appropriate plotting attributes, such as color and legend. Additionally, it is capable of generating comprehensive graphics with a single function call and a minimum number of arguments \citep{RN16}.
+
+\subsection{Library Usage}
+
 
 \section{Methodology}
 

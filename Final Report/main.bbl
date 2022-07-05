@@ -38,4 +38,9 @@ Stubblebine, T. (2007).
   Perl, Ruby, PHP, Python, C, Java and. NET}.
 \newblock " O'Reilly Media, Inc.".
 
+\bibitem[Waskom, 2021]{RN16}
+Waskom, M.~L. (2021).
+\newblock Seaborn: statistical data visualization.
+\newblock {\em Journal of Open Source Software}, 6(60):3021.
+
 \end{thebibliography}
