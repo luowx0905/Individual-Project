@@ -32,6 +32,7 @@
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \setcounter{page}{1}
 \pagestyle{plain}
+\graphicspath{ {./figures/} }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{abstract}
@@ -87,47 +88,77 @@ In this project, a supervised learning model will be implemented for data analys
 	\item Training \& Testing: The parameters of the model are updated, and it is expected that the loss will converge during training. The performance of the model is validated when testing.
 \end{enumerate}
 
-\section{NumPy}
-Numerical Python (\textit{\textbf{NumPy}}) is a scientific computing package utilizing an optimized C/C++ API to reduce computation time compared to pure Python computations \citep{RN6}. It provides some data structures, one of the most important structures is \textbf{\emph{ndarray}}. Unlike Python lists, NumPy arrays are homogenous, meaning all the elements in them are of the same type, and their sizes are constant \citep{RN4}.  In addition, NumPy provides various built-in functions for a variety of purposes, including statistics, linear algebra,  transforms, and element-wise operation. 
+\section{Handle Text Information}
+The format of texts in this project could be classified as HTML and plaintext. Although Python standard libraries provide some string processing capabilities, they are insufficient for this situation. 
+
+\subsection{Beautiful Soup}
+\textit{\textbf{Beautiful Soup}} is a Python library for extracting data from markup languages, such as HTML and XML. It can accomplish this with a user-specified parser, for example, \textbf{\textit{html.parser}}, to navigate, search and modify the parse tree, which would save considerable time \citep{RN10}. 
+
+\subsection{parse}
+The \textit{\textbf{format}} function in the Python standard library formats a string, whereas the \textit{\textbf{parse}} module provides functions with an oppositse effect, i.e., extract information from formatted strings.
+
+\subsection{Regular Expression}
+A regular expression is a sequence of ordinary and special characters representing textual patterns. The ordinary characters are identical throughout the expressions and texts, while the special characters specify the pattern, including number, location, and type of characters  \citep{RN14}. One of the primary disadvantages of the regular expression is its obscure syntax, which results in difficulty specifying a pattern. 
+
+\subsection{Library Usage}
+In this project, HTML texts are used extensively in the raw dataset to describe property summaries, property layouts, and council tax. This is the optimal scenario for \textit{Beautiful Soup} which is employed to extract plaintext by specifying tags. Then, \textit{parse} is applied to obtain the information, such as room names, from the plaintexts since they are in the same format. In addition, due to its limitations, the regular expression is only used to acquire numerical values in this project. 
+
+
+\section{Data Manipulation}
+\subsection{NumPy}
+Numerical Python (\textit{\textbf{NumPy}}) is a scientific computing package that was designed to support large multidimensional matrices. It uses an optimized \textit{C/C++} API to reduce computation time compared to pure Python computations \citep{RN6}. A substantial number of complex tasks of data analytics can be simplified by numerous \textit{numpy} features. For example, it provides robust matrix operations, facilitates the construction of multidimensional objects, and serves as the fundation of other packages, including \textit{matplotlib} and \textit{seaborn}.
+
+\subsection{Pandas}
+The \textbf{\textit{pandas}} is an open-source and compelling package that was developed primarily for data analysis and data manipulation and is built on \textit{numpy}. It is capable of handling data of various types (numerical values, strings, and time) and from a variety of sources (CSV, Excel, and MqSQL database). \textbf{\textit{DataFrame}} is one of the \textit{pandas} data structures that is appropriate for handling tabular data with columns of different types. Additionally, it could manage various operations, such as manipulating missing values, creating pivot tables, and grouping data from different columns \citep{RN4}. 
+
+\subsection{Library Usage}
+In this project, the dataset provided is in CSV format hence it could be loaded by \textbf{\textit{Pandas}} since it is suitable for tabular data. Then the package is utilized for preprocessing, such as handling missing values and grouping columns of data. 
 \\
 
-In this project, \textit{\textbf{Numpy}} will be used for data preprocessing. For example, converting categorical data into integers.
+\textit{\textbf{Numpy}} is appropriate for manipulating numerical data and acts as an intermediary between various packages. Therefore, it could be employed to evaluate the performance of ML models and transmit data to plotting packages. 
 
-\section{Pandas}
-The \textbf{\textit{pandas}} is a fast and compelling package capable of handling data of various types (numerical values, strings, and time) and from multiple sources (CSV, Excel, and MqSQL database). One of the \textbf{\textit{pandas}} data structures is \textbf{\textit{DataFrame}} which is appropriate for handling tabular data with columns of different types. In addition, it could manage various operations, such as manipulating missing values, creating pivot tables (table summaries), and grouping data from different columns \citep{RN4}. 
+
+\section{ML Frameworks}
+\subsection{Scikit-learn}
+\textit{\textbf{Scikit-learn}} is a popular open-source ML framework that employs \textit{Numpy}. It contains traditional ML algorithms, including clustering, classification, and regression, as well as a variety of utilities that can be applied to preprocess data and evaluate the performance \citep{RN7}. The drawback of this library is that it does not natively support GPU acceleration and is not a neural network framework. 
+
+\subsection{PyTorch}
+\textbf{\textit{PyTorch}} is one of the popular ML frameworks developed by Facebook, which is designed to implement neural networks with flexibility and speed \citep{RN5}. It provides various components for model construction and training. For instance, there are numerous types of modules that comprise a model, such as linear layers, dropout, and activation functions, as well as a variety of loss functions and optimizers that can be employed in model training. 
 \\
 
-\textbf{\textit{Pandas}} would be used for data loading and preprocessing in this project. Data is initially loaded and represented as a \textbf{\textit{DataFrame}}. Then the attributes of the data, such as distribution, should be inspected. Finally, the data is preprocessed.
+Furthermore, it can be beneficial to construct and train a model with \textit{Pytorch}. It has a Pythonic nature which means that its syntax is similar to Python, making it more straightforward for Python programmers to develop neural networks than other ML frameworks. Moreover, it is a rapidly expanding framework for developing neural networks with a vast ecosystem, meaning that a substantial number of utilities have been developed on top of it \citep{RN5}. Additionally, \textit{PyTorch} supports automatic differentiation and GPU acceleration which can be advantageous for model training.
 
-\section{Scikit-learn}
-Scikit-learn is a Python ML package that provides various techniques for data mining, modeling, and analyzing. It could be commonly used in multiple ML tasks, such as classification, regression, and clustering. This project will use the package to analyze the performance of the models.
+\subsection{TensorFlow}
+\textit{\textbf{TensorFlow}} is another ML framework produced by Google that specializes in deep learning and neural networks. It provides approximately the same components as \textit{PyTorch} and also supports automatic differentiation and GPU acceleration. One of the appealing characteristics of \textit{TensorFlow} is called \textit{\textbf{TensorBoard}}, which is an interactive visualization system that can display the flowchart of the data manipulation and plot the tendency of the performance \citep{RN15}. 
 
-\section{PyTorch}
-\textbf{\textit{PyTorch}} was developed by Facebook, and it is one of the popular libraries for constructing ML models. It is also the basis of numerous packages that the developers could take advantage of \citep{RN5}. In addition, this library is capable of performing auto differentiation by using graphic processing unit (GPU) acceleration, resulting in a reduction in training time. 
+\subsection{Library Usage}
+This project aims to construct a neural network which means \textit{scikit-learn} is not applicable at this stage. Although \textit{TensorFlow} provides the same capabilities as \textit{PyTorch} and is superior in visualization, the model construction and training will use \textit{PyTorch} due to its Pythonic syntax and compatibility with \textit{TensorBoard}. 
 \\
 
-In this project, some of the \textbf{\textit{PyTorch}} components will be utilized.
-\begin{itemize}
-	\item \textbf{\textit{nn.Sequential}} is the container that contains all the layers of the ML model
-	\item An appropriate loss function would be selected to compute the loss and perform backpropagation. 
-	\item One of the optimizers would be used to update the model's parameters. 
-\end{itemize}
+However, \textit{scikit-learn} can be used to preprocess datasets and evaluate performance. It provides various utilities that can be helpful before training, for example, encoding categorical features and splitting the dataset into training and validation. In addition, it offers features for model evaluation, such as confusion matrix, accuracy, and recall. 
 
-\section{Matplotlib}
-\textbf{\textit{Matplotlib}} is one of the Python plotting packages for plotting different types of figures, including histograms, pie plots, and line plots. This library will be utilized primarily for data visualization in this project. For instance, the distribution of the raw data should be visualized to determine the procedures of preprocessing and plotting the training loss and validation loss during model evaluation. 
+\section{Data Visualization}
+\subsection{Matplotlib}
+\textbf{\textit{Matplotlib}} is a Python package for 2D plotting that produces high-quality figures. It supports both interactive and non-interactive plotting and can save images in multiple formats, including PNG and JPEG. It can also generate numerous types of graphs, such as line plots, scatter plots, and pie plots.
 
+\subsection{Seaborn}
+\textbf{\textit{Seaborn}} is a Python library for creating statistical graphs that integrates with \textit{pandas} to offer a high-level interface to \textit{matploblib}. If a dataset is provided, \textit{seaborn} can automatically generate the figure with appropriate plotting attributes, such as color and legend. Additionally, it is capable of generating comprehensive graphics with a single function call and a minimum number of arguments \citep{RN16}.
 
+\subsection{Library Usage}
+In this project, data visualization would be beneficial during preprocessing data and performance evaluation. For preprocessing, the distribution of the raw data should be inspected, hence \textit{seaborn} could be an optimal choice since the input is a \textit{DataFrame} and its syntax is concise. During evaluation, the model output will be converted to \textit{Numpy} arrays. Therefore, \textit{matplotlib} can be used in this case, as it is interactive and the figure can be further adjusted to illustrate the performance. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Project Plan}
 
 \section{Data Preprocessing}
+\subsection{Extract information from HTML texts}
+HTML texts contain the property layouts and prices, and the information inside should be acquired at the beginning.
+\\
+
+In order to obtain the property layouts, \textit{Beautiful soup} will be used to extract plaintext by specifying tage. For instance, the room names and their dimensions are enclosed by \textit{$<$li$>$} and \textit{$<$i$>$}, respectively. Then the function in \textit{parse} package should be used to extract the area from dimension strings. The prices are contained by simple HTML texts, hence the regular expressions are used for extraction. 
+
 \subsection{Handling Missing Values}
-In this project, two methods will be attempted to preprocess the missing values.
-\begin{enumerate}
-	\item Drop missing values: This method deletes the messing values for data analysis.
-	\item Fill the missing values: In this approach, the missing values are filled with mean, median, or default values, for example, zero or some constants.
-\end{enumerate}
+By inspecting the dataset, more than 30\% of the data is missing. Therefore, these missing values should be removed. There is another method which is to fill in mean values. This is not applicable in this case since it will significantly change the distribution of original data.
 
 \subsection{Standardization}
 In this project, two different approaches will be attempted. 
@@ -144,15 +175,16 @@ The original dataset should be shuffled and divided into three parts which will 
 
 
 \section{Build Model with PyTorch}
-\subsection{Model architecture}
+\subsection{Model Architecture}
 \begin{itemize}
-	\item \textbf{Basic Model}: The number of the input neural of the model should be the same as the number of features, and then there are hidden layers. Finally, the output layer is a sigmoid function as this model should output the possibility of the selling. 
+	\item \textbf{Basic Model}: The number of the input neural of the model should be the same as the number of features, and then there are hidden layers. The output of this model is a possibility of the selling and its price, which indicates that the activation functions are sigmoid and ReLU.
 	\item \textbf{Advanced Model}: The advanced model contains more components, such as dropout or batch normalization, and these additional layers might reduce overfitting and enhance accuracy. 
 \end{itemize}
 
 \subsection{Training}
 \begin{enumerate}
-	\item Use \textbf{\textit{DataLoader}} to fetch batches of data for training, and the batch  size could be set to 128 if there is sufficient memory. 
+	\item Use \textbf{\textit{DataLoader}} to fetch batches of data for training, and the batch  size could be set to 128 if there is sufficient memory.
+	\item The dataset used in this project is small, so cross validation should be applied. 
 	\item The loss function used for model training is \textbf{\textit{MSELoss}} since this is a regression problem. 
 	\item The optimizer for updating parameters could be \textbf{\textit{SGD}} or \textbf{\textit{Adam}}.
 	\item Train the model iteratively, and the number of iterations (epochs) will be set to 500 and updated if necessary. 
@@ -168,13 +200,6 @@ The original dataset should be shuffled and divided into three parts which will 
 \section{Evaluation}
 After constructing and training models, the next step is to evaluate their performance. The mean squared error (MSE) could be used to evaluate performance numerically. The lower the MSE, the higher the performance. In addition, a line plot containing the training loss and validation loss against epochs should be produced. This figure could determine if the model is overfitting/underfitting. The optimal best model is then selected and tested using the test dataset to generate the final result. 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\chapter{Experimental Results}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\chapter{Conclusion}
 
 
 %% bibliography

@@ -21,4 +21,26 @@ McKinney, W. (2012).
   IPython}.
 \newblock " O'Reilly Media, Inc.".
 
+\bibitem[Richardson, 2007]{RN10}
+Richardson, L. (2007).
+\newblock Beautiful soup documentation.
+\newblock {\em Dosegljivo: https://www. crummy.
+  com/software/BeautifulSoup/bs4/doc/.[Dostopano: 7. 7. 2018]}.
+
+\bibitem[Shukla and Fricklas, 2018]{RN15}
+Shukla, N. and Fricklas, K. (2018).
+\newblock {\em Machine learning with TensorFlow}.
+\newblock Manning Greenwich.
+
+\bibitem[Stubblebine, 2007]{RN14}
+Stubblebine, T. (2007).
+\newblock {\em Regular Expression Pocket Reference: Regular Expressions for
+  Perl, Ruby, PHP, Python, C, Java and. NET}.
+\newblock " O'Reilly Media, Inc.".
+
+\bibitem[Waskom, 2021]{RN16}
+Waskom, M.~L. (2021).
+\newblock Seaborn: statistical data visualization.
+\newblock {\em Journal of Open Source Software}, 6(60):3021.
+
 \end{thebibliography}
