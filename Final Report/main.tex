@@ -129,12 +129,16 @@ In this project, the dataset provided is in CSV format hence it could be loaded 
 \textbf{\textit{PyTorch}} is one of the popular ML frameworks developed by Facebook, which is designed to implement neural networks with flexibility and speed \citep{RN5}. It provides various components for model construction and training. For instance, there are numerous types of modules that comprise a model, such as linear layers, dropout, and activation functions, as well as a variety of loss functions and optimizers that can be employed in model training. 
 \\
 
-Furthermore, it can be beneficial to construct and train a model with \textit{Pytorch}. It has a Pythonic nature which means that its syntax is similar to Python, making it more straightforward for Python programmers to develop neural networks than other ML frameworks. In addition, it is a rapidly expanding framework for developing neural networks with a vast ecosystem, meaning that there are a substantial number of utilities have been developed on top of it \citep{RN5}. 
+Furthermore, it can be beneficial to construct and train a model with \textit{Pytorch}. It has a Pythonic nature which means that its syntax is similar to Python, making it more straightforward for Python programmers to develop neural networks than other ML frameworks. Moreover, it is a rapidly expanding framework for developing neural networks with a vast ecosystem, meaning that a substantial number of utilities have been developed on top of it \citep{RN5}. Additionally, \textit{PyTorch} supports automatic differentiation and GPU acceleration which can be advantageous for model training.
 
 \subsection{TensorFlow}
-\textit{\textbf{TensorFlow}} is another ML framework produced by Google that specializes in deep learning and neural networks. One of the attractive features of this library is that it supports automatic differentiation, which can be advantageous for the model training. Another appealing characteristic of \textit{TensorFlow} is called \textit{\textbf{TensorBoard}}, which is an interactive visualization system that can display the flowchart of the data manipulation and plot the tendency of the performance \citep{RN15}. 
+\textit{\textbf{TensorFlow}} is another ML framework produced by Google that specializes in deep learning and neural networks. It provides approximately the same components as \textit{PyTorch} and also supports automatic differentiation and GPU acceleration. One of the appealing characteristics of \textit{TensorFlow} is called \textit{\textbf{TensorBoard}}, which is an interactive visualization system that can display the flowchart of the data manipulation and plot the tendency of the performance \citep{RN15}. 
 
 \subsection{Library usage}
+This project aims to construct a neural network which means \textit{scikit-learn} is not applicable at this stage. Although \textit{TensorFlow} provides the same capabilities as \textit{PyTorch} and is superior in visualization, the model construction and training will use \textit{PyTorch} due to its Pythonic syntax and compatibility with \textit{TensorBoard}. 
+\\
+
+However, \textit{scikit-learn} can be used to preprocess datasets and evaluate performance. It provides various utilities that can be helpful before training, for example, encoding categorical features and splitting the dataset into training and validation. In addition, it offers features for model evaluation, such as confusion matrix, accuracy, and recall. 
 
 \section{Data Visualization}
 \subsection{Matplotlib}
