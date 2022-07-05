@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  4 JUL 2022 14:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  5 JUL 2022 01:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -551,7 +551,7 @@ LaTeX Info: Redefining \nameref on input line 24.
 \openout3 = `main.out'.
 
  (./titlepage.tex
-<./figures/imperial.pdf, id=116, 362.35374pt x 95.35625pt>
+<./figures/imperial.pdf, id=132, 362.35374pt x 95.35625pt>
 File: ./figures/imperial.pdf Graphic file (type pdf)
 <use ./figures/imperial.pdf>
 Package pdftex.def Info: ./figures/imperial.pdf  used on input line 11.
@@ -576,16 +576,13 @@ es/imperial.pdf>]) [1
 ] [3] [4
 
 
-] (./main.toc)
+] (./main.toc [5
+
+])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [5
-
-] [6
-
-
-]
+ [6]
 Chapter 1.
 
 Underfull \hbox (badness 10000) in paragraph at lines 64--66
@@ -598,6 +595,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--69
  []
 
 [1
+
+
 
 ]
 Chapter 2.
@@ -613,93 +612,88 @@ Underfull \hbox (badness 10000) in paragraph at lines 83--85
 
 [2
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 111--113
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 117--119
+] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 118--120
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--128
+Underfull \hbox (badness 10000) in paragraph at lines 129--131
 
  []
 
 [4]
 LaTeX Font Info:    Trying to load font information for TS1+bch on input line 1
-31.
+34.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1bch.fd
 File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
 ) [5]
 Chapter 3.
-<./figures//html_structure.png, id=230, 598.235pt x 216.81pt>
+<./figures//html_structure.png, id=247, 598.235pt x 216.81pt>
 File: ./figures//html_structure.png Graphic file (type png)
 <use ./figures//html_structure.png>
-Package pdftex.def Info: ./figures//html_structure.png  used on input line 152.
+Package pdftex.def Info: ./figures//html_structure.png  used on input line 156.
 
 (pdftex.def)             Requested size: 426.79134pt x 154.67722pt.
-<./figures//html_room_info.png, id=232, 924.45375pt x 259.97125pt>
+<./figures//html_room_info.png, id=249, 924.45375pt x 259.97125pt>
 File: ./figures//html_room_info.png Graphic file (type png)
 <use ./figures//html_room_info.png>
-Package pdftex.def Info: ./figures//html_room_info.png  used on input line 159.
+Package pdftex.def Info: ./figures//html_room_info.png  used on input line 163.
 
 (pdftex.def)             Requested size: 426.79134pt x 120.0206pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--166
+Underfull \hbox (badness 10000) in paragraph at lines 168--170
 
  []
 
 [6
 
  <./figures//html_structure.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 167--169
+Underfull \hbox (badness 10000) in paragraph at lines 171--173
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--173
+Underfull \hbox (badness 10000) in paragraph at lines 174--177
 
  []
 
-<./figures//uml_extract_rooms.png, id=244, 358.33875pt x 173.64874pt>
+<./figures//uml_extract_rooms.png, id=261, 358.33875pt x 173.64874pt>
 File: ./figures//uml_extract_rooms.png Graphic file (type png)
 <use ./figures//uml_extract_rooms.png>
 Package pdftex.def Info: ./figures//uml_extract_rooms.png  used on input line 1
-76.
+80.
 (pdftex.def)             Requested size: 284.52756pt x 137.88846pt.
 [7 <./figures//html_room_info.png> <./figures//uml_extract_rooms.png>]
-<./figures//extract_room_get_rooms.png, id=253, 207.77625pt x 523.9575pt>
+<./figures//extract_room_get_rooms.png, id=270, 207.77625pt x 523.9575pt>
 File: ./figures//extract_room_get_rooms.png Graphic file (type png)
 <use ./figures//extract_room_get_rooms.png>
 Package pdftex.def Info: ./figures//extract_room_get_rooms.png  used on input l
-ine 192.
+ine 196.
 (pdftex.def)             Requested size: 124.11505pt x 312.9803pt.
-<./figures//parking_dataset.png, id=255, 758.835pt x 338.26375pt>
+<./figures//parking_dataset.png, id=272, 758.835pt x 338.26375pt>
 File: ./figures//parking_dataset.png Graphic file (type png)
 <use ./figures//parking_dataset.png>
-Package pdftex.def Info: ./figures//parking_dataset.png  used on input line 204
+Package pdftex.def Info: ./figures//parking_dataset.png  used on input line 208
 .
 (pdftex.def)             Requested size: 426.79134pt x 190.25223pt.
  [8 <./figures//extract_room_get_rooms.png>]
-<./figures//uml_generalize_dataset.png, id=267, 241.90375pt x 131.49126pt>
+<./figures//uml_generalize_dataset.png, id=284, 241.90375pt x 131.49126pt>
 File: ./figures//uml_generalize_dataset.png Graphic file (type png)
 <use ./figures//uml_generalize_dataset.png>
 Package pdftex.def Info: ./figures//uml_generalize_dataset.png  used on input l
-ine 212.
+ine 216.
 (pdftex.def)             Requested size: 142.26378pt x 77.33237pt.
-<./figures//generalize_dataset_get_feature_types.png, id=268, 844.15375pt x 171
+<./figures//generalize_dataset_get_feature_types.png, id=285, 844.15375pt x 171
 .64125pt>
 File: ./figures//generalize_dataset_get_feature_types.png Graphic file (type pn
 g)
 <use ./figures//generalize_dataset_get_feature_types.png>
 Package pdftex.def Info: ./figures//generalize_dataset_get_feature_types.png  u
-sed on input line 219.
+sed on input line 223.
 (pdftex.def)             Requested size: 426.79134pt x 86.78159pt.
 
 
@@ -709,27 +703,27 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [10 <./figures//generalize_dataset_get_feature_types.png>]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--235
+Underfull \hbox (badness 10000) in paragraph at lines 237--239
 
  []
 
-<./figures//html_room_info_1.png, id=284, 825.0825pt x 770.88pt>
+<./figures//html_room_info_1.png, id=302, 825.0825pt x 770.88pt>
 File: ./figures//html_room_info_1.png Graphic file (type png)
 <use ./figures//html_room_info_1.png>
 Package pdftex.def Info: ./figures//html_room_info_1.png  used on input line 24
-1.
+5.
 (pdftex.def)             Requested size: 213.3959pt x 227.61935pt.
-<./figures//html_room_info_2.png, id=285, 595.22375pt x 701.62125pt>
+<./figures//html_room_info_2.png, id=303, 595.22375pt x 701.62125pt>
 File: ./figures//html_room_info_2.png Graphic file (type png)
 <use ./figures//html_room_info_2.png>
 Package pdftex.def Info: ./figures//html_room_info_2.png  used on input line 24
-3.
+7.
 (pdftex.def)             Requested size: 213.39032pt x 227.61737pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--251
+Underfull \hbox (badness 10000) in paragraph at lines 252--255
 
  []
 
@@ -745,17 +739,17 @@ Chapter 5.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--320
+Underfull \hbox (badness 10000) in paragraph at lines 321--324
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 321--323
+Underfull \hbox (badness 10000) in paragraph at lines 325--327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 324--326
+Underfull \hbox (badness 10000) in paragraph at lines 328--330
 
  []
 
@@ -766,7 +760,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 324--326
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 402--404
+Underfull \hbox (badness 10000) in paragraph at lines 406--408
 
  []
 
@@ -785,28 +779,28 @@ Chapter 6.
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 49BF5D68D74526891079A705E3F45E40;4472.
+(rerunfilecheck)             Checksum: AD1EB7C9144DCBC9505B85AC21DFE431;5177.
 Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: 1C92EF092E26E140272D27E245A27E20;272.
+(rerunfilecheck)             Checksum: 18F7F73EBFE8D9E9603F09178A88909B;249.
  ) 
 Here is how much of TeX's memory you used:
- 13443 strings out of 478268
- 220580 string characters out of 5846347
- 530938 words of memory out of 5000000
- 31333 multiletter control sequences out of 15000+600000
+ 13451 strings out of 478268
+ 220704 string characters out of 5846347
+ 530947 words of memory out of 5000000
+ 31337 multiletter control sequences out of 15000+600000
  504551 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,9n,80p,744b,458s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,9n,80p,744b,493s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/local/texl
 ive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchbi8a.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/local/texlive/202
 2/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-Output written on main.pdf (24 pages, 814800 bytes).
+Output written on main.pdf (24 pages, 815562 bytes).
 PDF statistics:
- 394 PDF objects out of 1000 (max. 8388607)
- 334 compressed objects within 4 object streams
- 90 named destinations out of 1000 (max. 500000)
- 275 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 412 PDF objects out of 1000 (max. 8388607)
+ 352 compressed objects within 4 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 307 words of extra memory for PDF output out of 10000 (max. 10000000)
 

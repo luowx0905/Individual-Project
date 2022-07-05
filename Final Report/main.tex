@@ -107,22 +107,25 @@ A regular expression is a sequence of ordinary and special characters representi
 In this project, HTML texts are used extensively in the raw dataset to describe property summaries, property layouts, and council tax. This is the optimal scenario for \textit{Beautiful Soup} which is employed to extract plaintext by specifying tags. Then, \textit{parse} is applied to obtain the information, such as room names, from the plaintexts since they are in the same format. In addition, due to its limitations, the regular expression is only used to acquire numerical values in this project. 
 
 
-\section{NumPy}
-Numerical Python (\textit{\textbf{NumPy}}) is a scientific computing package utilizing an optimized C/C++ API to reduce computation time compared to pure Python computations \citep{RN6}. It provides some data structures, one of the most important structures is \textbf{\emph{ndarray}}. Unlike Python lists, NumPy arrays are homogenous, meaning all the elements in them are of the same type, and their sizes are constant \citep{RN4}.  In addition, NumPy provides various built-in functions for a variety of purposes, including statistics, linear algebra,  transforms, and element-wise operation. 
+\section{Data Manipulation}
+\subsection{NumPy}
+Numerical Python (\textit{\textbf{numPy}}) is a scientific computing package that was designed to support large multidimensional matrices. It uses an optimized \textit{C/C++} API to reduce computation time compared to pure Python computations \citep{RN6}. A substantial number of complex tasks of data analytics can be simplified by numerous \textit{numpy} features. For example, it provides robust matrix operations, facilitates the construction of multidimensional objects, and serves as the fundation of other packages, including \textit{matplotlib} and \textit{seaborn}.
+
+\subsection{Pandas}
+The \textbf{\textit{pandas}} is an open-source and compelling package that was developed primarily for data analysis and data manipulation and is built on \textit{numpy}. It is capable of handling data of various types (numerical values, strings, and time) and from a variety of sources (CSV, Excel, and MqSQL database). \textbf{\textit{DataFrame}} is one of the \textbf{\textit{pandas}} data structures that is appropriate for handling tabular data with columns of different types. Additionally, it could manage various operations, such as manipulating missing values, creating pivot tables, and grouping data from different columns \citep{RN4}. 
+
+\subsection{Library Usage}
+In this project, the dataset provided is in CSV format hence it could be loaded by \textbf{\textit{Pandas}} since it is suitable for tabular data. Then the package is utilized for preprocessing, such as handling missing values and grouping columns of data. 
 \\
 
-In this project, \textit{\textbf{Numpy}} will be used for data preprocessing. For example, converting categorical data into integers.
+\textit{\textbf{Numpy}} is appropriate for manipulating numerical data and acts as an intermediary between various packages. Therefore, it could be employed to evaluate the performance of ML models and transmit data to plotting packages. 
 
-\section{Pandas}
-The \textbf{\textit{pandas}} is a fast and compelling package capable of handling data of various types (numerical values, strings, and time) and from multiple sources (CSV, Excel, and MqSQL database). One of the \textbf{\textit{pandas}} data structures is \textbf{\textit{DataFrame}} which is appropriate for handling tabular data with columns of different types. In addition, it could manage various operations, such as manipulating missing values, creating pivot tables (table summaries), and grouping data from different columns \citep{RN4}. 
-\\
 
-\textbf{\textit{Pandas}} would be used for data loading and preprocessing in this project. Data is initially loaded and represented as a \textbf{\textit{DataFrame}}. Then the attributes of the data, such as distribution, should be inspected. Finally, the data is preprocessed.
-
-\section{Scikit-learn}
+\section{ML Frameworks}
+\subsection{Scikit-learn}
 Scikit-learn is a Python ML package that provides various techniques for data mining, modeling, and analyzing. It could be commonly used in multiple ML tasks, such as classification, regression, and clustering. This project will use the package to analyze the performance of the models.
 
-\section{PyTorch}
+\subsection{PyTorch}
 \textbf{\textit{PyTorch}} was developed by Facebook, and it is one of the popular libraries for constructing ML models. It is also the basis of numerous packages that the developers could take advantage of \citep{RN5}. In addition, this library is capable of performing auto differentiation by using graphic processing unit (GPU) acceleration, resulting in a reduction in training time. 
 \\
 
@@ -133,7 +136,8 @@ In this project, some of the \textbf{\textit{PyTorch}} components will be utiliz
 	\item One of the optimizers would be used to update the model's parameters. 
 \end{itemize}
 
-\section{Matplotlib}
+\section{Data Visualization}
+\subsection{Matplotlib}
 \textbf{\textit{Matplotlib}} is one of the Python plotting packages for plotting different types of figures, including histograms, pie plots, and line plots. This library will be utilized primarily for data visualization in this project. For instance, the distribution of the raw data should be visualized to determine the procedures of preprocessing and plotting the training loss and validation loss during model evaluation. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
