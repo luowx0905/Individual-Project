@@ -12,7 +12,7 @@ import unittest
 class TestCreateInputDataset(TestCase):
     filename = "../datasets/PropertyData_wDesc.csv"
     data = pd.read_csv(filename, encoding="ISO8859-1")
-    creation = CreateInputDataset(data)
+    creation = CreateInputDataset(data.copy())
 
     def test_get_general_dataset(self):
         column_names = ["Postcode", "Sale or Let", "Price Qualifier", "DESC Council Tax Band",
@@ -20,15 +20,15 @@ class TestCreateInputDataset(TestCase):
                         "# of Enquiry or viewings", "# of Apps/Offers"]
 
         result = self.creation.get_general_dataset()
-        truth = self.data.iloc[result.index][column_names]
+        truth = self.data[column_names].copy()
 
+        encode_names = ["Postcode", "Sale or Let", "Price Qualifier", "DESC Council Tax Band",
+                        "RTD3316_condition1 - Condition Description"]
         encoder = LabelEncoder()
-        encoder.fit(truth["Postcode"])
-        truth.Postcode = pd.DataFrame(encoder.transform(truth.Postcode))
-        encoder.fit(truth["Price Qualifier"])
-        truth["Price Qualifier"] = pd.DataFrame(encoder.transform(truth["Price Qualifier"]))
-        encoder.fit(truth["DESC Council Tax Band"])
-        truth["DESC Council Tax Band"] = pd.DataFrame(encoder.transform(truth["DESC Council Tax Band"]))
+        for name in encode_names:
+            encoder.fit(self.data[name])
+            truth[name] = pd.DataFrame(encoder.transform(truth[name]))
+        truth = truth.iloc[result.index]
 
         self.assertEqual(result.equals(truth), True)
 
@@ -64,7 +64,7 @@ class TestCreateInputDataset(TestCase):
                 count += 1
 
         print("Round errors = {}".format(count))
-        if count > 0.003 * len(result):
+        if count > 0.005 * len(result):
             self.fail()
 
     def test_get_categorical_dataset(self):
@@ -79,10 +79,12 @@ class TestCreateInputDataset(TestCase):
 
     def test_get_labels(self):
         result = self.creation.get_labels()
+        encoder = LabelEncoder()
 
         complete = pd.DataFrame(self.data["Completed"])
         complete = pd.DataFrame(np.where(complete.isna(), "Not Completed", "Completed"), columns=complete.columns)
-        complete = complete.iloc[result.index]
+        encoder.fit(complete)
+        complete = pd.DataFrame({"Completed": encoder.transform(complete)}).iloc[result.index]
 
         handler = ProcessHTML()
         for p in self.data["Price / Rent"]:
@@ -92,9 +94,6 @@ class TestCreateInputDataset(TestCase):
         price = pd.DataFrame({"Price": price}).iloc[result.index]
 
         truth = pd.concat([complete, price], axis=1)
-        encoder = LabelEncoder()
-        encoder.fit(truth["Completed"])
-        truth["Completed"] = pd.DataFrame(encoder.transform(truth["Completed"]))
 
         self.assertEqual(result.equals(truth), True)
 

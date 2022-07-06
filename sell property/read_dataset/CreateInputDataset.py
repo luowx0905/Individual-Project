@@ -25,13 +25,28 @@ class CreateInputDataset:
         price_indices = set(i for i in range(len(self.handler.price_or_rent)) if self.handler.price_or_rent[i][0] != 0)
         self.valid_indices = indices & room_indices & price_indices
 
+        # Obtain valid indices
         condition_indices = set(i for i in indices if self.data["RTD3316_condition1 - Condition Description"].notna()[i])
         qualifier_indices = set(i for i in indices if self.data["Price Qualifier"].notna()[i])
         council_tax_indices = set(i for i in indices if self.data["DESC Council Tax Band"].notna()[i])
-
         self.valid_indices = self.valid_indices & condition_indices & qualifier_indices & council_tax_indices
         self.valid_indices = sorted(list(self.valid_indices))
 
+        # Encode categorical feature
+        encode_names = ["Postcode", "Sale or Let", "Price Qualifier", "DESC Council Tax Band",
+                        "RTD3316_condition1 - Condition Description"]
+        encoder = LabelEncoder()
+        for name in encode_names:
+            encoder.fit(self.data[name])
+            self.data[name] = pd.DataFrame(encoder.transform(self.data[name]))
+
+        # Encode completeness
+        complete = pd.DataFrame(self.data["Completed"])
+        complete = pd.DataFrame(np.where(complete.isna(), "Not Completed", "Completed"), columns=complete.columns)
+        encoder.fit(complete)
+        self.data.Completed = pd.DataFrame(encoder.transform(complete))
+
+        # Obtain rooms for valid indices
         rooms = [self.handler.s3_rooms[i] for i in self.valid_indices]
         self.extract_room = ExtractRooms(rooms, self.handler.s3_rooms_set, "{} ({} sqm){}")
 
@@ -47,18 +62,8 @@ class CreateInputDataset:
         column_names = ["Postcode", "Sale or Let", "Price Qualifier", "DESC Council Tax Band",
                         "RTD3316_condition1 - Condition Description",
                         "# of Enquiry or viewings", "# of Apps/Offers"]
-        encoder = LabelEncoder()
 
-        result = self.data.iloc[self.valid_indices][column_names]
-
-        encoder.fit(result["Postcode"])
-        result.Postcode = pd.DataFrame(encoder.transform(result.Postcode))
-        encoder.fit(result["Price Qualifier"])
-        result["Price Qualifier"] = pd.DataFrame(encoder.transform(result["Price Qualifier"]))
-        encoder.fit(result["DESC Council Tax Band"])
-        result["DESC Council Tax Band"] = pd.DataFrame(encoder.transform(result["DESC Council Tax Band"]))
-
-        return result
+        return self.data[column_names].iloc[self.valid_indices]
 
     def get_room_dataset(self) -> pd.DataFrame:
         room_mapping = {"bedroom": ["bedroom"],
@@ -119,20 +124,15 @@ class CreateInputDataset:
         return result.rename(index={k: v for k, v in zip(result.index, self.valid_indices)})
 
     def get_labels(self) -> pd.DataFrame:
-        complete = pd.DataFrame(self.data["Completed"])
-        complete = pd.DataFrame(np.where(complete.isna(), "Not Completed", "Completed"), columns=complete.columns)
-        complete = complete.iloc[self.valid_indices]
+        complete = self.data["Completed"].iloc[self.valid_indices]
 
         price = [i[0] for i in self.handler.price_or_rent]
         price = pd.DataFrame({"Price": price}).iloc[self.valid_indices]
 
-        result = pd.concat([complete, price], axis=1)
+        return pd.concat([complete, price], axis=1)
 
-        encoder = LabelEncoder()
-        encoder.fit(result.Completed)
-        result.Completed = pd.DataFrame(encoder.transform(result.Completed))
-
-        return result
+    def get_valid_indices(self) -> list:
+        return self.valid_indices
 
 
 if __name__ == '__main__':
@@ -140,5 +140,4 @@ if __name__ == '__main__':
     data = pd.read_csv(filename, encoding="ISO8859-1")
 
     creation = CreateInputDataset(data)
-    #creation("../datasets/general.csv", "../datasets/room.csv", "../datasets/categorical.csv", "../datasets/label.csv")
-    print(creation.get_labels().iloc[: 2])
+    creation("../datasets/general.csv", "../datasets/room.csv", "../datasets/categorical.csv", "../datasets/label.csv")
