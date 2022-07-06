@@ -5,6 +5,7 @@ from GeneralizeDataset import GeneralizeDataset
 from unittest import TestCase
 from sklearn.preprocessing import LabelEncoder
 import pandas as pd
+import numpy as np
 import unittest
 
 
@@ -78,21 +79,24 @@ class TestCreateInputDataset(TestCase):
 
     def test_get_labels(self):
         result = self.creation.get_labels()
+
+        complete = pd.DataFrame(self.data["Completed"])
+        complete = pd.DataFrame(np.where(complete.isna(), "Not Completed", "Completed"), columns=complete.columns)
+        complete = complete.iloc[result.index]
+
+        handler = ProcessHTML()
+        for p in self.data["Price / Rent"]:
+            handler.price_rent(p)
+
+        price = [i[0] for i in handler.price_or_rent]
+        price = pd.DataFrame({"Price": price}).iloc[result.index]
+
+        truth = pd.concat([complete, price], axis=1)
         encoder = LabelEncoder()
-        encoder.fit(["Not Completed", "Completed"])
+        encoder.fit(truth["Completed"])
+        truth["Completed"] = pd.DataFrame(encoder.transform(truth["Completed"]))
 
-        for i in result.index:
-            complete = self.data.Completed.loc[i]
-            complete = "Not Completed" if pd.isna(complete) else "Completed"
-            complete = encoder.transform([complete])[0]
-
-            price = self.data["Price / Rent"].loc[i]
-            handler = ProcessHTML()
-            handler.price_rent(price)
-            price = handler.price_or_rent[0][0]
-
-            self.assertEqual(result.Completed.loc[i] == complete, True)
-            self.assertEqual(result.Price.loc[i] == price, True)
+        self.assertEqual(result.equals(truth), True)
 
 
 if __name__ == '__main__':
