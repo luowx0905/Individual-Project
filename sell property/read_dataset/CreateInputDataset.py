@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from ProcessHTML import ProcessHTML
 from ExtractRooms import ExtractRooms
 from GeneralizeDataset import GeneralizeDataset
@@ -35,17 +36,17 @@ class CreateInputDataset:
 
         self.generalize = GeneralizeDataset(self.data.iloc[self.valid_indices])
 
-    def __call__(self, general_filename, room_filename, categorical_filename):
-        return self.get_general_dataset().to_csv(general_filename, index=False), \
-               self.get_room_dataset().to_csv(room_filename, index=False), \
-               self.get_categorical_dataset().to_csv(categorical_filename, index=False)
+    def __call__(self, general_file, room_file, categorical_file, label_file, operation="types"):
+        return self.get_general_dataset().to_csv(general_file, index=False), \
+               self.get_room_dataset().to_csv(room_file, index=False), \
+               self.get_categorical_dataset(operation).to_csv(categorical_file, index=False), \
+               self.get_labels().to_csv(label_file, index=False)
 
     def get_general_dataset(self) -> pd.DataFrame:
         column_names = ["Postcode", "Sale or Let", "Price Qualifier", "DESC Council Tax Band",
                         "# of Enquiry or viewings", "# of Apps/Offers"]
 
-        input_data = self.data.iloc[self.valid_indices][column_names]
-        return input_data.loc[:, ~input_data.columns.isin(["EweMove Description S3 Rooms", "Price / Rent"])]
+        return self.data.iloc[self.valid_indices][column_names]
 
     def get_room_dataset(self) -> pd.DataFrame:
         room_mapping = {"bedroom": ["bedroom"],
@@ -105,10 +106,21 @@ class CreateInputDataset:
         result = pd.concat(info, axis=1)
         return result.rename(index={k: v for k, v in zip(result.index, self.valid_indices)})
 
+    def get_labels(self) -> pd.DataFrame:
+        complete = pd.DataFrame(self.data["Completed"])
+        complete = pd.DataFrame(np.where(complete.isna(), "Not Completed", "Completed"), columns=complete.columns)
+        complete = complete.iloc[self.valid_indices]
+
+        price = [i[0] for i in self.handler.price_or_rent]
+        price = pd.DataFrame({"Price": price}).iloc[self.valid_indices]
+
+        return pd.concat([complete, price], axis=1)
+
 
 if __name__ == '__main__':
     filename = "../datasets/PropertyData_wDesc.csv"
     data = pd.read_csv(filename, encoding="ISO8859-1")
 
     creation = CreateInputDataset(data)
-    result = creation.get_categorical_dataset()
+    creation("../datasets/general.csv", "../datasets/room.csv",
+             "../datasets/categorical.csv", "../datasets/label.csv")

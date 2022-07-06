@@ -65,6 +65,21 @@ class TestCreateInputDataset(TestCase):
             temp = pd.DataFrame(temp).iloc[result.index]
             self.assertEqual(result[temp.columns].equals(temp), True)
 
+    def test_get_labels(self):
+        result = self.creation.get_labels()
+
+        for i in result.index:
+            complete = self.data.Completed.loc[i]
+            complete = "Not Completed" if pd.isna(complete) else "Completed"
+
+            price = self.data["Price / Rent"].loc[i]
+            handler = ProcessHTML()
+            handler.price_rent(price)
+            price = handler.price_or_rent[0][0]
+
+            self.assertEqual(result.Completed.loc[i] == complete, True)
+            self.assertEqual(result.Price.loc[i] == price, True)
+
 
 if __name__ == '__main__':
     unittest.main()
