@@ -40,9 +40,9 @@ class ExtractRooms:
                         if isinstance(v, str):
                             # Extract the area if applicable
                             room_info_per_property[str(count)] = float(self.extract_area.parse(v)[1])
-                        else:
+                        #else:
                             # Fill in the average area
-                            room_info_per_property[str(count)] = average_room_area
+                            #room_info_per_property[str(count)] = average_room_area
                         count += 1
             # If there is no data about this property
             elif rooms is None and handle_na.lower() == "mean":
@@ -135,7 +135,7 @@ class ExtractRooms:
                 if room in room_names and isinstance(area, str):
                     areas.append(float(self.extract_area.parse(area)[1]))
 
-        return sum(areas) / len(areas)
+        return 0 if len(areas) == 0 else sum(areas) / len(areas)
 
 
 if __name__ == '__main__':
@@ -144,79 +144,7 @@ if __name__ == '__main__':
     handler = ProcessHTML()
 
     for r in data["EweMove Description S3 Rooms"]:
-        #handler.EweMove_Description_S3_Rooms(r)
-        pass
-
-    info1 = """This home includes:
-<ul>
-    <li>
-        <strong>01 - Entrance Hall</strong><br><br>
-    </li>
-    <li>
-        <strong>02 - Living/Dining Room</strong><br><br>
-        <i>6.58m x 3.78m (24.8 sqm) - 21' 7" x 12' 4" (267 sqft)</i><br><br>
-    </li>
-    <li>
-        <strong>03 - Kitchen</strong><br><br>
-        <i>2.68m x 2.14m (5.7 sqm) - 8' 9" x 7' (61 sqft)</i><br><br>
-    </li>
-    <li>
-        <strong>04 - Bedroom 1</strong><br><br>
-        <i>3.37m x 2.45m (8.2 sqm) - 11' x 8' (88 sqft)</i><br><br>
-    </li>
-    <li>
-        <strong>05 - Bedroom 2</strong><br><br>
-        <i>2.54m x 2.45m (6.2 sqm) - 8' 4" x 8' (67 sqft)</i><br><br>
-        The second double bedroom is bright and well-sized, with room for all required furniture.<br><br>
-    </li>
-    <li>
-        <strong>06 - Bathroom</strong><br><br>
-        <i>2.14m x 2.04m (4.3 sqm) - 7' x 6' 8" (46 sqft)</i><br><br>
-    </li>
-    <li>
-        <strong>07 - Garden</strong><br><br>
-        Communal Gardens.<br><br>
-    </li>
-    <li>
-        <strong>08 - Parking</strong><br><br>
-        2 allocated parking spaces.<br><br>
-    </li>
-</ul>"""
-    info2 = """This home includes:
-    <ul>
-        <li>
-            <strong>01 - Entrance Porch</strong><br><br>
-        </li>
-        <li>
-            <strong>02 - Lounge Diner</strong><br><br>
-            <i>6.76m x 4.04m (27.3 sqm) - 22' 2" x 13' 3" (293 sqft)</i><br><br>
-        </li>
-        <li>
-            <strong>03 - Kitchen</strong><br><br>
-            <i>2.97m x 2.36m (7 sqm) - 9' 8" x 7' 8" (75 sqft)</i><br><br>
-        </li>
-        <li>
-            <strong>05 - Bathroom</strong><br><br>
-        </li>
-        <li>
-            <strong>07 - Bedroom (Double)</strong><br><br>
-            <i>4.05m x 3.25m (13.1 sqm) - 13' 3" x 10' 7" (142 sqft)</i><br><br>
-        </li>
-        <li>
-            <strong>08 - Bedroom (Double)</strong><br><br>
-            <i>3.28m x 2.36m (7.7 sqm) - 10' 9" x 7' 8" (83 sqft)</i><br><br>
-        </li>
-        <li>
-            <strong>09 - Bedroom (Double)</strong><br><br>
-            <i>4.3m x 2.44m (10.4 sqm) - 14' 1" x 8' (112 sqft)</i><br><br>
-        </li>
-        <li>
-            <strong>10 - Bathroom</strong><br><br>
-        </li>
-    </ul>"""
-    handler = ProcessHTML()
-    handler.EweMove_Description_S3_Rooms(info1)
-    handler.EweMove_Description_S3_Rooms(info2)
+        handler.EweMove_Description_S3_Rooms(r)
 
     extract = ExtractRooms(handler.s3_rooms, handler.s3_rooms_set, "{} ({} sqm){}")
 

@@ -6,7 +6,7 @@ import parse
 class GeneralizeDataset:
     def __init__(self, data: pd.DataFrame):
         self.data = data
-        self.features = ["parking", "outside_space", "heating", "accessibility"]
+        self.features = ["parking", "outside_space", "heating", "accessibility", "condition"]
 
     def get_feature_types(self, feature: str):
         """
@@ -32,10 +32,8 @@ class GeneralizeDataset:
         for i in range(len(raw_data)):
             temp = {key: 0 for key in types if key != "None"}
 
-            first = raw_data.iloc[i, 0]
-            second = raw_data.iloc[i, 1]
-            third = raw_data.iloc[i, 2]
-            temp = self.record_types(first, second, third, temp)
+            keywords = [raw_data.iloc[i, j] for j in range(len(raw_data.iloc[i]))]
+            temp = self.record_types(*keywords, types=temp)
 
             list(map(lambda d: result[d].append(temp[d]), temp.keys()))
 
@@ -54,13 +52,10 @@ class GeneralizeDataset:
         return result
 
     @staticmethod
-    def record_types(first: str, second: str, third: str, types: dict):
-        if first in types.keys():
-            types[first] += 1
-        if second in types.keys():
-            types[second] += 1
-        if third in types.keys():
-            types[third] += 1
+    def record_types(*keywords: str, types: dict):
+        for keyword in keywords:
+            if keyword in types.keys():
+                types[keyword] += 1
 
         return types
 
@@ -70,6 +65,6 @@ if __name__ == '__main__':
     data = pd.read_csv(filename, encoding="ISO8859-1")
     generalize = GeneralizeDataset(data)
 
-    types = generalize.get_feature_types("accessibility")
+    types = generalize.get_feature_types("condition")
     for k, v in types.items():
         print("{:20s}{:5d}".format(k, sum(v)))

@@ -1,6 +1,7 @@
 import pandas as pd
 from ProcessHTML import ProcessHTML
 from ExtractRooms import ExtractRooms
+from GeneralizeDataset import GeneralizeDataset
 
 
 class CreateInputDataset:
@@ -27,54 +28,36 @@ class CreateInputDataset:
         council_tax_indices = set(i for i in indices if self.data["DESC Council Tax Band"].notna()[i])
 
         self.valid_indices = self.valid_indices & condition_indices & qualifier_indices & council_tax_indices
+        self.valid_indices = sorted(list(self.valid_indices))
 
         rooms = [self.handler.s3_rooms[i] for i in self.valid_indices]
         self.extract_room = ExtractRooms(rooms, self.handler.s3_rooms_set, "{} ({} sqm){}")
 
-    def __call__(self, no_nan_filename, room_filename):
-        return self.remove_nan_rows().to_csv(no_nan_filename, index=False), \
-               self.get_room_dataset().to_csv(room_filename, index=False)
+        self.generalize = GeneralizeDataset(self.data.iloc[self.valid_indices])
 
-    def remove_nan_rows(self, *col_names) -> pd.DataFrame:
-        if len(col_names) != 0:
-            column_names = col_names
-        else:
-            parking_names = [i for i in self.data.columns if "parking" in i]
-            outside_names = [i for i in self.data.columns if "outside" in i]
-            heating_names = [i for i in self.data.columns if "heating" in i]
-            accessibility_names = [i for i in self.data.columns if "accessibility" in i]
-            condition_names = [i for i in self.data.columns if "condition" in i]
-            column_names = ["Postcode", "Sale or Let", "EweMove Description S3 Rooms", "Price / Rent",
-                            "Price Qualifier", "DESC Council Tax Band", "# of Enquiry or viewings", "# of Apps/Offers"]
-            column_names += parking_names + outside_names + heating_names + accessibility_names + condition_names
+    def __call__(self, general_filename, room_filename, categorical_filename):
+        return self.get_general_dataset().to_csv(general_filename, index=False), \
+               self.get_room_dataset().to_csv(room_filename, index=False), \
+               self.get_categorical_dataset().to_csv(categorical_filename, index=False)
 
-        valid_indices = sorted(list(self.valid_indices))
-        input_data = self.data.iloc[valid_indices][column_names]
+    def get_general_dataset(self) -> pd.DataFrame:
+        column_names = ["Postcode", "Sale or Let", "Price Qualifier", "DESC Council Tax Band",
+                        "# of Enquiry or viewings", "# of Apps/Offers"]
+
+        input_data = self.data.iloc[self.valid_indices][column_names]
         return input_data.loc[:, ~input_data.columns.isin(["EweMove Description S3 Rooms", "Price / Rent"])]
 
-    def get_room_dataset(self, *operation, exclude_other_room=[], **rooms) -> pd.DataFrame:
-        # The number of operations should be the same as types of room
-        # if default values are not used
-        if exclude_other_room is None:
-            exclude_other_room = []
-        if len(rooms) != 0 and len(rooms) != len(operation):
-            raise ValueError("Length of input arguments mismatch, len(rooms) = {} and len(operation) = {}".
-                             format(len(rooms), len(operation)))
-
-        if len(rooms) != 0:
-            room_mapping = {k: v for k, v in rooms.items()}
-            operations = {k: v for k, v in zip(rooms.keys(), operation)}
-        else:
-            room_mapping = {"bedroom": ["bedroom"],
-                            "kitchen": ["kitchen"],
-                            "living": ["living", "reception"],
-                            "bathroom": ["bathroom", "wc", "washroom"],
-                            "dining": ["dining"]}
-            operations = {"bedroom": "split",
-                          "kitchen": "number",
-                          "living": "sum",
-                          "bathroom": "number",
-                          "dining": "number"}
+    def get_room_dataset(self) -> pd.DataFrame:
+        room_mapping = {"bedroom": ["bedroom"],
+                        "kitchen": ["kitchen"],
+                        "living": ["living", "reception"],
+                        "bathroom": ["bathroom", "wc", "washroom"],
+                        "dining": ["dining", "diner"]}
+        operations = {"bedroom": "number",
+                      "kitchen": "number",
+                      "living": "number",
+                      "bathroom": "number",
+                      "dining": "number"}
 
         room_info = []
         for room in room_mapping.keys():
@@ -94,11 +77,33 @@ class CreateInputDataset:
             rooms = rooms.rename(columns=rename_dict)
             room_info.append(rooms)
 
-        others = pd.DataFrame(self.extract_room.get_rest_rooms(*exclude_other_room))
-        others = others.rename(columns={0: "Other Number", 1: "Other Area"})
+        others = pd.DataFrame(self.extract_room.get_rest_rooms())
+        others = others.rename(columns={0: "other number", 1: "other area"})
         room_info.append(others)
 
-        return pd.concat(room_info, axis=1)
+        result = pd.concat(room_info, axis=1)
+        return result.rename(index={k: v for k, v in zip(result.index, self.valid_indices)})
+
+    def get_categorical_dataset(self, operation: str = "types") -> pd.DataFrame:
+        column_names = ["parking", "outside_space", "accessibility", "heating", "condition"]
+
+        operation = operation.lower()
+        if operation == "types":
+            operation_func = self.generalize.get_feature_types
+        elif operation == "number":
+            operation_func = self.generalize.get_feature_num
+        else:
+            raise ValueError("{} is an invalid operation".format(operation))
+
+        info = []
+        for name in column_names:
+            if operation == "number":
+                info.append(pd.DataFrame({name: operation_func(name)}))
+            else:
+                info.append(pd.DataFrame(operation_func(name)))
+
+        result = pd.concat(info, axis=1)
+        return result.rename(index={k: v for k, v in zip(result.index, self.valid_indices)})
 
 
 if __name__ == '__main__':
@@ -106,4 +111,4 @@ if __name__ == '__main__':
     data = pd.read_csv(filename, encoding="ISO8859-1")
 
     creation = CreateInputDataset(data)
-    creation("../datasets/no_nan_general_test.csv", "../datasets/no_nan_room_test.csv")
+    result = creation.get_categorical_dataset()
