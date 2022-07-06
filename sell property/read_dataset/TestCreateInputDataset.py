@@ -3,6 +3,7 @@ from ProcessHTML import ProcessHTML
 from ExtractRooms import ExtractRooms
 from GeneralizeDataset import GeneralizeDataset
 from unittest import TestCase
+from sklearn.preprocessing import LabelEncoder
 import pandas as pd
 import unittest
 
@@ -14,10 +15,20 @@ class TestCreateInputDataset(TestCase):
 
     def test_get_general_dataset(self):
         column_names = ["Postcode", "Sale or Let", "Price Qualifier", "DESC Council Tax Band",
+                        "RTD3316_condition1 - Condition Description",
                         "# of Enquiry or viewings", "# of Apps/Offers"]
 
         result = self.creation.get_general_dataset()
         truth = self.data.iloc[result.index][column_names]
+
+        encoder = LabelEncoder()
+        encoder.fit(truth["Postcode"])
+        truth.Postcode = pd.DataFrame(encoder.transform(truth.Postcode))
+        encoder.fit(truth["Price Qualifier"])
+        truth["Price Qualifier"] = pd.DataFrame(encoder.transform(truth["Price Qualifier"]))
+        encoder.fit(truth["DESC Council Tax Band"])
+        truth["DESC Council Tax Band"] = pd.DataFrame(encoder.transform(truth["DESC Council Tax Band"]))
+
         self.assertEqual(result.equals(truth), True)
 
     def test_get_room_dataset(self):
@@ -59,7 +70,7 @@ class TestCreateInputDataset(TestCase):
         result = self.creation.get_categorical_dataset()
 
         generalize = GeneralizeDataset(self.data)
-        features = ["parking", "outside_space", "heating", "accessibility", "condition"]
+        features = ["parking", "outside_space", "heating", "accessibility"]
         for feature in features:
             temp = generalize.get_feature_types(feature)
             temp = pd.DataFrame(temp).iloc[result.index]
@@ -67,10 +78,13 @@ class TestCreateInputDataset(TestCase):
 
     def test_get_labels(self):
         result = self.creation.get_labels()
+        encoder = LabelEncoder()
+        encoder.fit(["Not Completed", "Completed"])
 
         for i in result.index:
             complete = self.data.Completed.loc[i]
             complete = "Not Completed" if pd.isna(complete) else "Completed"
+            complete = encoder.transform([complete])[0]
 
             price = self.data["Price / Rent"].loc[i]
             handler = ProcessHTML()

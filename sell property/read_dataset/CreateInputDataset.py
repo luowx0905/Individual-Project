@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from sklearn.preprocessing import LabelEncoder
 from ProcessHTML import ProcessHTML
 from ExtractRooms import ExtractRooms
 from GeneralizeDataset import GeneralizeDataset
@@ -44,9 +45,20 @@ class CreateInputDataset:
 
     def get_general_dataset(self) -> pd.DataFrame:
         column_names = ["Postcode", "Sale or Let", "Price Qualifier", "DESC Council Tax Band",
+                        "RTD3316_condition1 - Condition Description",
                         "# of Enquiry or viewings", "# of Apps/Offers"]
+        encoder = LabelEncoder()
 
-        return self.data.iloc[self.valid_indices][column_names]
+        result = self.data.iloc[self.valid_indices][column_names]
+
+        encoder.fit(result["Postcode"])
+        result.Postcode = pd.DataFrame(encoder.transform(result.Postcode))
+        encoder.fit(result["Price Qualifier"])
+        result["Price Qualifier"] = pd.DataFrame(encoder.transform(result["Price Qualifier"]))
+        encoder.fit(result["DESC Council Tax Band"])
+        result["DESC Council Tax Band"] = pd.DataFrame(encoder.transform(result["DESC Council Tax Band"]))
+
+        return result
 
     def get_room_dataset(self) -> pd.DataFrame:
         room_mapping = {"bedroom": ["bedroom"],
@@ -86,7 +98,7 @@ class CreateInputDataset:
         return result.rename(index={k: v for k, v in zip(result.index, self.valid_indices)})
 
     def get_categorical_dataset(self, operation: str = "types") -> pd.DataFrame:
-        column_names = ["parking", "outside_space", "accessibility", "heating", "condition"]
+        column_names = ["parking", "outside_space", "accessibility", "heating"]
 
         operation = operation.lower()
         if operation == "types":
@@ -114,7 +126,13 @@ class CreateInputDataset:
         price = [i[0] for i in self.handler.price_or_rent]
         price = pd.DataFrame({"Price": price}).iloc[self.valid_indices]
 
-        return pd.concat([complete, price], axis=1)
+        result = pd.concat([complete, price], axis=1)
+
+        encoder = LabelEncoder()
+        encoder.fit(result.Completed)
+        result.Completed = pd.DataFrame(encoder.transform(result.Completed))
+
+        return result
 
 
 if __name__ == '__main__':
@@ -122,5 +140,5 @@ if __name__ == '__main__':
     data = pd.read_csv(filename, encoding="ISO8859-1")
 
     creation = CreateInputDataset(data)
-    creation("../datasets/general.csv", "../datasets/room.csv",
-             "../datasets/categorical.csv", "../datasets/label.csv")
+    #creation("../datasets/general.csv", "../datasets/room.csv", "../datasets/categorical.csv", "../datasets/label.csv")
+    print(creation.get_labels().iloc[: 2])
