@@ -33,7 +33,7 @@ class CreateInputDataset:
         self.valid_indices = sorted(list(self.valid_indices))
 
         # Encode categorical feature
-        encode_names = ["Postcode", "Sale or Let", "Price Qualifier", "DESC Council Tax Band",
+        encode_names = ["Postcode", "Price Qualifier", "DESC Council Tax Band",
                         "RTD3316_condition1 - Condition Description"]
         encoder = LabelEncoder()
         for name in encode_names:
@@ -130,9 +130,6 @@ class CreateInputDataset:
         price = pd.DataFrame({"Price": price}).iloc[self.valid_indices]
 
         return pd.concat([complete, price], axis=1)
-
-    def get_valid_indices(self) -> list:
-        return self.valid_indices
 
 
 if __name__ == '__main__':
