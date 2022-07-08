@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  9 JUL 2022 00:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  9 JUL 2022 00:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -799,18 +799,18 @@ File: ./figures//price_all_mean.png Graphic file (type png)
 Package pdftex.def Info: ./figures//price_all_mean.png  used on input line 480.
 
 (pdftex.def)             Requested size: 142.26378pt x 153.17581pt.
-<./figures//price_sale_remove.png, id=422, 401.5pt x 368.37625pt>
+<./figures//price_sale_remove.png, id=422, 349.305pt x 368.37625pt>
 File: ./figures//price_sale_remove.png Graphic file (type png)
 <use ./figures//price_sale_remove.png>
 Package pdftex.def Info: ./figures//price_sale_remove.png  used on input line 4
 87.
-(pdftex.def)             Requested size: 142.26378pt x 130.52997pt.
-<./figures//price_rental_remove.png, id=423, 401.5pt x 380.42125pt>
+(pdftex.def)             Requested size: 142.26378pt x 150.02908pt.
+<./figures//price_rental_remove.png, id=423, 349.305pt x 380.42125pt>
 File: ./figures//price_rental_remove.png Graphic file (type png)
 <use ./figures//price_rental_remove.png>
 Package pdftex.def Info: ./figures//price_rental_remove.png  used on input line
  488.
-(pdftex.def)             Requested size: 142.26378pt x 134.79797pt.
+(pdftex.def)             Requested size: 142.26378pt x 154.93466pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -846,7 +846,7 @@ ive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchbi8a.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/local/texlive/202
 2/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-Output written on main.pdf (26 pages, 877344 bytes).
+Output written on main.pdf (26 pages, 876643 bytes).
 PDF statistics:
  501 PDF objects out of 1000 (max. 8388607)
  426 compressed objects within 5 object streams
