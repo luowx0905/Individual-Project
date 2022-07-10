@@ -152,16 +152,14 @@ In this project, data visualization would be beneficial during preprocessing dat
 
 \section{Methodology}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Implementation}
 \section{Data Preprocessing}
 The data that was retrieved for this project originated from two different sources: a raw dataset and online APIs. 
 
-\subsection{Extract Values}
-There are two types of data in the raw dataset: HTML texts containing the property information and categorical keywords describing features, such as parking spaces and heating.
+\subsection{Handle Room Descriptions (HTML)}
 
-\subsubsection{Handle Room Descriptions (HTML)}
-\textbf{\textit{\underline{Acquire room name and dimension}}} \\
+\subsubsection{Acquire room name and dimension}
 The structure of the HTML texts containing the room information in a property is shown in figure \ref{html_structure}. The rooms are separated by tag \textit{$<$li$>$}, and the room name and its dimension is denoted by \textit{$<$strong$>$} and \textit{$<$i$>$} tags, respectively. Therefore, a function (\textit{\textbf{EweMove\_Description\_S3\_Rooms}}) was implemented to split the HTML text by utilizing \textit{Beautiful soup}, and its flowchart is shown in figure \ref{html_room_info}.
 \begin{figure}[h]
 	\centering
@@ -183,7 +181,7 @@ The names of rooms are analyzed after the room descriptions in the dataset have 
 Due to the large number of room names, it is impossible to use it as the input of the model. Therefore, the rooms are divided into seven categories: bedrooms, bathrooms, kitchens, living/reception rooms, dining rooms, work areas, and other rooms so that the data can be generalized. 
 \\
 
-\textbf{\textit{\underline{Generalize room information}}} \\
+\subsubsection{Generalize room information}
 A class, \textit{\textbf{ExtractRooms}}, was developed to acquire and integrate the room information, especially the area in square meters, and its UML diagram is shown in figure \ref{uml_extract_rooms}. The member variable \textit{rooms} is a list containing the result of invoking \textit{EweMove\_Description\_S3\_Rooms}, \textit{room\_set} comprises all the room names, \textit{current\_rooms} consists of the room names that have been processed, and \textit{extract\_area} is a formatted string for acquiring room area. 
 \\
 
@@ -214,7 +212,8 @@ Key member functions
 \end{itemize}
 
 \subsection{Manipulate Categorical Keywords}
-In the dataset, four features are characterized by categorical keywords, including parking, heating, accessibility, and outdoor spaces. Figure \ref{parking_dataset} is a snippet of the parking dataset that is used as an example to demonstrate the manipulation of the keywords. The first three rows indicate that there is one parking space for the first property, which is allocated off-street parking for residents, the second row has none, and the third property has one on-street parking space.
+In the dataset, four features are characterized by categorical keywords, including parking, heating, accessibility, and outdoor spaces. Figure \ref{parking_dataset} is a snippet of the parking dataset that is used as an example to illustrate the manipulation of the keywords. The first three rows indicate that there is a parking space for the first property, which is \textbf{allocated} \textbf{off-street} parking for \textbf{residents}, the second has none, and the third property has one \textbf{on-street} parking space. In this situation, feature encoding cannot be applied since there are multiple columns of keywords describing a feature, and the order and quantity of the keywords have no effect.
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=12cm]{parking_dataset}
@@ -251,22 +250,34 @@ The price is crucial to the project, and the distribution of the raw data was in
 	\label{price_raw}
 \end{figure*}
 
+\subsection{Create Input Dataset}
+After extracting the information from HTML texts and categorical keywords, it is combined with other columns in the dataset to produce a clean dataset for the model input.  Figure \ref{uml_create_input_dataset} is the UML diagram of \textit{\textbf{CreateInputDataset}}, which is a class developed for this objective.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Feature Encoding}
+This technique is applicable to multiple features in the dataset, including price qualifier, council tax band, and property condition. The label encoding was employed, which is capable of converting the feature into numeric values between 0 and N - 1, where N is the number of distinct classes in a column.
+
+\subsubsection{Drop Missing Values}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=10cm]{uml_create_input_dataset}
+	\caption{The UML diagram of \textit{CreateInputDataset}}
+	\label{uml_create_input_dataset}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Testing the Implementation}
 Comprehensive testing was conducted throughout the implementation but it is documented in this separate chapter for the sake of illuatration. 
 
 \section{Data Preprocessing}
 
-\subsection{Extract Values}
-
-\subsubsection{Obtaining Room Information}
+\subsection{Handle Room Descriptions (HTML)}
 There were two tests for this objective, the first test examing if the room name and its dimension can be acquiare from HTML texts and the second test focuses on whether the room areas can be obtained and integrated correctly. 
-\\
 
-\textbf{\textit{\underline{Acquire room name and dimension}}} \\
-This test utilized two HTML texts, which are illustrated in figure \ref{html_room_info_test}. By invoking the function \textit{\textbf{EweMove\_Description\_S3\_Rooms}} with two snippets, it can be verified that all the room names and dimensions can be extracted without error, and if the dimension is unavailable, it is set to one. 
-\\
+\subsubsection{Acquire room name and dimension}
+This test utilized two HTML texts, which are illustrated in figure \ref{html_room_info_test}. By invoking the function \textit{EweMove\_Description\_S3\_Rooms} with two snippets, it can be verified that all the room names and dimensions can be extracted without error, and if the dimension is unavailable, it is set to one. 
+
 \begin{figure*}[h]
 	\centering
 	\subfigure[Snippte 1]{\includegraphics[width=7.5cm, height=8cm]{html_room_info_1}\label{html_room_info_test_1}}
@@ -276,8 +287,8 @@ This test utilized two HTML texts, which are illustrated in figure \ref{html_roo
 	\label{html_room_info_test}
 \end{figure*}
 
-\textbf{\textit{\underline{Generalize room information}}} \\
-The information obtained from HTML texts (figure \ref{html_room_info_test}) was used to access the behavior of \textit{ExtractRooms}, especially its member functions, \textit{get\_rooms}. During testing, the selected type is the bedroom, and all the operations of \textit{get\_room} were inspected. Additionally, the other rooms were used to test \textit{get\_rest\_rooms}. 
+\subsubsection{Generalize room information}
+The information obtained from HTML texts (figure \ref{html_room_info_test}) was used to access the behavior of \textit{ExtractRooms}, especially its member function \textit{get\_rooms}. During testing, the selected type is the bedroom, and all the operations of \textit{get\_room} were inspected. Additionally, the other rooms were used to test \textit{get\_rest\_rooms}. 
 \\
 
 It is guaranteed that if the operation is  "split", then all the bedroom areas can be listed; the sum and average of areas as well as the number of bedrooms will be returned if the function is invoked with corresponding parameters. In addition, the number of other rooms and their total area will be computed correctly. 
@@ -293,10 +304,8 @@ During preprocessing, both filling the mean value and removing outliers were att
 
 \section{Data Preprocessing}
 
-\subsection{Extract Values}
-
-\subsubsection{Obtaining Room Information}
-\textbf{\textit{\underline{Acquire room name and dimension}}} \\
+\subsection{Handle Room Descriptions (HTML)}
+\subsubsection{Acquire room name and dimension}
 After calling the function and retrieving the results (shown in tables \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2}), it is evident that the room names in two HTML snippets could be obtained, and the dimensions were acquired if available otherwise, the value was set to one, hence this function can pass the test.
 \begin{table}[h]
 	\centering
@@ -348,7 +357,7 @@ After calling the function and retrieving the results (shown in tables \ref{html
 	\label{html_room_info_expect_2}
 \end{table}
 
-\textbf{\textit{\underline{Generalize room information}}} \\
+\subsubsection{Generalize room information}
 The results of calling \textit{get\_rooms} are displayed in tables \ref{bedroom_info_split} and \ref{bedroom_info_all}. It is obvious that all the bedrooms and their areas in tables \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2} were successfully extracted. In addition, the numerical values could also be obtained without error if the operations were configured appropriately. These behaviors demonstrated that the functionality and the design are identical. 
 \\
 
