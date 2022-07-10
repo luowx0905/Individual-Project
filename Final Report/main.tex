@@ -170,7 +170,7 @@ The structure of the HTML texts containing the room information in a property is
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=15cm]{html_room_info}
+	\includegraphics[width=1\linewidth]{html_room_info}
 	\caption{Flowchart for extracting room information from HTML}
 	\label{html_room_info}
 \end{figure}
@@ -231,7 +231,7 @@ Figure \ref{uml_generalize_dataset} illustrates the UML diagram of the class \te
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=15cm]{generalize_dataset_get_feature_types}
+	\includegraphics[width=1\linewidth]{generalize_dataset_get_feature_types}
 	\caption{Flowchart of \textit{get\_feature\_types}}
 	\label{generalize_dataset_get_feature_types}
 \end{figure}
@@ -251,19 +251,57 @@ The price is crucial to the project, and the distribution of the raw data was in
 \end{figure*}
 
 \subsection{Create Input Dataset}
-After extracting the information from HTML texts and categorical keywords, it is combined with other columns in the dataset to produce a clean dataset for the model input.  Figure \ref{uml_create_input_dataset} is the UML diagram of \textit{\textbf{CreateInputDataset}}, which is a class developed for this objective.
 
 \subsubsection{Feature Encoding}
 This technique is applicable to multiple features in the dataset, including price qualifier, council tax band, and property condition. The label encoding was employed, which is capable of converting the feature into numeric values between 0 and N - 1, where N is the number of distinct classes in a column.
 
-\subsubsection{Drop Missing Values}
-
+\subsubsection{Manage Missing Values}
+The features used to train the model and their percentages of missing values are shown in table \ref{feature_missing_percentage} (the percentages of categorical keywords are not included in this table as the missing values indicate they are not available). It is evident that there are considerable amount of missing data, and they should be removed to ensure the performance of the model.
+\begin{table}[h]
+	\centering
+	\caption{The features ant their percentages of missing values}
+	\begin{tabular}{| c | c |}
+		\hline
+		Postcode & 0 \\ 
+		\hline
+		Completed & 40.64 \\
+		\hline
+		Sale or Let & 0 \\ 
+		\hline
+		Room Description & 8.25 \\
+		\hline
+		Condition & 37.90 \\ 
+		\hline
+		Price / Rent & 0 \\
+		\hline
+		Price Qualifier & 31.46 \\
+		\hline
+		Council Tax band & 39.95 \\ 
+		\hline
+		Enquiry of Viewings & 0 \\ 
+		\hline
+		Apps/Offers & 0 \\
+		\hline
+	\end{tabular}
+	\label{feature_missing_percentage}
+\end{table}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=10cm]{uml_create_input_dataset}
 	\caption{The UML diagram of \textit{CreateInputDataset}}
 	\label{uml_create_input_dataset}
+\end{figure}
+
+\subsubsection{Classy Approach}
+After extracting the information from HTML texts and categorical keywords, it is combined with other columns in the dataset to produce a clean dataset for the model input.  Figure \ref{uml_create_input_dataset} is the UML diagram of \textit{\textbf{CreateInputDataset}}, which is a class developed for this objective.
+
+The core of this class is its constructor, where feature encoding and removal of missing values are performed, and its flowchart is shown in figure \ref{create_input_dataset_constructor}. After instantiating an instance of this class, the general information, room information, categorical keywords, and labels can be obtained by invoking corresponding member functions. Additionally, the method \_\_call\_\_ is a shortcut to acquire and save this information. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{create_input_dataset_constructor}
+	\caption{The flow diagram of constructor of \textit{CreateInputDataset}}
+	\label{create_input_dataset_constructor}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -298,6 +336,8 @@ The data utilized for this test is displayed in figure \ref{parking_dataset}. In
 
 \subsection{Manage Outliers}
 During preprocessing, both filling the mean value and removing outliers were attempted. It can be assured that the spike on the left side will decrease significantly in both methods. For filling the average prices, there will be a peak at the mean values, and the original price distribution will be altered. If they are removed, then the original distribution will be retained. 
+
+\subsection{Create Input Dataset}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Experimental Results}

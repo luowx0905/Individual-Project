@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  10 JUL 2022 15:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  10 JUL 2022 17:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -640,7 +640,7 @@ File: ./figures//html_room_info.png Graphic file (type png)
 <use ./figures//html_room_info.png>
 Package pdftex.def Info: ./figures//html_room_info.png  used on input line 173.
 
-(pdftex.def)             Requested size: 426.79134pt x 120.0206pt.
+(pdftex.def)             Requested size: 438.17227pt x 123.22185pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -701,7 +701,7 @@ g)
 <use ./figures//generalize_dataset_get_feature_types.png>
 Package pdftex.def Info: ./figures//generalize_dataset_get_feature_types.png  u
 sed on input line 234.
-(pdftex.def)             Requested size: 426.79134pt x 86.78159pt.
+(pdftex.def)             Requested size: 438.17227pt x 89.0942pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -727,37 +727,47 @@ Package pdftex.def Info: ./figures//price_rental_raw.png  used on input line 24
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [10 <./figures//parking_dataset.png> <./figures//uml_generalize_dataset.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 <./figures//uml_create_input_dataset.png, id=368, 400.49625pt x 211.79124pt>
 File: ./figures//uml_create_input_dataset.png Graphic file (type png)
 <use ./figures//uml_create_input_dataset.png>
 Package pdftex.def Info: ./figures//uml_create_input_dataset.png  used on input
- line 264.
+ line 291.
 (pdftex.def)             Requested size: 284.52756pt x 150.473pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+<./figures//create_input_dataset_constructor.png, id=371, 733.74126pt x 61.2287
+4pt>
+File: ./figures//create_input_dataset_constructor.png Graphic file (type png)
+<use ./figures//create_input_dataset_constructor.png>
+Package pdftex.def Info: ./figures//create_input_dataset_constructor.png  used 
+on input line 302.
+(pdftex.def)             Requested size: 438.17227pt x 36.56467pt.
 [11 <./figures//generalize_dataset_get_feature_types.png> <./figures//price_all
 _raw.png> <./figures//price_sale_raw.png> <./figures//price_rental_raw.png>]
-[12 <./figures//uml_create_input_dataset.png>]
+[12 <./figures//uml_create_input_dataset.png> <./figures//create_input_dataset_
+constructor.png>]
 Chapter 4.
-<./figures//html_room_info_1.png, id=390, 825.0825pt x 770.88pt>
+<./figures//html_room_info_1.png, id=397, 825.0825pt x 770.88pt>
 File: ./figures//html_room_info_1.png Graphic file (type png)
 <use ./figures//html_room_info_1.png>
-Package pdftex.def Info: ./figures//html_room_info_1.png  used on input line 28
-3.
+Package pdftex.def Info: ./figures//html_room_info_1.png  used on input line 32
+1.
 (pdftex.def)             Requested size: 213.3959pt x 227.61935pt.
-<./figures//html_room_info_2.png, id=391, 595.22375pt x 701.62125pt>
+<./figures//html_room_info_2.png, id=398, 595.22375pt x 701.62125pt>
 File: ./figures//html_room_info_2.png Graphic file (type png)
 <use ./figures//html_room_info_2.png>
-Package pdftex.def Info: ./figures//html_room_info_2.png  used on input line 28
-5.
+Package pdftex.def Info: ./figures//html_room_info_2.png  used on input line 32
+3.
 (pdftex.def)             Requested size: 213.39032pt x 227.61737pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--293
+Underfull \hbox (badness 10000) in paragraph at lines 329--331
 
  []
 
@@ -766,49 +776,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 291--293
 ] [14 <./figures//html_room_info_1.png> <./figures//html_room_info_2.png>]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 361--363
+Underfull \hbox (badness 10000) in paragraph at lines 401--403
 
  []
 
 [15
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 364--366
+Underfull \hbox (badness 10000) in paragraph at lines 404--406
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--369
+Underfull \hbox (badness 10000) in paragraph at lines 407--409
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 445--447
+Underfull \hbox (badness 10000) in paragraph at lines 485--487
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 482--484
+Underfull \hbox (badness 10000) in paragraph at lines 522--524
 
  []
 
-<./figures//price_all_mean.png, id=444, 353.32pt x 380.42125pt>
+<./figures//price_all_mean.png, id=451, 353.32pt x 380.42125pt>
 File: ./figures//price_all_mean.png Graphic file (type png)
 <use ./figures//price_all_mean.png>
-Package pdftex.def Info: ./figures//price_all_mean.png  used on input line 489.
+Package pdftex.def Info: ./figures//price_all_mean.png  used on input line 529.
 
 (pdftex.def)             Requested size: 142.26378pt x 153.17581pt.
-<./figures//price_sale_remove.png, id=445, 349.305pt x 368.37625pt>
+<./figures//price_sale_remove.png, id=452, 349.305pt x 368.37625pt>
 File: ./figures//price_sale_remove.png Graphic file (type png)
 <use ./figures//price_sale_remove.png>
-Package pdftex.def Info: ./figures//price_sale_remove.png  used on input line 4
-96.
+Package pdftex.def Info: ./figures//price_sale_remove.png  used on input line 5
+36.
 (pdftex.def)             Requested size: 142.26378pt x 150.02908pt.
-<./figures//price_rental_remove.png, id=446, 349.305pt x 380.42125pt>
+<./figures//price_rental_remove.png, id=453, 349.305pt x 380.42125pt>
 File: ./figures//price_rental_remove.png Graphic file (type png)
 <use ./figures//price_rental_remove.png>
 Package pdftex.def Info: ./figures//price_rental_remove.png  used on input line
- 497.
+ 537.
 (pdftex.def)             Requested size: 142.26378pt x 154.93466pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -825,39 +835,29 @@ Chapter 6.
 ]) [20
 
 ] (./main.aux)
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: A2DD4579FB4EFFE940D1977C1584B39F;7071
-(rerunfilecheck)             After:  99ED582833C50999DEA0064C7FC86B70;6880.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 1EC8EB9E0E9F9E138C535B89EC352ACA;7076.
 Package rerunfilecheck Info: File `main.brf' has not changed.
 (rerunfilecheck)             Checksum: C21DADF3B33DBF8F0732A0044D943A0C;423.
  ) 
 Here is how much of TeX's memory you used:
- 13601 strings out of 478268
- 224152 string characters out of 5846347
- 526847 words of memory out of 5000000
- 31457 multiletter control sequences out of 15000+600000
+ 13617 strings out of 478268
+ 224783 string characters out of 5846347
+ 527025 words of memory out of 5000000
+ 31470 multiletter control sequences out of 15000+600000
  504551 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,9n,80p,744b,501s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{subsection.54} has been referenced but does not exi
-st, replaced by a fixed one
-
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
-live/2022/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/local/texliv
-e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchbi8a.pfb></usr/local/texlive/
-2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/202
-2/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/local/texlive/2022/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-Output written on main.pdf (27 pages, 891290 bytes).
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/local/texl
+ive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchbi8a.pfb></usr/local/texliv
+e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
+022/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/local/texlive/202
+2/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
+Output written on main.pdf (27 pages, 904077 bytes).
 PDF statistics:
- 525 PDF objects out of 1000 (max. 8388607)
- 447 compressed objects within 5 object streams
- 124 named destinations out of 1000 (max. 500000)
- 422 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 533 PDF objects out of 1000 (max. 8388607)
+ 453 compressed objects within 5 object streams
+ 127 named destinations out of 1000 (max. 500000)
+ 427 words of extra memory for PDF output out of 10000 (max. 10000000)
 
