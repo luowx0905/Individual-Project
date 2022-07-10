@@ -304,6 +304,8 @@ The core of this class is its constructor, where feature encoding and removal of
 	\label{create_input_dataset_constructor}
 \end{figure}
 
+\section{Model Construction}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Testing the Implementation}
 Comprehensive testing was conducted throughout the implementation but it is documented in this separate chapter for the sake of illuatration. 
@@ -338,6 +340,7 @@ The data utilized for this test is displayed in figure \ref{parking_dataset}. In
 During preprocessing, both filling the mean value and removing outliers were attempted. It can be assured that the spike on the left side will decrease significantly in both methods. For filling the average prices, there will be a peak at the mean values, and the original price distribution will be altered. If they are removed, then the original distribution will be retained. 
 
 \subsection{Create Input Dataset}
+The first step in evaluating the behavior of this class is to determine if the categorical features are encoded, and the second test is to inspect whether the missing values are eliminated. It can be guaranteed that a clean dataset for the model input can be generated, indicating that encoding features and removing missing values did not lead to any errors. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Experimental Results}
@@ -539,6 +542,15 @@ Therefore, removing zero prices was applied to create input datasets for models 
 	\label{price_removed}
 \end{figure*}
 
+\subsection{Create Input Dataset}
+For general information, the first ten rows after preprocessing and their corresponding rows in the original dataset are displayed in figure \ref{general_info}. The categorical features, such as postcode and council tax band, are encoded as numerical values allowing the first test to be passed. In addition, it is evident that the indices in the new dataset are not continuous, indicating that the rows with missing values have been removed. Hence it can pass the second test. 
+\begin{figure*}[h]
+	\centering
+	\subfigure[Original dataset]{\includegraphics[width=\linewidth]{general_raw}\label{general_raw}}
+	\subfigure[Preprocessed dataset]{\includegraphics[width=\linewidth]{general_input}\label{general_input}}
+	\caption{Comparsion between original and preprocessed dataset}
+	\label{general_info}
+\end{figure*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion}
