@@ -1,3 +1,4 @@
+import re
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
@@ -7,20 +8,22 @@ from GeneralizeDataset import GeneralizeDataset
 
 
 class CreateInputDataset:
-    def __init__(self, data: pd.DataFrame):
+    def __init__(self, data: pd.DataFrame, extract_postcode: bool = False):
         self.data = data
+        if extract_postcode:
+            self.extract_postcode()
 
         # Obtain HTML info
         self.handler = ProcessHTML()
-        rooms = data["EweMove Description S3 Rooms"]
-        price = data["Price / Rent"]
+        rooms = self.data["EweMove Description S3 Rooms"]
+        price = self.data["Price / Rent"]
         for room in rooms:
             self.handler.EweMove_Description_S3_Rooms(room)
         for p in price:
             self.handler.price_rent(p)
 
         # Remove rows with NaN values
-        indices = set(range(len(data)))
+        indices = set(range(len(self.data)))
         room_indices = set(i for i in range(len(self.handler.s3_rooms)) if self.handler.s3_rooms[i] is not None)
         price_indices = set(i for i in range(len(self.handler.price_or_rent)) if self.handler.price_or_rent[i][0] != 0)
         self.valid_indices = indices & room_indices & price_indices
@@ -33,7 +36,7 @@ class CreateInputDataset:
         self.valid_indices = sorted(list(self.valid_indices))
 
         # Encode categorical feature
-        encode_names = ["Postcode", "Price Qualifier", "DESC Council Tax Band",
+        encode_names = ["Postcode", "Price Qualifier", "Sale or Let", "DESC Council Tax Band",
                         "RTD3316_condition1 - Condition Description"]
         encoder = LabelEncoder()
         for name in encode_names:
@@ -52,11 +55,19 @@ class CreateInputDataset:
 
         self.generalize = GeneralizeDataset(self.data.iloc[self.valid_indices])
 
-    def __call__(self, general_file, room_file, categorical_file, label_file, operation="types"):
-        return self.get_general_dataset().to_csv(general_file, index=False), \
-               self.get_room_dataset().to_csv(room_file, index=False), \
-               self.get_categorical_dataset(operation).to_csv(categorical_file, index=False), \
-               self.get_labels().to_csv(label_file, index=False)
+    def extract_postcode(self):
+        pattern = "[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}"
+        postcodes = []
+        for i in self.data["Full Address"]:
+            postcode = re.findall(pattern, i)
+            if len(postcode) == 0:
+                postcodes.append(np.nan)
+            else:
+                postcodes.append(postcode[0])
+        self.data["Full Address"] = postcodes
+        self.data = self.data.rename(columns={"Full Address": "Postcode"})
+        self.data = self.data[self.data["Postcode"].notna()]
+        self.data = self.data.rename(index={i: j for i, j in zip(self.data.index, range(len(self.data)))})
 
     def get_general_dataset(self) -> pd.DataFrame:
         column_names = ["Postcode", "Sale or Let", "Price Qualifier", "DESC Council Tax Band",
@@ -133,8 +144,9 @@ class CreateInputDataset:
 
 
 if __name__ == '__main__':
-    filename = "../datasets/PropertyData_wDesc.csv"
+    #filename = "../datasets/PropertyData_wDesc.csv"
+    filename = "../datasets/H1 2018 Data.csv"
     data = pd.read_csv(filename, encoding="ISO8859-1")
 
-    creation = CreateInputDataset(data)
-    creation("../datasets/general.csv", "../datasets/room.csv", "../datasets/categorical.csv", "../datasets/label.csv")
+    creation = CreateInputDataset(data, extract_postcode=True)
+

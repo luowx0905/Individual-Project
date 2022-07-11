@@ -22,7 +22,7 @@ class TestCreateInputDataset(TestCase):
         result = self.creation.get_general_dataset()
         truth = self.data[column_names].copy()
 
-        encode_names = ["Postcode", "Price Qualifier", "DESC Council Tax Band",
+        encode_names = ["Postcode", "Price Qualifier", "Sale or Let", "DESC Council Tax Band",
                         "RTD3316_condition1 - Condition Description"]
         encoder = LabelEncoder()
         for name in encode_names:
