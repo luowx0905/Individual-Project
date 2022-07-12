@@ -63,6 +63,11 @@ class CreateInputDataset:
         council_tax_indices = set(i for i in indices if data["DESC Council Tax Band"].notna()[i])
         valid_indices = valid_indices & condition_indices & qualifier_indices & council_tax_indices & postcode_indices
 
+        sale_indices = set(i for i in indices if data["Sale or Let"].notna()[i])
+        viewing_indices = set(i for i in indices if data["# of Enquiry or viewings"].notna()[i])
+        offer_indices = set(i for i in indices if data["# of Apps/Offers"].notna()[i])
+        valid_indices = valid_indices & sale_indices & viewing_indices & offer_indices
+
         return sorted(list(valid_indices))
 
     def get_general_dataset(self) -> pd.DataFrame:

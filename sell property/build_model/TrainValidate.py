@@ -4,6 +4,7 @@ from torch import optim
 from torch.utils.data import DataLoader
 
 import numpy as np
+from torch_snippets import Report
 from matplotlib import pyplot as plt
 
 
@@ -25,6 +26,7 @@ class TrainValidate:
         self.losses = []
         self.val_losses = []
         self.total_epochs = 0
+        self.log = None
 
         self.train_step = self._make_train_step()
         self.val_step = self._make_val_step()
@@ -47,6 +49,14 @@ class TrainValidate:
             return loss.item()
         return perform_train_step
 
+    def train_batch(self, data):
+        self.model.train()
+
+        x, y = data
+        prediction = self.model(x)
+
+
+
     def _make_val_step(self):
         def perform_val_step(x, y):
             self.model.eval()
@@ -68,16 +78,23 @@ class TrainValidate:
             return None
 
         mini_batch_losses = []
-        for x_batch, y_batch in data_loader:
+        N = len(data_loader)
+        for i, (x_batch, y_batch) in enumerate(data_loader):
             x_batch = x_batch.to(self.device)
             y_batch = y_batch.to(self.device)
 
-            mini_batch_losses.append(step(x_batch, y_batch))
+            loss = step(x_batch, y_batch)
+            mini_batch_losses.append(loss)
+            if validation:
+                self.log.record(self.total_epochs + (i + 1) / N, validation_loss=loss, end='\r')
+            else:
+                self.log.record(self.total_epochs + (i + 1) / N, training_loss=loss, end='\r')
 
         return np.mean(mini_batch_losses)
 
     def train(self, n_epochs, seed=13):
         torch.manual_seed(seed)
+        self.log = Report(n_epochs)
 
         for epoch in range(n_epochs):
             self.total_epochs += 1
@@ -102,6 +119,9 @@ class TrainValidate:
                       "train loss": self.losses,
                       "val loss": self.val_losses}
         torch.save(checkpoint, filename)
+
+    def save_model(self, filename):
+        torch.save(self.model, filename)
 
     def load(self, filename):
         checkpoint = torch.load(filename)

@@ -10,40 +10,71 @@ import unittest
 
 
 class TestCreateInputDataset(TestCase):
-    filename = "../datasets/H1 2020.csv"
-    data = pd.read_csv(filename, encoding="ISO8859-1")
+    filename = "../datasets/test_create_input_dataset.csv"
+    data = pd.read_csv(filename)
     creation = CreateInputDataset(data.copy())
 
     def test_get_general_dataset(self):
-        column_names = ["Postcode", "Sale or Let", "Price Qualifier", "DESC Council Tax Band",
-                        "RTD3316_condition1 - Condition Description",
-                        "# of Enquiry or viewings", "# of Apps/Offers"]
-        encode_names = ["Postcode", "Price Qualifier", "Sale or Let", "DESC Council Tax Band",
-                        "RTD3316_condition1 - Condition Description"]
         result = self.creation.get_general_dataset()
 
-        truth = CreateInputDataset.extract_prices(self.data.copy())
-        if "Postcode" not in truth.columns:
-            truth = CreateInputDataset.extract_postcode(truth)
-        valid_indices = CreateInputDataset.remove_invalid_values(truth)
-        truth = truth.iloc[valid_indices]
-        truth = truth.rename(index={i: j for i, j in zip(truth.index, range(len(truth)))})
+        truth = pd.DataFrame({"Postcode": [1, 0, 2],
+                              "Sale or Let": [1, 0, 1],
+                              "Price Qualifier": [1, 0, 0],
+                              "DESC Council Tax Band": [0, 1, 2],
+                              "RTD3316_condition1 - Condition Description": [0, 1, 1],
+                              "# of Enquiry or viewings": [32.0, 14.0, 10.0],
+                              "# of Apps/Offers": [12.0, 4.0, 2.0]},
+                             index=[0, 2, 6])
 
-        encoder = LabelEncoder()
-        for name in encode_names:
-            encoder.fit(truth[name])
-            truth[name] = pd.DataFrame(encoder.transform(truth[name]))
-
-        self.assertEqual(result.equals(truth[column_names]), True)
+        self.assertEqual(result.equals(truth), True)
 
     def test_get_room_dataset(self):
-        self.fail()
+        result = self.creation.get_room_dataset()
+
+        truth = pd.DataFrame({"bedroom number": [2, 3, 3],
+                              "kitchen number": [1, 1, 1],
+                              "living number": [1, 0, 1],
+                              "bathroom number": [1, 2, 0],
+                              "dining number": [1, 1, 1],
+                              "other number": [3, 3, 2]},
+                             index=[0, 2, 6])
+
+        self.assertEqual(result.equals(truth), True)
 
     def test_get_categorical_dataset(self):
-        self.fail()
+        result = self.creation.get_categorical_dataset()
+
+        truth = pd.DataFrame({"Allocated": [1, 0, 0],
+                              "Driveway": [0, 0, 1],
+                              "Garage": [0, 0, 1],
+                              "Off Street": [1, 0, 1],
+                              "On Street": [0, 1, 0],
+                              "Residents": [1, 0, 0],
+                              "Back Garden": [0, 0, 1],
+                              "Communal Garden": [1, 0, 0],
+                              "Enclosed Garden": [0, 0, 1],
+                              "Patio": [0, 0, 1],
+                              "Private Garden": [0, 1, 0],
+                              "Rear Garden": [0, 1, 0],
+                              "Not suitable for wheelchair users": [1, 0, 0],
+                              "Central": [0, 1, 0],
+                              "Double Glazing": [1, 1, 1],
+                              "Electric": [1, 0, 0],
+                              "Gas Central": [0, 1, 1],
+                              "Night Storage": [1, 0, 0],
+                              "Under Floor": [0, 0, 1]},
+                             index=[0, 2, 6])
+
+        self.assertEqual(result.equals(truth), True)
 
     def test_get_labels(self):
-        self.fail()
+        result = self.creation.get_labels()
+
+        truth = pd.DataFrame({"Completed": [0, 1, 1],
+                              "Price / Rent": [140000.0, 325000.0, 500000.0]},
+                             index=[0, 2, 6])
+
+        self.assertEqual(result.equals(truth), True)
 
     def test_extract_postcode(self):
         data = pd.DataFrame({"Full Address": ["3 Cromwell Crescent SW5 9QN",
