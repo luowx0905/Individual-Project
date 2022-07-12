@@ -78,7 +78,7 @@ class ProcessHTML:
 
     def price_rent(self, info: str) -> None:
         if pd.isna(info):
-            self.price_or_rent.append(None)
+            self.price_or_rent.append((-1, None))
             return
 
         price_qualifier = info.split("<br>")[-1]

@@ -4,6 +4,7 @@ from torch import optim
 from torch.utils.data import DataLoader
 
 import numpy as np
+from matplotlib import pyplot as plt
 
 
 class TrainValidate:
@@ -110,3 +111,17 @@ class TrainValidate:
         self.optimizer.load_state_dict(checkpoint["optimizer"])
         self.losses = checkpoint["train loss"]
         self.val_losses = checkpoint["val loss"]
+
+    def plot_losses(self):
+        fig = plt.figure(figsize=(10, 4))
+        plt.plot(self.losses, label="Training Loss")
+
+        if self.val_loader:
+            plt.plot(self.val_losses, label="Validation Loss")
+
+        plt.xlabel("Epochs")
+        plt.ylabel("Loss")
+        plt.legend()
+        plt.tight_layout()
+
+        return fig
