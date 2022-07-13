@@ -2,8 +2,11 @@ import numpy as np
 import torch
 from torch import nn
 from torch import optim
+from torch.utils.data import DataLoader
 
 from torch_snippets import Report
+from sklearn.model_selection import KFold
+from matplotlib import pyplot as plt
 
 
 class TrainValidate:
@@ -24,6 +27,7 @@ class TrainValidate:
         self.log = None
         self.loss = []
         self.val_loss = []
+        self.total_epochs = 0
 
     def set_loader(self, train_loader, val_loader=None):
         self.train_loader = train_loader
@@ -57,6 +61,8 @@ class TrainValidate:
         self.log = Report(epochs)
 
         for epoch in range(epochs):
+            self.total_epochs += 1
+
             N = len(self.train_loader)
             batch_loss = []
             for i, data in enumerate(self.train_loader):
@@ -72,3 +78,54 @@ class TrainValidate:
                 batch_val_loss.append(loss)
                 self.log.record(epoch + (i + 1) / N, val_loss=loss, end='\r')
             self.val_loss.append(np.mean(batch_val_loss))
+
+        self.log.plot()
+
+    def plot_losses(self):
+        fig = plt.figure()
+        plt.plot(self.loss, label="Training Loss")
+        plt.plot(self.val_loss, label="Validation Loss")
+        plt.xlabel("Epochs")
+        plt.ylabel("Loss")
+        plt.title("Training & Validation Loss against epochs")
+        return fig
+
+    def save_checkpoint(self, filename="checkpoint.pth"):
+        checkpoint = {"model": self.model.state_dict(),
+                      "optimizer": self.optimizer.state_dict(),
+                      "loss": self.loss,
+                      "val loss": self.val_loss,
+                      "epochs": self.total_epochs}
+        torch.save(checkpoint, filename)
+
+    def load_checkpoint(self, filename="checkpoint.pth"):
+        checkpoint = torch.load(filename)
+
+        self.model.load_state_dict(checkpoint["model"])
+        self.optimizer.load_state_dict(checkpoint["optimizer"])
+        self.loss = checkpoint["loss"]
+        self.val_loss = checkpoint["val loss"]
+        self.total_epochs = checkpoint["epochs"]
+
+    def save_model(self, filename="model.pth"):
+        torch.save(self.model, filename)
+
+
+def cross_validation(split, train_validate, dataset, epochs, x_train, y_train, filename seed=1):
+    kfold = KFold(n_splits=split, shuffle=True, random_state=seed)
+    torch.manual_seed(seed)
+
+    for fold, (train_id, val_id) in enumerate(kfold.split(x_train.index)):
+        train_feature, train_label = x_train.iloc[train_id], y_train.iloc[train_id]
+        val_feature, val_label = x_train.iloc[val_id], y_train.iloc[val_id]
+        print("\n\n-------------This is fold {}----------------".format(fold))
+
+        train_data = dataset(train_feature, train_label)
+        val_data = dataset(val_feature, val_label)
+        train_loader = DataLoader(train_data, batch_size=16, shuffle=False, drop_last=True)
+        val_loader = DataLoader(val_data, batch_size=16, shuffle=False, drop_last=True)
+
+        train_validate.set_loader(train_loader, val_loader)
+        train_validate.train(epochs)
+
+        train_validate.save_model("{}_fold_{}.pth".format(filename, fold))
