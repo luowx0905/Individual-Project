@@ -109,23 +109,3 @@ class TrainValidate:
 
     def save_model(self, filename="model.pth"):
         torch.save(self.model, filename)
-
-
-def cross_validation(split, train_validate, dataset, epochs, x_train, y_train, filename seed=1):
-    kfold = KFold(n_splits=split, shuffle=True, random_state=seed)
-    torch.manual_seed(seed)
-
-    for fold, (train_id, val_id) in enumerate(kfold.split(x_train.index)):
-        train_feature, train_label = x_train.iloc[train_id], y_train.iloc[train_id]
-        val_feature, val_label = x_train.iloc[val_id], y_train.iloc[val_id]
-        print("\n\n-------------This is fold {}----------------".format(fold))
-
-        train_data = dataset(train_feature, train_label)
-        val_data = dataset(val_feature, val_label)
-        train_loader = DataLoader(train_data, batch_size=16, shuffle=False, drop_last=True)
-        val_loader = DataLoader(val_data, batch_size=16, shuffle=False, drop_last=True)
-
-        train_validate.set_loader(train_loader, val_loader)
-        train_validate.train(epochs)
-
-        train_validate.save_model("{}_fold_{}.pth".format(filename, fold))
