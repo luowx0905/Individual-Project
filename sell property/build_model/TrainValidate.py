@@ -1,11 +1,9 @@
+import numpy as np
 import torch
 from torch import nn
 from torch import optim
-from torch.utils.data import DataLoader
 
-import numpy as np
 from torch_snippets import Report
-from matplotlib import pyplot as plt
 
 
 class TrainValidate:
@@ -23,125 +21,54 @@ class TrainValidate:
         self.train_loader = None
         self.val_loader = None
 
-        self.losses = []
-        self.val_losses = []
-        self.total_epochs = 0
         self.log = None
+        self.loss = []
+        self.val_loss = []
 
-        self.train_step = self._make_train_step()
-        self.val_step = self._make_val_step()
-
-    def set_loaders(self, train_loader, val_loader=None):
+    def set_loader(self, train_loader, val_loader=None):
         self.train_loader = train_loader
         self.val_loader = val_loader
-
-    def _make_train_step(self):
-        def perform_train_step(x, y):
-            self.model.train()
-
-            yhat = self.model(x)
-            loss = self.loss_fn(yhat, y)
-
-            self.optimizer.zero_grad()
-            loss.backward()
-            self.optimizer.step()
-
-            return loss.item()
-        return perform_train_step
 
     def train_batch(self, data):
         self.model.train()
 
         x, y = data
-        prediction = self.model(x)
-
-
-
-    def _make_val_step(self):
-        def perform_val_step(x, y):
-            self.model.eval()
-
-            yhat = self.model(x)
-            loss = self.loss_fn(yhat, y)
-            return loss.item()
-        return perform_val_step
-
-    def _mini_batch(self, validation=False):
-        if validation:
-            data_loader = self.val_loader
-            step = self.val_step
-        else:
-            data_loader = self.train_loader
-            step = self.train_step
-
-        if data_loader is None:
-            return None
-
-        mini_batch_losses = []
-        N = len(data_loader)
-        for i, (x_batch, y_batch) in enumerate(data_loader):
-            x_batch = x_batch.to(self.device)
-            y_batch = y_batch.to(self.device)
-
-            loss = step(x_batch, y_batch)
-            mini_batch_losses.append(loss)
-            if validation:
-                self.log.record(self.total_epochs + (i + 1) / N, validation_loss=loss, end='\r')
-            else:
-                self.log.record(self.total_epochs + (i + 1) / N, training_loss=loss, end='\r')
-
-        return np.mean(mini_batch_losses)
-
-    def train(self, n_epochs, seed=13):
-        torch.manual_seed(seed)
-        self.log = Report(n_epochs)
-
-        for epoch in range(n_epochs):
-            self.total_epochs += 1
-
-            self.losses.append(self._mini_batch())
-            with torch.no_grad():
-                self.val_losses.append(self._mini_batch(validation=True))
-
-    @torch.no_grad()
-    def predict(self, x):
-        self.model.eval()
-
-        x = torch.as_tensor(x).float().to(self.device)
         yhat = self.model(x)
 
-        return yhat.detach().cpu().numpy()
+        loss = self.loss_fn(yhat, y)
+        self.optimizer.zero_grad()
+        loss.backward()
+        self.optimizer.step()
 
-    def save(self, filename):
-        checkpoint = {"epoch": self.total_epochs,
-                      "model": self.model.state_dict(),
-                      "optimizer": self.optimizer.state_dict(),
-                      "train loss": self.losses,
-                      "val loss": self.val_losses}
-        torch.save(checkpoint, filename)
+        return loss.item()
 
-    def save_model(self, filename):
-        torch.save(self.model, filename)
+    @torch.no_grad()
+    def val_batch(self, data):
+        self.model.eval()
 
-    def load(self, filename):
-        checkpoint = torch.load(filename)
+        x, y = data
+        yhat = self.model(x)
+        loss = self.loss_fn(yhat, y)
 
-        self.total_epochs = checkpoint["epoch"]
-        self.model.load_state_dict(checkpoint["model"])
-        self.optimizer.load_state_dict(checkpoint["optimizer"])
-        self.losses = checkpoint["train loss"]
-        self.val_losses = checkpoint["val loss"]
+        return loss.item()
 
-    def plot_losses(self):
-        fig = plt.figure(figsize=(10, 4))
-        plt.plot(self.losses, label="Training Loss")
+    def train(self, epochs, seed=13):
+        torch.manual_seed(seed)
+        self.log = Report(epochs)
 
-        if self.val_loader:
-            plt.plot(self.val_losses, label="Validation Loss")
+        for epoch in range(epochs):
+            N = len(self.train_loader)
+            batch_loss = []
+            for i, data in enumerate(self.train_loader):
+                loss = self.train_batch(data)
+                batch_loss.append(loss)
+                self.log.record(epoch + (i + 1) / N, train_loss=loss, end='\r')
+            self.loss.append(np.mean(batch_loss))
 
-        plt.xlabel("Epochs")
-        plt.ylabel("Loss")
-        plt.legend()
-        plt.tight_layout()
-
-        return fig
+            N = len(self.val_loader)
+            batch_val_loss = []
+            for i, data in enumerate(self.val_loader):
+                loss = self.val_batch(data)
+                batch_val_loss.append(loss)
+                self.log.record(epoch + (i + 1) / N, val_loss=loss, end='\r')
+            self.val_loss.append(np.mean(batch_val_loss))
