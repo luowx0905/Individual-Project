@@ -2,7 +2,7 @@ import numpy as np
 import torch
 from torch import nn
 from torch import optim
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, WeightedRandomSampler
 
 from torch_snippets import Report
 from sklearn.model_selection import KFold
@@ -109,3 +109,25 @@ class TrainValidate:
 
     def save_model(self, filename="model.pth"):
         torch.save(self.model, filename)
+
+
+def create_weighted_sampler(data: np.array) -> WeightedRandomSampler:
+    sale_rent = torch.tensor(data)
+    classes, count = sale_rent.unique(return_counts=True)
+    weight = 1.0 / count.float()
+
+    sample_weight = []
+    for p in data:
+        for i in range(len(classes)):
+            if p == classes[i]:
+                sample_weight.append(weight[i].item())
+
+    sample_weight = torch.tensor(sample_weight)
+
+    generator = torch.Generator()
+    sampler = WeightedRandomSampler(weights=sample_weight,
+                                    num_samples=len(data),
+                                    generator=generator,
+                                    replacement=True)
+
+    return sampler
