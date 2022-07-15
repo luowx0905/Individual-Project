@@ -54,7 +54,7 @@ class CreateInputDataset:
     def remove_invalid_values(data: pd.DataFrame) -> list:
         indices = set(range(len(data)))
         room_indices = set(i for i in range(len(data)) if data["EweMove Description S3 Rooms"].notna()[i])
-        price_indices = set(i for i in range(len(data)) if data["Price / Rent"][i] > 0)
+        price_indices = set(i for i in range(len(data)) if data["Price / Rent"][i] > 10)
         valid_indices = indices & room_indices & price_indices
 
         postcode_indices = set(i for i in indices if data["Postcode"].notna()[i])
@@ -210,4 +210,7 @@ if __name__ == '__main__':
     folder = "../datasets"
     paths = [os.path.join(folder, path) for path in os.listdir(folder) if "final" not in path]
     features, labels, sources = CreateInputDataset.create_dataset(*paths)
+    features.to_csv("../datasets/final_features_removed.csv", index=False)
+    labels.to_csv("../datasets/final_labels_removed.csv", index=False)
+    sources.to_csv("../datasets/final_sources_removed.csv", index=False)
 
