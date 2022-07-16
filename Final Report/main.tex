@@ -160,7 +160,7 @@ The data that was retrieved for this project originated from two different sourc
 \subsection{Handle Room Descriptions (HTML)}
 
 \subsubsection{Acquire room name and dimension}
-The structure of the HTML texts containing the room information in a property is shown in figure \ref{html_structure}. The rooms are separated by tag \textit{$<$li$>$}, and the room name and its dimension is denoted by \textit{$<$strong$>$} and \textit{$<$i$>$} tags, respectively. Therefore, a function (\textit{\textbf{EweMove\_Description\_S3\_Rooms}}) was implemented to split the HTML text by utilizing \textit{Beautiful soup}, and its flowchart is shown in figure \ref{html_room_info}.
+The structure of the HTML texts containing the room information in a property is shown in figure \ref{html_structure}. The rooms are separated by tag \textit{$<$li$>$}, and the room name and its dimension is denoted by \textit{$<$strong$>$} and \textit{$<$i$>$} tags, respectively. Therefore, a function (\textit{\textbf{EweMove\_Description\_S3\_Rooms}}) was implemented to split the HTML texts by utilizing \textit{Beautiful soup}, and its flowchart is shown in figure \ref{html_room_info}.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=15cm]{html_structure}
@@ -175,7 +175,7 @@ The structure of the HTML texts containing the room information in a property is
 	\label{html_room_info}
 \end{figure}
 
-The names of rooms are analyzed after the room descriptions in the dataset have been processed. As a consequence, there are over 200 unique room names for approximately 3600 records, some of which are exceptionally uncommon across the entire dataset. For instance, only two properties have cinema rooms and one has a lift, which is less than 0.1\% of all entries.  
+The names of rooms are analyzed after the room descriptions in the dataset have been processed. As a consequence, there are over 200 unique room names for approximately 36000 records, some of which are exceptionally uncommon across the entire dataset. For instance, only two properties have cinema rooms, and one has a lift, which is less than 0.1\% of all entries.  
 \\
 
 Due to the large number of room names, it is impossible to use it as the input of the model. Therefore, the rooms are divided into six categories: bedrooms, bathrooms, kitchens, living/reception rooms, dining rooms, and other rooms so that the data can be generalized. 
@@ -197,9 +197,9 @@ Key member functions
 	\item get\_rooms \\
 	The flow diagram of this method is shown in figure \ref{extract_room_get_rooms} and the arguments are listed below.
 	\begin{enumerate}
-		\item args: It should be noted that this is a variable-length argument, which means that it can accept as many arguments as possible, and it is used to select room names from \textit{room\_set}. For instance, \textit{*args = ["living", "reception"]} will select all names containing "living" or "reception". 
-		\item operation: The argumen determines the types of the final result and the valid inputs include \textit{"sum"}, \textit{"mean"}, \textit{"split"}, and \textit{"number"}. For example, if args is "bedroom", then the function can return the sum of bedroom areas, the average bedroom area, the area of each bedroom and the number of bedrooms. 
-		\item handle\_na: This parameter specifies how to manage missing values, either by ignoring them or by filling the mean value if the input is "None" or "mean", respectively. 
+		\item args: It should be noted that this is a variable-length argument, which means that it can accept as many arguments as possible, and it is used to select room names from \textit{room\_set}. For instance, \textit{*args = [living, reception]} will select all names containing \textit{living} or \textit{reception}. 
+		\item operation: The argumen determines the types of the final result and the valid inputs include \textit{sum}, \textit{mean}, \textit{split}, and \textit{number}. For example, if args is \textit{bedroom}, then the function can return the sum of bedroom areas, the average bedroom area, the area of each bedroom and the number of bedrooms. 
+		\item handle\_na: This parameter specifies how to manage missing values, either by ignoring them or by filling the mean value if the input is \textit{None} or \textit{mean}, respectively. 
 	\end{enumerate} 
 	\begin{figure}[h]
 		\centering
@@ -262,6 +262,8 @@ The features used to train the model and their percentages of missing values are
 	\caption{The features ant their percentages of missing values}
 	\begin{tabular}{| c | c |}
 		\hline
+		Feature & Missing percentage / \% \\
+		\hline
 		Postcode & 0 \\ 
 		\hline
 		Completed & 40.64 \\
@@ -281,7 +283,7 @@ The features used to train the model and their percentages of missing values are
 		Enquiry of Viewings & 0 \\ 
 		\hline
 		Apps/Offers & 0 \\
-		\hline
+		 \hline
 	\end{tabular}
 	\label{feature_missing_percentage}
 \end{table}
@@ -330,8 +332,8 @@ Due to the small dataset in this project, cross validation was therefore employe
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Testing the Implementation}
-Comprehensive testing was conducted throughout the implementation but it is documented in this separate chapter for the sake of illuatration. 
+\chapter{Testing \& Experimental Results}
+Comprehensive testing and analyzing were conducted throughout the implementation but it is documented in this separate chapter for the sake of illuatration. 
 
 \section{Data Preprocessing}
 
@@ -339,7 +341,7 @@ Comprehensive testing was conducted throughout the implementation but it is docu
 There were two tests for this objective, the first test examing if the room name and its dimension can be acquiare from HTML texts and the second test focuses on whether the room areas can be obtained and integrated correctly. 
 
 \subsubsection{Acquire room name and dimension}
-This test utilized two HTML texts, which are illustrated in figure \ref{html_room_info_test}. By invoking the function \textit{EweMove\_Description\_S3\_Rooms} with two snippets, it can be verified that all the room names and dimensions can be extracted without error, and if the dimension is unavailable, it is set to one. 
+This test utilized two HTML texts, which are illustrated in figure \ref{html_room_info_test}. By invoking the function \textit{EweMove\_Description\_S3\_Rooms} with two snippets and retrieving the results (shown in tables \ref{html_room_info_expect_1} \& \ref{html_room_info_expect_2}), it is evident that the room names in two HTML snippets could be obtained, and the dimensions were acquired if available otherwise, the value was set to one. Therefore, this function can pass the test.
 
 \begin{figure*}[h]
 	\centering
@@ -350,33 +352,6 @@ This test utilized two HTML texts, which are illustrated in figure \ref{html_roo
 	\label{html_room_info_test}
 \end{figure*}
 
-\subsubsection{Generalize room information}
-The information obtained from HTML texts (figure \ref{html_room_info_test}) was used to access the behavior of \textit{ExtractRooms}, especially its member function \textit{get\_rooms}. During testing, the selected type is the bedroom, and all the operations of \textit{get\_room} were inspected. Additionally, the other rooms were used to test \textit{get\_rest\_rooms}. 
-\\
-
-It is guaranteed that if the operation is  "split", then all the bedroom areas can be listed; the sum and average of areas as well as the number of bedrooms will be returned if the function is invoked with corresponding parameters. In addition, the number of other rooms and their total area will be computed correctly. 
-
-\subsection{Manipulate Categorical Keywords}
-The data utilized for this test is displayed in figure \ref{parking_dataset}. Initially, an invalid feature, "Distance to School" was input into function \textit{get\_feature\_types}, and it can be assured that an exception would be thrown. The feature was then set to "parking", and the result should be a table with ten rows and six columns, as there are ten properties in the snippet and six keywords in total. In addition, it could be verified that \textit{get\_feature\_num} will return the number of keywords for each property when invoked.
-
-\subsection{Manage Outliers}
-During preprocessing, both filling the mean value and removing outliers were attempted. It can be assured that the spike on the left side will decrease significantly in both methods. For filling the average prices, there will be a peak at the mean values, and the original price distribution will be altered. If they are removed, then the original distribution will be retained. 
-
-\subsection{Create Input Dataset}
-The first step in evaluating the behavior of this class is to determine if the categorical features are encoded, and the second test is to inspect whether the missing values are eliminated. It can be guaranteed that a clean dataset for the model input can be generated, indicating that encoding features and removing missing values did not lead to any errors. 
-
-\section{Model Construction}
-\subsection{Basic Model: Output Sale Status and Price}
-The model with best performance was selected based on the figures for training and validation losses. Then the testing data were input to the model and the output are compared with the labels. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Experimental Results}
-
-\section{Data Preprocessing}
-
-\subsection{Handle Room Descriptions (HTML)}
-\subsubsection{Acquire room name and dimension}
-After calling the function and retrieving the results (shown in tables \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2}), it is evident that the room names in two HTML snippets could be obtained, and the dimensions were acquired if available otherwise, the value was set to one, hence this function can pass the test.
 \begin{table}[h]
 	\centering
 	\caption{Information from HTML snippet in figure \ref{html_room_info_test_1}}
@@ -428,18 +403,14 @@ After calling the function and retrieving the results (shown in tables \ref{html
 \end{table}
 
 \subsubsection{Generalize room information}
-The results of calling \textit{get\_rooms} are displayed in tables \ref{bedroom_info_split} and \ref{bedroom_info_all}. It is obvious that all the bedrooms and their areas in tables \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2} were successfully extracted. In addition, the numerical values could also be obtained without error if the operations were configured appropriately. These behaviors demonstrated that the functionality and the design are identical. 
+The data obtained from HTML texts (figure \ref{html_room_info_test}) was used to access the behavior of \textit{ExtractRooms}, particularly its member function \textit{get\_rooms}. During testing, the selected type is the bedroom, and all the operations of \textit{get\_room} were inspected. Additionally, the other rooms were used to test function \textit{get\_rest\_rooms}. 
 \\
 
-Furthermore, the result of invoking \textit{get\_rest\_rooms} is shown in table \ref{other_room_info}. It is clear that there is no statistical inconsistency using the information from tables \ref{bedroom_info_split}, \ref{html_room_info_expect_1}, and \ref{html_room_info_expect_2}, hence this function can pass the test. 
-\\ 
-
-In conclusion, the performance of the two crucial member functions in class \textit{ExtractRooms} meets expectations.
-\\
+The results of calling \textit{get\_rooms} are displayed in tables \ref{bedroom_info_split} and \ref{bedroom_info_all}. It is obvious that all the bedrooms and their respective areas in tables \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2} were successfully extracted. Moreover, the numerical values could also be obtained without error if the operations were appropriately configured. These behaviors demonstrated that the functionality and design are identical. In addition, the result of invoking \textit{get\_rest\_rooms} is displayed in table \ref{other_room_info}. It is clear that there is no statistical inconsistency using the information from tables \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2}, hence this function can pass the test. 
 
 \begin{table}[h]
 	\centering
-	\captionof{table}{Room information ("split")}
+	\captionof{table}{Room information (\textit{split})}
 	\label{bedroom_info_split}
 	\begin{tabular}{| c | c | c | c |}
 		\hline
@@ -494,28 +465,25 @@ In conclusion, the performance of the two crucial member functions in class \tex
 		\end{tabular}
 		\label{bedroom_info_number}
 	}
+	\subtable[Other rooms]{
+		\begin{tabular}{| c | c | c |}
+			\hline
+			& Number & Area \\
+			\hline
+			0 & 6 & 34.8 \\
+			\hline
+			1 & 5 & 34.3 \\
+			\hline
+		\end{tabular}
+		\label{other_room_info}
+	}
 \end{table*}
 
-\begin{table}[h]
-	\centering
-	\caption{The number and total area of other rooms}
-	\label{other_room_info}
-	\begin{tabular}{| c | c | c |}
-		\hline
-		 & Number & Area \\
-		 \hline
-		 0 & 6 & 34.8 \\
-		 \hline
-		 1 & 5 & 34.3 \\
-		 \hline
-	\end{tabular}
-\end{table}
-
 \subsection{Manipulate Categorical Keywords}
-For the initial test, an exception was thrown if an invalid feature, in this case "Distance to School", was entered. Next, the result of calling function \textit{get\_feature\_types} is shown in table \ref{parking_types}. Apparently, the shape of the table is correct, and its elements are consistent with the dataset snippet. For the first property with an \textbf{allocated} \textbf{off-street} parking space for \textbf{residents}, the three keywords in the first row are set to one while the others are zero, and this conclusion holds true for the remaining properties. In addition, the number of keywords associated with each property can be obtained accurately by calling \textit{get\_feature\_num}. 
+The data utilized for this test is displayed in figure \ref{parking_dataset}. Initially, an invalid feature, \textit{Distance to School}, was input into the function \textit{get\_feature\_types}, and the feature was then set to \textit{parking}. With the same data, the member function \textit{get\_feature\_num} was evaluated.
 \\
 
-In summary,  the member functions in this class are capable to determine the types and number of keywords, hence the implementation can pass the tests.
+In the initial test, an exception was thrown if an invalid feature was entered, in this case, \textit{Distance to School}. Next, the result of calling function \textit{get\_feature\_types} is shown in table \ref{parking_types}. Since there are ten properties in the snippets and six keywords in total, this table has ten rows and six columns which is correct, and its elements are consistent with the dataset snippet. For the first property with an \textbf{allocated} \textbf{off-street} parking space for \textbf{residents}, the three keywords in the first row are set to one while the others are zero, and this conclusion holds true for the remaining properties. In addition, the number of keywords associated with each property can be obtained accurately by calling \textit{get\_feature\_num}. 
 
 \begin{table}[h]
 	\centering
@@ -549,10 +517,10 @@ In summary,  the member functions in this class are capable to determine the typ
 \end{table}
 
 \subsection{Manage Outliers}
-The distribution of the prices after applying two methods are shown in figure \ref{price_filled} and \ref{price_removed}. For filling the average value, it is apparent that the spike is reduced, meaning that there is no price of zero. A new spike in the middle indicates that the original distribution has been modified. If zero prices were removed, the peak on the left would also be reduced, and the distribution would remain unchanged. 
+During preprocessing, both filling the mean value and removing outliers were attempted. The distributions of the prices after applying two methods are demonstrated in figures \ref{price_filled} and \ref{price_removed}. For filling the average value, it is apparent that the left-hand spike is diminished, meaning that there is no price of zero. A new peak in the middle suggests that the original distribution has been modified. If zero prices were removed, the peak on the left would also be reduced, and the distribution would remain unchanged. 
 \\
 
-Therefore, removing zero prices was applied to create input datasets for models as it retains the original distribution, whereas filling the mean value causes the data to shift. Consequently, the model will learn more from average, which results in poor performance. 
+Therefore, removing zero prices was applied to create input datasets for models as it retains the original distribution, whereas filling the mean value causes the data alternation. Consequently, the model will learn more from average, which results in poor performance. 
 
 \begin{figure}[h]
 	\centering
@@ -570,7 +538,11 @@ Therefore, removing zero prices was applied to create input datasets for models 
 \end{figure*}
 
 \subsection{Create Input Dataset}
+The first step in evaluating the behavior of this class is to determine if the categorical features are encoded, and the second test is to inspect whether the missing values are eliminated.
+\\
+
 For general information, the first ten rows after preprocessing and their corresponding rows in the original dataset are displayed in figure \ref{general_info}. The categorical features, such as postcode and council tax band, are encoded as numerical values allowing the first test to be passed. In addition, it is evident that the indices in the new dataset are not continuous, indicating that the rows with missing values have been removed. Hence it can pass the second test. 
+
 \begin{figure*}[h]
 	\centering
 	\subfigure[Original dataset]{\includegraphics[width=\linewidth]{general_raw}\label{general_raw}}
@@ -581,7 +553,12 @@ For general information, the first ten rows after preprocessing and their corres
 
 \section{Model Construction}
 \subsection{Basic Model: Output Sale Status and Price}
+The model with best performance was selected based on the figures for training and validation losses. Then the testing data were input to the model and the output are compared with the labels. 
+\\
+
 The training and validation losses against epochs for each fold is displayed in figure \ref{sale_fold_5}. For the first fold, the model was overfitting as the training loss was approximately the same after 60 epochs, whereas the validation loss was increasing. If the training stops elrly, then the performance of this model might be the best. For the second fold, the model is underfitting as the validation loss keeps decreasing and its performance might be better if it was trained for more epochs. For the next two folds, the performance of the models are the best and should be selected for testing. The model trained from last fold did not learn anything since both training and validation loss is osciliating. 
+\\
+
 \begin{figure*}[h]
 	\centering
 	\subfigure[Fold 1]{\includegraphics[width=5cm]{sale_fold_5_0}\label{sale_fold_5_0}}
@@ -601,34 +578,33 @@ Based on the performance plot, the model trained in fold 3 was selected. The fir
 \\
 
 This error result could be caused by loss functions. The completeness is either zero or one, hence the binary cross entroty (BCE) loss was used. For the prices which is greater than zero, the mean squared error (MSE) loss was applied. As the model outputs both completeness and prices, the BCS and MSE loss were added to produce a total loss which was then used for backpropagation. However, the BCE loss is small compared with MSE loss. Therefore, the total loss resulted in the model learning more in predicting prices and completeness was ignored. Additionally, another reason causing the wrong predictions on completness was that the price is not input into the model and it is one of the most important factors in real-life transactions. 
-
 \begin{table}[h]
 	\centering
 	\caption{Comparsion between truth and model predictions}
 	\label{first_model_predictions}
 	\begin{tabular}{| c | c | c | c | c |}
 		\hline
-		Completed & Price & pred completed & pred price & price error \\ 
+		Completed & Price & pred completed & pred price & price error  / \%\\ 
 		\hline
-		1 & 675000 & 1 & 600810 & 10.99 \% \\
+		1 & 675000 & 1 & 600810 & 10.99 \\
 		\hline
-		0 & 80000 & 1 & 36130 & 70.16 \% \\
+		0 & 80000 & 1 & 36130 & 70.16 \\
 		\hline
-		0 & 90000 & 1 & 53198 & 40.89 \% \\
+		0 & 90000 & 1 & 53198 & 40.89  \\
 		\hline
-		0 & 295000 & 1 & 253552 & 14.05 \% \\
+		0 & 295000 & 1 & 253552 & 14.05  \\
 		\hline
-		0 & 105000 & 1 & 105753 & 0.72 \% \\ 
+		0 & 105000 & 1 & 105753 & 0.72  \\ 
 		\hline
-		1 & 270000 & 1 & 297239 & 10.09 \% \\
+		1 & 270000 & 1 & 297239 & 10.09  \\
 		\hline
-		0 & 115000 & 1 & 124108 & 7.92 \% \\
+		0 & 115000 & 1 & 124108 & 7.92  \\
 		\hline
-		1 & 600000 & 1 & 528918 & 11.85 \% \\
+		1 & 600000 & 1 & 528918 & 11.85  \\
 		\hline
-		1 & 4000000 & 1 & 376152 & 5.96 \% \\
+		1 & 4000000 & 1 & 376152 & 5.96  \\
 		\hline
-		0 & 125000 & 1 & 157276 & 25.82 \% \\
+		0 & 125000 & 1 & 157276 & 25.82  \\
 		\hline
 	\end{tabular}
 \end{table}
