@@ -315,8 +315,15 @@ After extracting the information from HTML texts and categorical keywords, it is
 
 \section{Model Construction}
 
-\subsection{Data Preparation}
+\subsection{Development Steps}
+\subsubsection{Data Preparation}
 The datasets created during preprocessing are initially loaded. Then they are split into training and testing sets, which represent 80\% and 20\% of the total dataset, respectively. In the meantime, the datasets are also shuffled as some datasets might contain intrinsic patterns.
+
+\subsubsection{Training models}
+Due to the limited amount of training data for this project, cross validation was employed to train the model with different portions of training data. The performance was then illustrated by plotting training and validation loss against epoch, and the model with the best performance was selected for the evaluation phase based on these figures. 
+
+\subsubsection{Evaluation}
+The model performance should be evaluated on unseen data. Otherwise, it would be useless. In this project, various metrics are used to quantify the model performance, including mean absolute error (MAE), mean squared error (MSE), and coefficient of determination ($R^2$).  The lower the MAE and MSE errors, the better the performance. $R^2$ values range from 0 to 1. A model with $R^2 = 0$ means the model cannot make accurate predictions, while $R^2 = 1$ indicates that the model can precisely predict the results. In rare instances, the $R^2$ can be negative, indicating that the model does not match the trend of the data, which is the worst performance. 
 
 \subsection{Linear Regression: Predict Price}
 Prior to the construction of any neural networks, a linear regression model with a single linear layer was developed. Its input size is the same as the number of features, and the output is the price. If this model can accurately predict the price, it eliminates the need to build more complex neural networks with multiple layers, which is the motivation for its creation. To train this model, Mean squared error (MSE) is applied as prices can be any positive values. The optimizer is Adam, and the learning rate is 0.001.  
@@ -330,8 +337,6 @@ The predicted probability should be converted into 0 or 1 to indicate the status
 
 The loss function for the status of the transaction is binary cross entropy (BCE), as it has only two possible outcomes. For the same reason as the linear regression model, MSE loss is applied to prices. Therefore, the total loss for this model is the sum of the BCE and MSE. In addition, the optimizer used for training is Adam, and the learning rate is 0.001. 
 \\ 
-
-Due to the small dataset in this project, cross validation was therefore employed to train the model with different portion of training data. The performance was then displayed by plotting training and validation loss against epoch, and the model with the best performance was selected based on these figures. 
 
 \begin{figure}[h]
 	\centering
@@ -563,22 +568,54 @@ For general information, the first ten rows after preprocessing and their corres
 
 \section{Model Construction}
 \subsection{Linear Regression: Predict Price}
-The training \& validation losses of this model are shown in figure \ref{linear_regression_fold_5}
+The training \& validation losses of this model are depicted in figure \ref{linear_regression_fold_5}, and the model trained in fold two has been chosen for evaluation since it has the best performance. 
 \begin{figure*}[h]
 	\centering
-	\subfigure[Fold 1]{\includegraphics[width=5cm]{linear_regression_fold_0}\label{linear_regression_fold_0}}
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{linear_regression_fold_0}\label{linear_regression_fold_0}}
 	\hfill
-	\subfigure[Fold 2]{\includegraphics[width=5cm]{linear_regression_fold_1}\label{linear_regression_fold_1}}
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{linear_regression_fold_1}\label{linear_regression_fold_1}}
 	\hfill
-	\subfigure[Fold 3]{\includegraphics[width=5cm]{linear_regression_fold_2}\label{linear_regression_fold_2}}
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{linear_regression_fold_2}\label{linear_regression_fold_2}}
 	\hfil
-	\subfigure[Fold 4]{\includegraphics[width=5cm]{linear_regression_fold_3}\label{linear_regression_fold_3}}
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{linear_regression_fold_3}\label{linear_regression_fold_3}}
 	\hfil
-	\subfigure[Fold 5]{\includegraphics[width=5cm]{linear_regression_fold_4}\label{linear_regression_fold_4}}
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{linear_regression_fold_4}\label{linear_regression_fold_4}}
 	\caption{The training \& validation loss for different folds (linear regression model)}
 	\label{linear_regression_fold_5}
 \end{figure*}
 
+\begin{table}[h]
+	\centering
+	\caption{Comparsion between truth and model predictions}
+	\label{linear_regression_predictions}
+	\begin{tabular}{| c | c | c |}
+		\hline
+		Predicted Price & price & price error  / \%\\ 
+		\hline
+		940 & 695 & 35.37 \\
+		\hline
+		4150 & 350000 & 98.81 \\
+		\hline
+		1790 & 130000 & 98.62 \\
+		\hline
+		-2101 & 475 & 542.46 \\
+		\hline
+		1829 & 105000 & 98.25 \\
+		\hline
+		3058 & 450000 & 99.32 \\
+		\hline
+		-4289 & 460 & 1032.47 \\
+		\hline
+		855 & 325000 & 99.74 \\
+		\hline
+		3255 & 585000 & 99.44 \\
+		\hline
+		1071 & 900 & 19.10 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+The first ten predictions and the actual prices are displayed in table \ref{linear_regression_predictions}, and it is evident that there are significant differences between the predictions and the truth. Moreover, the model's metrics are as follows, $MAE = 179836$, $MSE = 66601086343$ and $R^2 = -0.9136$. These results demonstrate that a linear regression model cannot extract patterns from the dataset and that neural networks with multiple layers are compulsory.
 
 \subsection{Basic Model: Output Sale Status and Price}
 The model with best performance was selected based on the figures for training and validation losses. Then the testing data were input to the model and the output are compared with the labels. 
@@ -612,7 +649,7 @@ This error result could be caused by loss functions. The completeness is either 
 	\label{first_model_predictions}
 	\begin{tabular}{| c | c | c | c | c |}
 		\hline
-		Completed & Price & pred completed & pred price & price error  / \%\\ 
+		Completed & Price & Predicted completed & Predicted price & Price error  / \%\\ 
 		\hline
 		1 & 675000 & 1 & 600810 & 10.99 \\
 		\hline
