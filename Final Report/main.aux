@@ -70,134 +70,136 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}Implementation}{7}{chapter.31}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Data Preprocessing}{7}{section.32}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Handle Room Descriptions (HTML)}{7}{subsection.33}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Acquire room name and dimension}{7}{section*.34}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces The layout of HTML texts\relax }}{7}{figure.caption.35}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Data Source and Collection}{7}{section.32}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces The features used to train the model\relax }}{7}{table.caption.33}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{html_structure}{{3.1}{7}{The layout of HTML texts\relax }{figure.caption.35}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Flowchart for extracting room information from HTML\relax }}{8}{figure.caption.36}\protected@file@percent }
-\newlabel{html_room_info}{{3.2}{8}{Flowchart for extracting room information from HTML\relax }{figure.caption.36}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Generalize room information}{8}{section*.37}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces The UML diagram of the class (\textit  {ExtractRooms})\relax }}{8}{figure.caption.38}\protected@file@percent }
-\newlabel{uml_extract_rooms}{{3.3}{8}{The UML diagram of the class (\textit {ExtractRooms})\relax }{figure.caption.38}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Flowchart of \textit  {get\_rooms}\relax }}{9}{figure.caption.42}\protected@file@percent }
-\newlabel{extract_room_get_rooms}{{3.4}{9}{Flowchart of \textit {get\_rooms}\relax }{figure.caption.42}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Manipulate Categorical Keywords}{10}{subsection.43}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces The parking spaces in the first five properties\relax }}{10}{figure.caption.44}\protected@file@percent }
-\newlabel{parking_dataset}{{3.5}{10}{The parking spaces in the first five properties\relax }{figure.caption.44}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces The UML diagram of \textit  {GeneralizeDataset}\relax }}{10}{figure.caption.45}\protected@file@percent }
-\newlabel{uml_generalize_dataset}{{3.6}{10}{The UML diagram of \textit {GeneralizeDataset}\relax }{figure.caption.45}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Manage Outliers}{10}{subsection.47}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Flowchart of \textit  {get\_feature\_types}\relax }}{11}{figure.caption.46}\protected@file@percent }
-\newlabel{generalize_dataset_get_feature_types}{{3.7}{11}{Flowchart of \textit {get\_feature\_types}\relax }{figure.caption.46}{}}
-\newlabel{price_all_raw}{{3.8(a)}{11}{Subfigure 3 3.8(a)}{subfigure.49}{}}
-\newlabel{sub@price_all_raw}{{(a)}{11}{Subfigure 3 3.8(a)\relax }{subfigure.49}{}}
-\newlabel{price_sale_raw}{{3.8(b)}{11}{Subfigure 3 3.8(b)}{subfigure.50}{}}
-\newlabel{sub@price_sale_raw}{{(b)}{11}{Subfigure 3 3.8(b)\relax }{subfigure.50}{}}
-\newlabel{price_rental_raw}{{3.8(c)}{11}{Subfigure 3 3.8(c)}{subfigure.51}{}}
-\newlabel{sub@price_rental_raw}{{(c)}{11}{Subfigure 3 3.8(c)\relax }{subfigure.51}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces The distribution of prices from raw data\relax }}{11}{figure.caption.48}\protected@file@percent }
-\newlabel{price_raw}{{3.8}{11}{The distribution of prices from raw data\relax }{figure.caption.48}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {All Prices}}}{11}{figure.caption.48}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Sale Prices}}}{11}{figure.caption.48}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Rental Prices}}}{11}{figure.caption.48}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}Create Input Dataset}{11}{subsection.52}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Feature Encoding}{11}{section*.53}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Manage Missing Values}{11}{section*.54}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Classy Approach}{11}{section*.57}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces The features ant their percentages of missing values\relax }}{12}{table.caption.55}\protected@file@percent }
-\newlabel{feature_missing_percentage}{{3.1}{12}{The features ant their percentages of missing values\relax }{table.caption.55}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces The UML diagram of \textit  {CreateInputDataset}\relax }}{12}{figure.caption.56}\protected@file@percent }
-\newlabel{uml_create_input_dataset}{{3.9}{12}{The UML diagram of \textit {CreateInputDataset}\relax }{figure.caption.56}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Model Construction}{12}{section.59}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces The flow diagram of producing input dataset\relax }}{13}{figure.caption.58}\protected@file@percent }
-\newlabel{create_input_dataset}{{3.10}{13}{The flow diagram of producing input dataset\relax }{figure.caption.58}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Basic Model: Output Sale Status and Price}{13}{subsection.64}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces The architecture of the basic model\relax }}{14}{figure.caption.65}\protected@file@percent }
-\newlabel{basic_model_layout}{{3.11}{14}{The architecture of the basic model\relax }{figure.caption.65}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Testing \& Experimental Results}{15}{chapter.66}\protected@file@percent }
+\newlabel{model_input_features}{{3.1}{7}{The features used to train the model\relax }{table.caption.33}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Data Preprocessing}{8}{section.34}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Handle Room Descriptions (HTML)}{8}{subsection.35}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Acquire room name and dimension}{8}{section*.36}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces The layout of HTML texts\relax }}{8}{figure.caption.37}\protected@file@percent }
+\newlabel{html_structure}{{3.1}{8}{The layout of HTML texts\relax }{figure.caption.37}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Flowchart for extracting room information from HTML\relax }}{8}{figure.caption.38}\protected@file@percent }
+\newlabel{html_room_info}{{3.2}{8}{Flowchart for extracting room information from HTML\relax }{figure.caption.38}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Generalize room information}{9}{section*.39}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces The UML diagram of the class (\textit  {ExtractRooms})\relax }}{9}{figure.caption.40}\protected@file@percent }
+\newlabel{uml_extract_rooms}{{3.3}{9}{The UML diagram of the class (\textit {ExtractRooms})\relax }{figure.caption.40}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Flowchart of \textit  {get\_rooms}\relax }}{10}{figure.caption.44}\protected@file@percent }
+\newlabel{extract_room_get_rooms}{{3.4}{10}{Flowchart of \textit {get\_rooms}\relax }{figure.caption.44}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Manipulate Categorical Keywords}{10}{subsection.45}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces The parking spaces in the first five properties\relax }}{11}{figure.caption.46}\protected@file@percent }
+\newlabel{parking_dataset}{{3.5}{11}{The parking spaces in the first five properties\relax }{figure.caption.46}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces The UML diagram of \textit  {GeneralizeDataset}\relax }}{11}{figure.caption.47}\protected@file@percent }
+\newlabel{uml_generalize_dataset}{{3.6}{11}{The UML diagram of \textit {GeneralizeDataset}\relax }{figure.caption.47}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Manage Outliers}{11}{subsection.49}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Create Input Dataset}{11}{subsection.54}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Feature Encoding}{11}{section*.55}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Manage Missing Values}{11}{section*.56}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Flowchart of \textit  {get\_feature\_types}\relax }}{12}{figure.caption.48}\protected@file@percent }
+\newlabel{generalize_dataset_get_feature_types}{{3.7}{12}{Flowchart of \textit {get\_feature\_types}\relax }{figure.caption.48}{}}
+\newlabel{price_all_raw}{{3.8(a)}{12}{Subfigure 3 3.8(a)}{subfigure.51}{}}
+\newlabel{sub@price_all_raw}{{(a)}{12}{Subfigure 3 3.8(a)\relax }{subfigure.51}{}}
+\newlabel{price_sale_raw}{{3.8(b)}{12}{Subfigure 3 3.8(b)}{subfigure.52}{}}
+\newlabel{sub@price_sale_raw}{{(b)}{12}{Subfigure 3 3.8(b)\relax }{subfigure.52}{}}
+\newlabel{price_rental_raw}{{3.8(c)}{12}{Subfigure 3 3.8(c)}{subfigure.53}{}}
+\newlabel{sub@price_rental_raw}{{(c)}{12}{Subfigure 3 3.8(c)\relax }{subfigure.53}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces The distribution of prices from raw data\relax }}{12}{figure.caption.50}\protected@file@percent }
+\newlabel{price_raw}{{3.8}{12}{The distribution of prices from raw data\relax }{figure.caption.50}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {All Prices}}}{12}{figure.caption.50}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Sale Prices}}}{12}{figure.caption.50}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Rental Prices}}}{12}{figure.caption.50}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Classy Approach}{12}{section*.58}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Model Construction}{12}{section.60}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Data Preparation}{12}{subsection.61}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Basic Model: Output Sale Status and Price}{12}{subsection.62}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces The UML diagram of \textit  {CreateInputDataset}\relax }}{13}{figure.caption.57}\protected@file@percent }
+\newlabel{uml_create_input_dataset}{{3.9}{13}{The UML diagram of \textit {CreateInputDataset}\relax }{figure.caption.57}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces The flow diagram of producing input dataset\relax }}{14}{figure.caption.59}\protected@file@percent }
+\newlabel{create_input_dataset}{{3.10}{14}{The flow diagram of producing input dataset\relax }{figure.caption.59}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces The architecture of the basic model\relax }}{15}{figure.caption.63}\protected@file@percent }
+\newlabel{basic_model_layout}{{3.11}{15}{The architecture of the basic model\relax }{figure.caption.63}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Testing \& Experimental Results}{16}{chapter.64}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Data Preprocessing}{15}{section.67}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Handle Room Descriptions (HTML)}{15}{subsection.68}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Acquire room name and dimension}{15}{section*.69}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Information from HTML snippet in figure \ref  {html_room_info_test_1}\relax }}{15}{table.caption.73}\protected@file@percent }
-\newlabel{html_room_info_expect_1}{{4.1}{15}{Information from HTML snippet in figure \ref {html_room_info_test_1}\relax }{table.caption.73}{}}
-\newlabel{html_room_info_test_1}{{4.1(a)}{16}{Subfigure 4 4.1(a)}{subfigure.71}{}}
-\newlabel{sub@html_room_info_test_1}{{(a)}{16}{Subfigure 4 4.1(a)\relax }{subfigure.71}{}}
-\newlabel{html_room_info_test_2}{{4.1(b)}{16}{Subfigure 4 4.1(b)}{subfigure.72}{}}
-\newlabel{sub@html_room_info_test_2}{{(b)}{16}{Subfigure 4 4.1(b)\relax }{subfigure.72}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces The HTML snippets for testing\relax }}{16}{figure.caption.70}\protected@file@percent }
-\newlabel{html_room_info_test}{{4.1}{16}{The HTML snippets for testing\relax }{figure.caption.70}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Snippte 1}}}{16}{figure.caption.70}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Snippet 2}}}{16}{figure.caption.70}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Information from HTML snippet in figure \ref  *{html_room_info_test_2}\relax }}{16}{table.caption.74}\protected@file@percent }
-\newlabel{html_room_info_expect_2}{{4.2}{16}{Information from HTML snippet in figure \ref *{html_room_info_test_2}\relax }{table.caption.74}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Generalize room information}{16}{section*.75}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Room information (\textit  {split})\relax }}{17}{table.caption.76}\protected@file@percent }
-\newlabel{bedroom_info_split}{{4.3}{17}{Room information (\textit {split})\relax }{table.caption.76}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces Bedroom information integrated by different operations\relax }}{17}{table.caption.77}\protected@file@percent }
-\newlabel{bedroom_info_all}{{4.4}{17}{Bedroom information integrated by different operations\relax }{table.caption.77}{}}
-\newlabel{bedroom_info_mean}{{4.4(a)}{17}{Subtable 4 4.4(a)}{subtable.78}{}}
-\newlabel{sub@bedroom_info_mean}{{(a)}{17}{Subtable 4 4.4(a)\relax }{subtable.78}{}}
-\newlabel{bedroom_info_sum}{{4.4(b)}{17}{Subtable 4 4.4(b)}{subtable.79}{}}
-\newlabel{sub@bedroom_info_sum}{{(b)}{17}{Subtable 4 4.4(b)\relax }{subtable.79}{}}
-\newlabel{bedroom_info_number}{{4.4(c)}{17}{Subtable 4 4.4(c)}{subtable.80}{}}
-\newlabel{sub@bedroom_info_number}{{(c)}{17}{Subtable 4 4.4(c)\relax }{subtable.80}{}}
-\newlabel{other_room_info}{{4.4(d)}{17}{Subtable 4 4.4(d)}{subtable.81}{}}
-\newlabel{sub@other_room_info}{{(d)}{17}{Subtable 4 4.4(d)\relax }{subtable.81}{}}
-\@writefile{lot}{\contentsline {subtable}{\numberline{(a)}{\ignorespaces {Mean}}}{17}{subtable.81}\protected@file@percent }
-\@writefile{lot}{\contentsline {subtable}{\numberline{(b)}{\ignorespaces {Sum}}}{17}{subtable.81}\protected@file@percent }
-\@writefile{lot}{\contentsline {subtable}{\numberline{(c)}{\ignorespaces {Number}}}{17}{subtable.81}\protected@file@percent }
-\@writefile{lot}{\contentsline {subtable}{\numberline{(d)}{\ignorespaces {Other rooms}}}{17}{subtable.81}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Manipulate Categorical Keywords}{17}{subsection.82}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Manage Outliers}{17}{subsection.84}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.5}{\ignorespaces The keywords for each property\relax }}{18}{table.caption.83}\protected@file@percent }
-\newlabel{parking_types}{{4.5}{18}{The keywords for each property\relax }{table.caption.83}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces The distribution of prices with mean value filled\relax }}{18}{figure.caption.85}\protected@file@percent }
-\newlabel{price_filled}{{4.2}{18}{The distribution of prices with mean value filled\relax }{figure.caption.85}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.4}Create Input Dataset}{18}{subsection.89}\protected@file@percent }
-\newlabel{price_sale_remove}{{4.3(a)}{19}{Subfigure 4 4.3(a)}{subfigure.87}{}}
-\newlabel{sub@price_sale_remove}{{(a)}{19}{Subfigure 4 4.3(a)\relax }{subfigure.87}{}}
-\newlabel{price_rental_remove}{{4.3(b)}{19}{Subfigure 4 4.3(b)}{subfigure.88}{}}
-\newlabel{sub@price_rental_remove}{{(b)}{19}{Subfigure 4 4.3(b)\relax }{subfigure.88}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces The distribution of prices with zero prices removed\relax }}{19}{figure.caption.86}\protected@file@percent }
-\newlabel{price_removed}{{4.3}{19}{The distribution of prices with zero prices removed\relax }{figure.caption.86}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Sale Prices}}}{19}{figure.caption.86}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Rental Prices}}}{19}{figure.caption.86}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Model Construction}{19}{section.93}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Basic Model: Output Sale Status and Price}{19}{subsection.94}\protected@file@percent }
-\newlabel{general_raw}{{4.4(a)}{20}{Subfigure 4 4.4(a)}{subfigure.91}{}}
-\newlabel{sub@general_raw}{{(a)}{20}{Subfigure 4 4.4(a)\relax }{subfigure.91}{}}
-\newlabel{general_input}{{4.4(b)}{20}{Subfigure 4 4.4(b)}{subfigure.92}{}}
-\newlabel{sub@general_input}{{(b)}{20}{Subfigure 4 4.4(b)\relax }{subfigure.92}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Comparsion between original and preprocessed dataset\relax }}{20}{figure.caption.90}\protected@file@percent }
-\newlabel{general_info}{{4.4}{20}{Comparsion between original and preprocessed dataset\relax }{figure.caption.90}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Original dataset}}}{20}{figure.caption.90}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Preprocessed dataset}}}{20}{figure.caption.90}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.6}{\ignorespaces Comparsion between truth and model predictions\relax }}{20}{table.caption.101}\protected@file@percent }
-\newlabel{first_model_predictions}{{4.6}{20}{Comparsion between truth and model predictions\relax }{table.caption.101}{}}
-\newlabel{sale_fold_5_0}{{4.5(a)}{21}{Subfigure 4 4.5(a)}{subfigure.96}{}}
-\newlabel{sub@sale_fold_5_0}{{(a)}{21}{Subfigure 4 4.5(a)\relax }{subfigure.96}{}}
-\newlabel{sale_fold_5_1}{{4.5(b)}{21}{Subfigure 4 4.5(b)}{subfigure.97}{}}
-\newlabel{sub@sale_fold_5_1}{{(b)}{21}{Subfigure 4 4.5(b)\relax }{subfigure.97}{}}
-\newlabel{sale_fold_5_2}{{4.5(c)}{21}{Subfigure 4 4.5(c)}{subfigure.98}{}}
-\newlabel{sub@sale_fold_5_2}{{(c)}{21}{Subfigure 4 4.5(c)\relax }{subfigure.98}{}}
-\newlabel{sale_fold_5_3}{{4.5(d)}{21}{Subfigure 4 4.5(d)}{subfigure.99}{}}
-\newlabel{sub@sale_fold_5_3}{{(d)}{21}{Subfigure 4 4.5(d)\relax }{subfigure.99}{}}
-\newlabel{sale_fold_5_4}{{4.5(e)}{21}{Subfigure 4 4.5(e)}{subfigure.100}{}}
-\newlabel{sub@sale_fold_5_4}{{(e)}{21}{Subfigure 4 4.5(e)\relax }{subfigure.100}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces The training \& validation loss for different folds\relax }}{21}{figure.caption.95}\protected@file@percent }
-\newlabel{sale_fold_5}{{4.5}{21}{The training \& validation loss for different folds\relax }{figure.caption.95}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Fold 1}}}{21}{figure.caption.95}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Fold 2}}}{21}{figure.caption.95}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Fold 3}}}{21}{figure.caption.95}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Fold 4}}}{21}{figure.caption.95}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Fold 5}}}{21}{figure.caption.95}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Data Preprocessing}{16}{section.65}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Handle Room Descriptions (HTML)}{16}{subsection.66}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Acquire room name and dimension}{16}{section*.67}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Information from HTML snippet in figure \ref  {html_room_info_test_1}\relax }}{16}{table.caption.71}\protected@file@percent }
+\newlabel{html_room_info_expect_1}{{4.1}{16}{Information from HTML snippet in figure \ref {html_room_info_test_1}\relax }{table.caption.71}{}}
+\newlabel{html_room_info_test_1}{{4.1(a)}{17}{Subfigure 4 4.1(a)}{subfigure.69}{}}
+\newlabel{sub@html_room_info_test_1}{{(a)}{17}{Subfigure 4 4.1(a)\relax }{subfigure.69}{}}
+\newlabel{html_room_info_test_2}{{4.1(b)}{17}{Subfigure 4 4.1(b)}{subfigure.70}{}}
+\newlabel{sub@html_room_info_test_2}{{(b)}{17}{Subfigure 4 4.1(b)\relax }{subfigure.70}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces The HTML snippets for testing\relax }}{17}{figure.caption.68}\protected@file@percent }
+\newlabel{html_room_info_test}{{4.1}{17}{The HTML snippets for testing\relax }{figure.caption.68}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Snippte 1}}}{17}{figure.caption.68}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Snippet 2}}}{17}{figure.caption.68}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Information from HTML snippet in figure \ref  *{html_room_info_test_2}\relax }}{17}{table.caption.72}\protected@file@percent }
+\newlabel{html_room_info_expect_2}{{4.2}{17}{Information from HTML snippet in figure \ref *{html_room_info_test_2}\relax }{table.caption.72}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Generalize room information}{17}{section*.73}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Room information (\textit  {split})\relax }}{18}{table.caption.74}\protected@file@percent }
+\newlabel{bedroom_info_split}{{4.3}{18}{Room information (\textit {split})\relax }{table.caption.74}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces Bedroom information integrated by different operations\relax }}{18}{table.caption.75}\protected@file@percent }
+\newlabel{bedroom_info_all}{{4.4}{18}{Bedroom information integrated by different operations\relax }{table.caption.75}{}}
+\newlabel{bedroom_info_mean}{{4.4(a)}{18}{Subtable 4 4.4(a)}{subtable.76}{}}
+\newlabel{sub@bedroom_info_mean}{{(a)}{18}{Subtable 4 4.4(a)\relax }{subtable.76}{}}
+\newlabel{bedroom_info_sum}{{4.4(b)}{18}{Subtable 4 4.4(b)}{subtable.77}{}}
+\newlabel{sub@bedroom_info_sum}{{(b)}{18}{Subtable 4 4.4(b)\relax }{subtable.77}{}}
+\newlabel{bedroom_info_number}{{4.4(c)}{18}{Subtable 4 4.4(c)}{subtable.78}{}}
+\newlabel{sub@bedroom_info_number}{{(c)}{18}{Subtable 4 4.4(c)\relax }{subtable.78}{}}
+\newlabel{other_room_info}{{4.4(d)}{18}{Subtable 4 4.4(d)}{subtable.79}{}}
+\newlabel{sub@other_room_info}{{(d)}{18}{Subtable 4 4.4(d)\relax }{subtable.79}{}}
+\@writefile{lot}{\contentsline {subtable}{\numberline{(a)}{\ignorespaces {Mean}}}{18}{subtable.79}\protected@file@percent }
+\@writefile{lot}{\contentsline {subtable}{\numberline{(b)}{\ignorespaces {Sum}}}{18}{subtable.79}\protected@file@percent }
+\@writefile{lot}{\contentsline {subtable}{\numberline{(c)}{\ignorespaces {Number}}}{18}{subtable.79}\protected@file@percent }
+\@writefile{lot}{\contentsline {subtable}{\numberline{(d)}{\ignorespaces {Other rooms}}}{18}{subtable.79}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Manipulate Categorical Keywords}{18}{subsection.80}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Manage Outliers}{18}{subsection.82}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.5}{\ignorespaces The keywords for each property\relax }}{19}{table.caption.81}\protected@file@percent }
+\newlabel{parking_types}{{4.5}{19}{The keywords for each property\relax }{table.caption.81}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces The distribution of prices with mean value filled\relax }}{19}{figure.caption.83}\protected@file@percent }
+\newlabel{price_filled}{{4.2}{19}{The distribution of prices with mean value filled\relax }{figure.caption.83}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.4}Create Input Dataset}{19}{subsection.87}\protected@file@percent }
+\newlabel{price_sale_remove}{{4.3(a)}{20}{Subfigure 4 4.3(a)}{subfigure.85}{}}
+\newlabel{sub@price_sale_remove}{{(a)}{20}{Subfigure 4 4.3(a)\relax }{subfigure.85}{}}
+\newlabel{price_rental_remove}{{4.3(b)}{20}{Subfigure 4 4.3(b)}{subfigure.86}{}}
+\newlabel{sub@price_rental_remove}{{(b)}{20}{Subfigure 4 4.3(b)\relax }{subfigure.86}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces The distribution of prices with zero prices removed\relax }}{20}{figure.caption.84}\protected@file@percent }
+\newlabel{price_removed}{{4.3}{20}{The distribution of prices with zero prices removed\relax }{figure.caption.84}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Sale Prices}}}{20}{figure.caption.84}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Rental Prices}}}{20}{figure.caption.84}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Model Construction}{20}{section.91}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Basic Model: Output Sale Status and Price}{20}{subsection.92}\protected@file@percent }
+\newlabel{general_raw}{{4.4(a)}{21}{Subfigure 4 4.4(a)}{subfigure.89}{}}
+\newlabel{sub@general_raw}{{(a)}{21}{Subfigure 4 4.4(a)\relax }{subfigure.89}{}}
+\newlabel{general_input}{{4.4(b)}{21}{Subfigure 4 4.4(b)}{subfigure.90}{}}
+\newlabel{sub@general_input}{{(b)}{21}{Subfigure 4 4.4(b)\relax }{subfigure.90}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Comparsion between original and preprocessed dataset\relax }}{21}{figure.caption.88}\protected@file@percent }
+\newlabel{general_info}{{4.4}{21}{Comparsion between original and preprocessed dataset\relax }{figure.caption.88}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Original dataset}}}{21}{figure.caption.88}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Preprocessed dataset}}}{21}{figure.caption.88}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.6}{\ignorespaces Comparsion between truth and model predictions\relax }}{21}{table.caption.99}\protected@file@percent }
+\newlabel{first_model_predictions}{{4.6}{21}{Comparsion between truth and model predictions\relax }{table.caption.99}{}}
+\newlabel{sale_fold_5_0}{{4.5(a)}{22}{Subfigure 4 4.5(a)}{subfigure.94}{}}
+\newlabel{sub@sale_fold_5_0}{{(a)}{22}{Subfigure 4 4.5(a)\relax }{subfigure.94}{}}
+\newlabel{sale_fold_5_1}{{4.5(b)}{22}{Subfigure 4 4.5(b)}{subfigure.95}{}}
+\newlabel{sub@sale_fold_5_1}{{(b)}{22}{Subfigure 4 4.5(b)\relax }{subfigure.95}{}}
+\newlabel{sale_fold_5_2}{{4.5(c)}{22}{Subfigure 4 4.5(c)}{subfigure.96}{}}
+\newlabel{sub@sale_fold_5_2}{{(c)}{22}{Subfigure 4 4.5(c)\relax }{subfigure.96}{}}
+\newlabel{sale_fold_5_3}{{4.5(d)}{22}{Subfigure 4 4.5(d)}{subfigure.97}{}}
+\newlabel{sub@sale_fold_5_3}{{(d)}{22}{Subfigure 4 4.5(d)\relax }{subfigure.97}{}}
+\newlabel{sale_fold_5_4}{{4.5(e)}{22}{Subfigure 4 4.5(e)}{subfigure.98}{}}
+\newlabel{sub@sale_fold_5_4}{{(e)}{22}{Subfigure 4 4.5(e)\relax }{subfigure.98}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces The training \& validation loss for different folds\relax }}{22}{figure.caption.93}\protected@file@percent }
+\newlabel{sale_fold_5}{{4.5}{22}{The training \& validation loss for different folds\relax }{figure.caption.93}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Fold 1}}}{22}{figure.caption.93}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Fold 2}}}{22}{figure.caption.93}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Fold 3}}}{22}{figure.caption.93}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Fold 4}}}{22}{figure.caption.93}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Fold 5}}}{22}{figure.caption.93}\protected@file@percent }
 \bibstyle{apalike}
 \bibdata{proposal}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion}{22}{chapter.102}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion}{23}{chapter.100}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibcite{RN4}{{1}{2017}{{Fandango}}{{}}}
@@ -208,4 +210,4 @@
 \bibcite{RN15}{{6}{2018}{{Shukla and Fricklas}}{{}}}
 \bibcite{RN14}{{7}{2007}{{Stubblebine}}{{}}}
 \bibcite{RN16}{{8}{2021}{{Waskom}}{{}}}
-\gdef \@abspage@last{30}
+\gdef \@abspage@last{31}

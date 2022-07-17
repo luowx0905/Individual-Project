@@ -154,11 +154,49 @@ In this project, data visualization would be beneficial during preprocessing dat
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Implementation}
+\section{Data Source and Collection}
+The datasets used in this project are provided by EweMove, and transactions from 2018 to 2022 are included. There are 34591 records with 36 parameters describing each property after merging these datasets. Some parameters, such as postcodes, and room information, are independent variables that would be the model input. In contrast, the price and status of the transaction are dependent variables that serve as labels of supervised learning. The features that are used to train the model are listed in table \ref{model_input_features}. 
+
+\begin{table}[h]
+	\centering
+	\caption{The features used to train the model}
+	\label{model_input_features}
+	\begin{tabular}{| l | l | l |}
+		\hline
+		\textbf{Feature} & \textbf{Description} & \textbf{Type} \\
+		\hline
+		Postcode & The location of the property & Categorical \\
+		\hline
+		Sale or Let & Whether the property is for sale or rent & Categorical \\
+		\hline
+		EweMove Description S3 Rooms & The room names and dimensions & HTML texts\\
+		\hline
+		RTD3308\_outside\_space & Keywords describing outside spaces & Categorical \\ 
+		\hline
+		RTD3307\_parking& Keywords describing parking & Categorical \\
+		\hline
+		RTD3316\_condition & The condition of the property & Categorical \\
+		\hline
+		RTD3318\_heating & Keywords describing heating & Categorical \\
+		\hline
+		RTD3317\_accessibility & Keywords describing accessibility & Categorical \\
+		\hline
+		Price / Rent & The price of the property & HTML texts \\
+		\hline
+		Price Qualifier & & Categorical \\
+		\hline
+		DESC Council Tax Band & Type of the council tax & Categorical \\
+		\hline
+		\# of Enquiry or viewings & Number of viewing inqueries & Numerical \\
+		\hline
+		\# of Apps/Offers & Number of offers & Numerical \\
+		\hline
+	\end{tabular}
+\end{table}
+
 \section{Data Preprocessing}
-The data that was retrieved for this project originated from two different sources: a raw dataset and online APIs. 
 
 \subsection{Handle Room Descriptions (HTML)}
-
 \subsubsection{Acquire room name and dimension}
 The structure of the HTML texts containing the room information in a property is shown in figure \ref{html_structure}. The rooms are separated by tag \textit{$<$li$>$}, and the room name and its dimension is denoted by \textit{$<$strong$>$} and \textit{$<$i$>$} tags, respectively. Therefore, a function (\textit{\textbf{EweMove\_Description\_S3\_Rooms}}) was implemented to split the HTML texts by utilizing \textit{Beautiful soup}, and its flowchart is shown in figure \ref{html_room_info}.
 \begin{figure}[h]
@@ -253,40 +291,10 @@ The price is crucial to the project, and the distribution of the raw data was in
 \subsection{Create Input Dataset}
 
 \subsubsection{Feature Encoding}
-This technique is applicable to multiple features in the dataset, including price qualifier, council tax band, and property condition. The label encoding was employed, which is capable of converting the feature into numeric values between 0 and N - 1, where N is the number of distinct classes in a column.
+This technique is applicable to categorical features in the dataset, including price qualifier, council tax band, and property condition. The label encoding was employed, which is capable of converting the feature into numeric values between 0 and N - 1, where N is the number of distinct classes in a column.
 
 \subsubsection{Manage Missing Values}
-The features used to train the model and their percentages of missing values are shown in table \ref{feature_missing_percentage} (the percentages of categorical keywords are not included in this table as the missing values indicate they are not available). It is evident that there are considerable amount of missing data, and they should be removed to ensure the performance of the model.
-\begin{table}[h]
-	\centering
-	\caption{The features ant their percentages of missing values}
-	\begin{tabular}{| c | c |}
-		\hline
-		Feature & Missing percentage / \% \\
-		\hline
-		Postcode & 0 \\ 
-		\hline
-		Completed & 40.64 \\
-		\hline
-		Sale or Let & 0 \\ 
-		\hline
-		Room Description & 8.25 \\
-		\hline
-		Condition & 37.90 \\ 
-		\hline
-		Price / Rent & 0 \\
-		\hline
-		Price Qualifier & 31.46 \\
-		\hline
-		Council Tax band & 39.95 \\ 
-		\hline
-		Enquiry of Viewings & 0 \\ 
-		\hline
-		Apps/Offers & 0 \\
-		 \hline
-	\end{tabular}
-	\label{feature_missing_percentage}
-\end{table}
+The datasets used in this project contain a significant number of missing values. For example, approximately 30\% of the room layout and more than 40\% of the council tax band are missing. Under this situation, it is impossible to replace them with the mean value  since it causes the model to focus on the average and result in low performance. Therefore, another approach was applied, which was removing the missing values in the datasets. 
 
 \begin{figure}[h]
 	\centering
@@ -306,20 +314,19 @@ After extracting the information from HTML texts and categorical keywords, it is
 \end{figure}
 
 \section{Model Construction}
-The information in the dataset used to train the model is as follows. 
-\begin{enumerate}
-	\item \textbf{General information}: postcode, sale or let, price qualifier council tax band, property condition, number of enquiries or viewings, and number of offers.
-	\item \textbf{Property layouts}: the number of bedrooms, kitchens, bathrooms, reception rooms, dining rooms, and other rooms.
-	\item \textbf{Categorical features}: parking spaces, outside areas, accessibility, and heating.
-	\item \textbf{Labels}: Property is sold or rented and prices.
-\end{enumerate}
+
+\subsection{Data Preparation}
+The datasets created during preprocessing are initially loaded. Then they are split into training and testing sets, which represent 80\% and 20\% of the total dataset, respectively. In the meantime, the datasets are also shuffled as some datasets might contain intrinsic patterns.
 
 \subsection{Basic Model: Output Sale Status and Price}
-The datasets produced by CreateInputDataset were initially loaded, and data standardization was applied so that all the data were on the same scale. The dataset was then shuffled to eliminate the possibility that  it contains intrinsic patterns. Next, both features and labels are divided into two parts, one for training and the other for validation.
+The architecture of this model only consists of linear layers and activation functions, as depicted in figure \ref{basic_model_layout}. There are two outputs of the model, which are prices and probabilities of selling. Therefore, the activation functions of the output layers are ReLU and sigmoid, respectively.
 \\
 
-The architecture of the first model developed in this project only consists of linear layers and activation functions, as depicted in figure \ref{basic_model_layout}. There are two outputs of the model, which are prices and probabilities of selling. Therefore, the activation functions of the output layers are ReLU and sigmoid, respectively.
+The predicted probability should be converted into 0 or 1 to indicate the status of the transaction, given that it is either completed or not in the datasets. Therefore, a threshold of 0.5 is established. If the probability exceeds the threshold, then it is converted to 1. Otherwise, it is set to 0.
 \\
+
+The loss function for the status of the transaction is binary cross entropy (BCE), as it has only two possible outcomes. Mean squared error (MSE) is applied for prices as it can be any positive value. Therefore, the total loss for the model is the sum of the BCE and MSE. In addition, the optimizer used for training is Adam, and the learning rate is 0.001. 
+\\ 
 
 Due to the small dataset in this project, cross validation was therefore employed to train the model with different portion of training data. The performance was then displayed by plotting training and validation loss against epoch, and the model with the best performance was selected based on these figures. 
 
