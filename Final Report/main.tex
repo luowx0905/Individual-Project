@@ -318,6 +318,9 @@ After extracting the information from HTML texts and categorical keywords, it is
 \subsection{Data Preparation}
 The datasets created during preprocessing are initially loaded. Then they are split into training and testing sets, which represent 80\% and 20\% of the total dataset, respectively. In the meantime, the datasets are also shuffled as some datasets might contain intrinsic patterns.
 
+\subsection{Linear Regression: Predict Price}
+Prior to the construction of any neural networks, a linear regression model with a single linear layer was developed. Its input size is the same as the number of features, and the output is the price. If this model can accurately predict the price, it eliminates the need to build more complex neural networks with multiple layers, which is the motivation for its creation. To train this model, Mean squared error (MSE) is applied as prices can be any positive values. The optimizer is Adam, and the learning rate is 0.001.  
+
 \subsection{Basic Model: Output Sale Status and Price}
 The architecture of this model only consists of linear layers and activation functions, as depicted in figure \ref{basic_model_layout}. There are two outputs of the model, which are prices and probabilities of selling. Therefore, the activation functions of the output layers are ReLU and sigmoid, respectively.
 \\
@@ -325,7 +328,7 @@ The architecture of this model only consists of linear layers and activation fun
 The predicted probability should be converted into 0 or 1 to indicate the status of the transaction, given that it is either completed or not in the datasets. Therefore, a threshold of 0.5 is established. If the probability exceeds the threshold, then it is converted to 1. Otherwise, it is set to 0.
 \\
 
-The loss function for the status of the transaction is binary cross entropy (BCE), as it has only two possible outcomes. Mean squared error (MSE) is applied for prices as it can be any positive value. Therefore, the total loss for the model is the sum of the BCE and MSE. In addition, the optimizer used for training is Adam, and the learning rate is 0.001. 
+The loss function for the status of the transaction is binary cross entropy (BCE), as it has only two possible outcomes. For the same reason as the linear regression model, MSE loss is applied to prices. Therefore, the total loss for this model is the sum of the BCE and MSE. In addition, the optimizer used for training is Adam, and the learning rate is 0.001. 
 \\ 
 
 Due to the small dataset in this project, cross validation was therefore employed to train the model with different portion of training data. The performance was then displayed by plotting training and validation loss against epoch, and the model with the best performance was selected based on these figures. 
@@ -559,6 +562,24 @@ For general information, the first ten rows after preprocessing and their corres
 \end{figure*}
 
 \section{Model Construction}
+\subsection{Linear Regression: Predict Price}
+The training \& validation losses of this model are shown in figure \ref{linear_regression_fold_5}
+\begin{figure*}[h]
+	\centering
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{linear_regression_fold_0}\label{linear_regression_fold_0}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{linear_regression_fold_1}\label{linear_regression_fold_1}}
+	\hfill
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{linear_regression_fold_2}\label{linear_regression_fold_2}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{linear_regression_fold_3}\label{linear_regression_fold_3}}
+	\hfil
+	\subfigure[Fold 5]{\includegraphics[width=5cm]{linear_regression_fold_4}\label{linear_regression_fold_4}}
+	\caption{The training \& validation loss for different folds (linear regression model)}
+	\label{linear_regression_fold_5}
+\end{figure*}
+
+
 \subsection{Basic Model: Output Sale Status and Price}
 The model with best performance was selected based on the figures for training and validation losses. Then the testing data were input to the model and the output are compared with the labels. 
 \\
