@@ -3,10 +3,12 @@ import torch
 from torch import nn
 from torch import optim
 from torch.utils.data import DataLoader, WeightedRandomSampler
+from torch.optim.lr_scheduler import LambdaLR
 
 from torch_snippets import Report
 from sklearn.model_selection import KFold
 from matplotlib import pyplot as plt
+from copy import deepcopy
 
 
 class TrainValidate:
@@ -20,6 +22,7 @@ class TrainValidate:
             self.device = "cuda"
         elif torch.has_mps:
             self.device = "mps"
+        self.model.to(self.device)
 
         self.train_loader = None
         self.val_loader = None
@@ -110,6 +113,66 @@ class TrainValidate:
     def save_model(self, filename="model.pth"):
         torch.save(self.model, filename)
 
+    @staticmethod
+    def make_lr_fn(start_lr: float, end_lr: float, num: int, mode: str = "exp"):
+        if mode.lower() == "linear":
+            factor = (end_lr / start_lr - 1) / num
+            def lr_fn(iter):
+                return 1 + iter * factor
+        else:
+            factor = (np.log(end_lr) - np.log(start_lr)) / num
+            def lr_fn(iter):
+                return np.exp(factor) ** iter
+        return lr_fn
+
+    def test_lr_range(self, data_loader, end, num=100, mode="exp", alpha=0.05):
+        previous_state = {"model": deepcopy(self.model.state_dict()),
+                          "optimizer": deepcopy(self.optimizer.state_dict())}
+
+        start = self.optimizer.state_dict()["param_groups"][0]["lr"]
+        lr_fn = TrainValidate.make_lr_fn(start, end, num, mode)
+        scheduler = LambdaLR(self.optimizer, lr_lambda=lr_fn)
+        result = {"loss": [], "lr": []}
+        iteration = 0
+
+        while iteration < num:
+            for x, y in data_loader:
+                x = x.to(self.device)
+                y = y.to(self.device)
+
+                yhat = self.model(x)
+                loss = self.loss_fn(yhat, y)
+                loss.backward()
+
+                result["lr"].append(scheduler.get_last_lr()[0])
+                if iteration == 0:
+                    result["loss"].append(loss.item())
+                else:
+                    # Exponentially weighted moving average
+                    previous_loss = result["loss"][-1]
+                    result["loss"].append(alpha * loss.item() + (1 - alpha) * previous_loss)
+
+                iteration += 1
+                if iteration == num:
+                    break
+
+                self.optimizer.step()
+                scheduler.step()
+                self.optimizer.zero_grad()
+
+        self.model.load_state_dict(previous_state["model"])
+        self.optimizer.load_state_dict(previous_state["optimizer"])
+
+        fig = plt.figure(figsize=(5, 5))
+        plt.plot(result["lr"], result["loss"])
+        plt.xlabel("Learning rate")
+        plt.ylabel("Loss")
+        if mode.lower() == "exp":
+            plt.xscale("log")
+        plt.tight_layout()
+
+        return result, fig
+
 
 def create_weighted_sampler(data: np.array) -> WeightedRandomSampler:
     sale_rent = torch.tensor(data)
@@ -131,3 +194,11 @@ def create_weighted_sampler(data: np.array) -> WeightedRandomSampler:
                                     replacement=True)
 
     return sampler
+
+
+if __name__ == '__main__':
+    start = 0.01
+    end = 0.1
+    num = 10
+    lr_fn = TrainValidate.make_lr_fn(start, end, num, mode="exp")
+    print((start * lr_fn(np.arange(num + 1))))

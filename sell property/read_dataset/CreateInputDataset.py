@@ -202,15 +202,24 @@ class CreateInputDataset:
 
 if __name__ == '__main__':
     #filename = "../datasets/PropertyData_wDesc.csv"
-    filename = "../datasets/H1 2020.csv"
+    filename = "../datasets/PropertyData_wDesc.csv"
     data = pd.read_csv(filename, encoding="ISO8859-1")
 
-    #creation = CreateInputDataset(data)
+    creation = CreateInputDataset(data)
+    general = creation.get_general_dataset()
+    room = creation.get_room_dataset()
+    categorical = creation.get_categorical_dataset()
+    label = creation.get_labels()
+
+    general.to_csv("../datasets/final_sub_general.csv", index=False)
+    room.to_csv("../datasets/final_sub_room.csv", index=False)
+    categorical.to_csv("../datasets/final_sub_categorical.csv", index=False)
+    label.to_csv("../datasets/final_sub_label.csv", index=False)
 
     folder = "../datasets"
-    paths = [os.path.join(folder, path) for path in os.listdir(folder) if "final" not in path]
-    features, labels, sources = CreateInputDataset.create_dataset(*paths)
-    features.to_csv("../datasets/final_features_removed.csv", index=False)
-    labels.to_csv("../datasets/final_labels_removed.csv", index=False)
-    sources.to_csv("../datasets/final_sources_removed.csv", index=False)
+    #paths = [os.path.join(folder, path) for path in os.listdir(folder) if "final" not in path]
+    #features, labels, sources = CreateInputDataset.create_dataset(*paths)
+    #features.to_csv("../datasets/sub_features_removed.csv", index=False)
+    #labels.to_csv("../datasets/sub_labels_removed.csv", index=False)
+    #sources.to_csv("../datasets/sub_sources_removed.csv", index=False)
 
