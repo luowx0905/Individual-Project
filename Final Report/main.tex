@@ -326,9 +326,11 @@ Due to the limited amount of training data for this project, cross validation wa
 The model performance should be evaluated on unseen data. Otherwise, it would be useless. In this project, various metrics are used to quantify the model performance, including mean absolute error (MAE), mean squared error (MSE), and coefficient of determination ($R^2$).  The lower the MAE and MSE errors, the better the performance. $R^2$ values range from 0 to 1. A model with $R^2 = 0$ means the model cannot make accurate predictions, while $R^2 = 1$ indicates that the model can precisely predict the results. In rare instances, the $R^2$ can be negative, indicating that the model does not match the trend of the data, which is the worst performance. 
 
 \subsection{Linear Regression: Predict Price}
+\label{linear_regression_model_construction}
 Prior to the construction of any neural networks, a linear regression model with a single linear layer was developed. Its input size is the same as the number of features, and the output is the price. If this model can accurately predict the price, it eliminates the need to build more complex neural networks with multiple layers, which is the motivation for its creation. To train this model, Mean squared error (MSE) is applied as prices can be any positive values. The optimizer is Adam, and the learning rate is 0.001.  
 
 \subsection{Basic Model: Output Sale Status and Price}
+\label{basic_model_price_status_construction}
 The architecture of this model only consists of linear layers and activation functions, as depicted in figure \ref{basic_model_layout}. There are two outputs of the model, which are prices and probabilities of selling. Therefore, the activation functions of the output layers are ReLU and sigmoid, respectively.
 \\
 
@@ -345,6 +347,16 @@ The loss function for the status of the transaction is binary cross entropy (BCE
 	\label{basic_model_layout}
 \end{figure}
 
+\subsection{Basic Model: Predicting Prices}
+\label{basic_model_price_all}
+The structure of this model is demonstrated in figure \ref{basic_model_price}. Its hidden layers are identical to the model for predicting completeness and prices, whereas the completeness output is removed. Due to this similarity, the optimizer and learning rate remain unchanged, and the loss function is MSE instead of the sum of BCE and MSE. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{basic_model_price}
+	\caption{The structure of the basic model for predicting prices}
+	\label{basic_model_price}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Testing \& Experimental Results}
@@ -586,7 +598,7 @@ The training \& validation losses of this model are depicted in figure \ref{line
 
 \begin{table}[h]
 	\centering
-	\caption{Comparsion between truth and model predictions}
+	\caption{Comparison between truth and model predictions}
 	\label{linear_regression_predictions}
 	\begin{tabular}{| c | c | c |}
 		\hline
@@ -618,9 +630,6 @@ The training \& validation losses of this model are depicted in figure \ref{line
 The first ten predictions and the actual prices are displayed in table \ref{linear_regression_predictions}, and it is evident that there are significant differences between the predictions and the truth. Moreover, the model's metrics are as follows, $MAE = 179836$, $MSE = 66601086343$ and $R^2 = -0.9136$. These results demonstrate that a linear regression model cannot extract patterns from the dataset and that neural networks with multiple layers are compulsory.
 
 \subsection{Basic Model: Output Sale Status and Price}
-The model with best performance was selected based on the figures for training and validation losses. Then the testing data were input to the model and the output are compared with the labels. 
-\\
-
 The training and validation losses against epochs for each fold is displayed in figure \ref{sale_fold_5}. For fold zero, the model was overfitting as the training loss was approximately the same after 60 epochs, whereas the validation loss was increasing. If the training stops elrly, then the performance of this model might be the best. For fold one, the model is underfitting as the validation loss keeps decreasing and its performance might be better if it was trained for more epochs. For the next two folds, the performance of the models are the best and should be selected for testing. The model trained from last fold did not learn anything since both training and validation loss is osciliating. 
 \\
 
@@ -639,13 +648,26 @@ The training and validation losses against epochs for each fold is displayed in 
 	\label{sale_fold_5}
 \end{figure*}
 
-Based on the performance plot, the model trained in fold 3 was selected. The first ten predictions and true values are shown in table \ref{first_model_predictions}. It is evident that the model only predict one for completeness regardless of the truth values, whereas the predicted prices were better and the average error for the whole testing test is 26\%.  
+Based on the performance plot, the model trained in fold 3 was selected. The first ten predictions and true values are shown in table \ref{first_model_predictions}. It is evident that the model only predict one for completeness regardless of the truth values, whereas the predicted prices were better.  
 \\
 
-This error result could be caused by loss functions. The completeness is either zero or one, hence the binary cross entroty (BCE) loss was used. For the prices which is greater than zero, the mean squared error (MSE) loss was applied. As the model outputs both completeness and prices, the BCS and MSE loss were added to produce a total loss which was then used for backpropagation. However, the BCE loss is small compared with MSE loss. Therefore, the total loss resulted in the model learning more in predicting prices and completeness was ignored. Additionally, another reason causing the wrong predictions on completness was that the price is not input into the model and it is one of the most important factors in real-life transactions. 
+The metrics for price prediction are as follows, $MAE = 57527$, $MSE = 7559964776$ and $R^2 = 0.54$. Comparing this model to the linear regression model demonstrates that the neural network is able to extract patterns from the dataset, resulting in superior performance. 
+\\
+
+Figure \ref{confusion_matrix_basic_model} illustrates the confusion matrix of predicting completeness, from which the accuracy, precision, recall, and F1 score are calculated to be 0.638, 0.638, 1, and 0.78, respectively. 
+\\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=10cm]{confusion_matrix_basic_model}
+	\caption{The confusion matrix of the basic model}
+	\label{confusion_matrix_basic_model}
+\end{figure}
+
+The error result could be caused by loss functions. The completeness is either zero or one, hence the BCE loss was used. For the prices which is greater than zero, the MSE loss was applied. As the model outputs both completeness and prices, the BCE and MSE loss were added to produce a total loss which was then used for backpropagation. However, the BCE loss is small compared with MSE loss. Therefore, the total loss resulted in the model learning more in predicting prices and completeness was ignored. Additionally, another reason causing the wrong predictions on completness was that the price is not input into the model and it is one of the most important factors in real-life transactions. 
 \begin{table}[h]
 	\centering
-	\caption{Comparsion between truth and model predictions}
+	\caption{Comparison between truth and model predictions}
 	\label{first_model_predictions}
 	\begin{tabular}{| c | c | c | c | c |}
 		\hline
@@ -673,6 +695,59 @@ This error result could be caused by loss functions. The completeness is either 
 		\hline
 	\end{tabular}
 \end{table}
+
+\subsection{Basic Model: Predicting Prices}
+The training \& validation losses of this model is displayed in figure \ref{all_full_epoch_1000}, and the model from fold one was selected for the evaluation because of its performance. 
+\\
+
+The first ten predictions are shown in table \ref{first_model_predictions}, and the metrics of this model are as follows, $MAE = 36538$, $MSE = 4918700785$, and $R^2 = 0.85$. 
+
+\begin{figure*}[h]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{all_full_epoch_1000_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{all_full_epoch_1000_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{all_full_epoch_1000_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{all_full_epoch_1000_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{all_full_epoch_1000_fold_4}}
+	\caption{Training \& validation loss (Model for predicting prices)}
+	\label{all_full_epoch_1000}
+\end{figure*}
+
+\begin{table}[h]
+	\centering
+	\caption{Comparison between the true prices and predicted proces}
+	\label{basic_model_prediction_price}
+	\begin{tabular}{| c | c | c |}
+		\hline
+		True Price & Predicted Price & Price Error \% \\
+		\hline
+		0 & 695 & 100 \\
+		\hline
+		593571 & 350000 & 69.59 \\
+		\hline
+		177140 & 130000 & 36.26 \\
+		\hline
+		0 & 475 & 100 \\
+		\hline
+		156217 & 105000 & 48.77 \\
+		\hline
+		509198 & 450000 & 13.15 \\
+		\hline
+		0 & 460 & 100 \\ 
+		\hline
+		389259 & 325000 & 19.77 \\
+		\hline
+		571157 & 585000 & 2.36 \\
+		\hline
+		0 & 900 & 100 \\
+		\hline
+	\end{tabular}
+\end{table}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion}

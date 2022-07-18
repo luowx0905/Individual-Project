@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  17 JUL 2022 23:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  18 JUL 2022 18:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -551,7 +551,7 @@ LaTeX Info: Redefining \nameref on input line 24.
 \openout3 = `main.out'.
 
  (./titlepage.tex
-<./figures/imperial.pdf, id=184, 362.35374pt x 95.35625pt>
+<./figures/imperial.pdf, id=192, 362.35374pt x 95.35625pt>
 File: ./figures/imperial.pdf Graphic file (type pdf)
 <use ./figures/imperial.pdf>
 Package pdftex.def Info: ./figures/imperial.pdf  used on input line 11.
@@ -634,7 +634,7 @@ Overfull \hbox (34.31932pt too wide) in paragraph at lines 164--195
  [][] 
  []
 
-<./figures//html_structure.png, id=330, 598.235pt x 216.81pt>
+<./figures//html_structure.png, id=340, 598.235pt x 216.81pt>
 File: ./figures//html_structure.png Graphic file (type png)
 <use ./figures//html_structure.png>
 Package pdftex.def Info: ./figures//html_structure.png  used on input line 204.
@@ -646,7 +646,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [7
 
 ]
-<./figures//html_room_info.png, id=337, 924.45375pt x 259.97125pt>
+<./figures//html_room_info.png, id=347, 924.45375pt x 259.97125pt>
 File: ./figures//html_room_info.png Graphic file (type png)
 <use ./figures//html_room_info.png>
 Package pdftex.def Info: ./figures//html_room_info.png  used on input line 211.
@@ -667,7 +667,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 223--225
 
  []
 
-<./figures//uml_extract_rooms.png, id=349, 358.33875pt x 173.64874pt>
+<./figures//uml_extract_rooms.png, id=359, 358.33875pt x 173.64874pt>
 File: ./figures//uml_extract_rooms.png Graphic file (type png)
 <use ./figures//uml_extract_rooms.png>
 Package pdftex.def Info: ./figures//uml_extract_rooms.png  used on input line 2
@@ -678,7 +678,7 @@ LaTeX Font Info:    Trying to load font information for TS1+bch on input line 2
 (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1bch.fd
 File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
 )
-<./figures//extract_room_get_rooms.png, id=351, 207.77625pt x 523.9575pt>
+<./figures//extract_room_get_rooms.png, id=361, 207.77625pt x 523.9575pt>
 File: ./figures//extract_room_get_rooms.png Graphic file (type png)
 <use ./figures//extract_room_get_rooms.png>
 Package pdftex.def Info: ./figures//extract_room_get_rooms.png  used on input l
@@ -689,7 +689,7 @@ ine 244.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [9 <./figures//uml_extract_rooms.png>]
-<./figures//parking_dataset.png, id=364, 758.835pt x 338.26375pt>
+<./figures//parking_dataset.png, id=374, 758.835pt x 338.26375pt>
 File: ./figures//parking_dataset.png Graphic file (type png)
 <use ./figures//parking_dataset.png>
 Package pdftex.def Info: ./figures//parking_dataset.png  used on input line 257
@@ -699,7 +699,7 @@ Package pdftex.def Info: ./figures//parking_dataset.png  used on input line 257
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figures//uml_generalize_dataset.png, id=367, 201.75375pt x 121.45375pt>
+<./figures//uml_generalize_dataset.png, id=377, 201.75375pt x 121.45375pt>
 File: ./figures//uml_generalize_dataset.png Graphic file (type png)
 <use ./figures//uml_generalize_dataset.png>
 Package pdftex.def Info: ./figures//uml_generalize_dataset.png  used on input l
@@ -708,7 +708,7 @@ ine 265.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figures//generalize_dataset_get_feature_types.png, id=368, 844.15375pt x 171
+<./figures//generalize_dataset_get_feature_types.png, id=378, 844.15375pt x 171
 .64125pt>
 File: ./figures//generalize_dataset_get_feature_types.png Graphic file (type pn
 g)
@@ -723,18 +723,18 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 2042) has occurred while \output is active []
 
  [10 <./figures//extract_room_get_rooms.png>]
-<./figures//price_all_raw.png, id=378, 353.32pt x 368.37625pt>
+<./figures//price_all_raw.png, id=388, 353.32pt x 368.37625pt>
 File: ./figures//price_all_raw.png Graphic file (type png)
 <use ./figures//price_all_raw.png>
 Package pdftex.def Info: ./figures//price_all_raw.png  used on input line 282.
 (pdftex.def)             Requested size: 142.26378pt x 148.32593pt.
-<./figures//price_sale_raw.png, id=379, 353.32pt x 368.37625pt>
+<./figures//price_sale_raw.png, id=389, 353.32pt x 368.37625pt>
 File: ./figures//price_sale_raw.png Graphic file (type png)
 <use ./figures//price_sale_raw.png>
 Package pdftex.def Info: ./figures//price_sale_raw.png  used on input line 284.
 
 (pdftex.def)             Requested size: 142.26378pt x 148.32593pt.
-<./figures//price_rental_raw.png, id=380, 353.32pt x 380.42125pt>
+<./figures//price_rental_raw.png, id=390, 353.32pt x 380.42125pt>
 File: ./figures//price_rental_raw.png Graphic file (type png)
 <use ./figures//price_rental_raw.png>
 Package pdftex.def Info: ./figures//price_rental_raw.png  used on input line 28
@@ -744,7 +744,7 @@ Package pdftex.def Info: ./figures//price_rental_raw.png  used on input line 28
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figures//uml_create_input_dataset.png, id=381, 191.71625pt x 241.90375pt>
+<./figures//uml_create_input_dataset.png, id=391, 191.71625pt x 241.90375pt>
 File: ./figures//uml_create_input_dataset.png Graphic file (type png)
 <use ./figures//uml_create_input_dataset.png>
 Package pdftex.def Info: ./figures//uml_create_input_dataset.png  used on input
@@ -754,7 +754,7 @@ Package pdftex.def Info: ./figures//uml_create_input_dataset.png  used on input
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [11 <./figures//parking_dataset.png> <./figures//uml_generalize_dataset.png>]
-<./figures//create_input_dataset.png, id=393, 488.82625pt x 723.70375pt>
+<./figures//create_input_dataset.png, id=403, 488.82625pt x 723.70375pt>
 File: ./figures//create_input_dataset.png Graphic file (type png)
 <use ./figures//create_input_dataset.png>
 Package pdftex.def Info: ./figures//create_input_dataset.png  used on input lin
@@ -769,7 +769,7 @@ Underfull \vbox (badness 2990) has occurred while \output is active []
 
  [12 <./figures//generalize_dataset_get_feature_types.png> <./figures//price_al
 l_raw.png> <./figures//price_sale_raw.png> <./figures//price_rental_raw.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 332--334
+Underfull \hbox (badness 10000) in paragraph at lines 334--336
 
  []
 
@@ -777,35 +777,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 332--334
 Underfull \vbox (badness 1297) has occurred while \output is active []
 
  [13 <./figures//uml_create_input_dataset.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 335--337
+Underfull \hbox (badness 10000) in paragraph at lines 337--339
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 338--340
+Underfull \hbox (badness 10000) in paragraph at lines 340--342
 
  []
 
-<./figures//basic_model_layout.png, id=420, 717.68124pt x 439.6425pt>
+<./figures//basic_model_layout.png, id=431, 717.68124pt x 439.6425pt>
 File: ./figures//basic_model_layout.png Graphic file (type png)
 <use ./figures//basic_model_layout.png>
 Package pdftex.def Info: ./figures//basic_model_layout.png  used on input line 
-343.
+345.
 (pdftex.def)             Requested size: 438.17227pt x 268.42303pt.
-[14 <./figures//create_input_dataset.png>] [15 <./figures//basic_model_layout.p
-ng>]
+[14 <./figures//create_input_dataset.png>]
+<./figures//basic_model_price.png, id=439, 1457.445pt x 768.8725pt>
+File: ./figures//basic_model_price.png Graphic file (type png)
+<use ./figures//basic_model_price.png>
+Package pdftex.def Info: ./figures//basic_model_price.png  used on input line 3
+56.
+(pdftex.def)             Requested size: 438.17227pt x 231.15627pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[15 <./figures//basic_model_layout.png>] [16 <./figures//basic_model_price.png>
+]
 Chapter 4.
-<./figures//html_room_info_1.png, id=436, 825.0825pt x 770.88pt>
+<./figures//html_room_info_1.png, id=453, 825.0825pt x 770.88pt>
 File: ./figures//html_room_info_1.png Graphic file (type png)
 <use ./figures//html_room_info_1.png>
-Package pdftex.def Info: ./figures//html_room_info_1.png  used on input line 36
-3.
+Package pdftex.def Info: ./figures//html_room_info_1.png  used on input line 37
+5.
 (pdftex.def)             Requested size: 213.3959pt x 227.61935pt.
-<./figures//html_room_info_2.png, id=437, 595.22375pt x 701.62125pt>
+<./figures//html_room_info_2.png, id=454, 595.22375pt x 701.62125pt>
 File: ./figures//html_room_info_2.png Graphic file (type png)
 <use ./figures//html_room_info_2.png>
-Package pdftex.def Info: ./figures//html_room_info_2.png  used on input line 36
-5.
+Package pdftex.def Info: ./figures//html_room_info_2.png  used on input line 37
+7.
 (pdftex.def)             Requested size: 213.39032pt x 227.61737pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -814,11 +825,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 421--423
+Underfull \hbox (badness 10000) in paragraph at lines 433--435
 
  []
 
-[16
+[17
 
 ]
 
@@ -828,169 +839,228 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 498--500
+Underfull \hbox (badness 10000) in paragraph at lines 510--512
 
  []
 
-[17 <./figures//html_room_info_1.png> <./figures//html_room_info_2.png>]
+[18 <./figures//html_room_info_1.png> <./figures//html_room_info_2.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 535--537
+Underfull \hbox (badness 10000) in paragraph at lines 547--549
 
  []
 
-[18]
-<./figures//price_all_mean.png, id=483, 353.32pt x 380.42125pt>
+[19]
+<./figures//price_all_mean.png, id=500, 353.32pt x 380.42125pt>
 File: ./figures//price_all_mean.png Graphic file (type png)
 <use ./figures//price_all_mean.png>
-Package pdftex.def Info: ./figures//price_all_mean.png  used on input line 542.
+Package pdftex.def Info: ./figures//price_all_mean.png  used on input line 554.
 
 (pdftex.def)             Requested size: 142.26378pt x 153.17581pt.
-<./figures//price_sale_remove.png, id=484, 349.305pt x 368.37625pt>
+<./figures//price_sale_remove.png, id=501, 349.305pt x 368.37625pt>
 File: ./figures//price_sale_remove.png Graphic file (type png)
 <use ./figures//price_sale_remove.png>
 Package pdftex.def Info: ./figures//price_sale_remove.png  used on input line 5
-49.
+61.
 (pdftex.def)             Requested size: 142.26378pt x 150.02908pt.
-<./figures//price_rental_remove.png, id=485, 349.305pt x 380.42125pt>
+<./figures//price_rental_remove.png, id=502, 349.305pt x 380.42125pt>
 File: ./figures//price_rental_remove.png Graphic file (type png)
 <use ./figures//price_rental_remove.png>
 Package pdftex.def Info: ./figures//price_rental_remove.png  used on input line
- 550.
+ 562.
 (pdftex.def)             Requested size: 142.26378pt x 154.93466pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 556--558
+Underfull \hbox (badness 10000) in paragraph at lines 568--570
 
  []
 
-<./figures//general_raw.png, id=487, 1134.2375pt x 261.97874pt>
+<./figures//general_raw.png, id=504, 1134.2375pt x 261.97874pt>
 File: ./figures//general_raw.png Graphic file (type png)
 <use ./figures//general_raw.png>
-Package pdftex.def Info: ./figures//general_raw.png  used on input line 563.
+Package pdftex.def Info: ./figures//general_raw.png  used on input line 575.
 (pdftex.def)             Requested size: 438.17227pt x 101.2039pt.
-<./figures//general_input.png, id=488, 1127.21124pt x 258.9675pt>
+<./figures//general_input.png, id=505, 1127.21124pt x 258.9675pt>
 File: ./figures//general_input.png Graphic file (type png)
 <use ./figures//general_input.png>
-Package pdftex.def Info: ./figures//general_input.png  used on input line 564.
+Package pdftex.def Info: ./figures//general_input.png  used on input line 576.
 (pdftex.def)             Requested size: 438.17227pt x 100.66498pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figures//linear_regression_fold_0.png, id=490, 498.86375pt x 383.4325pt>
+<./figures//linear_regression_fold_0.png, id=507, 498.86375pt x 383.4325pt>
 File: ./figures//linear_regression_fold_0.png Graphic file (type png)
 <use ./figures//linear_regression_fold_0.png>
 Package pdftex.def Info: ./figures//linear_regression_fold_0.png  used on input
- line 574.
+ line 586.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-<./figures//linear_regression_fold_1.png, id=491, 498.86375pt x 383.4325pt>
+<./figures//linear_regression_fold_1.png, id=508, 498.86375pt x 383.4325pt>
 File: ./figures//linear_regression_fold_1.png Graphic file (type png)
 <use ./figures//linear_regression_fold_1.png>
 Package pdftex.def Info: ./figures//linear_regression_fold_1.png  used on input
- line 576.
+ line 588.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-<./figures//linear_regression_fold_2.png, id=492, 498.86375pt x 383.4325pt>
+<./figures//linear_regression_fold_2.png, id=509, 498.86375pt x 383.4325pt>
 File: ./figures//linear_regression_fold_2.png Graphic file (type png)
 <use ./figures//linear_regression_fold_2.png>
 Package pdftex.def Info: ./figures//linear_regression_fold_2.png  used on input
- line 578.
+ line 590.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-<./figures//linear_regression_fold_3.png, id=493, 498.86375pt x 383.4325pt>
+<./figures//linear_regression_fold_3.png, id=510, 498.86375pt x 383.4325pt>
 File: ./figures//linear_regression_fold_3.png Graphic file (type png)
 <use ./figures//linear_regression_fold_3.png>
 Package pdftex.def Info: ./figures//linear_regression_fold_3.png  used on input
- line 580.
+ line 592.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-<./figures//linear_regression_fold_4.png, id=494, 498.86375pt x 383.4325pt>
+<./figures//linear_regression_fold_4.png, id=511, 498.86375pt x 383.4325pt>
 File: ./figures//linear_regression_fold_4.png Graphic file (type png)
 <use ./figures//linear_regression_fold_4.png>
 Package pdftex.def Info: ./figures//linear_regression_fold_4.png  used on input
- line 582.
+ line 594.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-[19 <./figures//price_all_mean.png>]
+[20 <./figures//price_all_mean.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 621--623
+Underfull \hbox (badness 10000) in paragraph at lines 633--635
 
  []
 
 
 Underfull \vbox (badness 2277) has occurred while \output is active []
 
- [20 <./figures//price_sale_remove.png> <./figures//price_rental_remove.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 624--626
-
- []
-
-<./figures//sale_fold_5_0.png, id=514, 495.8525pt x 380.42125pt>
+ [21 <./figures//price_sale_remove.png> <./figures//price_rental_remove.png>]
+<./figures//sale_fold_5_0.png, id=531, 495.8525pt x 380.42125pt>
 File: ./figures//sale_fold_5_0.png Graphic file (type png)
 <use ./figures//sale_fold_5_0.png>
-Package pdftex.def Info: ./figures//sale_fold_5_0.png  used on input line 629.
+Package pdftex.def Info: ./figures//sale_fold_5_0.png  used on input line 638.
 (pdftex.def)             Requested size: 142.26378pt x 109.14676pt.
-<./figures//sale_fold_5_1.png, id=515, 495.8525pt x 380.42125pt>
+<./figures//sale_fold_5_1.png, id=532, 495.8525pt x 380.42125pt>
 File: ./figures//sale_fold_5_1.png Graphic file (type png)
 <use ./figures//sale_fold_5_1.png>
-Package pdftex.def Info: ./figures//sale_fold_5_1.png  used on input line 631.
+Package pdftex.def Info: ./figures//sale_fold_5_1.png  used on input line 640.
 (pdftex.def)             Requested size: 142.26378pt x 109.14676pt.
-<./figures//sale_fold_5_2.png, id=516, 501.875pt x 380.42125pt>
+<./figures//sale_fold_5_2.png, id=533, 501.875pt x 380.42125pt>
 File: ./figures//sale_fold_5_2.png Graphic file (type png)
 <use ./figures//sale_fold_5_2.png>
-Package pdftex.def Info: ./figures//sale_fold_5_2.png  used on input line 633.
+Package pdftex.def Info: ./figures//sale_fold_5_2.png  used on input line 642.
 (pdftex.def)             Requested size: 142.26378pt x 107.83488pt.
-<./figures//sale_fold_5_3.png, id=517, 495.8525pt x 380.42125pt>
+<./figures//sale_fold_5_3.png, id=534, 495.8525pt x 380.42125pt>
 File: ./figures//sale_fold_5_3.png Graphic file (type png)
 <use ./figures//sale_fold_5_3.png>
-Package pdftex.def Info: ./figures//sale_fold_5_3.png  used on input line 635.
+Package pdftex.def Info: ./figures//sale_fold_5_3.png  used on input line 644.
 (pdftex.def)             Requested size: 142.26378pt x 109.14676pt.
-<./figures//sale_fold_5_4.png, id=518, 501.875pt x 380.42125pt>
+<./figures//sale_fold_5_4.png, id=535, 501.875pt x 380.42125pt>
 File: ./figures//sale_fold_5_4.png Graphic file (type png)
 <use ./figures//sale_fold_5_4.png>
-Package pdftex.def Info: ./figures//sale_fold_5_4.png  used on input line 637.
+Package pdftex.def Info: ./figures//sale_fold_5_4.png  used on input line 646.
 (pdftex.def)             Requested size: 142.26378pt x 107.83488pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 642--644
+Underfull \hbox (badness 10000) in paragraph at lines 651--653
 
  []
 
-[21 <./figures//general_raw.png> <./figures//general_input.png>] [22 <./figures
-//linear_regression_fold_0.png> <./figures//linear_regression_fold_1.png> <./fi
-gures//linear_regression_fold_2.png> <./figures//linear_regression_fold_3.png> 
-<./figures//linear_regression_fold_4.png>] [23 <./figures//sale_fold_5_0.png> <
-./figures//sale_fold_5_1.png> <./figures//sale_fold_5_2.png> <./figures//sale_f
-old_5_3.png> <./figures//sale_fold_5_4.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 654--656
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--659
+
+ []
+
+<./figures//confusion_matrix_basic_model.png, id=538, 358.33875pt x 275.0275pt>
+
+File: ./figures//confusion_matrix_basic_model.png Graphic file (type png)
+<use ./figures//confusion_matrix_basic_model.png>
+Package pdftex.def Info: ./figures//confusion_matrix_basic_model.png  used on i
+nput line 662.
+(pdftex.def)             Requested size: 284.52756pt x 218.38982pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[22 <./figures//general_raw.png> <./figures//general_input.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 700--702
+
+ []
+
+[23 <./figures//linear_regression_fold_0.png> <./figures//linear_regression_fol
+d_1.png> <./figures//linear_regression_fold_2.png> <./figures//linear_regressio
+n_fold_3.png> <./figures//linear_regression_fold_4.png>]
+<./figures//all_full_epoch_1000_fold_0.png, id=566, 505.89pt x 383.4325pt>
+File: ./figures//all_full_epoch_1000_fold_0.png Graphic file (type png)
+<use ./figures//all_full_epoch_1000_fold_0.png>
+Package pdftex.def Info: ./figures//all_full_epoch_1000_fold_0.png  used on inp
+ut line 707.
+(pdftex.def)             Requested size: 142.26378pt x 107.82841pt.
+<./figures//all_full_epoch_1000_fold_1.png, id=567, 498.86375pt x 383.4325pt>
+File: ./figures//all_full_epoch_1000_fold_1.png Graphic file (type png)
+<use ./figures//all_full_epoch_1000_fold_1.png>
+Package pdftex.def Info: ./figures//all_full_epoch_1000_fold_1.png  used on inp
+ut line 709.
+(pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
+<./figures//all_full_epoch_1000_fold_2.png, id=568, 505.89pt x 383.4325pt>
+File: ./figures//all_full_epoch_1000_fold_2.png Graphic file (type png)
+<use ./figures//all_full_epoch_1000_fold_2.png>
+Package pdftex.def Info: ./figures//all_full_epoch_1000_fold_2.png  used on inp
+ut line 711.
+(pdftex.def)             Requested size: 142.26378pt x 107.82841pt.
+<./figures//all_full_epoch_1000_fold_3.png, id=569, 498.86375pt x 383.4325pt>
+File: ./figures//all_full_epoch_1000_fold_3.png Graphic file (type png)
+<use ./figures//all_full_epoch_1000_fold_3.png>
+Package pdftex.def Info: ./figures//all_full_epoch_1000_fold_3.png  used on inp
+ut line 713.
+(pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
+<./figures//all_full_epoch_1000_fold_4.png, id=570, 505.89pt x 383.4325pt>
+File: ./figures//all_full_epoch_1000_fold_4.png Graphic file (type png)
+<use ./figures//all_full_epoch_1000_fold_4.png>
+Package pdftex.def Info: ./figures//all_full_epoch_1000_fold_4.png  used on inp
+ut line 715.
+(pdftex.def)             Requested size: 142.26378pt x 107.82841pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[24 <./figures//sale_fold_5_0.png> <./figures//sale_fold_5_1.png> <./figures//s
+ale_fold_5_2.png> <./figures//sale_fold_5_3.png> <./figures//sale_fold_5_4.png>
+] [25 <./figures//confusion_matrix_basic_model.png> <./figures//all_full_epoch_
+1000_fold_0.png> <./figures//all_full_epoch_1000_fold_1.png> <./figures//all_fu
+ll_epoch_1000_fold_2.png> <./figures//all_full_epoch_1000_fold_3.png> <./figure
+s//all_full_epoch_1000_fold_4.png>]
 Chapter 5.
 (./main.bbl (./main.brf)
 \tf@brf=\write5
 \openout5 = `main.brf'.
 
- [24
+ [26
 
-]) [25
+]) [27
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4AD1C948BE70175E4FD0C89CE022035A;7973.
+(rerunfilecheck)             Checksum: B891DBA9E22F065E9B9B31AD8C639AE3;8472.
 Package rerunfilecheck Info: File `main.brf' has not changed.
 (rerunfilecheck)             Checksum: C21DADF3B33DBF8F0732A0044D943A0C;423.
  ) 
 Here is how much of TeX's memory you used:
- 13821 strings out of 478268
- 230422 string characters out of 5846347
- 532726 words of memory out of 5000000
- 31647 multiletter control sequences out of 15000+600000
+ 13920 strings out of 478268
+ 233967 string characters out of 5846347
+ 533276 words of memory out of 5000000
+ 31733 multiletter control sequences out of 15000+600000
  504551 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,9n,80p,835b,458s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,9n,80p,835b,468s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/local/texl
 ive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchbi8a.pfb></usr/local/texliv
@@ -1000,10 +1070,10 @@ e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (32 pages, 1393359 bytes).
+Output written on main.pdf (34 pages, 1607764 bytes).
 PDF statistics:
- 640 PDF objects out of 1000 (max. 8388607)
- 522 compressed objects within 6 object streams
- 154 named destinations out of 1000 (max. 500000)
- 516 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 686 PDF objects out of 1000 (max. 8388607)
+ 553 compressed objects within 6 object streams
+ 167 named destinations out of 1000 (max. 500000)
+ 567 words of extra memory for PDF output out of 10000 (max. 10000000)
 
