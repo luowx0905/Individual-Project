@@ -323,13 +323,16 @@ The datasets created during preprocessing are initially loaded. Then they are sp
 Due to the limited training data for this project, cross validation was employed to train the model with different portions of training data. There are two model outputs, including prices and the status of transactions. The loss function for prices is mean squared error (MSE) as they are positive values. However, the status of transactions is either one or zero, hence its loss function is binary cross entropy (BCE). 
 \\
 
+The optimizer used for training is Adam, which could compute a learning rate for each parameter and has a low computing time. The learning rate is initially set to $1 \times 10^{-3}$ and would be updated if necessary.
+\\
+
 The performance was illustrated after cross validation by plotting training and validation losses against epoch. Based on these graphs, the model with the best performance was selected for the evaluation phase. 
 
 \subsubsection{Evaluation}
 The model performance should be evaluated on unseen data. Otherwise, it would be useless. Various metrics are used to quantify the performance of the model in this project. 
 \\
 
-As the measurements for predicted prices, mean absolute error (MAE), mean squared error (MSE), and coefficient of determination ($R^2$) are applied.  The lower the MAE and MSE, the better the performance. $R^2$ values range from 0 to 1. A model with $R^2 = 0$ means the model cannot make accurate predictions, while $R^2 = 1$ indicates that the model can precisely predict the results. In rare instances, the $R^2$ can be negative, indicating that the model does not match the trend of the data, which is the worst performance. 
+As the measurements for predicted prices, MSE, mean absolute error (MAE), and coefficient of determination ($R^2$) are applied.  The lower the MAE and MSE, the better the performance. $R^2$ values range from 0 to 1. A model with $R^2 = 0$ means the model cannot make accurate predictions, while $R^2 = 1$ indicates that the model can precisely predict the results. In rare instances, the $R^2$ can be negative, indicating that the model does not match the trend of the data, which is the worst performance. 
 \\
 
 The confusion matrix is initially obtained to access the predictions regarding the status of transactions. A confusion matrix summarizes the classification problems, indicating where the model outputs wrong predictions and the types of errors. Based on the confusion matrix, various metrics are calculated, and they are shown as follows, 
@@ -342,18 +345,14 @@ The confusion matrix is initially obtained to access the predictions regarding t
 
 \subsection{Linear Regression: Predict Price}
 \label{linear_regression_model_construction}
-Prior to the construction of any neural networks, a linear regression model with a single linear layer was developed. Its input size is the same as the number of features, and the output is the price. If this model can accurately predict the price, it eliminates the need to build more complex neural networks with multiple layers, which is the motivation for its creation. To train this model, Mean squared error (MSE) is applied as prices can be any positive values. The optimizer is Adam, and the learning rate is 0.001.  
+Prior to the construction of any neural networks, a linear regression model with a single linear layer was developed. Its input size is the same as the number of features, and the output is the price. If this model can accurately predict the price, it eliminates the need to build more complex neural networks with multiple layers, which is the motivation for its creation. 
 
 \subsection{Basic Model: Output Sale Status and Price}
 \label{basic_model_price_status_construction}
-The architecture of this model only consists of linear layers and activation functions, as depicted in figure \ref{basic_model_layout}. There are two outputs of the model, which are prices and probabilities of selling. Therefore, the activation functions of the output layers are ReLU and sigmoid, respectively.
+The architecture of this model solely consists of linear layers and activation functions, as depicted in figure \ref{basic_model_layout}. There are two outputs of the model, which are prices and the status of transactions. Therefore, the activation functions of the output layers are ReLU and sigmoid, respectively.
 \\
 
-The predicted probability should be converted into 0 or 1 to indicate the status of the transaction, given that it is either completed or not in the datasets. Therefore, a threshold of 0.5 is established. If the probability exceeds the threshold, then it is converted to 1. Otherwise, it is set to 0.
-\\
-
-The loss function for the status of the transaction is binary cross entropy (BCE), as it has only two possible outcomes. For the same reason as the linear regression model, MSE loss is applied to prices. Therefore, the total loss for this model is the sum of the BCE and MSE. In addition, the optimizer used for training is Adam, and the learning rate is 0.001. 
-\\ 
+The status should be converted into 0 or 1 to, given that it is either completed or not in the datasets. Therefore, a threshold of 0.5 is established. If the probability exceeds the threshold, then it is converted to 1. Otherwise, it is set to 0.
 
 \begin{figure}[h]
 	\centering
@@ -363,8 +362,7 @@ The loss function for the status of the transaction is binary cross entropy (BCE
 \end{figure}
 
 \subsection{Basic Model: Predicting Prices}
-\label{basic_model_price_all}
-The structure of this model is demonstrated in figure \ref{basic_model_price}. Its hidden layers are identical to the model for predicting completeness and prices, whereas the completeness output is removed. Due to this similarity, the optimizer and learning rate remain unchanged, and the loss function is MSE instead of the sum of BCE and MSE. 
+The structure of this model is demonstrated in figure \ref{basic_model_price}. Its hidden layers are identical to the model for predicting completeness and prices, whereas the completeness output is removed.
 
 \begin{figure}[h]
 	\centering
@@ -712,10 +710,7 @@ The error result could be caused by loss functions. The completeness is either z
 \end{table}
 
 \subsection{Basic Model: Predicting Prices}
-The training \& validation losses of this model is displayed in figure \ref{all_full_epoch_1000}, and the model from fold one was selected for the evaluation because of its performance. 
-\\
-
-The first ten predictions are shown in table \ref{first_model_predictions}, and the metrics of this model are as follows, $MAE = 36538$, $MSE = 4918700785$, and $R^2 = 0.85$. 
+Initially, the training \& validation losses of this model is displayed in figure \ref{all_full_epoch_1000}, and the model from fold one was selected for the evaluation because of its performance. The first ten predictions are shown in table \ref{first_model_predictions}, and the metrics of this model are as follows, $MAE = 36538$, $MSE = 4918700785$, and $R^2 = 0.85$. 
 
 \begin{figure*}[h]
 	\centering
@@ -763,6 +758,58 @@ The first ten predictions are shown in table \ref{first_model_predictions}, and 
 	\end{tabular}
 \end{table}
 
+ It is evident from table \ref{basic_model_prediction_price} that the rental prices which are around few hundreds are all predicted to be zero, whereas the error for some sale prices can be acceptable. This could be caused by the imbalanced dataset, which contains twice as many sale data as rental data. Therefore, the weighted random sampler (WRS), which can ensure that the number of distinct classes in a mini-batch are approximately the same, was utilized to address the issue caused by imbalanced dataset.
+ \\
+ 
+Figure \ref{all_full_epoch_1000_ws} illustrates the training \& validation losses after applying WRS. Base on these figures, the model trained in fold two was selected for the evaluation, and the first ten predicted prices are displayed in table \ref{basic_model_prediction_price_ws}. The metrics of this model are $MAE = 34099$, $MSE = 4635616774$, $R^2 = 0.86$. 
+
+\begin{figure*}[h]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{all_weighted_sampler_full_epoch_1000_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{all_weighted_sampler_full_epoch_1000_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{all_weighted_sampler_full_epoch_1000_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{all_weighted_sampler_full_epoch_1000_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{all_weighted_sampler_full_epoch_1000_fold_4}}
+	\caption{Training \& validation loss (Model for predicting prices)}
+	\label{all_full_epoch_1000_ws}
+\end{figure*}
+
+\begin{table}[h]
+	\centering
+	\caption{Comparison between the true prices and predicted proces}
+	\label{basic_model_prediction_price_ws}
+	\begin{tabular}{| c | c | c |}
+		\hline
+		True Price & Predicted Price & Price Error \% \\
+		\hline
+		764 & 695 & 10.06 \\
+		\hline
+		0 & 1 & 100 \\
+		\hline
+		233418 & 130000 & 79.55 \\
+		\hline
+		619 & 475 & 30.37 \\
+		\hline
+		91812 & 105000 & 12.55 \\
+		\hline
+		575859 & 450000 & 27.96 \\
+		\hline
+		595 & 460 & 29.38 \\ 
+		\hline
+		360867 & 325000 & 11.03 \\
+		\hline
+		655685 & 585000 & 12.08 \\
+		\hline
+		1149 & 900 & 27.66 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+The predicted rental prices in table \ref{basic_model_prediction_price_ws} are not zero, but it should be noticed that one of the actual price is an outlier which has the potential to significantly impact the performance. Therefore, the all the outliers (true prices less than 100) are removed from the dataset and the model was retrained.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion}

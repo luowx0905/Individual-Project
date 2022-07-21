@@ -55,4 +55,4 @@
 \contentsline {subsection}{\numberline {4.2.1}Linear Regression: Predict Price}{21}{subsection.98}%
 \contentsline {subsection}{\numberline {4.2.2}Basic Model: Output Sale Status and Price}{22}{subsection.106}%
 \contentsline {subsection}{\numberline {4.2.3}Basic Model: Predicting Prices}{24}{subsection.115}%
-\contentsline {chapter}{\numberline {5}Conclusion}{26}{chapter.123}%
+\contentsline {chapter}{\numberline {5}Conclusion}{27}{chapter.130}%
