@@ -308,7 +308,7 @@ After extracting the information from HTML texts and categorical keywords, it is
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=13cm]{create_input_dataset}
+	\includegraphics[height=7cm]{create_input_dataset}
 	\caption{The flow diagram of producing  input dataset}
 	\label{create_input_dataset}
 \end{figure}
@@ -320,10 +320,25 @@ After extracting the information from HTML texts and categorical keywords, it is
 The datasets created during preprocessing are initially loaded. Then they are split into training and testing sets, which represent 80\% and 20\% of the total dataset, respectively. In the meantime, the datasets are also shuffled as some datasets might contain intrinsic patterns.
 
 \subsubsection{Training models}
-Due to the limited amount of training data for this project, cross validation was employed to train the model with different portions of training data. The performance was then illustrated by plotting training and validation loss against epoch, and the model with the best performance was selected for the evaluation phase based on these figures. 
+Due to the limited training data for this project, cross validation was employed to train the model with different portions of training data. There are two model outputs, including prices and the status of transactions. The loss function for prices is mean squared error (MSE) as they are positive values. However, the status of transactions is either one or zero, hence its loss function is binary cross entropy (BCE). 
+\\
+
+The performance was illustrated after cross validation by plotting training and validation losses against epoch. Based on these graphs, the model with the best performance was selected for the evaluation phase. 
 
 \subsubsection{Evaluation}
-The model performance should be evaluated on unseen data. Otherwise, it would be useless. In this project, various metrics are used to quantify the model performance, including mean absolute error (MAE), mean squared error (MSE), and coefficient of determination ($R^2$).  The lower the MAE and MSE errors, the better the performance. $R^2$ values range from 0 to 1. A model with $R^2 = 0$ means the model cannot make accurate predictions, while $R^2 = 1$ indicates that the model can precisely predict the results. In rare instances, the $R^2$ can be negative, indicating that the model does not match the trend of the data, which is the worst performance. 
+The model performance should be evaluated on unseen data. Otherwise, it would be useless. Various metrics are used to quantify the performance of the model in this project. 
+\\
+
+As the measurements for predicted prices, mean absolute error (MAE), mean squared error (MSE), and coefficient of determination ($R^2$) are applied.  The lower the MAE and MSE, the better the performance. $R^2$ values range from 0 to 1. A model with $R^2 = 0$ means the model cannot make accurate predictions, while $R^2 = 1$ indicates that the model can precisely predict the results. In rare instances, the $R^2$ can be negative, indicating that the model does not match the trend of the data, which is the worst performance. 
+\\
+
+The confusion matrix is initially obtained to access the predictions regarding the status of transactions. A confusion matrix summarizes the classification problems, indicating where the model outputs wrong predictions and the types of errors. Based on the confusion matrix, various metrics are calculated, and they are shown as follows, 
+\begin{itemize}
+	\item \textbf{Accuracy}: It is the number of correct predictions divided by the total number of predictions. The best accuracy is one and zero is the worst. 
+	\item \textbf{Precision}: It is the number of correct positive predictions divided by the number of positive predictions. The best and worst precisions are one and zero, respectively. 
+	\item \textbf{Recall}: the ratio of correct positive predictions to the total number of positive examples, and the high recall indicates that the class is correctly identified. 
+	\item \textbf{F1 Score}: This is a harmonic mean of both recall and precision. Hence this value can be used to evaluate performance independently. 
+\end{itemize}
 
 \subsection{Linear Regression: Predict Price}
 \label{linear_regression_model_construction}

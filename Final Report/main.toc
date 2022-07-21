@@ -39,8 +39,8 @@
 \contentsline {subsection}{\numberline {3.3.1}Development Steps}{12}{subsection.61}%
 \contentsline {subsubsection}{Data Preparation}{12}{section*.62}%
 \contentsline {subsubsection}{Training models}{13}{section*.63}%
-\contentsline {subsubsection}{Evaluation}{13}{section*.64}%
-\contentsline {subsection}{\numberline {3.3.2}Linear Regression: Predict Price}{13}{subsection.65}%
+\contentsline {subsubsection}{Evaluation}{14}{section*.64}%
+\contentsline {subsection}{\numberline {3.3.2}Linear Regression: Predict Price}{14}{subsection.65}%
 \contentsline {subsection}{\numberline {3.3.3}Basic Model: Output Sale Status and Price}{14}{subsection.66}%
 \contentsline {subsection}{\numberline {3.3.4}Basic Model: Predicting Prices}{15}{subsection.68}%
 \contentsline {chapter}{\numberline {4}Testing \& Experimental Results}{17}{chapter.70}%
