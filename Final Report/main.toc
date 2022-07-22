@@ -43,16 +43,18 @@
 \contentsline {subsection}{\numberline {3.3.2}Linear Regression: Predict Price}{14}{subsection.65}%
 \contentsline {subsection}{\numberline {3.3.3}Basic Model: Output Sale Status and Price}{14}{subsection.66}%
 \contentsline {subsection}{\numberline {3.3.4}Basic Model: Predicting Prices}{15}{subsection.68}%
-\contentsline {chapter}{\numberline {4}Testing \& Experimental Results}{17}{chapter.70}%
-\contentsline {section}{\numberline {4.1}Data Preprocessing}{17}{section.71}%
-\contentsline {subsection}{\numberline {4.1.1}Handle Room Descriptions (HTML)}{17}{subsection.72}%
-\contentsline {subsubsection}{Acquire room name and dimension}{17}{section*.73}%
-\contentsline {subsubsection}{Generalize room information}{18}{section*.79}%
-\contentsline {subsection}{\numberline {4.1.2}Manipulate Categorical Keywords}{19}{subsection.86}%
-\contentsline {subsection}{\numberline {4.1.3}Manage Outliers}{19}{subsection.88}%
-\contentsline {subsection}{\numberline {4.1.4}Create Input Dataset}{20}{subsection.93}%
-\contentsline {section}{\numberline {4.2}Model Construction}{21}{section.97}%
-\contentsline {subsection}{\numberline {4.2.1}Linear Regression: Predict Price}{21}{subsection.98}%
-\contentsline {subsection}{\numberline {4.2.2}Basic Model: Output Sale Status and Price}{22}{subsection.106}%
-\contentsline {subsection}{\numberline {4.2.3}Basic Model: Predicting Prices}{24}{subsection.115}%
-\contentsline {chapter}{\numberline {5}Conclusion}{27}{chapter.130}%
+\contentsline {subsection}{\numberline {3.3.5}Complex Model: Predicting Prices}{15}{subsection.70}%
+\contentsline {subsection}{\numberline {3.3.6}Residual Network: Predicting Prices}{15}{subsection.71}%
+\contentsline {chapter}{\numberline {4}Testing \& Experimental Results}{17}{chapter.72}%
+\contentsline {section}{\numberline {4.1}Data Preprocessing}{17}{section.73}%
+\contentsline {subsection}{\numberline {4.1.1}Handle Room Descriptions (HTML)}{17}{subsection.74}%
+\contentsline {subsubsection}{Acquire room name and dimension}{17}{section*.75}%
+\contentsline {subsubsection}{Generalize room information}{18}{section*.81}%
+\contentsline {subsection}{\numberline {4.1.2}Manipulate Categorical Keywords}{19}{subsection.88}%
+\contentsline {subsection}{\numberline {4.1.3}Manage Outliers}{19}{subsection.90}%
+\contentsline {subsection}{\numberline {4.1.4}Create Input Dataset}{20}{subsection.95}%
+\contentsline {section}{\numberline {4.2}Model Construction}{21}{section.99}%
+\contentsline {subsection}{\numberline {4.2.1}Linear Regression: Predict Price}{21}{subsection.100}%
+\contentsline {subsection}{\numberline {4.2.2}Basic Model: Output Sale Status and Price}{22}{subsection.108}%
+\contentsline {subsection}{\numberline {4.2.3}Basic Model: Predicting Prices}{24}{subsection.117}%
+\contentsline {chapter}{\numberline {5}Conclusion}{29}{chapter.140}%

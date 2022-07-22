@@ -371,6 +371,11 @@ The structure of this model is demonstrated in figure \ref{basic_model_price}. I
 	\label{basic_model_price}
 \end{figure}
 
+\subsection{Complex Model: Predicting Prices}
+
+\subsection{Residual Network: Predicting Prices}
+The 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Testing \& Experimental Results}
 Comprehensive testing and analyzing were conducted throughout the implementation but it is documented in this separate chapter for the sake of illuatration. 
@@ -729,7 +734,7 @@ Initially, the training \& validation losses of this model is displayed in figur
 
 \begin{table}[h]
 	\centering
-	\caption{Comparison between the true prices and predicted proces}
+	\caption{ True and predicted prices for basic model}
 	\label{basic_model_prediction_price}
 	\begin{tabular}{| c | c | c |}
 		\hline
@@ -761,7 +766,7 @@ Initially, the training \& validation losses of this model is displayed in figur
  It is evident from table \ref{basic_model_prediction_price} that the rental prices which are around few hundreds are all predicted to be zero, whereas the error for some sale prices can be acceptable. This could be caused by the imbalanced dataset, which contains twice as many sale data as rental data. Therefore, the weighted random sampler (WRS), which can ensure that the number of distinct classes in a mini-batch are approximately the same, was utilized to address the issue caused by imbalanced dataset.
  \\
  
-Figure \ref{all_full_epoch_1000_ws} illustrates the training \& validation losses after applying WRS. Base on these figures, the model trained in fold two was selected for the evaluation, and the first ten predicted prices are displayed in table \ref{basic_model_prediction_price_ws}. The metrics of this model are $MAE = 34099$, $MSE = 4635616774$, $R^2 = 0.86$. 
+Figure \ref{all_full_epoch_1000_ws} illustrates the training \& validation losses after applying WRS. Base on these figures, the model trained in fold two was selected for the evaluation, and the first ten predicted prices are displayed in table \ref{basic_model_prediction_price_ws}. The metrics of this model are $MAE = 34099$, $MSE = 4635616774$, and $R^2 = 0.86$. 
 
 \begin{figure*}[h]
 	\centering
@@ -774,13 +779,13 @@ Figure \ref{all_full_epoch_1000_ws} illustrates the training \& validation losse
 	\subfigure[Fold 3]{\includegraphics[width=5cm]{all_weighted_sampler_full_epoch_1000_fold_3}}
 	\hfil
 	\subfigure[Fold 4]{\includegraphics[width=5cm]{all_weighted_sampler_full_epoch_1000_fold_4}}
-	\caption{Training \& validation loss (Model for predicting prices)}
+	\caption{Training \& validation loss for basic model (WRS applied)}
 	\label{all_full_epoch_1000_ws}
 \end{figure*}
 
 \begin{table}[h]
 	\centering
-	\caption{Comparison between the true prices and predicted proces}
+	\caption{True \& predicted prices for basic model (WRS applied)}
 	\label{basic_model_prediction_price_ws}
 	\begin{tabular}{| c | c | c |}
 		\hline
@@ -809,7 +814,73 @@ Figure \ref{all_full_epoch_1000_ws} illustrates the training \& validation losse
 	\end{tabular}
 \end{table}
 
-The predicted rental prices in table \ref{basic_model_prediction_price_ws} are not zero, but it should be noticed that one of the actual price is an outlier which has the potential to significantly impact the performance. Therefore, the all the outliers (true prices less than 100) are removed from the dataset and the model was retrained.
+The predicted rental prices in table \ref{basic_model_prediction_price_ws} are not zero, but it should be noted that one of the actual prices is an outlier which has the potential to impact the performance significantly. Therefore, all the outliers (actual prices less than 100) were removed from the dataset, and the model was retrained.
+\\
+
+Figure \ref{all_full_epoch_1000_outlier_removed} depicts the training and validation losses after removing the outliers, and the model trained on fold one was chosen for evaluation based on its performance. Some actual and predicted prices are displayed in table \ref{basic_model_prediction_price_outlier_removed}. This model has following metrics, $MAE = 35391$, $MSE = 4580892828$, and $R^2 = 0.87$. 
+\begin{figure*}[h]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{all_removed_weighted_sampler_full_epoch_1000_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{all_removed_weighted_sampler_full_epoch_1000_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{all_removed_weighted_sampler_full_epoch_1000_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{all_removed_weighted_sampler_full_epoch_1000_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{all_removed_weighted_sampler_full_epoch_1000_fold_4}}
+	\caption{Training \& validation loss for basic model (outliers removed)}
+	\label{all_full_epoch_1000_outlier_removed}
+\end{figure*}
+
+\begin{table}[h]
+	\centering
+	\caption{True \& predicted prices for basic model (outlier removed)}
+	\label{basic_model_prediction_price_outlier_removed}
+	\begin{tabular}{| c | c | c |}
+		\hline
+		True Price & Predicted Price & Price Error \% \\
+		\hline
+		92743 & 105000 & 11.67 \\
+		\hline
+		527 & 475 & 10.96 \\
+		\hline
+		183196 & 180000 & 1.77\\
+		\hline
+		802 & 1250 & 35.77 \\
+		\hline
+		522 & 395 & 32.27 \\
+		\hline
+		159249 & 230000 & 30.76 \\
+		\hline
+		1119 & 950 & 17.88 \\ 
+		\hline
+		74438 & 60000 & 24.06 \\
+		\hline
+		345296 & 285000 & 21.15 \\
+		\hline
+		115000 & 127500 & 9.80 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+Table \ref{metrics_basic_model}, which summarizes the metrics for three models, shows that the MSE is decreasing and $R^2$ is increasing for the three models. Therefore, the results illustrate that the WRS could be a solution for the imbalanced dataset and that removing the outliers can improve the performance. 
+\begin{table}[h]
+	\centering
+	\caption{Metrics for various models}
+	\label{metrics_basic_model}
+	\begin{tabular}{| l | c | c | c |}
+		\hline
+		 & MAE & MSE & $R^2$ \\
+		 \hline
+		 Basic model & 36538 & 4918700785 & 0.85 \\
+		 \hline
+		 WRS applied & 34099 & 4635616774 & 0.86 \\
+		 \hline
+		 Outliers removed & 35391 & 4580892828 & 0.87 \\
+		 \hline
+	\end{tabular}
+\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion}
