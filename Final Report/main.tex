@@ -74,6 +74,8 @@ In this project, some AI techniques will be applied to property and demographic 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Literal Review}
+\section{Previous }
+
 Python is one of the most popular programming languages in the world since it is simple to develop, and there are extensive packages for various functionalities. In this project, Python and its packages would be used for loading data, preprocessing data, and constructing and evaluating machine learning models. 
 
 \section{Machine Learning}
@@ -356,7 +358,7 @@ The status should be converted into 0 or 1 to, given that it is either completed
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\linewidth]{basic_model_layout}
+	\includegraphics[height=10cm]{basic_model_layout}
 	\caption{The architecture of the basic model}
 	\label{basic_model_layout}
 \end{figure}
@@ -366,7 +368,7 @@ The structure of this model is demonstrated in figure \ref{basic_model_price}. I
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\linewidth]{basic_model_price}
+	\includegraphics[height=10cm]{basic_model_price}
 	\caption{The structure of the basic model for predicting prices}
 	\label{basic_model_price}
 \end{figure}
@@ -682,7 +684,7 @@ Figure \ref{confusion_matrix_basic_model} illustrates the confusion matrix of pr
 	\label{confusion_matrix_basic_model}
 \end{figure}
 
-The error result could be caused by loss functions. The completeness is either zero or one, hence the BCE loss was used. For the prices which is greater than zero, the MSE loss was applied. As the model outputs both completeness and prices, the BCE and MSE loss were added to produce a total loss which was then used for backpropagation. However, the BCE loss is small compared with MSE loss. Therefore, the total loss resulted in the model learning more in predicting prices and completeness was ignored. Additionally, another reason causing the wrong predictions on completness was that the price is not input into the model and it is one of the most important factors in real-life transactions. 
+The error results could be caused by loss functions. The completeness is either zero or one, hence the BCE loss was used. For the prices which is greater than zero, the MSE loss was applied. As the model outputs both completeness and prices, the BCE and MSE loss were added to produce a total loss which was then used for backpropagation. However, the BCE loss is small compared with MSE loss. Therefore, the total loss resulted in the model learning more in predicting prices and completeness was ignored. Additionally, another reason causing the wrong predictions on completness was that the price is not input into the model and it is one of the most important factors in real-life transactions. 
 \begin{table}[h]
 	\centering
 	\caption{Comparison between truth and model predictions}
