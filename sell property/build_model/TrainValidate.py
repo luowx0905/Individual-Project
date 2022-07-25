@@ -32,6 +32,9 @@ class TrainValidate:
         self.val_loss = []
         self.total_epochs = 0
 
+        self.visualization = {}
+        self.handles = {}
+
     def set_loader(self, train_loader, val_loader=None):
         self.train_loader = train_loader
         self.val_loader = val_loader
@@ -172,6 +175,32 @@ class TrainValidate:
         plt.tight_layout()
 
         return result, fig
+
+    def attach_hooks(self, layer_to_hook, hook_fn=None):
+        self.visualization = {}
+
+        modules = list(self.model.named_modules())
+        layer_names = {layer: name for layer, name in modules[1:]}
+
+        if hook_fn is None:
+            def hook_fn(layer, inputs, outputs):
+                name = layer_names[layer]
+                values = outputs.detach().cpu().numpy()
+
+                if self.visualization[name] is None:
+                    self.visualization[name] = values
+                else:
+                    self.visualization[name] = np.concatenate([self.visualization[name], values])
+
+        for name, layer in modules:
+            if name in layer_to_hook:
+                self.visualization[name] = None
+                self.handles[name] = layer.register_forward_hook(hook_fn)
+
+    def remove_hook(self):
+        for handle in self.handles.values():
+            handle.remove()
+        self.handles = {}
 
 
 def create_weighted_sampler(data: np.array) -> WeightedRandomSampler:
