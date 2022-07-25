@@ -80,6 +80,9 @@ The datasets are the foundation of AI, and a significant number of real estate d
 \\
 
 Nevertheless, the disadvantages of the dataset are noticeable. It only contains the property data in Latvia, suggesting that the conclusions drawn from it might not be applicable to other countries worldwide. Moreover, the regional factors that can significantly influence the real estate transactions, such as economic growth, medical care, and education, are not included in this dataset, meaning that the conclusions base on it only consider the property itself and do not account for the surrounding environment. 
+\\
+
+The second dataset 
 
 \section{Related Technologies}
 Python is one of the most popular programming languages in the world since it is simple to develop, and there are extensive packages for various functionalities. In this project, Python and its packages would be used for loading data, preprocessing data, and constructing and evaluating machine learning models. 
@@ -165,7 +168,7 @@ In this project, data visualization would be beneficial during preprocessing dat
 \section{Data Source and Collection}
 The datasets used in this project are provided by EweMove, and transactions from 2018 to 2022 are included. There are 34591 records with 36 parameters describing each property after merging these datasets. Some parameters, such as postcodes, and room information, are independent variables that would be the model input. In contrast, the price and status of the transaction are dependent variables that serve as labels of supervised learning. The features that are used to train the model are listed in table \ref{model_input_features}. 
 
-\begin{table}[h]
+\begin{table}[!htbp]
 	\centering
 	\caption{The features used to train the model}
 	\label{model_input_features}
@@ -207,14 +210,14 @@ The datasets used in this project are provided by EweMove, and transactions from
 \subsection{Handle Room Descriptions (HTML)}
 \subsubsection{Acquire room name and dimension}
 The structure of the HTML texts containing the room information in a property is shown in figure \ref{html_structure}. The rooms are separated by tag \textit{$<$li$>$}, and the room name and its dimension is denoted by \textit{$<$strong$>$} and \textit{$<$i$>$} tags, respectively. Therefore, a function (\textit{\textbf{EweMove\_Description\_S3\_Rooms}}) was implemented to split the HTML texts by utilizing \textit{Beautiful soup}, and its flowchart is shown in figure \ref{html_room_info}.
-\begin{figure}[h]
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=15cm]{html_structure}
 	\caption{The layout of HTML texts}
 	\label{html_structure}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\linewidth]{html_room_info}
 	\caption{Flowchart for extracting room information from HTML}
@@ -231,7 +234,7 @@ Due to the large number of room names, it is impossible to use it as the input o
 A class, \textit{\textbf{ExtractRooms}}, was developed to acquire and integrate the room information, especially the area in square meters, and its UML diagram is shown in figure \ref{uml_extract_rooms}. The member variable \textit{rooms} is a list containing the result of invoking \textit{EweMove\_Description\_S3\_Rooms}, \textit{room\_set} comprises all the room names, \textit{current\_rooms} consists of the room names that have been processed, and \textit{extract\_area} is a formatted string for acquiring room area. 
 \\
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=10cm]{uml_extract_rooms}
 	\caption{The UML diagram of the class (\textit{ExtractRooms})}
@@ -247,7 +250,7 @@ Key member functions
 		\item operation: The argumen determines the types of the final result and the valid inputs include \textit{sum}, \textit{mean}, \textit{split}, and \textit{number}. For example, if args is \textit{bedroom}, then the function can return the sum of bedroom areas, the average bedroom area, the area of each bedroom and the number of bedrooms. 
 		\item handle\_na: This parameter specifies how to manage missing values, either by ignoring them or by filling the mean value if the input is \textit{None} or \textit{mean}, respectively. 
 	\end{enumerate} 
-	\begin{figure}[h]
+	\begin{figure}[!htbp]
 		\centering
 		\includegraphics[height=11cm]{extract_room_get_rooms}
 		\caption{Flowchart of \textit{get\_rooms}}
@@ -260,7 +263,7 @@ Key member functions
 \subsection{Manipulate Categorical Keywords}
 In the dataset, four features are characterized by categorical keywords, including parking, heating, accessibility, and outdoor spaces. Figure \ref{parking_dataset} is a snippet of the parking dataset that is used as an example to illustrate the manipulation of the keywords. The first three rows indicate that there is a parking space for the first property, which is \textbf{allocated} \textbf{off-street} parking for \textbf{residents}, the second has none, and the third property has one \textbf{on-street} parking space. In this situation, feature encoding cannot be applied since there are multiple columns of keywords describing a feature, and the order and quantity of the keywords have no effect.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=12cm]{parking_dataset}
 	\caption{The parking spaces in the first five properties}
@@ -268,14 +271,14 @@ In the dataset, four features are characterized by categorical keywords, includi
 \end{figure}
 
 Figure \ref{uml_generalize_dataset} illustrates the UML diagram of the class \textit{\textbf{GeneralizeDataset}}, which was developed to determine how these features of each property are described and the number of keywords within the description. The core of this class is member function \textit{\textbf{get\_feature\_types}}, and its flowchart is displayed in figure \ref{generalize_dataset_get_feature_types}. In addition, function \textbf{\textit{get\_feature\_num}} can be used to determine the number of keywords for each property. 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=5cm]{uml_generalize_dataset}
 	\caption{The UML diagram of \textit{GeneralizeDataset}}
 	\label{uml_generalize_dataset}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\linewidth]{generalize_dataset_get_feature_types}
 	\caption{Flowchart of \textit{get\_feature\_types}}
@@ -285,7 +288,7 @@ Figure \ref{uml_generalize_dataset} illustrates the UML diagram of the class \te
 \subsection{Manage Outliers}
 The price is crucial to the project, and the distribution of the raw data was inspected, as shown in figure \ref{price_raw}. The spike on the left side of the figure indicates that numerous properties have zero prices, which is illogical. Therefore, these abnormal values should be addressed as they could significantly impact the performance of the model.
 
-\begin{figure*}[h]
+\begin{figure*}[!htbp]
 	\centering
 	\subfigure[All Prices]{\includegraphics[width=5cm]{price_all_raw}\label{price_all_raw}}
 	\hfill
@@ -304,7 +307,7 @@ This technique is applicable to categorical features in the dataset, including p
 \subsubsection{Manage Missing Values}
 The datasets used in this project contain a significant number of missing values. For example, approximately 30\% of the room layout and more than 40\% of the council tax band are missing. Under this situation, it is impossible to replace them with the mean value  since it causes the model to focus on the average and result in low performance. Therefore, another approach was applied, which was removing the missing values in the datasets. 
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[height=6cm]{uml_create_input_dataset}
 	\caption{The UML diagram of \textit{CreateInputDataset}}
@@ -314,7 +317,7 @@ The datasets used in this project contain a significant number of missing values
 \subsubsection{Classy Approach}
 After extracting the information from HTML texts and categorical keywords, it is combined with other columns in the dataset to produce a clean dataset for the model input.  Figure \ref{uml_create_input_dataset} is the UML diagram of \textit{\textbf{CreateInputDataset}}, which is a class developed for this objective, and the flow diagram of producing an input dataset is displayed in figure \ref{create_input_dataset}.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[height=7cm]{create_input_dataset}
 	\caption{The flow diagram of producing  input dataset}
@@ -362,7 +365,7 @@ The architecture of this model solely consists of linear layers and activation f
 
 The status should be converted into 0 or 1 to, given that it is either completed or not in the datasets. Therefore, a threshold of 0.5 is established. If the probability exceeds the threshold, then it is converted to 1. Otherwise, it is set to 0.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[height=10cm]{basic_model_layout}
 	\caption{The architecture of the basic model}
@@ -372,7 +375,7 @@ The status should be converted into 0 or 1 to, given that it is either completed
 \subsection{Basic Model: Predicting Prices}
 The structure of this model is demonstrated in figure \ref{basic_model_price}. Its hidden layers are identical to the model for predicting completeness and prices, whereas the completeness output is removed.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[height=10cm]{basic_model_price}
 	\caption{The structure of the basic model for predicting prices}
@@ -380,9 +383,20 @@ The structure of this model is demonstrated in figure \ref{basic_model_price}. I
 \end{figure}
 
 \subsection{Complex Model: Predicting Prices}
+The layout of a more complex model is similar to that of figure \ref{basic_model_price}, with additional linear layers, and neurons in each layer. The model was constructed for obvious reasons. Intuitively, more complex models are more capable to learn from the input dataset, resulting in enhanced performance. 
 
 \subsection{Residual Network: Predicting Prices}
 The 
+
+\subsection{Linear Regression: Predict Status of Transactions}
+For the same reason as predicting prices, another linear regression model was developed to determine whether a single linear layer is sufficient for the prediction. Figure \ref{correlation_status} depicts the correlation between the status and other attributes that was obtained prior to training the model. It is apparent in the bottom right that the actual and predicted prices are not closely related. Therefore, two models were trained in this section, with the actual and predicted prices included in the first but not the second. 
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=\columnwidth]{correlation_status}
+	\caption{The correlation between the status and other attributes}
+	\label{correlation_status}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Testing \& Experimental Results}
@@ -396,7 +410,7 @@ There were two tests for this objective, the first test examing if the room name
 \subsubsection{Acquire room name and dimension}
 This test utilized two HTML texts, which are illustrated in figure \ref{html_room_info_test}. By invoking the function \textit{EweMove\_Description\_S3\_Rooms} with two snippets and retrieving the results (shown in tables \ref{html_room_info_expect_1} \& \ref{html_room_info_expect_2}), it is evident that the room names in two HTML snippets could be obtained, and the dimensions were acquired if available otherwise, the value was set to one. Therefore, this function can pass the test.
 
-\begin{figure*}[h]
+\begin{figure*}[!htbp]
 	\centering
 	\subfigure[Snippte 1]{\includegraphics[width=7.5cm, height=8cm]{html_room_info_1}\label{html_room_info_test_1}}
 	\hfill
@@ -405,7 +419,7 @@ This test utilized two HTML texts, which are illustrated in figure \ref{html_roo
 	\label{html_room_info_test}
 \end{figure*}
 
-\begin{table}[h]
+\begin{table}[!htbp]
 	\centering
 	\caption{Information from HTML snippet in figure \ref{html_room_info_test_1}}
 	\begin{tabular} {| l | l |}
@@ -430,7 +444,7 @@ This test utilized two HTML texts, which are illustrated in figure \ref{html_roo
 	\label{html_room_info_expect_1}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[!htbp]
 	\centering
 	\caption{Information from HTML snippet in figure \ref*{html_room_info_test_2}}
 	\begin{tabular} {| l | l |}
@@ -461,7 +475,7 @@ The data obtained from HTML texts (figure \ref{html_room_info_test}) was used to
 
 The results of calling \textit{get\_rooms} are displayed in tables \ref{bedroom_info_split} and \ref{bedroom_info_all}. It is obvious that all the bedrooms and their respective areas in tables \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2} were successfully extracted. Moreover, the numerical values could also be obtained without error if the operations were appropriately configured. These behaviors demonstrated that the functionality and design are identical. In addition, the result of invoking \textit{get\_rest\_rooms} is displayed in table \ref{other_room_info}. It is clear that there is no statistical inconsistency using the information from tables \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2}, hence this function can pass the test. 
 
-\begin{table}[h]
+\begin{table}[!htbp]
 	\centering
 	\captionof{table}{Room information (\textit{split})}
 	\label{bedroom_info_split}
@@ -476,7 +490,7 @@ The results of calling \textit{get\_rooms} are displayed in tables \ref{bedroom_
 	\end{tabular}
 \end{table}
 
-\begin{table*}[h]
+\begin{table*}[!htbp]
 	\centering
 	\caption{Bedroom information integrated by different operations}
 	\label{bedroom_info_all}
@@ -538,7 +552,7 @@ The data utilized for this test is displayed in figure \ref{parking_dataset}. In
 
 In the initial test, an exception was thrown if an invalid feature was entered, in this case, \textit{Distance to School}. Next, the result of calling function \textit{get\_feature\_types} is shown in table \ref{parking_types}. Since there are ten properties in the snippets and six keywords in total, this table has ten rows and six columns which is correct, and its elements are consistent with the dataset snippet. For the first property with an \textbf{allocated} \textbf{off-street} parking space for \textbf{residents}, the three keywords in the first row are set to one while the others are zero, and this conclusion holds true for the remaining properties. In addition, the number of keywords associated with each property can be obtained accurately by calling \textit{get\_feature\_num}. 
 
-\begin{table}[h]
+\begin{table}[!htbp]
 	\centering
 	\caption{The keywords for each property}
 	\label{parking_types}
@@ -596,7 +610,7 @@ The first step in evaluating the behavior of this class is to determine if the c
 
 For general information, the first ten rows after preprocessing and their corresponding rows in the original dataset are displayed in figure \ref{general_info}. The categorical features, such as postcode and council tax band, are encoded as numerical values allowing the first test to be passed. In addition, it is evident that the indices in the new dataset are not continuous, indicating that the rows with missing values have been removed. Hence it can pass the second test. 
 
-\begin{figure*}[h]
+\begin{figure*}[!htbp]
 	\centering
 	\subfigure[Original dataset]{\includegraphics[width=\linewidth]{general_raw}\label{general_raw}}
 	\subfigure[Preprocessed dataset]{\includegraphics[width=\linewidth]{general_input}\label{general_input}}
@@ -607,7 +621,8 @@ For general information, the first ten rows after preprocessing and their corres
 \section{Model Construction}
 \subsection{Linear Regression: Predict Price}
 The training \& validation losses of this model are depicted in figure \ref{linear_regression_fold_5}, and the model trained in fold two has been chosen for evaluation since it has the best performance. 
-\begin{figure*}[h]
+\\
+\begin{figure*}[!htbp]
 	\centering
 	\subfigure[Fold 0]{\includegraphics[width=5cm]{linear_regression_fold_0}\label{linear_regression_fold_0}}
 	\hfill
@@ -622,7 +637,7 @@ The training \& validation losses of this model are depicted in figure \ref{line
 	\label{linear_regression_fold_5}
 \end{figure*}
 
-\begin{table}[h]
+\begin{table}[!htbp]
 	\centering
 	\caption{Comparison between truth and model predictions}
 	\label{linear_regression_predictions}
@@ -659,7 +674,7 @@ The first ten predictions and the actual prices are displayed in table \ref{line
 The training and validation losses against epochs for each fold is displayed in figure \ref{sale_fold_5}. For fold zero, the model was overfitting as the training loss was approximately the same after 60 epochs, whereas the validation loss was increasing. If the training stops elrly, then the performance of this model might be the best. For fold one, the model is underfitting as the validation loss keeps decreasing and its performance might be better if it was trained for more epochs. For the next two folds, the performance of the models are the best and should be selected for testing. The model trained from last fold did not learn anything since both training and validation loss is osciliating. 
 \\
 
-\begin{figure*}[h]
+\begin{figure*}[!htbp]
 	\centering
 	\subfigure[Fold 0]{\includegraphics[width=5cm]{sale_fold_5_0}\label{sale_fold_5_0}}
 	\hfill
@@ -683,7 +698,7 @@ The metrics for price prediction are as follows, $MAE = 57527$, $MSE = 755996477
 Figure \ref{confusion_matrix_basic_model} illustrates the confusion matrix of predicting completeness, from which the accuracy, precision, recall, and F1 score are calculated to be 0.638, 0.638, 1, and 0.78, respectively. 
 \\
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=10cm]{confusion_matrix_basic_model}
 	\caption{The confusion matrix of the basic model}
@@ -691,7 +706,7 @@ Figure \ref{confusion_matrix_basic_model} illustrates the confusion matrix of pr
 \end{figure}
 
 The error results could be caused by loss functions. The completeness is either zero or one, hence the BCE loss was used. For the prices which is greater than zero, the MSE loss was applied. As the model outputs both completeness and prices, the BCE and MSE loss were added to produce a total loss which was then used for backpropagation. However, the BCE loss is small compared with MSE loss. Therefore, the total loss resulted in the model learning more in predicting prices and completeness was ignored. Additionally, another reason causing the wrong predictions on completness was that the price is not input into the model and it is one of the most important factors in real-life transactions. 
-\begin{table}[h]
+\begin{table}[!htbp]
 	\centering
 	\caption{Comparison between truth and model predictions}
 	\label{first_model_predictions}
@@ -725,7 +740,7 @@ The error results could be caused by loss functions. The completeness is either 
 \subsection{Basic Model: Predicting Prices}
 Initially, the training \& validation losses of this model is displayed in figure \ref{all_full_epoch_1000}, and the model from fold one was selected for the evaluation because of its performance. The first ten predictions are shown in table \ref{first_model_predictions}, and the metrics of this model are as follows, $MAE = 36538$, $MSE = 4918700785$, and $R^2 = 0.85$. 
 
-\begin{figure*}[h]
+\begin{figure*}[!htbp]
 	\centering
 	\subfigure[Fold 0]{\includegraphics[width=5cm]{all_full_epoch_1000_fold_0}}
 	\hfill
@@ -740,7 +755,7 @@ Initially, the training \& validation losses of this model is displayed in figur
 	\label{all_full_epoch_1000}
 \end{figure*}
 
-\begin{table}[h]
+\begin{table}[!htbp]
 	\centering
 	\caption{ True and predicted prices for basic model}
 	\label{basic_model_prediction_price}
@@ -776,7 +791,7 @@ Initially, the training \& validation losses of this model is displayed in figur
  
 Figure \ref{all_full_epoch_1000_ws} illustrates the training \& validation losses after applying WRS. Base on these figures, the model trained in fold two was selected for the evaluation, and the first ten predicted prices are displayed in table \ref{basic_model_prediction_price_ws}. The metrics of this model are $MAE = 34099$, $MSE = 4635616774$, and $R^2 = 0.86$. 
 
-\begin{figure*}[h]
+\begin{figure*}[!htbp]
 	\centering
 	\subfigure[Fold 0]{\includegraphics[width=5cm]{all_weighted_sampler_full_epoch_1000_fold_0}}
 	\hfill
@@ -791,7 +806,7 @@ Figure \ref{all_full_epoch_1000_ws} illustrates the training \& validation losse
 	\label{all_full_epoch_1000_ws}
 \end{figure*}
 
-\begin{table}[h]
+\begin{table}[!htbp]
 	\centering
 	\caption{True \& predicted prices for basic model (WRS applied)}
 	\label{basic_model_prediction_price_ws}
@@ -826,7 +841,7 @@ The predicted rental prices in table \ref{basic_model_prediction_price_ws} are n
 \\
 
 Figure \ref{all_full_epoch_1000_outlier_removed} depicts the training and validation losses after removing the outliers, and the model trained on fold one was chosen for evaluation based on its performance. Some actual and predicted prices are displayed in table \ref{basic_model_prediction_price_outlier_removed}. This model has following metrics, $MAE = 35391$, $MSE = 4580892828$, and $R^2 = 0.87$. 
-\begin{figure*}[h]
+\begin{figure*}[!htbp]
 	\centering
 	\subfigure[Fold 0]{\includegraphics[width=5cm]{all_removed_weighted_sampler_full_epoch_1000_fold_0}}
 	\hfill
@@ -841,7 +856,7 @@ Figure \ref{all_full_epoch_1000_outlier_removed} depicts the training and valida
 	\label{all_full_epoch_1000_outlier_removed}
 \end{figure*}
 
-\begin{table}[h]
+\begin{table}[!htbp]
 	\centering
 	\caption{True \& predicted prices for basic model (outlier removed)}
 	\label{basic_model_prediction_price_outlier_removed}
@@ -873,7 +888,7 @@ Figure \ref{all_full_epoch_1000_outlier_removed} depicts the training and valida
 \end{table}
 
 Table \ref{metrics_basic_model}, which summarizes the metrics for three models, shows that the MSE is decreasing and $R^2$ is increasing for the three models. Therefore, the results illustrate that the WRS could be a solution for the imbalanced dataset and that removing the outliers can improve the performance. 
-\begin{table}[h]
+\begin{table}[!htbp]
 	\centering
 	\caption{Metrics for various models}
 	\label{metrics_basic_model}
@@ -889,6 +904,57 @@ Table \ref{metrics_basic_model}, which summarizes the metrics for three models, 
 		 \hline
 	\end{tabular}
 \end{table}
+
+\subsection{Complex Model: Predicting Prices}
+The training and validation losses of this model are depicted in figure \ref{all_complex_full_epoch_1000}. The predictions made by the model in fold two are displayed in table \ref{complex_model_prediction_price}, along with its metrics, $MAE = 193166$, $MSE = 70788722849$, and $R^2 = -1.11$. Clearly, the complex model was not learning, and this might be caused by error hyperparameters. Therefore, the model was tuned so that its performance could be improved. 
+\\
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{all_complex_full_epoch_1000_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{all_complex_full_epoch_1000_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{all_complex_full_epoch_1000_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{all_complex_full_epoch_1000_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{all_complex_full_epoch_1000_fold_4}}
+	\caption{Training \& validation loss (Model for predicting prices)}
+	\label{all_complex_full_epoch_1000}
+\end{figure*}
+
+\begin{table}[!htbp]
+	\centering
+	\caption{ True and predicted prices for basic model}
+	\label{complex_model_prediction_price}
+	\begin{tabular}{| c | c | c |}
+		\hline
+		True Price & Predicted Price & Price Error \% \\
+		\hline
+		0 & 1300 & 100 \\
+		\hline
+		0 & 425000 & 100 \\
+		\hline
+		0 & 800000 & 100 \\
+		\hline
+		0 & 265000 & 100 \\
+		\hline
+		0 & 140000 & 100 \\
+		\hline
+		0 & 525 & 100 \\
+		\hline
+		0 & 460 & 100 \\ 
+		\hline
+		0 & 650000 & 100 \\
+		\hline
+		0 & 200000 & 100 \\
+		\hline
+		0 & 650 & 100 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+The hyperparameters tuned to enhance the performance are number of epochs, learning rate, number of layers and neurons in each layer. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion}
