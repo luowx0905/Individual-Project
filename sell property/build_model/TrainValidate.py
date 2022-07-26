@@ -34,6 +34,8 @@ class TrainValidate:
 
         self.visualization = {}
         self.handles = {}
+        self.parameters = {}
+        self.gradients = {}
 
     def set_loader(self, train_loader, val_loader=None):
         self.train_loader = train_loader
@@ -201,6 +203,49 @@ class TrainValidate:
         for handle in self.handles.values():
             handle.remove()
         self.handles = {}
+
+    def get_parameters(self, layer_to_hook):
+        if not isinstance(layer_to_hook, list):
+            layer_to_hook = [layer_to_hook]
+
+        modules = list(self.model.named_modules())
+        layer_names = {layer: name for name, layer in modules}
+
+        self.parameters = {}
+
+        for name, layer in modules:
+            if name in layer_to_hook:
+                self.parameters.update({name: {}})
+                for parm_id, p in layer.named_parameters():
+                    self.parameters[name].update({parm_id: []})
+
+        def hook_fn(layer, inputs, outputs):
+            name = layer_names[layer]
+            for parm_id, parameter in layer.names_parameters():
+                self.parameters[name][parm_id].append(parameter.tolist())
+
+        self.attach_hooks(layer_to_hook, hook_fn)
+
+    def get_gradient(self, layer_to_hook):
+        if not isinstance(layer_to_hook, list):
+            layer_to_hook = [layer_to_hook]
+
+        modules = list(self.model.named_modules())
+        self.gradients = {}
+
+        def make_log_fn(name, parm_id):
+            def log_fn(grad):
+                self.gradients[name][parm_id].append(grad.tolist())
+            return log_fn
+
+        for name, layer in self.model.named_modules():
+            if name in layer_to_hook:
+                self.gradients.update({name: {}})
+                for parm_id, p in layer.names_parameters():
+                    if p.requires_grad:
+                        self.gradients[name].update({parm_id: []})
+                        log_fn = make_log_fn(name, parm_id)
+                        self.handles[f"{name}.{parm_id}.grad"] = p.register_hook(log_fn)
 
 
 def create_weighted_sampler(data: np.array) -> WeightedRandomSampler:
