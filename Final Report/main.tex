@@ -657,7 +657,7 @@ The training \& validation losses of this model are depicted in figure \ref{line
 	\label{linear_regression_predictions}
 	\begin{tabular}{| c | c | c |}
 		\hline
-		Predicted Price & price & price error  / \%\\ 
+		Predicted Price & Price & Price Error  / \%\\ 
 		\hline
 		940 & 695 & 35.37 \\
 		\hline
@@ -726,7 +726,7 @@ The error results could be caused by loss functions. The completeness is either 
 	\label{first_model_predictions}
 	\begin{tabular}{| c | c | c | c | c |}
 		\hline
-		Completed & Price & Predicted completed & Predicted price & Price error  / \%\\ 
+		Completed & Price & Predicted Status & Predicted Price & Price error  / \%\\ 
 		\hline
 		1 & 675000 & 1 & 600810 & 10.99 \\
 		\hline
@@ -775,7 +775,7 @@ Initially, the training \& validation losses of this model is displayed in figur
 	\label{basic_model_prediction_price}
 	\begin{tabular}{| c | c | c |}
 		\hline
-		True Price & Predicted Price & Price Error \% \\
+		Predictions & Actual Price & Price Error \% \\
 		\hline
 		0 & 695 & 100 \\
 		\hline
@@ -826,7 +826,7 @@ Figure \ref{all_full_epoch_1000_ws} illustrates the training \& validation losse
 	\label{basic_model_prediction_price_ws}
 	\begin{tabular}{| c | c | c |}
 		\hline
-		True Price & Predicted Price & Price Error \% \\
+		Prediction & True Price & Error \% \\
 		\hline
 		764 & 695 & 10.06 \\
 		\hline
@@ -876,7 +876,7 @@ Figure \ref{all_full_epoch_1000_outlier_removed} depicts the training and valida
 	\label{basic_model_prediction_price_outlier_removed}
 	\begin{tabular}{| c | c | c |}
 		\hline
-		True Price & Predicted Price & Price Error \% \\
+		Predicted Price & Actual Price & Error \% \\
 		\hline
 		92743 & 105000 & 11.67 \\
 		\hline
@@ -898,24 +898,6 @@ Figure \ref{all_full_epoch_1000_outlier_removed} depicts the training and valida
 		\hline
 		115000 & 127500 & 9.80 \\
 		\hline
-	\end{tabular}
-\end{table}
-
-Table \ref{metrics_basic_model}, which summarizes the metrics for three models, shows that the MSE is decreasing and $R^2$ is increasing for the three models. Therefore, the results illustrate that the WRS could be a solution for the imbalanced dataset and that removing the outliers can improve the performance. 
-\begin{table}[!htbp]
-	\centering
-	\caption{Metrics for various models}
-	\label{metrics_basic_model}
-	\begin{tabular}{| l | c | c | c |}
-		\hline
-		 & MAE & MSE & $R^2$ \\
-		 \hline
-		 Basic model & 36538 & 4918700785 & 0.85 \\
-		 \hline
-		 WRS applied & 34099 & 4635616774 & 0.86 \\
-		 \hline
-		 Outliers removed & 35391 & 4580892828 & 0.87 \\
-		 \hline
 	\end{tabular}
 \end{table}
 
@@ -943,7 +925,7 @@ The training and validation losses of this model are depicted in figure \ref{all
 	\label{complex_model_prediction_price}
 	\begin{tabular}{| c | c | c |}
 		\hline
-		True Price & Predicted Price & Price Error \% \\
+		Predictions & True Price & Error \% \\
 		\hline
 		0 & 1300 & 100 \\
 		\hline
@@ -969,6 +951,82 @@ The training and validation losses of this model are depicted in figure \ref{all
 \end{table}
 
 The hyperparameters tuned to enhance the performance are number of epochs, learning rate, number of layers and neurons in each layer. 
+
+\subsection{Residual Network: Predicting Prices}
+Figure \ref{all_resnet_full_epoch_1000} illustrates the training and validation losses for residual networks, and the model from fold one was selected for evaluation due to its low loss. Some predicted prices are displayed in table \ref{resnet_prediction_price}; its metrics are $MAE = 35607$, $MSE = 4515004136$, and $R^2 = 0.86$. 
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{all_resnet_full_epoch_1000_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{all_resnet_full_epoch_1000_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{all_resnet_full_epoch_1000_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{all_resnet_full_epoch_1000_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{all_resnet_full_epoch_1000_fold_4}}
+	\caption{Training \& validation loss (Model for predicting prices)}
+	\label{all_resnet_full_epoch_1000}
+\end{figure*}
+
+\begin{table}[!htbp]
+	\centering
+	\caption{ True and predicted prices for basic model}
+	\label{resnet_prediction_price}
+	\begin{tabular}{| c | c | c |}
+		\hline
+		Predictions & Actual Price & Error \% \\
+		\hline
+		146653 & 200000 & 26.67 \\
+		\hline
+		434 & 475 & 8.44 \\
+		\hline
+		117730 & 105000 & 12.12 \\
+		\hline
+		1840 & 1250 & 47.26 \\
+		\hline
+		177246 & 180000 & 1.52 \\
+		\hline
+		123018 & 140000 & 12.12 \\
+		\hline
+		325667 & 300000 & 8.55 \\ 
+		\hline
+		122508 & 150000 & 18.32 \\
+		\hline
+		747 & 525 & 42.38 \\
+		\hline
+		255869 & 200000 & 27.93 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsection{Comparing models for predicting prices}
+Table \ref{metrics_basic_model} summarizes the metrics of all the models for predicting prices. It is evident that the linear regression model has the worst performance since its simple architecture is incapable of extracting insight from datasets. For the basic models, their performance becomes better when WRS is applied and outliers are removed. Moreover, although the remaining two complex models have more layers and neurons, they are unable to improve the accuracy of their predictions significantly. Therefore, the basic model was chosen for predicting prices because of its acceptable performance and simple architecture, which results in smaller model size and less prediction time. 
+\begin{table}[!htbp]
+	\centering
+	\caption{Metrics for various models}
+	\label{metrics_basic_model}
+	\begin{tabular}{| l | c | c | c |}
+		\hline
+		& MAE & MSE & $R^2$ \\
+		\hline
+		Linear Regression Model & 179836 & 66601086343 & -0.91 \\
+		\hline
+		Basic Model (Price and Status) & 57527 & 7559964776 & 0.54 \\
+		\hline
+		Basic Model (Price only) & 36538 & 4918700785 & 0.85 \\
+		\hline
+		Basic Model (WRS applied)& 34099 & 4635616774 & 0.86 \\
+		\hline
+		Basic Model (Outliers removed) & 35391 & 4580892828 & 0.87 \\
+		\hline
+		Complex Model & & & \\
+		\hline
+		Residual Network & 35607 & 4515004136 & 0.86 \\
+		\hline
+	\end{tabular}
+\end{table}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion}
