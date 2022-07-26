@@ -349,8 +349,8 @@ As the measurements for predicted prices, MSE, mean absolute error (MAE), and co
 The confusion matrix is initially obtained to access the predictions regarding the status of transactions. A confusion matrix summarizes the classification problems, indicating where the model outputs wrong predictions and the types of errors. Based on the confusion matrix, various metrics are calculated, and they are shown as follows, 
 \begin{itemize}
 	\item \textbf{Accuracy}: It is the number of correct predictions divided by the total number of predictions. The best accuracy is one and zero is the worst. 
-	\item \textbf{Precision}: It is the number of correct positive predictions divided by the number of positive predictions. The best and worst precisions are one and zero, respectively. 
-	\item \textbf{Recall}: the ratio of correct positive predictions to the total number of positive examples, and the high recall indicates that the class is correctly identified. 
+	\item \textbf{Precision}: It is the number of correct positive predictions divided by the total number of positive predictions. High precision suggests that predictions on positive can be guaranteed.
+	\item \textbf{Recall}: The ratio of correct positive predictions to the total number of positive examples, and the high recall indicates that the positive class is correctly identified. 
 	\item \textbf{F1 Score}: This is a harmonic mean of both recall and precision. Hence this value can be used to evaluate performance independently. 
 \end{itemize}
 
@@ -953,7 +953,7 @@ The training and validation losses of this model are depicted in figure \ref{all
 The hyperparameters tuned to enhance the performance are number of epochs, learning rate, number of layers and neurons in each layer. 
 
 \subsection{Residual Network: Predicting Prices}
-Figure \ref{all_resnet_full_epoch_1000} illustrates the training and validation losses for residual networks, and the model from fold one was selected for evaluation due to its low loss. Some predicted prices are displayed in table \ref{resnet_prediction_price}; its metrics are $MAE = 35607$, $MSE = 4515004136$, and $R^2 = 0.86$. 
+Figure \ref{all_resnet_full_epoch_1000} illustrates the training and validation losses for residual networks, and the model from fold one was selected for evaluation due to its low loss. Some predicted prices are displayed in table \ref{resnet_prediction_price}; its metrics are $MAE = 35607$, $MSE = 4515004136$, and $R^2 = 0.87$. 
 \begin{figure*}[!htbp]
 	\centering
 	\subfigure[Fold 0]{\includegraphics[width=5cm]{all_resnet_full_epoch_1000_fold_0}}
@@ -1001,7 +1001,7 @@ Figure \ref{all_resnet_full_epoch_1000} illustrates the training and validation 
 \end{table}
 
 \subsection{Comparing models for predicting prices}
-Table \ref{metrics_basic_model} summarizes the metrics of all the models for predicting prices. It is evident that the linear regression model has the worst performance since its simple architecture is incapable of extracting insight from datasets. For the basic models, their performance becomes better when WRS is applied and outliers are removed. Moreover, although the remaining two complex models have more layers and neurons, they are unable to improve the accuracy of their predictions significantly. Therefore, the basic model was chosen for predicting prices because of its acceptable performance and simple architecture, which results in smaller model size and less prediction time. 
+Table \ref{metrics_basic_model} summarizes the metrics of all the models for predicting prices. It is evident that the linear regression model has the worst performance since its simple architecture is incapable of extracting insight from datasets. For the basic models, their performance becomes better when WRS is applied and outliers are removed. Moreover, although the remaining two complex models have more layers and neurons, they cannot improve the accuracy of their predictions significantly. Therefore, the basic model was chosen for predicting prices because of its acceptable performance and simple architecture, which results in smaller model size and less prediction time. 
 \begin{table}[!htbp]
 	\centering
 	\caption{Metrics for various models}
@@ -1022,7 +1022,105 @@ Table \ref{metrics_basic_model} summarizes the metrics of all the models for pre
 		\hline
 		Complex Model & & & \\
 		\hline
-		Residual Network & 35607 & 4515004136 & 0.86 \\
+		Residual Network & 35607 & 4515004136 & 0.87 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsection{Linear Regression: Predict Status of Transactions}
+\subsubsection{Actual and Predicted Prices Included}
+The training and validation losses of the model are depicted in figure \ref{linear_regression_status_include_full}, and all the models can converge and the losses of the last three models are comparable. Therefore, they were utilized for evaluation, and the threshold for converting numerical values into status has been set to 0.5. Figure \ref{cm_included} displays the confusion matrics of three models, and their metrics are listed in table \ref{metrics_linear_regression_status_included}.
+\\
+
+From table \ref{metrics_linear_regression_status_included}, the recall has the highest values, indicating that the model can predict the completed transactions with greater confidence. However, the precision and F1 score are around 0.3, which means that the performance of these models is unacceptable. 
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{linear_regression_status_include_full_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{linear_regression_status_include_full_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{linear_regression_status_include_full_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{linear_regression_status_include_full_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{linear_regression_status_include_full_fold_4}}
+	\caption{Training \& validation loss (Model for predicting status)}
+	\label{linear_regression_status_include_full}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{cm_included_2}}
+	\hfill
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{cm_included_3}}
+	\hfill
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{cm_included_4}}
+	\caption{Confusion matrices for linear regression models (prices included)}
+	\label{cm_included}
+\end{figure*}
+
+\begin{table}[!htbp]
+	\centering
+	\caption{Metrics of linear regression models (prices included)}
+	\label{metrics_linear_regression_status_included}
+	\begin{tabular}{| c | c | c | c | c |}
+		\hline
+		Fold & Accuracy & Precision & Recall & F1 Score \\
+		\hline
+		2 & 0.405 & 0.242 & 0.683 & 0.357 \\
+		\hline
+		3 & 0.423 & 0.235 & 0.747 & 0.358 \\
+		\hline
+		4 & 0.453 & 0.352 & 0.697 & 0.468 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsubsection{Actual and Predicted Prices Excluded}
+Figure \ref{linear_regression_status_exclude_full} illustrates the training and validation losses of the models that were trained without prices. It is evident that all the models can converge, and the models from folds zero, two and four were utilized for evaluation since they have superior performance. The confusion matrices and metrics are illustrated in figure \ref{cm_excluded} and table \ref{metrics_linear_regression_status_excluded}, respectively. 
+\\
+
+In table \ref{metrics_linear_regression_status_excluded}, the recall is the highest, while the precision and F1 score are low, suggesting that although the loss can converge, the performance of models is unreliable. Therefore, more complex neural networks are essential for robust performance regardless of price. 
+
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{linear_regression_status_exclude_full_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{linear_regression_status_exclude_full_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{linear_regression_status_exclude_full_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{linear_regression_status_exclude_full_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{linear_regression_status_exclude_full_fold_4}}
+	\caption{Training \& validation loss of model for status(without prices))}
+	\label{linear_regression_status_exclude_full}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{cm_excluded_0}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{cm_excluded_2}}
+	\hfill
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{cm_excluded_4}}
+	\caption{Confusion matrices for linear regression models (prices excluded)}
+	\label{cm_excluded}
+\end{figure*}
+
+\begin{table}[!htbp]
+	\centering
+	\caption{Metrics of linear regression models (prices excluded)}
+	\label{metrics_linear_regression_status_excluded}
+	\begin{tabular}{| c | c | c | c | c |}
+		\hline
+		Fold & Accuracy & Precision & Recall & F1 Score \\
+		\hline
+		0 & 0.381 & 0.154 & 0.719 & 0.254 \\
+		\hline
+		2 & 0.514 & 0.469 & 0.722 & 0.569 \\
+		\hline
+		4 & 0.388 & 0.191 & 0.690 & 0.300 \\
 		\hline
 	\end{tabular}
 \end{table}
