@@ -386,30 +386,37 @@ The structure of this model is demonstrated in figure \ref{basic_model_price}. I
 The layout of a more complex model is similar to that of figure \ref{basic_model_price}, with additional linear layers, and neurons in each layer. The model was constructed for an obvious reason. Intuitively, more complex models are more capable to learn from the input dataset, resulting in enhanced performance. 
 
 \subsection{Residual Network: Predicting Prices}
-The second complex model was developed which utilized residual connections. The architecture of the residual blocks and the network are illustrated in figures \ref{residual_block_layout} and \ref{resnet_model_price}, respectively. This model was developed because the performance of the first complex model was not significantly enhanced despite having more layers and neurons. In addition, tuning the hyperparameters of this model was time consuming and the improvement of the accuracy was limited. 
+The second complex model was developed which utilized residual connections. The architecture of the residual blocks and the network are illustrated in figure \ref{resnet}. This model was developed because the performance of the first complex model was not significantly enhanced despite having more layers and neurons. In addition, tuning the hyperparameters of this model was time consuming and the improvement of the accuracy was limited. 
 
-\begin{figure}[!htbp]
+\begin{figure*}[!htbp]
 	\centering
-	\includegraphics[width=7.5cm]{residual_bolck_layout}
-	\caption{The layout of a single residual block}
-	\label{residual_block_layout}
-\end{figure}
-
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=7.5cm]{resnet_model_price}
-	\caption{The architecture of the residual model}
-	\label{resnet_model_price}
-\end{figure}
+	\subfigure[Residual Block]{\includegraphics[width=7.5cm]{residual_bolck_layout}}
+	\hfill
+	\subfigure[Residual Network]{\includegraphics[width=7.5cm]{resnet_model_price}}
+	\caption{Layout of residual block and network}
+	\label{resnet}
+\end{figure*}
 
 \subsection{Linear Regression: Predict Status of Transactions}
-For the same reason as predicting prices, another linear regression model was developed to determine whether a single linear layer is sufficient for the prediction. Figure \ref{correlation_status} depicts the correlation between the status and other attributes that was obtained prior to training the model. It is apparent in the bottom right that the actual and predicted prices are not closely related. Therefore, two models were trained in this section, with the actual and predicted prices included in the first but not the second. 
+Before constructing models, the correlation between the status and other attributes was obtained and is depicted in figure \ref{correlation_status}. It is apparent in the bottom right that the actual and predicted prices are not closely related to the status as the correlation is approximately -0.1. However, they were still considered model inputs because close proximity between prices increases the likelihood of a completed transaction. For example, if the predicted price is 1000 £/month but the actual price is 100 £/month, this would be considered fraud resulting in an incomplete transaction. 
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=\columnwidth]{correlation_status}
+	\includegraphics[width=15cm]{correlation_status}
 	\caption{The correlation between the status and other attributes}
 	\label{correlation_status}
+\end{figure}
+
+For the same reason as predicting prices, another linear regression model was developed to determine whether a single linear layer is sufficient for the prediction. In this case, the model was trained using two datasets, with the actual and predicted prices included in the first but excluded in the second. 
+
+\subsection{Transfer-baesd Model: Predict Status}
+There are multiple models developed previously, and their performance can be acceptable. Hence, transfer learning might be one of the practical approaches to building a model for predicting status. The selected model is the one to which WRS and outlier removal have been applied. It is loaded initially, and its parameters are frozen. Its output, along with all the attributes and actual prices, is utilized by subsequent layers for forecasting status. The complete architecture of this model is illustrated in figure \ref{transfer_layout}, and the layout of the selected model (indicated in the red rectangle) is displayed in figure \ref{basic_model_price}.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[height=17cm]{transfer_layout}
+	\caption{The architecture of the transfer-based model for predicting status}
+	\label{transfer_layout}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1093,7 +1100,7 @@ In table \ref{metrics_linear_regression_status_excluded}, the recall is the high
 	\subfigure[Fold 3]{\includegraphics[width=5cm]{linear_regression_status_exclude_full_fold_3}}
 	\hfil
 	\subfigure[Fold 4]{\includegraphics[width=5cm]{linear_regression_status_exclude_full_fold_4}}
-	\caption{Training \& validation loss of model for status(without prices))}
+	\caption{Training \& validation loss of model for status(without prices)}
 	\label{linear_regression_status_exclude_full}
 \end{figure*}
 
@@ -1125,6 +1132,23 @@ In table \ref{metrics_linear_regression_status_excluded}, the recall is the high
 	\end{tabular}
 \end{table}
 
+\subsection{Transfer-baesd Model: Predict Status}
+Figure \ref{transfer_based_status}
+
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_removed_full_epoch_1000_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_removed_full_epoch_1000_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_removed_full_epoch_1000_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_removed_full_epoch_1000_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_removed_full_epoch_1000_fold_4}}
+	\caption{Training \& validation loss of transfer-based model}
+	\label{transfer_based_status}
+\end{figure*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion}
