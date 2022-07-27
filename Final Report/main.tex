@@ -1133,7 +1133,7 @@ In table \ref{metrics_linear_regression_status_excluded}, the recall is the high
 \end{table}
 
 \subsection{Transfer-baesd Model: Predict Status}
-Figure \ref{transfer_based_status}
+Figure \ref{transfer_based_status} illustrates the training and validation losses. The model in fold three is selected for the evaluation, and predictions are the same regardless of the actual status. This error may be caused by the imbalanced dataset since there are 3088 complete transactions, whereas more than twice as many incomplete transactions. 
 
 \begin{figure*}[!htbp]
 	\centering
@@ -1149,6 +1149,28 @@ Figure \ref{transfer_based_status}
 	\caption{Training \& validation loss of transfer-based model}
 	\label{transfer_based_status}
 \end{figure*}
+
+Therefore, WRS is applied to ensure that the data in each mini-batch is balanced, and the results are depicted in figure \ref{transfer_based_status_WRS}. The model's output is 0.499189 for all the inputs, which is incorrect. 
+\\
+
+The architecture of this model may be responsible for these outcomes. A pre-trained model for predicting prices is loaded whose outputs range from several hundred to several thousand. However, the other inputs are normalized, meaning that they range from -1 to 1. Therefore, the inputs are on significantly different scales, resulting in the model focusing on the feature with a larger magnitude, prices in this case, while ignoring other features. 
+
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_ws_removed_full_epoch_1000_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_ws_removed_full_epoch_1000_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_ws_removed_full_epoch_1000_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_ws_removed_full_epoch_1000_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_ws_removed_full_epoch_1000_fold_4}}
+	\caption{Training \& validation loss of transfer-based model (WRS applied)}
+	\label{transfer_based_status_WRS}
+\end{figure*}
+
+In order to address this issue, the layout of the model is preserved, but the parameters of the pre-trained model are not frozen. This is because despite the model output being on a different scale, its previous performance demonstrated that this architecture is capable of predicting prices with acceptable error rates. Therefore, it is anticipated that removing parameters while retaining architecture would output the prices on the same scale as other features, thereby facilitating the output of the entire model. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion}
