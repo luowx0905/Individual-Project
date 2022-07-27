@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  27 JUL 2022 22:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  27 JUL 2022 23:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1428,30 +1428,79 @@ e png)
 Package pdftex.def Info: ./figures//status_ws_removed_full_epoch_1000_fold_4.pn
 g  used on input line 1168.
 (pdftex.def)             Requested size: 142.26378pt x 103.33939pt.
- [37 <./figures//status_ws_removed_full_epoch_1000_fold_0.png> <./figures//stat
-us_ws_removed_full_epoch_1000_fold_1.png> <./figures//status_ws_removed_full_ep
-och_1000_fold_2.png> <./figures//status_ws_removed_full_epoch_1000_fold_3.png> 
-<./figures//status_ws_removed_full_epoch_1000_fold_4.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 1173--1175
+
+ []
+
+<./figures//status_ws_removed_full_no_freeze_fold_0.png, id=846, 533.995pt x 37
+3.395pt>
+File: ./figures//status_ws_removed_full_no_freeze_fold_0.png Graphic file (type
+ png)
+<use ./figures//status_ws_removed_full_no_freeze_fold_0.png>
+Package pdftex.def Info: ./figures//status_ws_removed_full_no_freeze_fold_0.png
+  used on input line 1180.
+(pdftex.def)             Requested size: 142.26378pt x 99.47906pt.
+<./figures//status_ws_removed_full_no_freeze_fold_1.png, id=847, 517.935pt x 36
+9.38pt>
+File: ./figures//status_ws_removed_full_no_freeze_fold_1.png Graphic file (type
+ png)
+<use ./figures//status_ws_removed_full_no_freeze_fold_1.png>
+Package pdftex.def Info: ./figures//status_ws_removed_full_no_freeze_fold_1.png
+  used on input line 1182.
+(pdftex.def)             Requested size: 142.26378pt x 101.45862pt.
+<./figures//status_ws_removed_full_no_freeze_fold_2.png, id=848, 520.94624pt x 
+374.39874pt>
+File: ./figures//status_ws_removed_full_no_freeze_fold_2.png Graphic file (type
+ png)
+<use ./figures//status_ws_removed_full_no_freeze_fold_2.png>
+Package pdftex.def Info: ./figures//status_ws_removed_full_no_freeze_fold_2.png
+  used on input line 1184.
+(pdftex.def)             Requested size: 142.26378pt x 102.243pt.
+<./figures//status_ws_removed_full_no_freeze_fold_3.png, id=849, 537.00626pt x 
+380.42125pt>
+File: ./figures//status_ws_removed_full_no_freeze_fold_3.png Graphic file (type
+ png)
+<use ./figures//status_ws_removed_full_no_freeze_fold_3.png>
+Package pdftex.def Info: ./figures//status_ws_removed_full_no_freeze_fold_3.png
+  used on input line 1186.
+(pdftex.def)             Requested size: 142.26378pt x 100.78212pt.
+<./figures//status_ws_removed_full_no_freeze_fold_4.png, id=850, 516.93124pt x 
+368.37625pt>
+File: ./figures//status_ws_removed_full_no_freeze_fold_4.png Graphic file (type
+ png)
+<use ./figures//status_ws_removed_full_no_freeze_fold_4.png>
+Package pdftex.def Info: ./figures//status_ws_removed_full_no_freeze_fold_4.png
+  used on input line 1188.
+(pdftex.def)             Requested size: 142.26378pt x 101.37965pt.
+[37 <./figures//status_ws_removed_full_epoch_1000_fold_0.png> <./figures//statu
+s_ws_removed_full_epoch_1000_fold_1.png> <./figures//status_ws_removed_full_epo
+ch_1000_fold_2.png> <./figures//status_ws_removed_full_epoch_1000_fold_3.png> <
+./figures//status_ws_removed_full_epoch_1000_fold_4.png>] [38 <./figures//statu
+s_ws_removed_full_no_freeze_fold_0.png> <./figures//status_ws_removed_full_no_f
+reeze_fold_1.png> <./figures//status_ws_removed_full_no_freeze_fold_2.png> <./f
+igures//status_ws_removed_full_no_freeze_fold_3.png> <./figures//status_ws_remo
+ved_full_no_freeze_fold_4.png>]
 Chapter 5.
 (./main.bbl (./main.brf)
 \tf@brf=\write5
 \openout5 = `main.brf'.
 
- [38
+ [39
 
-]) [39
+]) [40
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CEFE5AC9601658ADC181133D32EDE500;9612.
+(rerunfilecheck)             Checksum: 6C902670366504565804155ABEB2A931;9612.
 Package rerunfilecheck Info: File `main.brf' has not changed.
 (rerunfilecheck)             Checksum: 42691143BEC1A5D423BBB6F30417013A;449.
  ) 
 Here is how much of TeX's memory you used:
- 14588 strings out of 478268
- 264023 string characters out of 5846347
- 534040 words of memory out of 5000000
- 32306 multiletter control sequences out of 15000+600000
+ 14651 strings out of 478268
+ 267156 string characters out of 5846347
+ 534150 words of memory out of 5000000
+ 32362 multiletter control sequences out of 15000+600000
  504551 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,10n,80p,835b,468s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1465,10 +1514,10 @@ e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (46 pages, 4632315 bytes).
+Output written on main.pdf (47 pages, 5754288 bytes).
 PDF statistics:
- 970 PDF objects out of 1000 (max. 8388607)
- 720 compressed objects within 8 object streams
- 262 named destinations out of 1000 (max. 500000)
- 801 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 992 PDF objects out of 1000 (max. 8388607)
+ 731 compressed objects within 8 object streams
+ 269 named destinations out of 1000 (max. 500000)
+ 826 words of extra memory for PDF output out of 10000 (max. 10000000)
 

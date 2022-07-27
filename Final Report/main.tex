@@ -1171,6 +1171,24 @@ The architecture of this model may be responsible for these outcomes. A pre-trai
 \end{figure*}
 
 In order to address this issue, the layout of the model is preserved, but the parameters of the pre-trained model are not frozen. This is because despite the model output being on a different scale, its previous performance demonstrated that this architecture is capable of predicting prices with acceptable error rates. Therefore, it is anticipated that removing parameters while retaining architecture would output the prices on the same scale as other features, thereby facilitating the output of the entire model. 
+\\
+
+Figure \ref{transfer_based_status_no_freeze} displays the training and validation losses for the latest model. The models from folds two and four have the best performance and are used for evaluation. The results for the two models are comparable, both of them output the same value, which is approximately 0.5, regardless of the actual status. These incorrect results indicate that the transfer-based model cannot predict the status of transactions.  
+
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_ws_removed_full_no_freeze_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_ws_removed_full_no_freeze_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_ws_removed_full_no_freeze_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_ws_removed_full_no_freeze_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_ws_removed_full_no_freeze_fold_4}}
+	\caption{Training \& validation loss of transfer-based model (no frozen parameters)}
+	\label{transfer_based_status_no_freeze}
+\end{figure*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion}
