@@ -248,10 +248,16 @@ class TrainValidate:
                         self.handles[f"{name}.{parm_id}.grad"] = p.register_hook(log_fn)
 
 
-def create_weighted_sampler(data: np.array) -> WeightedRandomSampler:
+def create_weighted_sampler(data: np.array, bias=None) -> WeightedRandomSampler:
     sale_rent = torch.tensor(data)
     classes, count = sale_rent.unique(return_counts=True)
     weight = 1.0 / count.float()
+
+    if bias is not None:
+        assert len(bias) == len(classes)
+
+        for i in range(len(classes)):
+            weight[i] += bias[i] * weight[i]
 
     sample_weight = []
     for p in data:
@@ -271,8 +277,5 @@ def create_weighted_sampler(data: np.array) -> WeightedRandomSampler:
 
 
 if __name__ == '__main__':
-    start = 0.01
-    end = 0.1
-    num = 10
-    lr_fn = TrainValidate.make_lr_fn(start, end, num, mode="exp")
-    print((start * lr_fn(np.arange(num + 1))))
+    data = np.array([1, 1, 0, 0, 1, 0, 1, 0, 0, 1])
+    create_weighted_sampler(data, [0.1, 0])
