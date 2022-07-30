@@ -419,6 +419,16 @@ There are multiple models developed previously, and their performance can be acc
 	\label{transfer_layout}
 \end{figure}
 
+\subsection{Basic Model: Price Included}
+Due to inaccurate predictions of the transfer-based model, another method to forecast status is attempted. Initially, all the features are input into the model for predicting prices, and then the predicted and actual prices are appended to the original features, resulting in a new dataset. Next, the new data is normalized, shuffled, and split into training and testing datasets. This step ensures that the inputs in this section have the same scale. Figure \ref{basic_status_layout} illustrates the structure of a new model consisting of only linear layers and activation functions, which is trained with the new dataset.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[height=13cm]{basic_status_layout}
+	\caption{The architecture of the basic model for predicting status}
+	\label{basic_status_layout}
+\end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Testing \& Experimental Results}
 Comprehensive testing and analyzing were conducted throughout the implementation but it is documented in this separate chapter for the sake of illuatration. 
@@ -1189,6 +1199,43 @@ Figure \ref{transfer_based_status_no_freeze} displays the training and validatio
 	\caption{Training \& validation loss of transfer-based model (no frozen parameters)}
 	\label{transfer_based_status_no_freeze}
 \end{figure*}
+
+\subsection{Basic Model: Price Included}
+The training and validation losses are displayed in figure \ref{basic_status}. Even though all the losses can converge from these graphs, the models would only output a value of approximately 0.5 regardless of the actual status.
+
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_basic_no_bs_dropout_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_basic_no_bs_dropout_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_basic_no_bs_dropout_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_basic_no_bs_dropout_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_basic_no_bs_dropout_4}}
+	\caption{Training \& validation loss of basic model}
+	\label{basic_status}
+\end{figure*}
+
+In order to evaluate the cause of this error, outputs from the hidden layers are obtained, with the result that all the hidden layer outputs are zero indicating that hidden layers and inputs have no effect, resulting in the model outputs being 0.5. To further analyze this error, the outputs of the activation functions are obtained, and they are illustrated in figure \ref{vanish_gradient}. It is evident that the outputs decreae as the depth increases, and in some folds, they even become approximately zero.
+
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{vanish0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{vanish1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{vanish2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{vanish3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{vanish4}}
+	\caption{The outputs of activation functions}
+	\label{vanish_gradient}
+\end{figure*}
+
+The problem causing the models to output 0.5 is the vanishing gradient which is mitigated by two solutions. The first method is the initialization scheme; the Keiming initialization scheme is used since the activation functions are ReLU in this model. The second approach is inserting batch normalization between linear layers and activation functions. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion}
