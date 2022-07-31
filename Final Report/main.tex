@@ -1243,7 +1243,7 @@ The problem causing the models to output 0.5 is the vanishing gradient which is 
 The results of configuring the initialization scheme and inserting BN are displayed in figure \ref{status_overfitting}. The models are overfitting since the validation losses continue to increase while the training losses remain constant. Therefore, regularization should be applied so that overfitting can be prevented. In this project, dropout, a type of regularization that can avoid the neural network relying on a single neuron, is inserted into the model between BN and activation functions at a ratio of 0.5. 
 \\
 
-Figure \ref{status_dropout} demonstrates the effect of applying dropout. The overfitting is avoided, but the losses are oscillating around 0.7 with neither decreasing nor increasing trend. Despite these defects, the models have the lowest losses for predicting status. Therefore, they are evaluated. The confusion matrices are depicted in figure \ref{status_dropout_prediction}, and metrics are shown in table \ref{status_metrics_dropout}.
+Figure \ref{status_dropout} demonstrates the effect of applying dropout. The overfitting is avoided, but the losses oscillate around 0.7 with neither decreasing nor increasing trend. Despite these defects, the models have the lowest losses for predicting status. Therefore, they are evaluated. The model from the second fold is chosen for evaluation because it has the lowest loss and oscillation range based on these loss plots. The confusion matrix are depicted in figure \ref{status_dropout_prediction}, and its metrics are as follows, $accuracy = 0.7188$, $precision = 0.8113$, $recall = 0.7845$ and $F1 score = 0.7977$.
 \\
 
 \begin{figure*}[!htbp]
@@ -1276,45 +1276,65 @@ Figure \ref{status_dropout} demonstrates the effect of applying dropout. The ove
 	\label{status_dropout}
 \end{figure*}
 
-The evaluation results show that the predictions are not accurate but superior than the linear regression models. 
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=10cm]{cm_dropout2}
+	\caption{The confusion matrix of the model from fold two}
+	\label{status_dropout_prediction}
+\end{figure}
+
+From the confusion matrix, the model can predict the class of \textit{Not Complete} with more than 80\% accuracy, whereas the forecast of the other class is approximately 50\%, which is not acceptable. Therefore, the model's performance must be improved by tuning some hyperparameters such as the learning rate and dropout ratio. Figure \ref{status_tuned} illustrates the losses after tuning hyperparameters, and it can be seen that all the losses initially decrease and then oscillate. 
 
 \begin{figure*}[!htbp]
 	\centering
-	\subfigure[Fold 0]{\includegraphics[width=5cm]{cm_dropout0}}
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_v3_fold_0}}
 	\hfill
-	\subfigure[Fold 1]{\includegraphics[width=5cm]{cm_dropout1}}
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_v3_fold_1}}
 	\hfill
-	\subfigure[Fold 2]{\includegraphics[width=5cm]{cm_dropout2}}
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_v3_fold_2}}
 	\hfil
-	\subfigure[Fold 3]{\includegraphics[width=5cm]{cm_dropout3}}
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_v3_fold_3}}
 	\hfil
-	\subfigure[Fold 4]{\includegraphics[width=5cm]{cm_dropout4}}
-	\caption{Confusion matrices for basic models (dropout inserted)}
-	\label{status_dropout_prediction}
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_v3_fold_4}}
+	\caption{Training \& validation losses (hyperparameters tuned)}
+	\label{status_tuned}
 \end{figure*}
 
-\begin{table}[!htbp]
+The model in fold three is selected due to ist low loss and narrow oscillation. The confusion matrix is displayed in figure \ref{status_tuned_prediction}, and its metrics are $accuracy = 0.8177$, $recall = 0.8350$, $precision = 0.9138$ and $F1 score = 0.8726$. It is evident that the overall accuracy has enhanced and the prediction of \textit{Not Completed} exceeds 90\%, while it is around 60\% for \textit{Completed}. Moreover, the models become overfitting as the oscillation range expands in figure \ref{status_tuned}. Therefore, the model is retrained with fewer epochs and adjusted dropout. 
+
+\begin{figure}[!htbp]
 	\centering
-	\caption{Metrics of basic models (dropout inserted)}
-	\label{status_metrics_dropout}
-	\begin{tabular}{| c | c | c | c | c |}
-		\hline
-		Fold & Accuracy & Precision & Recall & F1 Score \\
-		\hline
-		0 & 0.6055 & 0.5432 & 0.8186 & 0.6529 \\
-		\hline
-		1 & 0.5211 & 0.3821 & 0.8267 & 0.5216 \\
-		\hline
-		2 & 0.7188 & 0.8113 & 0.7845 & 0.7977 \\
-		\hline
-		3 & 0.6367 & 0.5967 & 0.8228 & 0.6918 \\
-		\hline
-		4 & 0.63 & 0.6211 & 0.7925 & 0.6964 \\
-		\hline
-	\end{tabular}
-\end{table}
+	\includegraphics[width=10cm]{cm_tuned}
+	\caption{The confusion matrix of the model after tuning hyperparameters}
+	\label{status_tuned_prediction}
+\end{figure}
 
+Figure \ref{status_fewer} depicts the training and validation losses, where the trends initially decrease and oscillate around 0.5, whereas the models are less overfitting since the oscillation ranges are constant. The model in fold three is selected for evaluation, and figure \ref{status_fewer_prediction} illustrates the confusion matrix, along with the following metrics: $accuracy = 0.8355$, $recall = 0.8293$, $precision = 0.9560$, and $F1 score = 0.8882$. 
+\\
 
+From the evaluation results, it is obvious that the overall performance has enhanced, but the issue of predicting the completed transactions still exists. The imbalanced dataset could be the cause of this problem. Although the WRS is applied during training, resulting in the balanced mini-batches, the \textit{Completed} class is the minority and is therefore insufficient for the model to extract its patterns. Consequently, a bias is considered to modify the sampling weight so that the number of completed transactions can be increased in each mini-batch which is anticipated to improve the accuracy of predictions. As a trade-off, it can also be expected that the prediction accuracy of uncompleted transactions will decrease.
+
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_v4_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_v4_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_v4_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_v4_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_v4_fold_4}}
+	\caption{Training \& validation losses (fewer epoch and adjusted dropout)}
+	\label{status_fewer}
+\end{figure*}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=10cm]{cm_fewer}
+	\caption{The confusion matrix of the model (fewer eopchs and adjusted dropout)}
+	\label{status_fewer_prediction}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion}
