@@ -82,9 +82,17 @@ The datasets are the foundation of AI, and a significant number of real estate d
 Nevertheless, the disadvantages of the dataset are noticeable. It only contains the property data in Latvia, suggesting that the conclusions drawn from it might not be applicable to other countries worldwide. Moreover, the regional factors that can significantly influence the real estate transactions, such as economic growth, medical care, and education, are not included in this dataset, meaning that the conclusions base on it only consider the property itself and do not account for the surrounding environment. 
 \\
 
-The second dataset 
+The second dataset contains information on transport, land cover, population density, and real estate for approximately 200 cities worldwide, and 800 million people are covered \citep{RN22}. The dataset utilized GHS-POP and ESA CCI databases for extracting population density and land cover. The real estate, as well as transport information, were obtained via web scrapping and the Google Map and Baidu APIs, respectively.
+\\ 
 
-\section{Related Technologies}
+One of the benefits of this dataset is that each city's urban area is divided into 1 km $\times$ 1 km grids, and the community information, such as distance to the city center and the demographics, can be obtained from this dataset. Moreover, it contains 192 cities around the world, indicating that people from various continents, countries, and cultures are included, allowing for more generalized conclusions to be drawn and making it globally applicable. 
+\\
+
+On the other hand, the disadvantage of this dataset is obvious. The interior information of properties is not available, which means that this dataset and the property information should be merged so that machine learning techniques can be applied. Furthermore, the common limitation of the first two datasets is that they lack records after the outbreak of COVID-19. According to research, the annual loss of the sale and rental prices is 6\%, and the sale prices declined by 13\% one year after the pandemic outbreak \citep{RN29}. Therefore, the accuracy of the models trained by these datasets would be affected. 
+
+\subsection{Models}
+
+\section{Related Tools}
 Python is one of the most popular programming languages in the world since it is simple to develop, and there are extensive packages for various functionalities. In this project, Python and its packages would be used for loading data, preprocessing data, and constructing and evaluating machine learning models. 
 
 \subsection{Machine Learning}
@@ -161,7 +169,7 @@ However, \textit{scikit-learn} can be used to preprocess datasets and evaluate p
 \subsubsection{Library Usage}
 In this project, data visualization would be beneficial during preprocessing data and performance evaluation. For preprocessing, the distribution of the raw data should be inspected, hence \textit{seaborn} could be an optimal choice since the input is a \textit{DataFrame} and its syntax is concise. During evaluation, the model output will be converted to \textit{Numpy} arrays. Therefore, \textit{matplotlib} can be used in this case, as it is interactive and the figure can be further adjusted to illustrate the performance. 
 
-\section{Methodology}
+\section{Research Gap}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Implementation}
@@ -1098,7 +1106,8 @@ From table \ref{metrics_linear_regression_status_included}, the recall has the h
 Figure \ref{linear_regression_status_exclude_full} illustrates the training and validation losses of the models that are trained without prices. It is evident that all the models can converge, and the models from folds zero, two and four are utilized for evaluation since they have superior performance. The confusion matrices and metrics are illustrated in figure \ref{cm_excluded} and table \ref{metrics_linear_regression_status_excluded}, respectively. 
 \\
 
-In table \ref{metrics_linear_regression_status_excluded}, the recall is the highest, while the precision and F1 score are low, suggesting that although the loss can converge, the performance of models is unreliable. Therefore, more complex neural networks are essential for robust performance. 
+In table \ref{metrics_linear_regression_status_excluded}, the recall is the highest, while the precision and F1 score are low, suggesting that although the loss can converge, the performance of models is unreliable.  Moreover, there are approximately 300 completed and 600 incompleted transactions in the testing dataset; the accuracy of the model should be 66.6\% even if it only outputs incompleted, whereas none of the linear regression models can exceed this threshold. Therefore, more complex neural networks are required for robust performance. 
+\\
 
 \begin{figure*}[!htbp]
 	\centering
@@ -1165,6 +1174,7 @@ Therefore, WRS is applied to ensure that the data in each mini-batch is balanced
 \\
 
 The architecture of this model may be responsible for these outcomes. A pre-trained model for predicting prices is loaded whose outputs range from several hundred to several thousand. However, the other inputs are normalized, meaning that they range from -1 to 1. Therefore, the inputs are on significantly different scales, resulting in the model focusing on the feature with a larger magnitude, prices in this case, while ignoring other features. 
+\\
 
 \begin{figure*}[!htbp]
 	\centering
@@ -1203,6 +1213,7 @@ Figure \ref{transfer_based_status_no_freeze} displays the training and validatio
 
 \subsection{Basic Model: Price Included}
 The training and validation losses are displayed in figure \ref{basic_status}. Even though all the losses can converge from these graphs, the models would only output a value of approximately 0.5 regardless of the actual status.
+\\
 
 \begin{figure*}[!htbp]
 	\centering
@@ -1284,6 +1295,7 @@ Figure \ref{status_dropout} demonstrates the effect of applying dropout. The ove
 \end{figure}
 
 From the confusion matrix, the model can predict the class of \textit{Not Complete} with more than 80\% accuracy, whereas the forecast of the other class is approximately 50\%, which is not acceptable. Therefore, the model's performance must be improved by tuning some hyperparameters such as the learning rate and dropout ratio. Figure \ref{status_tuned} illustrates the losses after tuning hyperparameters, and it can be seen that all the losses initially decrease and then oscillate. 
+\\
 
 \begin{figure*}[!htbp]
 	\centering
@@ -1301,6 +1313,7 @@ From the confusion matrix, the model can predict the class of \textit{Not Comple
 \end{figure*}
 
 The model in fold three is selected due to ist low loss and narrow oscillation. The confusion matrix is displayed in figure \ref{status_tuned_prediction}, and its metrics are $accuracy = 0.8177$, $recall = 0.8350$, $precision = 0.9138$ and $F1 score = 0.8726$. It is evident that the overall accuracy has enhanced and the prediction of \textit{Not Completed} exceeds 90\%, while it is around 60\% for \textit{Completed}. Moreover, the models become overfitting as the oscillation range expands in figure \ref{status_tuned}. Therefore, the model is retrained with fewer epochs and adjusted dropout. 
+\\
 
 \begin{figure}[!htbp]
 	\centering
