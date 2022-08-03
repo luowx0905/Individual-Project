@@ -1312,7 +1312,7 @@ From the confusion matrix, the model can predict the class of \textit{Not Comple
 	\label{status_tuned}
 \end{figure*}
 
-The model in fold three is selected due to ist low loss and narrow oscillation. The confusion matrix is displayed in figure \ref{status_tuned_prediction}, and its metrics are $accuracy = 0.8177$, $recall = 0.8350$, $precision = 0.9138$ and $F1 score = 0.8726$. It is evident that the overall accuracy has enhanced and the prediction of \textit{Not Completed} exceeds 90\%, while it is around 60\% for \textit{Completed}. Moreover, the models become overfitting as the oscillation range expands in figure \ref{status_tuned}. Therefore, the model is retrained with fewer epochs and adjusted dropout. 
+The model in fold three is selected due to ist low loss and narrow oscillation. The confusion matrix is displayed in figure \ref{status_tuned_prediction}, and its metrics are $accuracy = 0.8177$, $recall = 0.8350$, $precision = 0.9138$ and $F1 score = 0.8726$. It is evident that the overall accuracy has enhanced and the prediction of \textit{Not Completed} exceeds 90\%, while it is around 60\% for \textit{Completed} transactions. Moreover, the models become overfitting as the oscillation range expands in figure \ref{status_tuned}. Therefore, the model is retrained with fewer epochs and higher ratio of dropout. 
 \\
 
 \begin{figure}[!htbp]
@@ -1322,10 +1322,8 @@ The model in fold three is selected due to ist low loss and narrow oscillation. 
 	\label{status_tuned_prediction}
 \end{figure}
 
-Figure \ref{status_fewer} depicts the training and validation losses, where the trends initially decrease and oscillate around 0.5, whereas the models are less overfitting since the oscillation ranges are constant. The model in fold three is selected for evaluation, and figure \ref{status_fewer_prediction} illustrates the confusion matrix, along with the following metrics: $accuracy = 0.8355$, $recall = 0.8293$, $precision = 0.9560$, and $F1 score = 0.8882$. 
+Figure \ref{status_fewer} depicts the training and validation losses, where the trends initially decrease and oscillate around 0.5, and the models are less overfitting since the oscillation ranges are constant. The model in fold three is selected for evaluation, and figure \ref{status_fewer_prediction} illustrates the confusion matrix, along with the following metrics: $accuracy = 0.8355$, $recall = 0.8293$, $precision = 0.9560$, and $F1 score = 0.8882$. 
 \\
-
-From the evaluation results, it is obvious that the overall performance has enhanced, but the issue of predicting the completed transactions still exists. The imbalanced dataset could be the cause of this problem. Although the WRS is applied during training, resulting in the balanced mini-batches, the \textit{Completed} class is the minority and is therefore insufficient for the model to extract its patterns. Consequently, a bias is considered to modify the sampling weight so that the number of completed transactions can be increased in each mini-batch which is anticipated to improve the accuracy of predictions. As a trade-off, it can also be expected that the prediction accuracy of uncompleted transactions will decrease.
 
 \begin{figure*}[!htbp]
 	\centering
@@ -1344,10 +1342,87 @@ From the evaluation results, it is obvious that the overall performance has enha
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=10cm]{cm_fewer}
-	\caption{The confusion matrix of the model (fewer eopchs and adjusted dropout)}
+	\includegraphics[width=9cm]{cm_fewer}
+	\caption{The confusion matrix of the model (fewer epochs and adjusted dropout)}
 	\label{status_fewer_prediction}
 \end{figure}
+
+From the evaluation results, it is obvious that the overall performance has enhanced, but the issue of predicting the completed transactions still exists. The imbalanced dataset could be the cause of this problem. Although the WRS is applied during training, resulting in the balanced mini-batches, the \textit{Completed} class is the minority and is therefore insufficient for the model to extract its patterns. Consequently, a bias is considered to modify the sampling weight so that the number of completed transactions can be increased in each mini-batch which is anticipated to improve the accuracy of predictions. The attempted biases are 0.05, 0.1 and 0.15, with the corresponding losses shown in figures \ref{status_005}, \ref{status_01}, and \ref{status_015}. 
+
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_bias_005_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_bias_005_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_bias_005_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_bias_005_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_bias_005_fold_4}}
+	\caption{Training \& validation losses (prices included and bias = 0.05)}
+	\label{status_005}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_bias_01_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_bias_01_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_bias_01_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_bias_01_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_bias_01_fold_4}}
+	\caption{Training \& validation losses (prices included and bias = 0.1)}
+	\label{status_01}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_bias_015_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_bias_015_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_bias_015_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_bias_015_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_bias_015_fold_4}}
+	\caption{Training \& validation losses (prices included and bias = 0.15)}
+	\label{status_015}
+\end{figure*}
+
+Folds three, two and four when bias is 0.05, 0.1 and 0.15 are selecrted for evaluation, respectively. Their confusion matrices and metrics are depiected in figure \ref{status_bias_cm} and table \ref{status_bias_metrics}.
+
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[bias = 0.05]{\includegraphics[width=7.5cm]{cm_005_fold_1}}
+	\hfill
+	\subfigure[bias = 0.1]{\includegraphics[width=7.5cm]{cm_01_fold_4}}
+	\hfill
+	\subfigure[bias = 0.15]{\includegraphics[width=7.5cm]{cm_015_fold_2}}
+	\caption{Confusion matrices of models with various biases (price included)}
+	\label{status_bias_cm}
+\end{figure*}
+
+\begin{table}[!htbp]
+	\centering
+	\caption{Metrics of models with various biases (price included)}
+	\label{status_bias_metrics}
+	\begin{tabular}{| c | c | c | c | c |}
+		\hline
+		Bias & Accuracy & Recall & Precision & F1 Score \\
+		\hline
+		0.05 & 0.8177 & 0.8340 & 0.9154 & 0.8728 \\
+		\hline
+		0.10 & 0.8266 & 0.8614 & 0.8894 & 0.8752 \\
+		\hline
+		0.15 & 0.8011 & 0.8682 & 0.8357 & 0.8516 \\
+		\hline
+	\end{tabular}
+\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion}
