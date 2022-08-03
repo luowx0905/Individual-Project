@@ -428,6 +428,7 @@ There are multiple models developed previously, and their performance can be acc
 \end{figure}
 
 \subsection{Basic Model: Price Included}
+\label{basic_status_include}
 Due to inaccurate predictions of the transfer-based model, another method to forecast status is attempted. Initially, all the features are input into the model for predicting prices, and then the predicted and actual prices are appended to the original features, resulting in a new dataset. Next, the new data is normalized, shuffled, and split into training and testing datasets. This step ensures that the inputs in this section have the same scale. Figure \ref{basic_status_layout} illustrates the structure of a new model consisting of only linear layers and activation functions, which is trained with the new dataset.
 
 \begin{figure}[!htbp]
@@ -436,6 +437,9 @@ Due to inaccurate predictions of the transfer-based model, another method to for
 	\caption{The architecture of the basic model for predicting status}
 	\label{basic_status_layout}
 \end{figure}
+
+\subsection{Basic Model: Price Excluded}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Testing \& Experimental Results}
@@ -1428,7 +1432,7 @@ Folds three, two, and four are selected for evaluation when bias is 0.05, 0.1, a
 	\end{tabular}
 \end{table}
 
-Furthermore, comparing the models when bias is 0 and 0.05, the correct prediction of the class \textit{Completed} increases from 57\% to 60\%, but the accuracy for the \textit{Not Completed} drops from 95\% to 91\%, indicating that the bias is not worthy if it is 0.05. 
+Furthermore, when comparing the models with biases are 0 and 0.05, the correct prediction of the class \textit{Completed} increases from 57\% to 60\%, but the accuracy for the \textit{Not Completed} drops from 95\% to 91\%, indicating that a bias of 0.05 is not worthwhile. Using the same approach when biases are 0 and 0.15, the corrected predicted \textit{Completed} class increases by 20\%, while the precision and the overall performance decline significantly. When comparing models with biases of 0 and 0.1, the correct prediction of the \textit{Completed} transactions increases by more than 10\%, and a decrease in the overall performance and precision can be acceptable. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion}

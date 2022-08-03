@@ -52,24 +52,25 @@
 \contentsline {subsection}{\numberline {3.3.7}Linear Regression: Predict Status of Transactions}{18}{subsection.79}%
 \contentsline {subsection}{\numberline {3.3.8}Transfer-baesd Model: Predict Status}{20}{subsection.81}%
 \contentsline {subsection}{\numberline {3.3.9}Basic Model: Price Included}{21}{subsection.83}%
-\contentsline {chapter}{\numberline {4}Testing \& Experimental Results}{22}{chapter.85}%
-\contentsline {section}{\numberline {4.1}Data Preprocessing}{22}{section.86}%
-\contentsline {subsection}{\numberline {4.1.1}Handle Room Descriptions (HTML)}{22}{subsection.87}%
-\contentsline {subsubsection}{Acquire room name and dimension}{22}{section*.88}%
-\contentsline {subsubsection}{Generalize room information}{24}{section*.94}%
-\contentsline {subsection}{\numberline {4.1.2}Manipulate Categorical Keywords}{24}{subsection.101}%
-\contentsline {subsection}{\numberline {4.1.3}Manage Outliers}{25}{subsection.103}%
-\contentsline {subsection}{\numberline {4.1.4}Create Input Dataset}{25}{subsection.108}%
-\contentsline {section}{\numberline {4.2}Model Construction}{26}{section.112}%
-\contentsline {subsection}{\numberline {4.2.1}Linear Regression: Predict Price}{26}{subsection.113}%
-\contentsline {subsection}{\numberline {4.2.2}Basic Model: Output Sale Status and Price}{28}{subsection.121}%
-\contentsline {subsection}{\numberline {4.2.3}Basic Model: Predicting Prices}{30}{subsection.130}%
-\contentsline {subsection}{\numberline {4.2.4}Complex Model: Predicting Prices}{33}{subsection.152}%
-\contentsline {subsection}{\numberline {4.2.5}Residual Network: Predicting Prices}{34}{subsection.160}%
-\contentsline {subsection}{\numberline {4.2.6}Comparing models for predicting prices}{35}{subsection.168}%
-\contentsline {subsection}{\numberline {4.2.7}Linear Regression: Predict Status of Transactions}{36}{subsection.170}%
-\contentsline {subsubsection}{Actual and Predicted Prices Included}{36}{section*.171}%
-\contentsline {subsubsection}{Actual and Predicted Prices Excluded}{37}{section*.183}%
-\contentsline {subsection}{\numberline {4.2.8}Transfer-baesd Model: Predict Status}{37}{subsection.195}%
-\contentsline {subsection}{\numberline {4.2.9}Basic Model: Price Included}{41}{subsection.214}%
-\contentsline {chapter}{\numberline {5}Conclusion}{50}{chapter.278}%
+\contentsline {subsection}{\numberline {3.3.10}Basic Model: Price Excluded}{21}{subsection.85}%
+\contentsline {chapter}{\numberline {4}Testing \& Experimental Results}{22}{chapter.86}%
+\contentsline {section}{\numberline {4.1}Data Preprocessing}{22}{section.87}%
+\contentsline {subsection}{\numberline {4.1.1}Handle Room Descriptions (HTML)}{22}{subsection.88}%
+\contentsline {subsubsection}{Acquire room name and dimension}{22}{section*.89}%
+\contentsline {subsubsection}{Generalize room information}{24}{section*.95}%
+\contentsline {subsection}{\numberline {4.1.2}Manipulate Categorical Keywords}{24}{subsection.102}%
+\contentsline {subsection}{\numberline {4.1.3}Manage Outliers}{25}{subsection.104}%
+\contentsline {subsection}{\numberline {4.1.4}Create Input Dataset}{25}{subsection.109}%
+\contentsline {section}{\numberline {4.2}Model Construction}{26}{section.113}%
+\contentsline {subsection}{\numberline {4.2.1}Linear Regression: Predict Price}{26}{subsection.114}%
+\contentsline {subsection}{\numberline {4.2.2}Basic Model: Output Sale Status and Price}{28}{subsection.122}%
+\contentsline {subsection}{\numberline {4.2.3}Basic Model: Predicting Prices}{30}{subsection.131}%
+\contentsline {subsection}{\numberline {4.2.4}Complex Model: Predicting Prices}{33}{subsection.153}%
+\contentsline {subsection}{\numberline {4.2.5}Residual Network: Predicting Prices}{34}{subsection.161}%
+\contentsline {subsection}{\numberline {4.2.6}Comparing models for predicting prices}{35}{subsection.169}%
+\contentsline {subsection}{\numberline {4.2.7}Linear Regression: Predict Status of Transactions}{36}{subsection.171}%
+\contentsline {subsubsection}{Actual and Predicted Prices Included}{36}{section*.172}%
+\contentsline {subsubsection}{Actual and Predicted Prices Excluded}{37}{section*.184}%
+\contentsline {subsection}{\numberline {4.2.8}Transfer-baesd Model: Predict Status}{37}{subsection.196}%
+\contentsline {subsection}{\numberline {4.2.9}Basic Model: Price Included}{41}{subsection.215}%
+\contentsline {chapter}{\numberline {5}Conclusion}{50}{chapter.279}%
