@@ -1394,10 +1394,12 @@ From the evaluation results, it is obvious that the overall performance has enha
 	\label{status_015}
 \end{figure*}
 
-Folds three, two and four when bias is 0.05, 0.1 and 0.15 are selecrted for evaluation, respectively. Their confusion matrices and metrics are depiected in figure \ref{status_bias_cm} and table \ref{status_bias_metrics}.
+Folds three, two, and four are selected for evaluation when bias is 0.05, 0.1, and 0.15, respectively. Figure \ref{status_bias_cm} and table \ref{status_bias_metrics} depicts their confusion matrices and metrics along with the model that bias is not applied. The accuracy for predicting the \textit{Completed} class improves with the bias increases, which is the same as the expectation. However, as a trade-off, the precision in table \ref{status_bias_metrics} is decreasing, indicating that the correctness of predicting the other class decreases, resulting in the decline of the overall performance.
 
 \begin{figure*}[!htbp]
 	\centering
+	\subfigure[bias = 0]{\includegraphics[width = 7.5cm]{cm_fewer}}
+	\hfil
 	\subfigure[bias = 0.05]{\includegraphics[width=7.5cm]{cm_005_fold_1}}
 	\hfill
 	\subfigure[bias = 0.1]{\includegraphics[width=7.5cm]{cm_01_fold_4}}
@@ -1415,6 +1417,8 @@ Folds three, two and four when bias is 0.05, 0.1 and 0.15 are selecrted for eval
 		\hline
 		Bias & Accuracy & Recall & Precision & F1 Score \\
 		\hline
+		0 & 0.8355 & 0.8293 & 0.9560 & 0.8882 \\
+		\hline
 		0.05 & 0.8177 & 0.8340 & 0.9154 & 0.8728 \\
 		\hline
 		0.10 & 0.8266 & 0.8614 & 0.8894 & 0.8752 \\
@@ -1423,6 +1427,8 @@ Folds three, two and four when bias is 0.05, 0.1 and 0.15 are selecrted for eval
 		\hline
 	\end{tabular}
 \end{table}
+
+Furthermore, comparing the models when bias is 0 and 0.05, the correct prediction of the class \textit{Completed} increases from 57\% to 60\%, but the accuracy for the \textit{Not Completed} drops from 95\% to 91\%, indicating that the bias is not worthy if it is 0.05. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion}

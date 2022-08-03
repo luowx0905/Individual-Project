@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  3 AUG 2022 13:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  3 AUG 2022 15:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1863,43 +1863,47 @@ res//status_bias_005_fold_3.png> <./figures//status_bias_005_fold_4.png>] [47 <
 figures//status_bias_01_fold_4.png> <./figures//status_bias_015_fold_0.png> <./
 figures//status_bias_015_fold_1.png> <./figures//status_bias_015_fold_2.png> <.
 /figures//status_bias_015_fold_3.png> <./figures//status_bias_015_fold_4.png>]
-<./figures//cm_005_fold_1.png, id=1111, 367.3725pt x 279.0425pt>
+File: ./figures//cm_fewer.png Graphic file (type png)
+<use ./figures//cm_fewer.png>
+Package pdftex.def Info: ./figures//cm_fewer.png  used on input line 1401.
+(pdftex.def)             Requested size: 213.39566pt x 162.0917pt.
+<./figures//cm_005_fold_1.png, id=1112, 367.3725pt x 279.0425pt>
 File: ./figures//cm_005_fold_1.png Graphic file (type png)
 <use ./figures//cm_005_fold_1.png>
-Package pdftex.def Info: ./figures//cm_005_fold_1.png  used on input line 1401.
+Package pdftex.def Info: ./figures//cm_005_fold_1.png  used on input line 1403.
 
 (pdftex.def)             Requested size: 213.39566pt x 162.0917pt.
-<./figures//cm_01_fold_4.png, id=1112, 367.3725pt x 279.0425pt>
+<./figures//cm_01_fold_4.png, id=1113, 367.3725pt x 279.0425pt>
 File: ./figures//cm_01_fold_4.png Graphic file (type png)
 <use ./figures//cm_01_fold_4.png>
-Package pdftex.def Info: ./figures//cm_01_fold_4.png  used on input line 1403.
+Package pdftex.def Info: ./figures//cm_01_fold_4.png  used on input line 1405.
 (pdftex.def)             Requested size: 213.39566pt x 162.0917pt.
-<./figures//cm_015_fold_2.png, id=1113, 367.3725pt x 279.0425pt>
+<./figures//cm_015_fold_2.png, id=1114, 367.3725pt x 279.0425pt>
 File: ./figures//cm_015_fold_2.png Graphic file (type png)
 <use ./figures//cm_015_fold_2.png>
-Package pdftex.def Info: ./figures//cm_015_fold_2.png  used on input line 1405.
+Package pdftex.def Info: ./figures//cm_015_fold_2.png  used on input line 1407.
 
 (pdftex.def)             Requested size: 213.39566pt x 162.0917pt.
  [48 <./figures//cm_005_fold_1.png> <./figures//cm_01_fold_4.png> <./figures//c
-m_015_fold_2.png>]
+m_015_fold_2.png>] [49]
 Chapter 5.
 (./main.bbl (./main.brf)
 \tf@brf=\write5
 \openout5 = `main.brf'.
 
- [49
+ [50
 
-]) [50
+]) [51
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D157C32C754BADE83DE01730FB8C6159;10180.
+(rerunfilecheck)             Checksum: 3B36DDFCCCFB20C18CFFBD050995BBFD;10180.
 Package rerunfilecheck Info: File `main.brf' has not changed.
 (rerunfilecheck)             Checksum: 25176997C74C2DFEDBE58242283ECC1C;535.
  ) 
 Here is how much of TeX's memory you used:
- 15324 strings out of 478268
- 289297 string characters out of 5846347
+ 15326 strings out of 478268
+ 289317 string characters out of 5846347
  535615 words of memory out of 5000000
  32958 multiletter control sequences out of 15000+600000
  504551 words of font info for 78 fonts, out of 8000000 for 9000
@@ -1915,10 +1919,10 @@ e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (57 pages, 8398876 bytes).
+Output written on main.pdf (58 pages, 8399813 bytes).
 PDF statistics:
- 1253 PDF objects out of 1440 (max. 8388607)
- 877 compressed objects within 9 object streams
- 346 named destinations out of 1000 (max. 500000)
+ 1259 PDF objects out of 1440 (max. 8388607)
+ 882 compressed objects within 9 object streams
+ 348 named destinations out of 1000 (max. 500000)
  1110 words of extra memory for PDF output out of 10000 (max. 10000000)
 
