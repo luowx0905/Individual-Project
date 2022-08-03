@@ -85,7 +85,7 @@ Nevertheless, the disadvantages of the dataset are noticeable. It only contains 
 The second dataset contains information on transport, land cover, population density, and real estate for approximately 200 cities worldwide, and 800 million people are covered \citep{RN22}. The dataset utilized GHS-POP and ESA CCI databases for extracting population density and land cover. The real estate, as well as transport information, were obtained via web scrapping and the Google Map and Baidu APIs, respectively.
 \\ 
 
-One of the benefits of this dataset is that each city's urban area is divided into 1 km $\times$ 1 km grids, and the community information, such as distance to the city center and the demographics, can be obtained from this dataset. Moreover, it contains 192 cities around the world, indicating that people from various continents, countries, and cultures are included, allowing for more generalized conclusions to be drawn and making it globally applicable. 
+One of the benefits of this dataset is that each city's urban area is divided into 1 km $\times$ 1 km grids, hence the community information, such as distance to the city center and the demographics, can be obtained from this dataset. Moreover, it contains 192 cities around the world, indicating that people from various continents, countries, and cultures are included, allowing for more generalized conclusions to be drawn and making it globally applicable. 
 \\
 
 On the other hand, the disadvantage of this dataset is obvious. The interior information of properties is not available, which means that this dataset and the property information should be merged so that machine learning techniques can be applied. Furthermore, the common limitation of the first two datasets is that they lack records after the outbreak of COVID-19. According to research, the annual loss of the sale and rental prices is 6\%, and the sale prices declined by 13\% one year after the pandemic outbreak \citep{RN29}. Therefore, the accuracy of the models trained by these datasets would be affected. 
@@ -217,7 +217,7 @@ The datasets used in this project are provided by EweMove, and transactions from
 
 \subsection{Handle Room Descriptions (HTML)}
 \subsubsection{Acquire room name and dimension}
-The structure of the HTML texts containing the room information in a property is shown in figure \ref{html_structure}. The rooms are separated by tag \textit{$<$li$>$}, and the room name and its dimension is denoted by \textit{$<$strong$>$} and \textit{$<$i$>$} tags, respectively. Therefore, a function (\textit{\textbf{EweMove\_Description\_S3\_Rooms}}) was implemented to split the HTML texts by utilizing \textit{Beautiful soup}, and its flowchart is shown in figure \ref{html_room_info}.
+The structure of the HTML texts containing the room information in a property is shown in figure \ref{html_structure}. The rooms are separated by tag \textit{$<$li$>$}, and the room name and its dimension are denoted by \textit{$<$strong$>$} and \textit{$<$i$>$} tags, respectively. Therefore, a function (\textit{\textbf{EweMove\_Description\_S3\_Rooms}}) is implemented to split the HTML texts by utilizing \textit{Beautiful soup}, and its flowchart is shown in figure \ref{html_room_info}.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=15cm]{html_structure}
@@ -255,7 +255,7 @@ Key member functions
 	The flow diagram of this method is shown in figure \ref{extract_room_get_rooms} and the arguments are listed below.
 	\begin{enumerate}
 		\item args: It should be noted that this is a variable-length argument, which means that it can accept as many arguments as possible, and it is used to select room names from \textit{room\_set}. For instance, \textit{*args = [living, reception]} will select all names containing \textit{living} or \textit{reception}. 
-		\item operation: The argumen determines the types of the final result and the valid inputs include \textit{sum}, \textit{mean}, \textit{split}, and \textit{number}. For example, if args is \textit{bedroom}, then the function can return the sum of bedroom areas, the average bedroom area, the area of each bedroom and the number of bedrooms. 
+		\item operation: The argument determines the types of the final result and the valid inputs include \textit{sum}, \textit{mean}, \textit{split}, and \textit{number}. For example, if args is \textit{bedroom}, then the function can return the sum of bedroom areas, the average bedroom area, the area of each bedroom and the number of bedrooms. 
 		\item handle\_na: This parameter specifies how to manage missing values, either by ignoring them or by filling the mean value if the input is \textit{None} or \textit{mean}, respectively. 
 	\end{enumerate} 
 	\begin{figure}[!htbp]
@@ -294,7 +294,7 @@ Figure \ref{uml_generalize_dataset} illustrates the UML diagram of the class \te
 \end{figure}
 
 \subsection{Manage Outliers}
-The price is crucial to the project, and the distribution of the raw data was inspected, as shown in figure \ref{price_raw}. The spike on the left side of the figure indicates that numerous properties have zero prices, which is illogical. Therefore, these abnormal values should be addressed as they could significantly impact the performance of the model.
+The price is crucial to the project, and the distribution of the raw data is inspected, as shown in figure \ref{price_raw}. The spike on the left side of the figure indicates that numerous properties have zero prices, which is illogical. Therefore, these abnormal values should be addressed as they could significantly impact the performance of the model.
 
 \begin{figure*}[!htbp]
 	\centering
@@ -310,10 +310,10 @@ The price is crucial to the project, and the distribution of the raw data was in
 \subsection{Create Input Dataset}
 \label{create_input_dataset_section}
 \subsubsection{Feature Encoding}
-This technique is applicable to categorical features in the dataset, including price qualifier, council tax band, and property condition. The label encoding was employed, which is capable of converting the feature into numeric values between 0 and N - 1, where N is the number of distinct classes in a column.
+This technique is applicable to categorical features in the dataset, including price qualifier, council tax band, and property condition. The label encoding is employed, which is capable of converting the feature into numeric values between 0 and N - 1, where N is the number of distinct classes in a column.
 
 \subsubsection{Manage Missing Values}
-The datasets used in this project contain a significant number of missing values. For example, approximately 30\% of the room layout and more than 40\% of the council tax band are missing. Under this situation, it is impossible to replace them with the mean value since it causes the model to focus on the average and result in low performance. Therefore, another approach was applied, which was removing the missing values in the datasets. 
+The datasets used in this project contain a significant number of missing values. For example, approximately 30\% of the room layout and more than 40\% of the council tax band are missing. Under this situation, it is impossible to replace them with the mean value since it causes the model to focus on the average and result in low performance. Therefore, another approach is applied, which is removing the missing values in the datasets. 
 
 \begin{figure}[!htbp]
 	\centering
@@ -323,7 +323,7 @@ The datasets used in this project contain a significant number of missing values
 \end{figure}
 
 \subsubsection{Classy Approach}
-After the information in HTML texts and categorical keywords is extracted, it is combined with other columns in the dataset to produce a clean dataset for the model input.  Figure \ref{uml_create_input_dataset} is the UML diagram of \textit{\textbf{CreateInputDataset}}, which is a class developed for this objective, and the flow diagram of producing an input dataset is displayed in figure \ref{create_input_dataset}.
+After the information in HTML texts and categorical keywords are extracted, it is combined with other columns in the dataset to produce a clean dataset for the model input.  Figure \ref{uml_create_input_dataset} is the UML diagram of \textit{\textbf{CreateInputDataset}}, which is a class developed for this objective, and the flow diagram of producing an input dataset is displayed in figure \ref{create_input_dataset}.
 
 \begin{figure}[!htbp]
 	\centering
@@ -371,7 +371,7 @@ Prior to the construction of any neural networks, a linear regression model with
 The architecture of this model solely consists of linear layers and activation functions, as depicted in figure \ref{basic_model_layout}. There are two outputs of the model, which are prices and the status of transactions. Therefore, the activation functions of the output layers are ReLU and sigmoid, respectively.
 \\
 
-The status should be converted into 0 or 1 to, given that it is either completed or not in the datasets. Therefore, a threshold of 0.5 is established. If the probability exceeds the threshold, then it is converted to 1. Otherwise, it is set to 0.
+The status should be converted into 0 or 1, given that it is either completed or not in the datasets. Therefore, a threshold of 0.5 is established. If the probability exceeds the threshold, then it is converted to 1. Otherwise, it is set to 0.
 
 \begin{figure}[!htbp]
 	\centering
@@ -406,7 +406,7 @@ The second complex model is developed which utilized residual connections. The a
 \end{figure*}
 
 \subsection{Linear Regression: Predict Status of Transactions}
-Before constructing models, the correlation between the status and other attributes is obtained and depicted in figure \ref{correlation_status}. as shown in the bottom right of the graph, the correlation between actual and predicted prices are approximately -0.1. However, they were still considered model inputs because close proximity between prices increases the likelihood of a completed transaction. For example, if the predicted price is 1000 pounds/month but the actual price is 100 pounds/month, this would be considered fraud resulting in an incomplete transaction. 
+Before constructing models, the correlation between the status and other attributes is obtained and depicted in figure \ref{correlation_status}. As shown in the bottom right of the graph, the correlation between actual and predicted prices are approximately -0.3. However, they were still considered model inputs because close proximity between prices increases the likelihood of a completed transaction. For example, if the predicted price is 1000 pounds/month but the actual price is 100 pounds/month, this would be considered fraud resulting in an incomplete transaction. 
 
 \begin{figure}[!htbp]
 	\centering
@@ -448,10 +448,10 @@ Comprehensive testing and analyzing were conducted throughout the implementation
 \section{Data Preprocessing}
 
 \subsection{Handle Room Descriptions (HTML)}
-There are two tests for this objective, the first test examing if the room name and its dimension can be acquiare from HTML texts and the second test focuses on whether the room areas can be obtained and integrated correctly. 
+There are two tests for this objective, the first test examing if the room name and its dimension can be acquiare from HTML texts and the second test focuses on if the room areas can be obtained and integrated correctly. 
 
 \subsubsection{Acquire room name and dimension}
-This test utilized two HTML texts, which are illustrated in figure \ref{html_room_info_test}. After invoking the function \textit{EweMove\_Description\_S3\_Rooms} with two snippets and retrieving the results (shown in tables \ref{html_room_info_expect_1} \& \ref{html_room_info_expect_2}), it is evident that the room names in two HTML snippets could be obtained, and the dimensions were acquired if available otherwise, the value was set to one. Therefore, this function can pass the test.
+This test utilized two HTML texts, which are illustrated in figure \ref{html_room_info_test}. After invoking the function \textit{EweMove\_Description\_S3\_Rooms} with two snippets and retrieving the results (shown in tables \ref{html_room_info_expect_1} \& \ref{html_room_info_expect_2}), it is evident that the room names in two HTML snippets could be obtained, and the dimensions are acquired if available otherwise, the value is set to one. Therefore, this function can pass the test.
 
 \begin{figure*}[!htbp]
 	\centering
@@ -516,7 +516,7 @@ This test utilized two HTML texts, which are illustrated in figure \ref{html_roo
 The data obtained from HTML texts (figure \ref{html_room_info_test}) is used to access the behavior of \textit{ExtractRooms}, particularly its member function \textit{get\_rooms}. During testing, the selected type is the bedroom, and all the operations of \textit{get\_room} are inspected. Additionally, the other rooms are used to test function \textit{get\_rest\_rooms}. 
 \\
 
-The results of calling \textit{get\_rooms} are displayed in tables \ref{bedroom_info_split} and \ref{bedroom_info_all}. It is obvious that all the bedrooms and their respective areas in tables \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2} were successfully extracted. Moreover, the numerical values could also be obtained without error if the operations were appropriately configured. These behaviors demonstrated that the functionality and design are identical. In addition, the result of invoking \textit{get\_rest\_rooms} is displayed in table \ref{other_room_info}. It is clear that there is no statistical inconsistency using the information from tables \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2}, hence this function can pass the test. 
+The results of calling \textit{get\_rooms} are displayed in tables \ref{bedroom_info_split} and \ref{bedroom_info_all}. It is obvious that all the bedrooms and their respective areas in tables \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2} are successfully extracted. Moreover, the numerical values could also be obtained without error if the operations are appropriately configured. These behaviors demonstrates that the functionality and design are identical. In addition, the result of invoking \textit{get\_rest\_rooms} is displayed in table \ref{other_room_info}. It is clear that there is no statistical inconsistency using the information from tables \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2}, hence this function can pass the test. 
 
 \begin{table}[!htbp]
 	\centering
@@ -593,7 +593,7 @@ The results of calling \textit{get\_rooms} are displayed in tables \ref{bedroom_
 The data utilized for this test is displayed in figure \ref{parking_dataset}. Initially, an invalid feature, \textit{Distance to School}, is input into the function \textit{get\_feature\_types}, and the feature is then set to \textit{parking}. With the same data, the member function \textit{get\_feature\_num} is evaluated.
 \\
 
-In the initial test, an exception can be thrown if an invalid feature was entered, in this case, \textit{Distance to School}. Next, the result of calling function \textit{get\_feature\_types} is shown in table \ref{parking_types}. Since there are ten properties in the snippets and six keywords in total, this table has ten rows and six columns which is correct, and its elements are consistent with the dataset snippet. For the first property with an \textbf{allocated} \textbf{off-street} parking space for \textbf{residents}, the three keywords in the first row are set to one while the others are zero, and this conclusion holds true for the remaining properties. In addition, the number of keywords associated with each property can be obtained accurately by calling \textit{get\_feature\_num}. 
+In the initial test, an exception can be thrown if an invalid feature is entered, in this case, \textit{Distance to School}. Next, the result of calling function \textit{get\_feature\_types} is shown in table \ref{parking_types}. Since there are ten properties in the snippets and six keywords in total, this table has ten rows and six columns which is correct, and its elements are consistent with the dataset snippet. For the first property with an \textbf{allocated} \textbf{off-street} parking space for \textbf{residents}, the three keywords in the first row are set to one while the others are zero, and this conclusion holds true for the remaining properties. In addition, the number of keywords associated with each property can be obtained accurately by calling \textit{get\_feature\_num}. 
 
 \begin{table}[!htbp]
 	\centering
@@ -627,7 +627,7 @@ In the initial test, an exception can be thrown if an invalid feature was entere
 \end{table}
 
 \subsection{Manage Outliers}
-During preprocessing, both filling the mean value and removing outliers are attempted. The distributions of the prices after applying two methods are demonstrated in figures \ref{price_filled} and \ref{price_removed}. For filling the average value, it is apparent that the left-hand spike is diminished, meaning that there is no price of zero. A new peak in the middle suggests that the original distribution has been modified. If zero prices were removed, the peak on the left would also be reduced, and the distribution would remain unchanged. 
+During preprocessing, both filling the mean value and removing outliers are attempted. The distributions of the prices after applying two methods are demonstrated in figures \ref{price_filled} and \ref{price_removed}. For filling the average value, it is apparent that the left-hand spike is diminished, meaning that there is no price of zero. A new peak in the middle suggests that the original distribution has been modified. If zero prices are removed, the peak on the left would also be reduced, and the distribution would remain unchanged. 
 \\
 
 Therefore, removing zero prices is applied to create input datasets for models as it retains the original distribution, whereas filling the mean value causes the data alternation. Consequently, the model will learn more from average, which results in poor performance. 
@@ -663,7 +663,7 @@ For general information, the first ten rows after preprocessing and their corres
 
 \section{Model Construction}
 \subsection{Linear Regression: Predict Price}
-The training \& validation losses of this model are depicted in figure \ref{linear_regression_fold_5}, and the model trained in fold two has been chosen for evaluation since it has the best performance. 
+The training and validation losses of this model are depicted in figure \ref{linear_regression_fold_5}, and the model trained in fold two has been chosen for evaluation since it has the best performance. 
 \\
 \begin{figure*}[!htbp]
 	\centering
