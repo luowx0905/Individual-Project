@@ -308,7 +308,7 @@ The price is crucial to the project, and the distribution of the raw data was in
 \end{figure*}
 
 \subsection{Create Input Dataset}
-
+\label{create_input_dataset_section}
 \subsubsection{Feature Encoding}
 This technique is applicable to categorical features in the dataset, including price qualifier, council tax band, and property condition. The label encoding was employed, which is capable of converting the feature into numeric values between 0 and N - 1, where N is the number of distinct classes in a column.
 
@@ -439,7 +439,7 @@ Due to inaccurate predictions of the transfer-based model, another method to for
 \end{figure}
 
 \subsection{Basic Model: Price Excluded}
-
+The architecture of this model is identical to the model developed in section \ref{basic_status_include}, which is displayed in figure \ref{basic_status_layout}, and the datasets are created in section \ref{create_input_dataset_section}. The previously employed ML techniques are applied directly to train this model to achieve acceptable performance with less time investment. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Testing \& Experimental Results}
@@ -1433,6 +1433,9 @@ Folds three, two, and four are selected for evaluation when bias is 0.05, 0.1, a
 \end{table}
 
 Furthermore, when comparing the models with biases are 0 and 0.05, the correct prediction of the class \textit{Completed} increases from 57\% to 60\%, but the accuracy for the \textit{Not Completed} drops from 95\% to 91\%, indicating that a bias of 0.05 is not worthwhile. Using the same approach when biases are 0 and 0.15, the corrected predicted \textit{Completed} class increases by 20\%, while the precision and the overall performance decline significantly. When comparing models with biases of 0 and 0.1, the correct prediction of the \textit{Completed} transactions increases by more than 10\%, and a decrease in the overall performance and precision can be acceptable. 
+
+\subsection{Basic Model: Price Excluded}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion}
