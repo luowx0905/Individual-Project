@@ -11,7 +11,7 @@
 \contentsline {subsection}{\numberline {2.2.2}Handle Text Information}{4}{subsection.16}%
 \contentsline {subsubsection}{Beautiful Soup}{4}{section*.17}%
 \contentsline {subsubsection}{parse}{4}{section*.18}%
-\contentsline {subsubsection}{Regular Expression}{4}{section*.19}%
+\contentsline {subsubsection}{Regular Expression}{5}{section*.19}%
 \contentsline {subsubsection}{Library Usage}{5}{section*.20}%
 \contentsline {subsection}{\numberline {2.2.3}Data Manipulation}{5}{subsection.21}%
 \contentsline {subsubsection}{NumPy}{5}{section*.22}%
