@@ -7,21 +7,21 @@
 \contentsline {subsection}{\numberline {2.1.1}Datasets}{2}{subsection.8}%
 \contentsline {subsection}{\numberline {2.1.2}Models}{3}{subsection.9}%
 \contentsline {section}{\numberline {2.2}Related Tools}{3}{section.10}%
-\contentsline {subsection}{\numberline {2.2.1}Machine Learning}{3}{subsection.11}%
+\contentsline {subsection}{\numberline {2.2.1}Machine Learning}{4}{subsection.11}%
 \contentsline {subsection}{\numberline {2.2.2}Handle Text Information}{4}{subsection.16}%
 \contentsline {subsubsection}{Beautiful Soup}{4}{section*.17}%
-\contentsline {subsubsection}{parse}{4}{section*.18}%
+\contentsline {subsubsection}{parse}{5}{section*.18}%
 \contentsline {subsubsection}{Regular Expression}{5}{section*.19}%
 \contentsline {subsubsection}{Library Usage}{5}{section*.20}%
 \contentsline {subsection}{\numberline {2.2.3}Data Manipulation}{5}{subsection.21}%
 \contentsline {subsubsection}{NumPy}{5}{section*.22}%
 \contentsline {subsubsection}{Pandas}{5}{section*.23}%
-\contentsline {subsubsection}{Library Usage}{5}{section*.24}%
+\contentsline {subsubsection}{Library Usage}{6}{section*.24}%
 \contentsline {subsection}{\numberline {2.2.4}ML Frameworks}{6}{subsection.25}%
 \contentsline {subsubsection}{Scikit-learn}{6}{section*.26}%
 \contentsline {subsubsection}{PyTorch}{6}{section*.27}%
 \contentsline {subsubsection}{TensorFlow}{6}{section*.28}%
-\contentsline {subsubsection}{Library Usage}{6}{section*.29}%
+\contentsline {subsubsection}{Library Usage}{7}{section*.29}%
 \contentsline {subsection}{\numberline {2.2.5}Data Visualization}{7}{subsection.30}%
 \contentsline {subsubsection}{Matplotlib}{7}{section*.31}%
 \contentsline {subsubsection}{Seaborn}{7}{section*.32}%
