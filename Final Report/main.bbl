@@ -20,6 +20,13 @@ Géron, A. (2019).
   TensorFlow: Concepts, tools, and techniques to build intelligent systems}.
 \newblock " O'Reilly Media, Inc.".
 
+\bibitem[Louati et~al., 2022]{RN17}
+Louati, A., Lahyani, R., Aldaej, A., Aldumaykhi, A., and Otai, S. (2022).
+\newblock Price forecasting for real estate using machine learning: A case
+  study on riyadh city.
+\newblock {\em Concurrency and Computation: Practice and Experience},
+  34(6):e6748.
+
 \bibitem[McKinney, 2012]{RN6}
 McKinney, W. (2012).
 \newblock {\em Python for data analysis: Data wrangling with Pandas, NumPy, and
