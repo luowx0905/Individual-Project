@@ -1,68 +1,101 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{14}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Balemi et~al., 2021]{RN29}
-Balemi, N., Füss, R., and Weigand, A. (2021).
+\bibitem[Skribans et~al.(2020)Skribans, Jurušs, Demianchuk, Maslii, and
+  Pastory]{RN22}
+Valerijs Skribans, Māris Jurušs, Maryna Demianchuk, Natalia Maslii, and
+  Dickson Pastory.
+\newblock Real estate announcements monitoring dataset for latvia 2018.
+\newblock \emph{Data in brief}, 28:\penalty0 105064, 2020.
+\newblock ISSN 2352-3409.
+
+\bibitem[Lepetit et~al.(2022)Lepetit, Viguie, and Liotta]{RN26}
+Quentin Lepetit, Vincent Viguie, and Charlotte Liotta.
+\newblock A gridded dataset on densities, real estate prices, transport, and
+  land use inside 192 worldwide urban areas.
+\newblock \emph{Available at SSRN 4105575}, 2022.
+
+\bibitem[Balemi et~al.(2021)Balemi, Füss, and Weigand]{RN29}
+Nadia Balemi, Roland Füss, and Alois Weigand.
 \newblock Covid-19’s impact on real estate markets: review and outlook.
-\newblock {\em Financial Markets and Portfolio Management}, 35(4):495--513.
+\newblock \emph{Financial Markets and Portfolio Management}, 35\penalty0
+  (4):\penalty0 495--513, 2021.
+\newblock ISSN 2373-8529.
 
-\bibitem[Fandango, 2017]{RN4}
-Fandango, A. (2017).
-\newblock {\em Python Data Analysis}.
-\newblock Packt Publishing Ltd.
+\bibitem[Xie and Milcheva(2020)]{RN24}
+Lingshan Xie and Stanimira Milcheva.
+\newblock Proximity to covid-19 cases and real estate equity returns.
+\newblock \emph{Available at SSRN 3641268}, 2020.
 
-\bibitem[Godoy, 2021]{RN5}
-Godoy, D.~V. (2021).
-\newblock {\em Deep Learning with PyTorch Step-by-Step: A Beginner’s Guide}.
-
-\bibitem[Géron, 2019]{RN7}
-Géron, A. (2019).
-\newblock {\em Hands-on machine learning with Scikit-Learn, Keras, and
-  TensorFlow: Concepts, tools, and techniques to build intelligent systems}.
-\newblock " O'Reilly Media, Inc.".
-
-\bibitem[Louati et~al., 2022]{RN17}
-Louati, A., Lahyani, R., Aldaej, A., Aldumaykhi, A., and Otai, S. (2022).
+\bibitem[Louati et~al.(2022)Louati, Lahyani, Aldaej, Aldumaykhi, and
+  Otai]{RN17}
+Ali Louati, Rahma Lahyani, Abdulaziz Aldaej, Abdullah Aldumaykhi, and Saad
+  Otai.
 \newblock Price forecasting for real estate using machine learning: A case
   study on riyadh city.
-\newblock {\em Concurrency and Computation: Practice and Experience},
-  34(6):e6748.
+\newblock \emph{Concurrency and Computation: Practice and Experience},
+  34\penalty0 (6):\penalty0 e6748, 2022.
+\newblock ISSN 1532-0626.
 
-\bibitem[McKinney, 2012]{RN6}
-McKinney, W. (2012).
-\newblock {\em Python for data analysis: Data wrangling with Pandas, NumPy, and
-  IPython}.
-\newblock " O'Reilly Media, Inc.".
+\bibitem[Jha et~al.(2020)Jha, Pandey, Jha, and Babiceanu]{RN20}
+Shashi~Bhushan Jha, Vijay Pandey, Rajesh~Kumar Jha, and Radu~F Babiceanu.
+\newblock Machine learning approaches to real estate market prediction problem:
+  A case study.
+\newblock \emph{arXiv preprint arXiv:2008.09922}, 2020.
 
-\bibitem[Richardson, 2007]{RN10}
-Richardson, L. (2007).
+\bibitem[Fandango(2017)]{RN4}
+Armando Fandango.
+\newblock \emph{Python Data Analysis}.
+\newblock Packt Publishing Ltd, 2017.
+\newblock ISBN 1787127923.
+
+\bibitem[Richardson(2007)]{RN10}
+Leonard Richardson.
 \newblock Beautiful soup documentation.
-\newblock {\em Dosegljivo: https://www. crummy.
-  com/software/BeautifulSoup/bs4/doc/.[Dostopano: 7. 7. 2018]}.
+\newblock \emph{Dosegljivo: https://www. crummy.
+  com/software/BeautifulSoup/bs4/doc/.[Dostopano: 7. 7. 2018]}, 2007.
 
-\bibitem[Shukla and Fricklas, 2018]{RN15}
-Shukla, N. and Fricklas, K. (2018).
-\newblock {\em Machine learning with TensorFlow}.
-\newblock Manning Greenwich.
-
-\bibitem[Skribans et~al., 2020]{RN22}
-Skribans, V., Jurušs, M., Demianchuk, M., Maslii, N., and Pastory, D. (2020).
-\newblock Real estate announcements monitoring dataset for latvia 2018.
-\newblock {\em Data in brief}, 28:105064.
-
-\bibitem[Stubblebine, 2007]{RN14}
-Stubblebine, T. (2007).
-\newblock {\em Regular Expression Pocket Reference: Regular Expressions for
+\bibitem[Stubblebine(2007)]{RN14}
+Tony Stubblebine.
+\newblock \emph{Regular Expression Pocket Reference: Regular Expressions for
   Perl, Ruby, PHP, Python, C, Java and. NET}.
-\newblock " O'Reilly Media, Inc.".
+\newblock " O'Reilly Media, Inc.", 2007.
+\newblock ISBN 0596514271.
 
-\bibitem[Waskom, 2021]{RN16}
-Waskom, M.~L. (2021).
+\bibitem[McKinney(2012)]{RN6}
+Wes McKinney.
+\newblock \emph{Python for data analysis: Data wrangling with Pandas, NumPy,
+  and IPython}.
+\newblock " O'Reilly Media, Inc.", 2012.
+\newblock ISBN 1449323618.
+
+\bibitem[Géron(2019)]{RN7}
+Aurélien Géron.
+\newblock \emph{Hands-on machine learning with Scikit-Learn, Keras, and
+  TensorFlow: Concepts, tools, and techniques to build intelligent systems}.
+\newblock " O'Reilly Media, Inc.", 2019.
+\newblock ISBN 149203259X.
+
+\bibitem[Godoy(2021)]{RN5}
+Daniel~Voigt Godoy.
+\newblock \emph{Deep Learning with PyTorch Step-by-Step: A Beginner’s Guide}.
+\newblock 2021.
+
+\bibitem[Shukla and Fricklas(2018)]{RN15}
+Nishant Shukla and Kenneth Fricklas.
+\newblock \emph{Machine learning with TensorFlow}.
+\newblock Manning Greenwich, 2018.
+\newblock ISBN 1617293873.
+
+\bibitem[Waskom(2021)]{RN16}
+Michael~L Waskom.
 \newblock Seaborn: statistical data visualization.
-\newblock {\em Journal of Open Source Software}, 6(60):3021.
-
-\bibitem[Xie and Milcheva, 2020]{RN24}
-Xie, L. and Milcheva, S. (2020).
-\newblock Proximity to covid-19 cases and real estate equity returns.
-\newblock {\em Available at SSRN 3641268}.
+\newblock \emph{Journal of Open Source Software}, 6\penalty0 (60):\penalty0
+  3021, 2021.
+\newblock ISSN 2475-9066.
 
 \end{thebibliography}
