@@ -2,20 +2,20 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.3}%
 \contentsline {section}{\numberline {1.1}Aim \& Objective}{1}{section.4}%
 \contentsline {section}{\numberline {1.2}Layout of the Report}{1}{section.5}%
-\contentsline {chapter}{\numberline {2}Literal Review}{2}{chapter.6}%
+\contentsline {chapter}{\numberline {2}Literature Review}{2}{chapter.6}%
 \contentsline {section}{\numberline {2.1}Related Works}{2}{section.7}%
 \contentsline {subsection}{\numberline {2.1.1}Datasets}{2}{subsection.8}%
 \contentsline {subsection}{\numberline {2.1.2}Machine Learning Approaches}{3}{subsection.9}%
 \contentsline {section}{\numberline {2.2}Related Tools}{4}{section.10}%
 \contentsline {subsection}{\numberline {2.2.1}Machine Learning}{4}{subsection.11}%
-\contentsline {subsection}{\numberline {2.2.2}Handle Text Information}{4}{subsection.16}%
+\contentsline {subsection}{\numberline {2.2.2}Handle Text Information}{5}{subsection.16}%
 \contentsline {subsubsection}{Beautiful Soup}{5}{section*.17}%
 \contentsline {subsubsection}{parse}{5}{section*.18}%
 \contentsline {subsubsection}{Regular Expression}{5}{section*.19}%
 \contentsline {subsubsection}{Library Usage}{5}{section*.20}%
 \contentsline {subsection}{\numberline {2.2.3}Data Manipulation}{5}{subsection.21}%
 \contentsline {subsubsection}{NumPy}{5}{section*.22}%
-\contentsline {subsubsection}{Pandas}{5}{section*.23}%
+\contentsline {subsubsection}{Pandas}{6}{section*.23}%
 \contentsline {subsubsection}{Library Usage}{6}{section*.24}%
 \contentsline {subsection}{\numberline {2.2.4}ML Frameworks}{6}{subsection.25}%
 \contentsline {subsubsection}{Scikit-learn}{6}{section*.26}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  7 AUG 2022 15:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  7 AUG 2022 17:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -637,10 +637,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 100--102
 
  []
 
-
-Underfull \vbox (badness 1122) has occurred while \output is active []
-
- [3]
+[3]
 Underfull \hbox (badness 10000) in paragraph at lines 107--109
 
  []
@@ -1914,14 +1911,8 @@ Chapter 5.
 ]) [52
 
 ] (./main.aux)
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: F016AB131135F30E4B5601C450B733FB;10660
-(rerunfilecheck)             After:  6393F142CD9BFC5622917F0E13CC8A6C;10771.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 4E7F354511A5C71338301EA0E22C2373;10786.
 Package rerunfilecheck Info: File `main.brf' has not changed.
 (rerunfilecheck)             Checksum: FC12FC5E0D492DF5202AD746335FFA4C;621.
  ) 
@@ -1932,7 +1923,7 @@ Here is how much of TeX's memory you used:
  32973 multiletter control sequences out of 15000+600000
  504551 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,10n,80p,1015b,468s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,10n,80p,1240b,468s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/local/texl
 ive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchbi8a.pfb></usr/local/texliv
@@ -1943,7 +1934,7 @@ e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (59 pages, 8402681 bytes).
+Output written on main.pdf (59 pages, 8402821 bytes).
 PDF statistics:
  1268 PDF objects out of 1440 (max. 8388607)
  890 compressed objects within 9 object streams
