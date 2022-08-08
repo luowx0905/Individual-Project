@@ -13,8 +13,8 @@
 \contentsline {subsubsection}{parse}{5}{section*.18}%
 \contentsline {subsubsection}{Regular Expression}{5}{section*.19}%
 \contentsline {subsubsection}{Library Usage}{5}{section*.20}%
-\contentsline {subsection}{\numberline {2.2.3}Data Manipulation}{5}{subsection.21}%
-\contentsline {subsubsection}{NumPy}{5}{section*.22}%
+\contentsline {subsection}{\numberline {2.2.3}Data Manipulation}{6}{subsection.21}%
+\contentsline {subsubsection}{NumPy}{6}{section*.22}%
 \contentsline {subsubsection}{Pandas}{6}{section*.23}%
 \contentsline {subsubsection}{Library Usage}{6}{section*.24}%
 \contentsline {subsection}{\numberline {2.2.4}ML Frameworks}{6}{subsection.25}%
@@ -24,8 +24,8 @@
 \contentsline {subsubsection}{Library Usage}{7}{section*.29}%
 \contentsline {subsection}{\numberline {2.2.5}Data Visualization}{7}{subsection.30}%
 \contentsline {subsubsection}{Matplotlib}{7}{section*.31}%
-\contentsline {subsubsection}{Seaborn}{7}{section*.32}%
-\contentsline {subsubsection}{Library Usage}{7}{section*.33}%
+\contentsline {subsubsection}{Seaborn}{8}{section*.32}%
+\contentsline {subsubsection}{Library Usage}{8}{section*.33}%
 \contentsline {section}{\numberline {2.3}Research Gap}{8}{section.34}%
 \contentsline {chapter}{\numberline {3}Implementation}{9}{chapter.35}%
 \contentsline {section}{\numberline {3.1}Data Source and Collection}{9}{section.36}%
