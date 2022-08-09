@@ -1447,7 +1447,7 @@ Folds three, two, and four are selected for evaluation when bias is 0.05, 0.1, a
 Furthermore, when comparing the models with biases are 0 and 0.05, the correct prediction of the class \textit{Completed} increases from 57\% to 60\%, but the accuracy for the \textit{Not Completed} drops from 95\% to 91\%, indicating that a bias of 0.05 is not worthwhile. Using the same approach when biases are 0 and 0.15, the corrected predicted \textit{Completed} class increases by 20\%, while the precision and the overall performance decline significantly. When comparing models with biases of 0 and 0.1, the correct prediction of the \textit{Completed} transactions increases by more than 10\%, and a decrease in the overall performance and precision can be acceptable. 
 
 \subsection{Basic Model: Price Excluded}
-Based on the training process in \ref{basic_status_training_included}, this model is directly trained with baises of 0, 0.05, 0.1 and 0.15, the corresponding losses are depicted in figures \ref{basic_status_exclude_0} to \ref{basic_status_exclude_015}. 
+Based on the training process in \ref{basic_status_training_included}, this model is directly trained with baises of 0, 0.05, 0.1 and 0.15, the corresponding losses are depicted in figures \ref{basic_status_exclude_0} to \ref{basic_status_exclude_015}. Folds zero, one, zero, and three of each bias are selected for evaluation due to the low loss. 
 
 \begin{figure*}[!htbp]
 	\centering
@@ -1508,6 +1508,40 @@ Based on the training process in \ref{basic_status_training_included}, this mode
 	\caption{Training \& validation loss of basic model without prices (bias = 0.15)}
 	\label{basic_status_exclude_015}
 \end{figure*}
+
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[bias = 0]{\includegraphics[width=5cm]{cm_exclude_0}}
+	\hfill
+	\subfigure[bias = 0.05]{\includegraphics[width=5cm]{cm_exclude_005_0}}
+	\hfill
+	\subfigure[bias = 0.1]{\includegraphics[width=5cm]{cm_exclude_01_4}}
+	\hfil
+	\subfigure[bias = 0.15]{\includegraphics[width=5cm]{cm_exclude_015_4}}
+	\caption{Confusion matrices of model with various biases (without prices)}
+	\label{cm_exclude}
+\end{figure*}
+
+\begin{table}[!htbp]
+	\centering
+	\caption{Metrics of models with various biases (without price)}
+	\label{metrics_exclude}
+	\begin{tabular}{| c | c | c | c | c |}
+		\hline
+		Bias & Accuracy & Recall & Precision & F1 Score \\
+		\hline
+		0.00 & 0.8177 & 0.8421 & 0.9024 & 0.8712 \\
+		\hline
+		0.05 & 0.8133 & 0.8443 & 0.8910 & 0.8670 \\
+		\hline
+		0.10 & 0.8077 & 0.8389 & 0.8894 & 0.8634 \\
+		\hline
+		0.15 & 0.7955 & 0.8515 & 0.8487 & 0.8501 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+Figure \ref{cm_exclude} and table \ref{metrics_exclude} illustrate the confusion matrices and metrics of each model trained with various biases. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion and Future Work}
