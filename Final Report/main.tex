@@ -1447,7 +1447,7 @@ Folds three, two, and four are selected for evaluation when bias is 0.05, 0.1, a
 Furthermore, when comparing the models with biases are 0 and 0.05, the correct prediction of the class \textit{Completed} increases from 57\% to 60\%, but the accuracy for the \textit{Not Completed} drops from 95\% to 91\%, indicating that a bias of 0.05 is not worthwhile. Using the same approach when biases are 0 and 0.15, the corrected predicted \textit{Completed} class increases by 20\%, while the precision and the overall performance decline significantly. When comparing models with biases of 0 and 0.1, the correct prediction of the \textit{Completed} transactions increases by more than 10\%, and a decrease in the overall performance and precision can be acceptable. 
 
 \subsection{Basic Model: Price Excluded}
-Based on the training process in \ref{basic_status_training_included}, this model is directly trained with baises of 0, 0.05, 0.1 and 0.15, the corresponding losses are depicted in figures \ref{basic_status_exclude_0} to \ref{basic_status_exclude_015}. Folds zero, one, zero, and three of each bias are selected for evaluation due to the low loss. 
+Based on the training process in \ref{basic_status_training_included}, this model is directly trained with biases of 0, 0.05, 0.1, and 0.15. The corresponding losses are depicted in figures \ref{basic_status_exclude_0} to \ref{basic_status_exclude_015}. Folds zero, one, zero, and three of each bias are selected for evaluation due to the low loss. Figure \ref{cm_exclude} and table \ref{metrics_exclude} illustrate the confusion matrices and metrics of each model trained with various biases. Apparently, adding bias to these models cannot improve the performance significantly, and the metrics are comparable.
 
 \begin{figure*}[!htbp]
 	\centering
@@ -1541,11 +1541,18 @@ Based on the training process in \ref{basic_status_training_included}, this mode
 	\end{tabular}
 \end{table}
 
-Figure \ref{cm_exclude} and table \ref{metrics_exclude} illustrate the confusion matrices and metrics of each model trained with various biases. 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion and Future Work}
+\section{Future Work}
+\subsection{Dataset}
+Although the raw dataset contains approximately 35000 records, there are numerous missing values which leads to the dataset for training and testing contains less than 9000 records. Moreover, this project aims to develop a model to predict if a property can be sold across the UK, and the distribution of the properties used for training is shown in figure \ref{uk_distribution}. A significant number of properties are located in England. The data outside of England are located in Cardiff, Edinburgh, Glasgow, and Aberdeen. Therefore, the result will be unrealiable if a property is not located in these areas, such as Belfast. Furthermore, the layout and facility of each property are considered, whereas there are some other factors that can influence the price and the possibility of selling. 
 
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=\linewidth]{uk_distribution}
+	\caption{The distribution of the properties used in this project}
+	\label{uk_distribution}
+\end{figure}
 
 %% bibliography
 \bibliographystyle{unsrtnat}
