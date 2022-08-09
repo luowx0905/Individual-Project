@@ -1,4 +1,4 @@
-\begin{thebibliography}{14}
+\begin{thebibliography}{15}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -46,6 +46,13 @@ Shashi~Bhushan Jha, Vijay Pandey, Rajesh~Kumar Jha, and Radu~F Babiceanu.
 \newblock Machine learning approaches to real estate market prediction problem:
   A case study.
 \newblock \emph{arXiv preprint arXiv:2008.09922}, 2020.
+
+\bibitem[Ray()]{RN33}
+Susmita Ray.
+\newblock A quick review of machine learning algorithms.
+\newblock In \emph{2019 International conference on machine learning, big data,
+  cloud and parallel computing (COMITCon)}, pages 35--39. IEEE.
+\newblock ISBN 1728102111.
 
 \bibitem[Fandango(2017)]{RN4}
 Armando Fandango.
