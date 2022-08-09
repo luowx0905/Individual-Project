@@ -74,4 +74,4 @@
 \contentsline {subsection}{\numberline {4.2.8}Transfer-baesd Model: Predict Status}{38}{subsection.196}%
 \contentsline {subsection}{\numberline {4.2.9}Basic Model: Price Included}{42}{subsection.215}%
 \contentsline {subsection}{\numberline {4.2.10}Basic Model: Price Excluded}{50}{subsection.279}%
-\contentsline {chapter}{\numberline {5}Conclusion}{51}{chapter.280}%
+\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{53}{chapter.304}%

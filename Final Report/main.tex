@@ -1227,6 +1227,7 @@ Figure \ref{transfer_based_status_no_freeze} displays the training and validatio
 \end{figure*}
 
 \subsection{Basic Model: Price Included}
+\label{basic_status_training_included}
 The training and validation losses are displayed in figure \ref{basic_status}. Even though all the losses can converge from these graphs, the models would only output a value of approximately 0.5 regardless of the actual status.
 \\
 
@@ -1432,7 +1433,7 @@ Folds three, two, and four are selected for evaluation when bias is 0.05, 0.1, a
 		\hline
 		Bias & Accuracy & Recall & Precision & F1 Score \\
 		\hline
-		0 & 0.8355 & 0.8293 & 0.9560 & 0.8882 \\
+		0.00 & 0.8355 & 0.8293 & 0.9560 & 0.8882 \\
 		\hline
 		0.05 & 0.8177 & 0.8340 & 0.9154 & 0.8728 \\
 		\hline
@@ -1446,10 +1447,70 @@ Folds three, two, and four are selected for evaluation when bias is 0.05, 0.1, a
 Furthermore, when comparing the models with biases are 0 and 0.05, the correct prediction of the class \textit{Completed} increases from 57\% to 60\%, but the accuracy for the \textit{Not Completed} drops from 95\% to 91\%, indicating that a bias of 0.05 is not worthwhile. Using the same approach when biases are 0 and 0.15, the corrected predicted \textit{Completed} class increases by 20\%, while the precision and the overall performance decline significantly. When comparing models with biases of 0 and 0.1, the correct prediction of the \textit{Completed} transactions increases by more than 10\%, and a decrease in the overall performance and precision can be acceptable. 
 
 \subsection{Basic Model: Price Excluded}
+Based on the training process in \ref{basic_status_training_included}, this model is directly trained with baises of 0, 0.05, 0.1 and 0.15, the corresponding losses are depicted in figures \ref{basic_status_exclude_0} to \ref{basic_status_exclude_015}. 
 
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_exclude_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_exclude_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_exclude_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_exclude_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_exclude_fold_4}}
+	\caption{Training \& validation loss of basic model without prices (bias = 0)}
+	\label{basic_status_exclude_0}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_exclude_bias_005_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_exclude_bias_005_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_exclude_bias_005_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_exclude_bias_005_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_exclude_bias_005_fold_4}}
+	\caption{Training \& validation loss of basic model without prices (bias = 0.05)}
+	\label{basic_status_exclude_005}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_exclude_bias_01_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_exclude_bias_01_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_exclude_bias_01_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_exclude_bias_01_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_exclude_bias_01_fold_4}}
+	\caption{Training \& validation loss of basic model without prices (bias = 0.1)}
+	\label{basic_status_exclude_01}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_exclude_bias_015_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_exclude_bias_015_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_exclude_bias_015_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_exclude_bias_015_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_exclude_bias_015_fold_4}}
+	\caption{Training \& validation loss of basic model without prices (bias = 0.15)}
+	\label{basic_status_exclude_015}
+\end{figure*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Conclusion}
+\chapter{Conclusion and Future Work}
 
 
 %% bibliography
