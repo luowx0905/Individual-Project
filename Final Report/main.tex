@@ -1545,7 +1545,13 @@ Based on the training process in \ref{basic_status_training_included}, this mode
 \chapter{Conclusion and Future Work}
 \section{Future Work}
 \subsection{Dataset}
-Although the raw dataset contains approximately 35000 records, there are numerous missing values which leads to the dataset for training and testing contains less than 9000 records. Moreover, this project aims to develop a model to predict if a property can be sold across the UK, and the distribution of the properties used for training is shown in figure \ref{uk_distribution}. A significant number of properties are located in England. The data outside of England are located in Cardiff, Edinburgh, Glasgow, and Aberdeen. Therefore, the result will be unrealiable if a property is not located in these areas, such as Belfast. Furthermore, the layout and facility of each property are considered, whereas there are some other factors that can influence the price and the possibility of selling. 
+This project aims to develop a model to predict if a property can be sold across the UK. The distribution of the properties used for training is shown in figure \ref{uk_distribution}. A significant number of properties are located in England, and the data outside of England are located in Cardiff, Edinburgh, Glasgow, and Aberdeen. Therefore, the result will be unreliable if a property is not located in these areas, such as Belfast. In addition, the raw dataset contains approximately 35000 records, whereas a significant number of missing values lead to the dataset for training and testing containing less than 9000 records.
+\\
+
+Moreover, only the layouts and facilities of properties are used for prediction. However, in the research conducted by \citet{RN20}, the local economic data was collected and used with property data to forecast prices. Therefore, the dataset utilized in the current project can be incorporated with economical attributes, including GDP and CPI, to obtain a more robust performance. 
+\\
+
+Furthermore, London is the largest city in the UK, with distinct infrastructure and landmarks. Therefore, the properties in this area could be analyzed separately, and some other attributes, such as the nearest tube station and the distance to it, can be inserted for training the model, resulting in more accurate predictions for London. 
 
 \begin{figure}[!htbp]
 	\centering
