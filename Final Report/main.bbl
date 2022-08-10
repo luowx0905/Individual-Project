@@ -1,4 +1,4 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{19}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -55,6 +55,11 @@ Alexey Natekin and Alois Knoll.
 \newblock Gradient boosting machines, a tutorial.
 \newblock \emph{Frontiers in neurorobotics}, 7:\penalty0 21, 2013.
 \newblock ISSN 1662-5218.
+
+\bibitem[Zou et~al.(2008)Zou, Han, and So]{RN36}
+Jinming Zou, Yi~Han, and Sung-Sau So.
+\newblock Overview of artificial neural networks.
+\newblock \emph{Artificial Neural Networks}, pages 14--22, 2008.
 
 \bibitem[Louati et~al.(2022)Louati, Lahyani, Aldaej, Aldumaykhi, and
   Otai]{RN17}
