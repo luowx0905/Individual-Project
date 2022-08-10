@@ -7,45 +7,45 @@ Warning--empty year in RN33
 Warning--empty year in RN33
 Warning--empty journal in RN31
 Warning--empty publisher in RN5
-You've used 16 entries,
+You've used 18 entries,
             2481 wiz_defined-function locations,
-            659 strings with 6891 characters,
-and the built_in function-call counts, 5252 in all, are:
-= -- 431
-> -- 228
-< -- 12
-+ -- 98
-- -- 66
-* -- 338
-:= -- 867
-add.period$ -- 59
-call.type$ -- 16
-change.case$ -- 26
-chr.to.int$ -- 16
-cite$ -- 20
-duplicate$ -- 309
-empty$ -- 514
-format.name$ -- 86
-if$ -- 1120
+            673 strings with 7076 characters,
+and the built_in function-call counts, 5865 in all, are:
+= -- 485
+> -- 250
+< -- 14
++ -- 108
+- -- 72
+* -- 373
+:= -- 968
+add.period$ -- 67
+call.type$ -- 18
+change.case$ -- 29
+chr.to.int$ -- 18
+cite$ -- 22
+duplicate$ -- 347
+empty$ -- 576
+format.name$ -- 96
+if$ -- 1253
 int.to.chr$ -- 1
-int.to.str$ -- 17
-missing$ -- 22
-newline$ -- 98
-num.names$ -- 48
-pop$ -- 152
+int.to.str$ -- 19
+missing$ -- 25
+newline$ -- 110
+num.names$ -- 54
+pop$ -- 169
 preamble$ -- 1
-purify$ -- 16
+purify$ -- 18
 quote$ -- 0
-skip$ -- 175
+skip$ -- 197
 stack$ -- 0
-substring$ -- 118
-swap$ -- 39
+substring$ -- 128
+swap$ -- 43
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 94
+type$ -- 105
 warning$ -- 4
-while$ -- 38
+while$ -- 43
 width$ -- 0
-write$ -- 222
+write$ -- 251
 (There were 4 warnings)

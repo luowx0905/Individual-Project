@@ -1,4 +1,4 @@
-\begin{thebibliography}{16}
+\begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -43,6 +43,18 @@ Obinna~Chilezie Njoku.
 \newblock Decision trees and their application for classification and
   regression problems.
 \newblock 2019.
+
+\bibitem[Bonaccorso(2017)]{RN34}
+Giuseppe Bonaccorso.
+\newblock \emph{Machine learning algorithms}.
+\newblock Packt Publishing Ltd, 2017.
+\newblock ISBN 1785884514.
+
+\bibitem[Natekin and Knoll(2013)]{RN35}
+Alexey Natekin and Alois Knoll.
+\newblock Gradient boosting machines, a tutorial.
+\newblock \emph{Frontiers in neurorobotics}, 7:\penalty0 21, 2013.
+\newblock ISSN 1662-5218.
 
 \bibitem[Louati et~al.(2022)Louati, Lahyani, Aldaej, Aldumaykhi, and
   Otai]{RN17}
