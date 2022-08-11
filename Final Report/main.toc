@@ -14,20 +14,20 @@
 \contentsline {subsection}{\numberline {2.2.1}Machine Learning}{5}{subsection.15}%
 \contentsline {subsection}{\numberline {2.2.2}Handle Text Information}{6}{subsection.20}%
 \contentsline {subsubsection}{Beautiful Soup}{6}{section*.21}%
-\contentsline {subsubsection}{parse}{6}{section*.22}%
-\contentsline {subsubsection}{Regular Expression}{6}{section*.23}%
-\contentsline {subsubsection}{Library Usage}{6}{section*.24}%
+\contentsline {subsubsection}{parse}{7}{section*.22}%
+\contentsline {subsubsection}{Regular Expression}{7}{section*.23}%
+\contentsline {subsubsection}{Library Usage}{7}{section*.24}%
 \contentsline {subsection}{\numberline {2.2.3}Data Manipulation}{7}{subsection.25}%
 \contentsline {subsubsection}{NumPy}{7}{section*.26}%
 \contentsline {subsubsection}{Pandas}{7}{section*.27}%
-\contentsline {subsubsection}{Library Usage}{7}{section*.28}%
-\contentsline {subsection}{\numberline {2.2.4}ML Frameworks}{7}{subsection.29}%
-\contentsline {subsubsection}{Scikit-learn}{7}{section*.30}%
+\contentsline {subsubsection}{Library Usage}{8}{section*.28}%
+\contentsline {subsection}{\numberline {2.2.4}ML Frameworks}{8}{subsection.29}%
+\contentsline {subsubsection}{Scikit-learn}{8}{section*.30}%
 \contentsline {subsubsection}{PyTorch}{8}{section*.31}%
 \contentsline {subsubsection}{TensorFlow}{8}{section*.32}%
-\contentsline {subsubsection}{Library Usage}{8}{section*.33}%
-\contentsline {subsection}{\numberline {2.2.5}Data Visualization}{8}{subsection.34}%
-\contentsline {subsubsection}{Matplotlib}{8}{section*.35}%
+\contentsline {subsubsection}{Library Usage}{9}{section*.33}%
+\contentsline {subsection}{\numberline {2.2.5}Data Visualization}{9}{subsection.34}%
+\contentsline {subsubsection}{Matplotlib}{9}{section*.35}%
 \contentsline {subsubsection}{Seaborn}{9}{section*.36}%
 \contentsline {subsubsection}{Library Usage}{9}{section*.37}%
 \contentsline {section}{\numberline {2.3}Research Gap}{9}{section.38}%

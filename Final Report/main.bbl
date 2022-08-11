@@ -1,4 +1,4 @@
-\begin{thebibliography}{19}
+\begin{thebibliography}{20}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -76,6 +76,15 @@ Shashi~Bhushan Jha, Vijay Pandey, Rajesh~Kumar Jha, and Radu~F Babiceanu.
 \newblock Machine learning approaches to real estate market prediction problem:
   A case study.
 \newblock \emph{arXiv preprint arXiv:2008.09922}, 2020.
+
+\bibitem[Chiarazzo et~al.(2014)Chiarazzo, Caggiani, Marinelli, and
+  Ottomanelli]{RN37}
+Vincenza Chiarazzo, Leonardo Caggiani, Mario Marinelli, and Michele
+  Ottomanelli.
+\newblock A neural network based model for real estate price estimation
+  considering environmental quality of property location.
+\newblock \emph{Transportation Research Procedia}, 3:\penalty0 810--817, 2014.
+\newblock ISSN 2352-1465.
 
 \bibitem[Fandango(2017)]{RN4}
 Armando Fandango.
