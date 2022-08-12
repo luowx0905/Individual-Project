@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  12 AUG 2022 14:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  12 AUG 2022 15:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -551,7 +551,7 @@ LaTeX Info: Redefining \nameref on input line 24.
 \openout3 = `main.out'.
 
  (./titlepage.tex
-<./figures/imperial.pdf, id=213, 362.35374pt x 95.35625pt>
+<./figures/imperial.pdf, id=209, 362.35374pt x 95.35625pt>
 File: ./figures/imperial.pdf Graphic file (type pdf)
 <use ./figures/imperial.pdf>
 Package pdftex.def Info: ./figures/imperial.pdf  used on input line 11.
@@ -594,6 +594,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--69
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--72
+
+ []
+
 [1
 
 
@@ -601,88 +606,88 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--69
 ]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--80
+Underfull \hbox (badness 10000) in paragraph at lines 79--81
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--83
+Underfull \hbox (badness 10000) in paragraph at lines 82--84
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--86
+Underfull \hbox (badness 10000) in paragraph at lines 85--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--89
+Underfull \hbox (badness 10000) in paragraph at lines 88--90
 
  []
 
 [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 90--92
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--95
+Underfull \hbox (badness 10000) in paragraph at lines 94--96
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--105
+Underfull \hbox (badness 10000) in paragraph at lines 104--106
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 112--114
+Underfull \hbox (badness 10000) in paragraph at lines 113--115
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 115--117
+Underfull \hbox (badness 10000) in paragraph at lines 116--118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--126
+Underfull \hbox (badness 10000) in paragraph at lines 125--127
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 127--129
+Underfull \hbox (badness 10000) in paragraph at lines 128--130
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 162--164
+Underfull \hbox (badness 10000) in paragraph at lines 163--165
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 173--175
+Underfull \hbox (badness 10000) in paragraph at lines 174--176
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--184
+Underfull \hbox (badness 10000) in paragraph at lines 183--185
 
  []
 
 [8] [9]
 Chapter 3.
 
-Overfull \hbox (30.01126pt too wide) in paragraph at lines 209--240
+Overfull \hbox (30.01126pt too wide) in paragraph at lines 210--241
  [][] 
  []
 
-<./figures//html_structure.png, id=414, 598.235pt x 216.81pt>
+<./figures//html_structure.png, id=409, 598.235pt x 216.81pt>
 File: ./figures//html_structure.png Graphic file (type png)
 <use ./figures//html_structure.png>
-Package pdftex.def Info: ./figures//html_structure.png  used on input line 249.
+Package pdftex.def Info: ./figures//html_structure.png  used on input line 250.
 
 (pdftex.def)             Requested size: 426.79134pt x 154.67722pt.
 
@@ -691,413 +696,413 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [10
 
 ]
-<./figures//html_room_info.png, id=421, 924.45375pt x 259.97125pt>
+<./figures//html_room_info.png, id=416, 924.45375pt x 259.97125pt>
 File: ./figures//html_room_info.png Graphic file (type png)
 <use ./figures//html_room_info.png>
-Package pdftex.def Info: ./figures//html_room_info.png  used on input line 256.
+Package pdftex.def Info: ./figures//html_room_info.png  used on input line 257.
 
 (pdftex.def)             Requested size: 438.17227pt x 123.22185pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--263
+Underfull \hbox (badness 10000) in paragraph at lines 262--264
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--266
+Underfull \hbox (badness 10000) in paragraph at lines 265--267
 
  []
 
 [11 <./figures//html_structure.png> <./figures//html_room_info.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 268--270
+Underfull \hbox (badness 10000) in paragraph at lines 269--271
 
  []
 
-<./figures//uml_extract_rooms.png, id=432, 358.33875pt x 173.64874pt>
+<./figures//uml_extract_rooms.png, id=427, 358.33875pt x 173.64874pt>
 File: ./figures//uml_extract_rooms.png Graphic file (type png)
 <use ./figures//uml_extract_rooms.png>
 Package pdftex.def Info: ./figures//uml_extract_rooms.png  used on input line 2
-73.
+74.
 (pdftex.def)             Requested size: 284.52756pt x 137.88846pt.
 LaTeX Font Info:    Trying to load font information for TS1+bch on input line 2
-80.
+81.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1bch.fd
 File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
 )
-<./figures//extract_room_get_rooms.png, id=434, 207.77625pt x 523.9575pt>
+<./figures//extract_room_get_rooms.png, id=429, 207.77625pt x 523.9575pt>
 File: ./figures//extract_room_get_rooms.png Graphic file (type png)
 <use ./figures//extract_room_get_rooms.png>
 Package pdftex.def Info: ./figures//extract_room_get_rooms.png  used on input l
-ine 289.
+ine 290.
 (pdftex.def)             Requested size: 124.11505pt x 312.9803pt.
  [12 <./figures//uml_extract_rooms.png>] [13 <./figures//extract_room_get_rooms
 .png>]
-<./figures//parking_dataset.png, id=454, 758.835pt x 338.26375pt>
+<./figures//parking_dataset.png, id=448, 758.835pt x 338.26375pt>
 File: ./figures//parking_dataset.png Graphic file (type png)
 <use ./figures//parking_dataset.png>
-Package pdftex.def Info: ./figures//parking_dataset.png  used on input line 302
+Package pdftex.def Info: ./figures//parking_dataset.png  used on input line 303
 .
 (pdftex.def)             Requested size: 341.43306pt x 152.20178pt.
-<./figures//uml_generalize_dataset.png, id=457, 201.75375pt x 121.45375pt>
+<./figures//uml_generalize_dataset.png, id=451, 201.75375pt x 121.45375pt>
 File: ./figures//uml_generalize_dataset.png Graphic file (type png)
 <use ./figures//uml_generalize_dataset.png>
 Package pdftex.def Info: ./figures//uml_generalize_dataset.png  used on input l
-ine 310.
+ine 311.
 (pdftex.def)             Requested size: 142.26378pt x 85.64156pt.
-<./figures//generalize_dataset_get_feature_types.png, id=458, 844.15375pt x 171
+<./figures//generalize_dataset_get_feature_types.png, id=452, 844.15375pt x 171
 .64125pt>
 File: ./figures//generalize_dataset_get_feature_types.png Graphic file (type pn
 g)
 <use ./figures//generalize_dataset_get_feature_types.png>
 Package pdftex.def Info: ./figures//generalize_dataset_get_feature_types.png  u
-sed on input line 317.
+sed on input line 318.
 (pdftex.def)             Requested size: 438.17227pt x 89.0942pt.
  [14 <./figures//parking_dataset.png> <./figures//uml_generalize_dataset.png>]
-<./figures//price_all_raw.png, id=469, 353.32pt x 368.37625pt>
+<./figures//price_all_raw.png, id=464, 353.32pt x 368.37625pt>
 File: ./figures//price_all_raw.png Graphic file (type png)
 <use ./figures//price_all_raw.png>
-Package pdftex.def Info: ./figures//price_all_raw.png  used on input line 327.
+Package pdftex.def Info: ./figures//price_all_raw.png  used on input line 328.
 (pdftex.def)             Requested size: 142.26378pt x 148.32593pt.
-<./figures//price_sale_raw.png, id=470, 353.32pt x 368.37625pt>
+<./figures//price_sale_raw.png, id=465, 353.32pt x 368.37625pt>
 File: ./figures//price_sale_raw.png Graphic file (type png)
 <use ./figures//price_sale_raw.png>
-Package pdftex.def Info: ./figures//price_sale_raw.png  used on input line 329.
+Package pdftex.def Info: ./figures//price_sale_raw.png  used on input line 330.
 
 (pdftex.def)             Requested size: 142.26378pt x 148.32593pt.
-<./figures//price_rental_raw.png, id=471, 353.32pt x 380.42125pt>
+<./figures//price_rental_raw.png, id=466, 353.32pt x 380.42125pt>
 File: ./figures//price_rental_raw.png Graphic file (type png)
 <use ./figures//price_rental_raw.png>
 Package pdftex.def Info: ./figures//price_rental_raw.png  used on input line 33
-1.
+2.
 (pdftex.def)             Requested size: 142.26378pt x 153.17581pt.
  [15 <./figures//generalize_dataset_get_feature_types.png> <./figures//price_al
 l_raw.png> <./figures//price_sale_raw.png> <./figures//price_rental_raw.png>]
-<./figures//uml_create_input_dataset.png, id=486, 191.71625pt x 241.90375pt>
+<./figures//uml_create_input_dataset.png, id=481, 191.71625pt x 241.90375pt>
 File: ./figures//uml_create_input_dataset.png Graphic file (type png)
 <use ./figures//uml_create_input_dataset.png>
 Package pdftex.def Info: ./figures//uml_create_input_dataset.png  used on input
- line 346.
+ line 347.
 (pdftex.def)             Requested size: 135.30331pt x 170.71652pt.
-<./figures//create_input_dataset.png, id=489, 488.82625pt x 723.70375pt>
+<./figures//create_input_dataset.png, id=484, 488.82625pt x 723.70375pt>
 File: ./figures//create_input_dataset.png Graphic file (type png)
 <use ./figures//create_input_dataset.png>
 Package pdftex.def Info: ./figures//create_input_dataset.png  used on input lin
-e 356.
+e 357.
 (pdftex.def)             Requested size: 134.52832pt x 199.16928pt.
  [16 <./figures//uml_create_input_dataset.png> <./figures//create_input_dataset
 .png>]
-Underfull \hbox (badness 10000) in paragraph at lines 368--370
+Underfull \hbox (badness 10000) in paragraph at lines 369--371
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 371--373
+Underfull \hbox (badness 10000) in paragraph at lines 372--374
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--379
+Underfull \hbox (badness 10000) in paragraph at lines 378--380
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 380--382
+Underfull \hbox (badness 10000) in paragraph at lines 381--383
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 397--399
+Underfull \hbox (badness 10000) in paragraph at lines 398--400
 
  []
 
-<./figures//basic_model_layout.png, id=509, 1942.25626pt x 2596.70125pt>
+<./figures//basic_model_layout.png, id=504, 1942.25626pt x 2596.70125pt>
 File: ./figures//basic_model_layout.png Graphic file (type png)
 <use ./figures//basic_model_layout.png>
 Package pdftex.def Info: ./figures//basic_model_layout.png  used on input line 
-404.
+405.
 (pdftex.def)             Requested size: 212.7894pt x 284.52756pt.
-<./figures//basic_model_price.png, id=511, 1264.725pt x 2595.6975pt>
+<./figures//basic_model_price.png, id=506, 1264.725pt x 2595.6975pt>
 File: ./figures//basic_model_price.png Graphic file (type png)
 <use ./figures//basic_model_price.png>
 Package pdftex.def Info: ./figures//basic_model_price.png  used on input line 4
-14.
+15.
 (pdftex.def)             Requested size: 138.61842pt x 284.52756pt.
 [18] [19 <./figures//basic_model_layout.png> <./figures//basic_model_price.png>
 ]
-<./figures//residual_bolck_layout.png, id=527, 1279.78125pt x 2466.21375pt>
+<./figures//residual_bolck_layout.png, id=522, 1279.78125pt x 2466.21375pt>
 File: ./figures//residual_bolck_layout.png Graphic file (type png)
 <use ./figures//residual_bolck_layout.png>
 Package pdftex.def Info: ./figures//residual_bolck_layout.png  used on input li
-ne 427.
+ne 428.
 (pdftex.def)             Requested size: 213.39566pt x 411.1977pt.
-<./figures//resnet_model_price.png, id=528, 1264.725pt x 2314.6475pt>
+<./figures//resnet_model_price.png, id=523, 1264.725pt x 2314.6475pt>
 File: ./figures//resnet_model_price.png Graphic file (type png)
 <use ./figures//resnet_model_price.png>
 Package pdftex.def Info: ./figures//resnet_model_price.png  used on input line 
-429.
+430.
 (pdftex.def)             Requested size: 213.39566pt x 390.51811pt.
  [20 <./figures//residual_bolck_layout.png> <./figures//resnet_model_price.png>
 ]
-<./figures//correlation_status.png, id=540, 1028.84375pt x 1064.97874pt>
+<./figures//correlation_status.png, id=535, 1028.84375pt x 1064.97874pt>
 File: ./figures//correlation_status.png Graphic file (type png)
 <use ./figures//correlation_status.png>
 Package pdftex.def Info: ./figures//correlation_status.png  used on input line 
-439.
+440.
 (pdftex.def)             Requested size: 426.79134pt x 441.77919pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21 <./figures//correlation_status.png>]
-<./figures//transfer_layout.png, id=548, 1264.725pt x 3868.4525pt>
+<./figures//transfer_layout.png, id=543, 1264.725pt x 3868.4525pt>
 File: ./figures//transfer_layout.png Graphic file (type png)
 <use ./figures//transfer_layout.png>
-Package pdftex.def Info: ./figures//transfer_layout.png  used on input line 451
+Package pdftex.def Info: ./figures//transfer_layout.png  used on input line 452
 .
 (pdftex.def)             Requested size: 158.12883pt x 483.69684pt.
  [22 <./figures//transfer_layout.png>]
-<./figures//basic_status_layout.png, id=556, 1264.725pt x 2838.605pt>
+<./figures//basic_status_layout.png, id=551, 1264.725pt x 2838.605pt>
 File: ./figures//basic_status_layout.png Graphic file (type png)
 <use ./figures//basic_status_layout.png>
 Package pdftex.def Info: ./figures//basic_status_layout.png  used on input line
- 462.
+ 463.
 (pdftex.def)             Requested size: 164.78668pt x 369.88582pt.
  [23 <./figures//basic_status_layout.png>]
 Chapter 4.
-<./figures//html_room_info_1.png, id=569, 825.0825pt x 770.88pt>
+<./figures//html_room_info_1.png, id=564, 825.0825pt x 770.88pt>
 File: ./figures//html_room_info_1.png Graphic file (type png)
 <use ./figures//html_room_info_1.png>
 Package pdftex.def Info: ./figures//html_room_info_1.png  used on input line 48
-4.
+5.
 (pdftex.def)             Requested size: 213.3959pt x 227.61935pt.
-<./figures//html_room_info_2.png, id=570, 595.22375pt x 701.62125pt>
+<./figures//html_room_info_2.png, id=565, 595.22375pt x 701.62125pt>
 File: ./figures//html_room_info_2.png Graphic file (type png)
 <use ./figures//html_room_info_2.png>
 Package pdftex.def Info: ./figures//html_room_info_2.png  used on input line 48
-6.
+7.
 (pdftex.def)             Requested size: 213.39032pt x 227.61737pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 542--544
+Underfull \hbox (badness 10000) in paragraph at lines 543--545
 
  []
 
 [24
 
 ] [25 <./figures//html_room_info_1.png> <./figures//html_room_info_2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 619--621
+Underfull \hbox (badness 10000) in paragraph at lines 620--622
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 656--658
+Underfull \hbox (badness 10000) in paragraph at lines 657--659
 
  []
 
-<./figures//price_all_mean.png, id=615, 353.32pt x 380.42125pt>
+<./figures//price_all_mean.png, id=610, 353.32pt x 380.42125pt>
 File: ./figures//price_all_mean.png Graphic file (type png)
 <use ./figures//price_all_mean.png>
-Package pdftex.def Info: ./figures//price_all_mean.png  used on input line 663.
+Package pdftex.def Info: ./figures//price_all_mean.png  used on input line 664.
 
 (pdftex.def)             Requested size: 142.26378pt x 153.17581pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figures//price_sale_remove.png, id=616, 349.305pt x 368.37625pt>
+<./figures//price_sale_remove.png, id=611, 349.305pt x 368.37625pt>
 File: ./figures//price_sale_remove.png Graphic file (type png)
 <use ./figures//price_sale_remove.png>
 Package pdftex.def Info: ./figures//price_sale_remove.png  used on input line 6
-70.
+71.
 (pdftex.def)             Requested size: 142.26378pt x 150.02908pt.
-<./figures//price_rental_remove.png, id=617, 349.305pt x 380.42125pt>
+<./figures//price_rental_remove.png, id=612, 349.305pt x 380.42125pt>
 File: ./figures//price_rental_remove.png Graphic file (type png)
 <use ./figures//price_rental_remove.png>
 Package pdftex.def Info: ./figures//price_rental_remove.png  used on input line
- 671.
+ 672.
 (pdftex.def)             Requested size: 142.26378pt x 154.93466pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 677--679
+Underfull \hbox (badness 10000) in paragraph at lines 678--680
 
  []
 
 [27]
-<./figures//general_raw.png, id=626, 1134.2375pt x 261.97874pt>
+<./figures//general_raw.png, id=621, 1134.2375pt x 261.97874pt>
 File: ./figures//general_raw.png Graphic file (type png)
 <use ./figures//general_raw.png>
-Package pdftex.def Info: ./figures//general_raw.png  used on input line 684.
+Package pdftex.def Info: ./figures//general_raw.png  used on input line 685.
 (pdftex.def)             Requested size: 438.17227pt x 101.2039pt.
-<./figures//general_input.png, id=627, 1127.21124pt x 258.9675pt>
+<./figures//general_input.png, id=622, 1127.21124pt x 258.9675pt>
 File: ./figures//general_input.png Graphic file (type png)
 <use ./figures//general_input.png>
-Package pdftex.def Info: ./figures//general_input.png  used on input line 685.
+Package pdftex.def Info: ./figures//general_input.png  used on input line 686.
 (pdftex.def)             Requested size: 438.17227pt x 100.66498pt.
-<./figures//linear_regression_fold_0.png, id=629, 498.86375pt x 383.4325pt>
+<./figures//linear_regression_fold_0.png, id=624, 498.86375pt x 383.4325pt>
 File: ./figures//linear_regression_fold_0.png Graphic file (type png)
 <use ./figures//linear_regression_fold_0.png>
 Package pdftex.def Info: ./figures//linear_regression_fold_0.png  used on input
- line 696.
+ line 697.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-<./figures//linear_regression_fold_1.png, id=630, 498.86375pt x 383.4325pt>
+<./figures//linear_regression_fold_1.png, id=625, 498.86375pt x 383.4325pt>
 File: ./figures//linear_regression_fold_1.png Graphic file (type png)
 <use ./figures//linear_regression_fold_1.png>
 Package pdftex.def Info: ./figures//linear_regression_fold_1.png  used on input
- line 698.
+ line 699.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-<./figures//linear_regression_fold_2.png, id=631, 498.86375pt x 383.4325pt>
+<./figures//linear_regression_fold_2.png, id=626, 498.86375pt x 383.4325pt>
 File: ./figures//linear_regression_fold_2.png Graphic file (type png)
 <use ./figures//linear_regression_fold_2.png>
 Package pdftex.def Info: ./figures//linear_regression_fold_2.png  used on input
- line 700.
+ line 701.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-<./figures//linear_regression_fold_3.png, id=632, 498.86375pt x 383.4325pt>
+<./figures//linear_regression_fold_3.png, id=627, 498.86375pt x 383.4325pt>
 File: ./figures//linear_regression_fold_3.png Graphic file (type png)
 <use ./figures//linear_regression_fold_3.png>
 Package pdftex.def Info: ./figures//linear_regression_fold_3.png  used on input
- line 702.
+ line 703.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-<./figures//linear_regression_fold_4.png, id=633, 498.86375pt x 383.4325pt>
+<./figures//linear_regression_fold_4.png, id=628, 498.86375pt x 383.4325pt>
 File: ./figures//linear_regression_fold_4.png Graphic file (type png)
 <use ./figures//linear_regression_fold_4.png>
 Package pdftex.def Info: ./figures//linear_regression_fold_4.png  used on input
- line 704.
+ line 705.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
  [28 <./figures//price_all_mean.png> <./figures//price_sale_remove.png> <./figu
 res//price_rental_remove.png>] [29 <./figures//general_raw.png> <./figures//gen
 eral_input.png> <./figures//linear_regression_fold_0.png> <./figures//linear_re
 gression_fold_1.png> <./figures//linear_regression_fold_2.png> <./figures//line
 ar_regression_fold_3.png> <./figures//linear_regression_fold_4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 743--745
+Underfull \hbox (badness 10000) in paragraph at lines 744--746
 
  []
 
-<./figures//sale_fold_5_0.png, id=665, 495.8525pt x 380.42125pt>
+<./figures//sale_fold_5_0.png, id=660, 495.8525pt x 380.42125pt>
 File: ./figures//sale_fold_5_0.png Graphic file (type png)
 <use ./figures//sale_fold_5_0.png>
-Package pdftex.def Info: ./figures//sale_fold_5_0.png  used on input line 748.
+Package pdftex.def Info: ./figures//sale_fold_5_0.png  used on input line 749.
 (pdftex.def)             Requested size: 142.26378pt x 109.14676pt.
-<./figures//sale_fold_5_1.png, id=666, 495.8525pt x 380.42125pt>
+<./figures//sale_fold_5_1.png, id=661, 495.8525pt x 380.42125pt>
 File: ./figures//sale_fold_5_1.png Graphic file (type png)
 <use ./figures//sale_fold_5_1.png>
-Package pdftex.def Info: ./figures//sale_fold_5_1.png  used on input line 750.
+Package pdftex.def Info: ./figures//sale_fold_5_1.png  used on input line 751.
 (pdftex.def)             Requested size: 142.26378pt x 109.14676pt.
-<./figures//sale_fold_5_2.png, id=667, 501.875pt x 380.42125pt>
+<./figures//sale_fold_5_2.png, id=662, 501.875pt x 380.42125pt>
 File: ./figures//sale_fold_5_2.png Graphic file (type png)
 <use ./figures//sale_fold_5_2.png>
-Package pdftex.def Info: ./figures//sale_fold_5_2.png  used on input line 752.
+Package pdftex.def Info: ./figures//sale_fold_5_2.png  used on input line 753.
 (pdftex.def)             Requested size: 142.26378pt x 107.83488pt.
-<./figures//sale_fold_5_3.png, id=668, 495.8525pt x 380.42125pt>
+<./figures//sale_fold_5_3.png, id=663, 495.8525pt x 380.42125pt>
 File: ./figures//sale_fold_5_3.png Graphic file (type png)
 <use ./figures//sale_fold_5_3.png>
-Package pdftex.def Info: ./figures//sale_fold_5_3.png  used on input line 754.
+Package pdftex.def Info: ./figures//sale_fold_5_3.png  used on input line 755.
 (pdftex.def)             Requested size: 142.26378pt x 109.14676pt.
-<./figures//sale_fold_5_4.png, id=669, 501.875pt x 380.42125pt>
+<./figures//sale_fold_5_4.png, id=664, 501.875pt x 380.42125pt>
 File: ./figures//sale_fold_5_4.png Graphic file (type png)
 <use ./figures//sale_fold_5_4.png>
-Package pdftex.def Info: ./figures//sale_fold_5_4.png  used on input line 756.
+Package pdftex.def Info: ./figures//sale_fold_5_4.png  used on input line 757.
 (pdftex.def)             Requested size: 142.26378pt x 107.83488pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 761--763
+Underfull \hbox (badness 10000) in paragraph at lines 762--764
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 764--766
+Underfull \hbox (badness 10000) in paragraph at lines 765--767
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 767--769
+Underfull \hbox (badness 10000) in paragraph at lines 768--770
 
  []
 
-<./figures//confusion_matrix_basic_model.png, id=672, 358.33875pt x 275.0275pt>
+<./figures//confusion_matrix_basic_model.png, id=667, 358.33875pt x 275.0275pt>
 
 File: ./figures//confusion_matrix_basic_model.png Graphic file (type png)
 <use ./figures//confusion_matrix_basic_model.png>
 Package pdftex.def Info: ./figures//confusion_matrix_basic_model.png  used on i
-nput line 772.
+nput line 773.
 (pdftex.def)             Requested size: 284.52756pt x 218.38982pt.
 [30] [31 <./figures//sale_fold_5_0.png> <./figures//sale_fold_5_1.png> <./figur
 es//sale_fold_5_2.png> <./figures//sale_fold_5_3.png> <./figures//sale_fold_5_4
 .png> <./figures//confusion_matrix_basic_model.png>]
-<./figures//all_full_epoch_1000_fold_0.png, id=698, 505.89pt x 383.4325pt>
+<./figures//all_full_epoch_1000_fold_0.png, id=693, 505.89pt x 383.4325pt>
 File: ./figures//all_full_epoch_1000_fold_0.png Graphic file (type png)
 <use ./figures//all_full_epoch_1000_fold_0.png>
 Package pdftex.def Info: ./figures//all_full_epoch_1000_fold_0.png  used on inp
-ut line 815.
+ut line 816.
 (pdftex.def)             Requested size: 142.26378pt x 107.82841pt.
-<./figures//all_full_epoch_1000_fold_1.png, id=699, 498.86375pt x 383.4325pt>
+<./figures//all_full_epoch_1000_fold_1.png, id=694, 498.86375pt x 383.4325pt>
 File: ./figures//all_full_epoch_1000_fold_1.png Graphic file (type png)
 <use ./figures//all_full_epoch_1000_fold_1.png>
 Package pdftex.def Info: ./figures//all_full_epoch_1000_fold_1.png  used on inp
-ut line 817.
+ut line 818.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-<./figures//all_full_epoch_1000_fold_2.png, id=700, 505.89pt x 383.4325pt>
+<./figures//all_full_epoch_1000_fold_2.png, id=695, 505.89pt x 383.4325pt>
 File: ./figures//all_full_epoch_1000_fold_2.png Graphic file (type png)
 <use ./figures//all_full_epoch_1000_fold_2.png>
 Package pdftex.def Info: ./figures//all_full_epoch_1000_fold_2.png  used on inp
-ut line 819.
+ut line 820.
 (pdftex.def)             Requested size: 142.26378pt x 107.82841pt.
-<./figures//all_full_epoch_1000_fold_3.png, id=701, 498.86375pt x 383.4325pt>
+<./figures//all_full_epoch_1000_fold_3.png, id=696, 498.86375pt x 383.4325pt>
 File: ./figures//all_full_epoch_1000_fold_3.png Graphic file (type png)
 <use ./figures//all_full_epoch_1000_fold_3.png>
 Package pdftex.def Info: ./figures//all_full_epoch_1000_fold_3.png  used on inp
-ut line 821.
+ut line 822.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-<./figures//all_full_epoch_1000_fold_4.png, id=702, 505.89pt x 383.4325pt>
+<./figures//all_full_epoch_1000_fold_4.png, id=697, 505.89pt x 383.4325pt>
 File: ./figures//all_full_epoch_1000_fold_4.png Graphic file (type png)
 <use ./figures//all_full_epoch_1000_fold_4.png>
 Package pdftex.def Info: ./figures//all_full_epoch_1000_fold_4.png  used on inp
-ut line 823.
+ut line 824.
 (pdftex.def)             Requested size: 142.26378pt x 107.82841pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 859--861
+Underfull \hbox (badness 10000) in paragraph at lines 860--862
 
  []
 
 [32]
-<./figures//all_weighted_sampler_full_epoch_1000_fold_0.png, id=712, 505.89pt x
+<./figures//all_weighted_sampler_full_epoch_1000_fold_0.png, id=707, 505.89pt x
  383.4325pt>
 File: ./figures//all_weighted_sampler_full_epoch_1000_fold_0.png Graphic file (
 type png)
 <use ./figures//all_weighted_sampler_full_epoch_1000_fold_0.png>
 Package pdftex.def Info: ./figures//all_weighted_sampler_full_epoch_1000_fold_0
-.png  used on input line 866.
+.png  used on input line 867.
 (pdftex.def)             Requested size: 142.26378pt x 107.82841pt.
-<./figures//all_weighted_sampler_full_epoch_1000_fold_1.png, id=713, 498.86375p
+<./figures//all_weighted_sampler_full_epoch_1000_fold_1.png, id=708, 498.86375p
 t x 383.4325pt>
 File: ./figures//all_weighted_sampler_full_epoch_1000_fold_1.png Graphic file (
 type png)
 <use ./figures//all_weighted_sampler_full_epoch_1000_fold_1.png>
 Package pdftex.def Info: ./figures//all_weighted_sampler_full_epoch_1000_fold_1
-.png  used on input line 868.
+.png  used on input line 869.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-<./figures//all_weighted_sampler_full_epoch_1000_fold_2.png, id=714, 498.86375p
+<./figures//all_weighted_sampler_full_epoch_1000_fold_2.png, id=709, 498.86375p
 t x 383.4325pt>
 File: ./figures//all_weighted_sampler_full_epoch_1000_fold_2.png Graphic file (
 type png)
 <use ./figures//all_weighted_sampler_full_epoch_1000_fold_2.png>
 Package pdftex.def Info: ./figures//all_weighted_sampler_full_epoch_1000_fold_2
-.png  used on input line 870.
+.png  used on input line 871.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-<./figures//all_weighted_sampler_full_epoch_1000_fold_3.png, id=715, 498.86375p
+<./figures//all_weighted_sampler_full_epoch_1000_fold_3.png, id=710, 498.86375p
 t x 383.4325pt>
 File: ./figures//all_weighted_sampler_full_epoch_1000_fold_3.png Graphic file (
 type png)
 <use ./figures//all_weighted_sampler_full_epoch_1000_fold_3.png>
 Package pdftex.def Info: ./figures//all_weighted_sampler_full_epoch_1000_fold_3
-.png  used on input line 872.
+.png  used on input line 873.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-<./figures//all_weighted_sampler_full_epoch_1000_fold_4.png, id=716, 498.86375p
+<./figures//all_weighted_sampler_full_epoch_1000_fold_4.png, id=711, 498.86375p
 t x 383.4325pt>
 File: ./figures//all_weighted_sampler_full_epoch_1000_fold_4.png Graphic file (
 type png)
 <use ./figures//all_weighted_sampler_full_epoch_1000_fold_4.png>
 Package pdftex.def Info: ./figures//all_weighted_sampler_full_epoch_1000_fold_4
-.png  used on input line 874.
+.png  used on input line 875.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 910--912
+Underfull \hbox (badness 10000) in paragraph at lines 911--913
 
  []
 
@@ -1107,124 +1112,124 @@ Underfull \vbox (badness 1484) has occurred while \output is active []
  [33 <./figures//all_full_epoch_1000_fold_0.png> <./figures//all_full_epoch_100
 0_fold_1.png> <./figures//all_full_epoch_1000_fold_2.png> <./figures//all_full_
 epoch_1000_fold_3.png> <./figures//all_full_epoch_1000_fold_4.png>]
-<./figures//all_removed_weighted_sampler_full_epoch_1000_fold_0.png, id=736, 50
+<./figures//all_removed_weighted_sampler_full_epoch_1000_fold_0.png, id=731, 50
 5.89pt x 383.4325pt>
 File: ./figures//all_removed_weighted_sampler_full_epoch_1000_fold_0.png Graphi
 c file (type png)
 <use ./figures//all_removed_weighted_sampler_full_epoch_1000_fold_0.png>
 Package pdftex.def Info: ./figures//all_removed_weighted_sampler_full_epoch_100
-0_fold_0.png  used on input line 916.
+0_fold_0.png  used on input line 917.
 (pdftex.def)             Requested size: 142.26378pt x 107.82841pt.
-<./figures//all_removed_weighted_sampler_full_epoch_1000_fold_1.png, id=737, 49
+<./figures//all_removed_weighted_sampler_full_epoch_1000_fold_1.png, id=732, 49
 8.86375pt x 383.4325pt>
 File: ./figures//all_removed_weighted_sampler_full_epoch_1000_fold_1.png Graphi
 c file (type png)
 <use ./figures//all_removed_weighted_sampler_full_epoch_1000_fold_1.png>
 Package pdftex.def Info: ./figures//all_removed_weighted_sampler_full_epoch_100
-0_fold_1.png  used on input line 918.
+0_fold_1.png  used on input line 919.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-<./figures//all_removed_weighted_sampler_full_epoch_1000_fold_2.png, id=738, 49
+<./figures//all_removed_weighted_sampler_full_epoch_1000_fold_2.png, id=733, 49
 8.86375pt x 383.4325pt>
 File: ./figures//all_removed_weighted_sampler_full_epoch_1000_fold_2.png Graphi
 c file (type png)
 <use ./figures//all_removed_weighted_sampler_full_epoch_1000_fold_2.png>
 Package pdftex.def Info: ./figures//all_removed_weighted_sampler_full_epoch_100
-0_fold_2.png  used on input line 920.
+0_fold_2.png  used on input line 921.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-<./figures//all_removed_weighted_sampler_full_epoch_1000_fold_3.png, id=739, 50
+<./figures//all_removed_weighted_sampler_full_epoch_1000_fold_3.png, id=734, 50
 5.89pt x 383.4325pt>
 File: ./figures//all_removed_weighted_sampler_full_epoch_1000_fold_3.png Graphi
 c file (type png)
 <use ./figures//all_removed_weighted_sampler_full_epoch_1000_fold_3.png>
 Package pdftex.def Info: ./figures//all_removed_weighted_sampler_full_epoch_100
-0_fold_3.png  used on input line 922.
+0_fold_3.png  used on input line 923.
 (pdftex.def)             Requested size: 142.26378pt x 107.82841pt.
-<./figures//all_removed_weighted_sampler_full_epoch_1000_fold_4.png, id=740, 49
+<./figures//all_removed_weighted_sampler_full_epoch_1000_fold_4.png, id=735, 49
 8.86375pt x 383.4325pt>
 File: ./figures//all_removed_weighted_sampler_full_epoch_1000_fold_4.png Graphi
 c file (type png)
 <use ./figures//all_removed_weighted_sampler_full_epoch_1000_fold_4.png>
 Package pdftex.def Info: ./figures//all_removed_weighted_sampler_full_epoch_100
-0_fold_4.png  used on input line 924.
+0_fold_4.png  used on input line 925.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-<./figures//all_complex_full_epoch_1000_fold_0.png, id=743, 527.9725pt x 392.46
+<./figures//all_complex_full_epoch_1000_fold_0.png, id=738, 527.9725pt x 392.46
 625pt>
 File: ./figures//all_complex_full_epoch_1000_fold_0.png Graphic file (type png)
 
 <use ./figures//all_complex_full_epoch_1000_fold_0.png>
 Package pdftex.def Info: ./figures//all_complex_full_epoch_1000_fold_0.png  use
-d on input line 965.
+d on input line 966.
 (pdftex.def)             Requested size: 142.26378pt x 105.74571pt.
-<./figures//all_complex_full_epoch_1000_fold_1.png, id=744, 537.00626pt x 386.4
+<./figures//all_complex_full_epoch_1000_fold_1.png, id=739, 537.00626pt x 386.4
 4376pt>
 File: ./figures//all_complex_full_epoch_1000_fold_1.png Graphic file (type png)
 
 <use ./figures//all_complex_full_epoch_1000_fold_1.png>
 Package pdftex.def Info: ./figures//all_complex_full_epoch_1000_fold_1.png  use
-d on input line 967.
+d on input line 968.
 (pdftex.def)             Requested size: 142.26378pt x 102.37762pt.
-<./figures//all_complex_full_epoch_1000_fold_2.png, id=745, 531.9875pt x 389.45
+<./figures//all_complex_full_epoch_1000_fold_2.png, id=740, 531.9875pt x 389.45
 5pt>
 File: ./figures//all_complex_full_epoch_1000_fold_2.png Graphic file (type png)
 
 <use ./figures//all_complex_full_epoch_1000_fold_2.png>
 Package pdftex.def Info: ./figures//all_complex_full_epoch_1000_fold_2.png  use
-d on input line 969.
+d on input line 970.
 (pdftex.def)             Requested size: 142.26378pt x 104.14401pt.
-<./figures//all_complex_full_epoch_1000_fold_3.png, id=746, 526.96875pt x 384.4
+<./figures//all_complex_full_epoch_1000_fold_3.png, id=741, 526.96875pt x 384.4
 3625pt>
 File: ./figures//all_complex_full_epoch_1000_fold_3.png Graphic file (type png)
 
 <use ./figures//all_complex_full_epoch_1000_fold_3.png>
 Package pdftex.def Info: ./figures//all_complex_full_epoch_1000_fold_3.png  use
-d on input line 971.
+d on input line 972.
 (pdftex.def)             Requested size: 142.26378pt x 103.78743pt.
-<./figures//all_complex_full_epoch_1000_fold_4.png, id=747, 513.92pt x 381.425p
+<./figures//all_complex_full_epoch_1000_fold_4.png, id=742, 513.92pt x 381.425p
 t>
 File: ./figures//all_complex_full_epoch_1000_fold_4.png Graphic file (type png)
 
 <use ./figures//all_complex_full_epoch_1000_fold_4.png>
 Package pdftex.def Info: ./figures//all_complex_full_epoch_1000_fold_4.png  use
-d on input line 973.
+d on input line 974.
 (pdftex.def)             Requested size: 142.26378pt x 105.58769pt.
  [34 <./figures//all_weighted_sampler_full_epoch_1000_fold_0.png> <./figures//a
 ll_weighted_sampler_full_epoch_1000_fold_1.png> <./figures//all_weighted_sample
 r_full_epoch_1000_fold_2.png> <./figures//all_weighted_sampler_full_epoch_1000_
 fold_3.png> <./figures//all_weighted_sampler_full_epoch_1000_fold_4.png>]
-<./figures//all_resnet_full_epoch_1000_fold_0.png, id=767, 505.89pt x 383.4325p
+<./figures//all_resnet_full_epoch_1000_fold_0.png, id=762, 505.89pt x 383.4325p
 t>
 File: ./figures//all_resnet_full_epoch_1000_fold_0.png Graphic file (type png)
 <use ./figures//all_resnet_full_epoch_1000_fold_0.png>
 Package pdftex.def Info: ./figures//all_resnet_full_epoch_1000_fold_0.png  used
- on input line 1015.
+ on input line 1016.
 (pdftex.def)             Requested size: 142.26378pt x 107.82841pt.
-<./figures//all_resnet_full_epoch_1000_fold_1.png, id=768, 498.86375pt x 383.43
+<./figures//all_resnet_full_epoch_1000_fold_1.png, id=763, 498.86375pt x 383.43
 25pt>
 File: ./figures//all_resnet_full_epoch_1000_fold_1.png Graphic file (type png)
 <use ./figures//all_resnet_full_epoch_1000_fold_1.png>
 Package pdftex.def Info: ./figures//all_resnet_full_epoch_1000_fold_1.png  used
- on input line 1017.
+ on input line 1018.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-<./figures//all_resnet_full_epoch_1000_fold_2.png, id=769, 505.89pt x 383.4325p
+<./figures//all_resnet_full_epoch_1000_fold_2.png, id=764, 505.89pt x 383.4325p
 t>
 File: ./figures//all_resnet_full_epoch_1000_fold_2.png Graphic file (type png)
 <use ./figures//all_resnet_full_epoch_1000_fold_2.png>
 Package pdftex.def Info: ./figures//all_resnet_full_epoch_1000_fold_2.png  used
- on input line 1019.
+ on input line 1020.
 (pdftex.def)             Requested size: 142.26378pt x 107.82841pt.
-<./figures//all_resnet_full_epoch_1000_fold_3.png, id=770, 498.86375pt x 383.43
+<./figures//all_resnet_full_epoch_1000_fold_3.png, id=765, 498.86375pt x 383.43
 25pt>
 File: ./figures//all_resnet_full_epoch_1000_fold_3.png Graphic file (type png)
 <use ./figures//all_resnet_full_epoch_1000_fold_3.png>
 Package pdftex.def Info: ./figures//all_resnet_full_epoch_1000_fold_3.png  used
- on input line 1021.
+ on input line 1022.
 (pdftex.def)             Requested size: 142.26378pt x 109.34375pt.
-<./figures//all_resnet_full_epoch_1000_fold_4.png, id=771, 505.89pt x 383.4325p
+<./figures//all_resnet_full_epoch_1000_fold_4.png, id=766, 505.89pt x 383.4325p
 t>
 File: ./figures//all_resnet_full_epoch_1000_fold_4.png Graphic file (type png)
 <use ./figures//all_resnet_full_epoch_1000_fold_4.png>
 Package pdftex.def Info: ./figures//all_resnet_full_epoch_1000_fold_4.png  used
- on input line 1023.
+ on input line 1024.
 (pdftex.def)             Requested size: 142.26378pt x 107.82841pt.
  [35 <./figures//all_removed_weighted_sampler_full_epoch_1000_fold_0.png> <./fi
 gures//all_removed_weighted_sampler_full_epoch_1000_fold_1.png> <./figures//all
@@ -1237,7 +1242,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 x_full_epoch_1000_fold_1.png> <./figures//all_complex_full_epoch_1000_fold_2.pn
 g> <./figures//all_complex_full_epoch_1000_fold_3.png> <./figures//all_complex_
 full_epoch_1000_fold_4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1088--1090
+Underfull \hbox (badness 10000) in paragraph at lines 1089--1091
 
  []
 
@@ -1248,66 +1253,66 @@ Underfull \vbox (badness 3219) has occurred while \output is active []
 full_epoch_1000_fold_1.png> <./figures//all_resnet_full_epoch_1000_fold_2.png> 
 <./figures//all_resnet_full_epoch_1000_fold_3.png> <./figures//all_resnet_full_
 epoch_1000_fold_4.png>]
-<./figures//linear_regression_status_include_full_fold_0.png, id=825, 497.86pt 
+<./figures//linear_regression_status_include_full_fold_0.png, id=820, 497.86pt 
 x 375.4025pt>
 File: ./figures//linear_regression_status_include_full_fold_0.png Graphic file 
 (type png)
 <use ./figures//linear_regression_status_include_full_fold_0.png>
 Package pdftex.def Info: ./figures//linear_regression_status_include_full_fold_
-0.png  used on input line 1094.
+0.png  used on input line 1095.
 (pdftex.def)             Requested size: 142.26378pt x 107.2715pt.
-<./figures//linear_regression_status_include_full_fold_1.png, id=826, 497.86pt 
+<./figures//linear_regression_status_include_full_fold_1.png, id=821, 497.86pt 
 x 375.4025pt>
 File: ./figures//linear_regression_status_include_full_fold_1.png Graphic file 
 (type png)
 <use ./figures//linear_regression_status_include_full_fold_1.png>
 Package pdftex.def Info: ./figures//linear_regression_status_include_full_fold_
-1.png  used on input line 1096.
+1.png  used on input line 1097.
 (pdftex.def)             Requested size: 142.26378pt x 107.2715pt.
-<./figures//linear_regression_status_include_full_fold_2.png, id=827, 497.86pt 
+<./figures//linear_regression_status_include_full_fold_2.png, id=822, 497.86pt 
 x 375.4025pt>
 File: ./figures//linear_regression_status_include_full_fold_2.png Graphic file 
 (type png)
 <use ./figures//linear_regression_status_include_full_fold_2.png>
 Package pdftex.def Info: ./figures//linear_regression_status_include_full_fold_
-2.png  used on input line 1098.
+2.png  used on input line 1099.
 (pdftex.def)             Requested size: 142.26378pt x 107.2715pt.
-<./figures//linear_regression_status_include_full_fold_3.png, id=828, 497.86pt 
+<./figures//linear_regression_status_include_full_fold_3.png, id=823, 497.86pt 
 x 375.4025pt>
 File: ./figures//linear_regression_status_include_full_fold_3.png Graphic file 
 (type png)
 <use ./figures//linear_regression_status_include_full_fold_3.png>
 Package pdftex.def Info: ./figures//linear_regression_status_include_full_fold_
-3.png  used on input line 1100.
+3.png  used on input line 1101.
 (pdftex.def)             Requested size: 142.26378pt x 107.2715pt.
-<./figures//linear_regression_status_include_full_fold_4.png, id=829, 497.86pt 
+<./figures//linear_regression_status_include_full_fold_4.png, id=824, 497.86pt 
 x 375.4025pt>
 File: ./figures//linear_regression_status_include_full_fold_4.png Graphic file 
 (type png)
 <use ./figures//linear_regression_status_include_full_fold_4.png>
 Package pdftex.def Info: ./figures//linear_regression_status_include_full_fold_
-4.png  used on input line 1102.
+4.png  used on input line 1103.
 (pdftex.def)             Requested size: 142.26378pt x 107.2715pt.
-<./figures//cm_included_2.png, id=830, 363.3575pt x 275.0275pt>
+<./figures//cm_included_2.png, id=825, 363.3575pt x 275.0275pt>
 File: ./figures//cm_included_2.png Graphic file (type png)
 <use ./figures//cm_included_2.png>
-Package pdftex.def Info: ./figures//cm_included_2.png  used on input line 1109.
+Package pdftex.def Info: ./figures//cm_included_2.png  used on input line 1110.
 
 (pdftex.def)             Requested size: 142.26378pt x 107.67995pt.
-<./figures//cm_included_3.png, id=831, 363.3575pt x 275.0275pt>
+<./figures//cm_included_3.png, id=826, 363.3575pt x 275.0275pt>
 File: ./figures//cm_included_3.png Graphic file (type png)
 <use ./figures//cm_included_3.png>
-Package pdftex.def Info: ./figures//cm_included_3.png  used on input line 1111.
+Package pdftex.def Info: ./figures//cm_included_3.png  used on input line 1112.
 
 (pdftex.def)             Requested size: 142.26378pt x 107.67995pt.
-<./figures//cm_included_4.png, id=832, 363.3575pt x 275.0275pt>
+<./figures//cm_included_4.png, id=827, 363.3575pt x 275.0275pt>
 File: ./figures//cm_included_4.png Graphic file (type png)
 <use ./figures//cm_included_4.png>
-Package pdftex.def Info: ./figures//cm_included_4.png  used on input line 1113.
+Package pdftex.def Info: ./figures//cm_included_4.png  used on input line 1114.
 
 (pdftex.def)             Requested size: 142.26378pt x 107.67995pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1136--1138
+Underfull \hbox (badness 10000) in paragraph at lines 1137--1139
 
  []
 
@@ -1315,110 +1320,110 @@ Underfull \hbox (badness 10000) in paragraph at lines 1136--1138
 inear_regression_status_include_full_fold_1.png> <./figures//linear_regression_
 status_include_full_fold_2.png> <./figures//linear_regression_status_include_fu
 ll_fold_3.png> <./figures//linear_regression_status_include_full_fold_4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1139--1141
+Underfull \hbox (badness 10000) in paragraph at lines 1140--1142
 
  []
 
-<./figures//linear_regression_status_exclude_full_fold_0.png, id=855, 497.86pt 
+<./figures//linear_regression_status_exclude_full_fold_0.png, id=850, 497.86pt 
 x 375.4025pt>
 File: ./figures//linear_regression_status_exclude_full_fold_0.png Graphic file 
 (type png)
 <use ./figures//linear_regression_status_exclude_full_fold_0.png>
 Package pdftex.def Info: ./figures//linear_regression_status_exclude_full_fold_
-0.png  used on input line 1144.
+0.png  used on input line 1145.
 (pdftex.def)             Requested size: 142.26378pt x 107.2715pt.
-<./figures//linear_regression_status_exclude_full_fold_1.png, id=856, 497.86pt 
+<./figures//linear_regression_status_exclude_full_fold_1.png, id=851, 497.86pt 
 x 375.4025pt>
 File: ./figures//linear_regression_status_exclude_full_fold_1.png Graphic file 
 (type png)
 <use ./figures//linear_regression_status_exclude_full_fold_1.png>
 Package pdftex.def Info: ./figures//linear_regression_status_exclude_full_fold_
-1.png  used on input line 1146.
+1.png  used on input line 1147.
 (pdftex.def)             Requested size: 142.26378pt x 107.2715pt.
-<./figures//linear_regression_status_exclude_full_fold_2.png, id=857, 497.86pt 
+<./figures//linear_regression_status_exclude_full_fold_2.png, id=852, 497.86pt 
 x 375.4025pt>
 File: ./figures//linear_regression_status_exclude_full_fold_2.png Graphic file 
 (type png)
 <use ./figures//linear_regression_status_exclude_full_fold_2.png>
 Package pdftex.def Info: ./figures//linear_regression_status_exclude_full_fold_
-2.png  used on input line 1148.
+2.png  used on input line 1149.
 (pdftex.def)             Requested size: 142.26378pt x 107.2715pt.
-<./figures//linear_regression_status_exclude_full_fold_3.png, id=858, 497.86pt 
+<./figures//linear_regression_status_exclude_full_fold_3.png, id=853, 497.86pt 
 x 375.4025pt>
 File: ./figures//linear_regression_status_exclude_full_fold_3.png Graphic file 
 (type png)
 <use ./figures//linear_regression_status_exclude_full_fold_3.png>
 Package pdftex.def Info: ./figures//linear_regression_status_exclude_full_fold_
-3.png  used on input line 1150.
+3.png  used on input line 1151.
 (pdftex.def)             Requested size: 142.26378pt x 107.2715pt.
-<./figures//linear_regression_status_exclude_full_fold_4.png, id=859, 497.86pt 
+<./figures//linear_regression_status_exclude_full_fold_4.png, id=854, 497.86pt 
 x 375.4025pt>
 File: ./figures//linear_regression_status_exclude_full_fold_4.png Graphic file 
 (type png)
 <use ./figures//linear_regression_status_exclude_full_fold_4.png>
 Package pdftex.def Info: ./figures//linear_regression_status_exclude_full_fold_
-4.png  used on input line 1152.
+4.png  used on input line 1153.
 (pdftex.def)             Requested size: 142.26378pt x 107.2715pt.
-<./figures//cm_excluded_0.png, id=860, 363.3575pt x 275.0275pt>
+<./figures//cm_excluded_0.png, id=855, 363.3575pt x 275.0275pt>
 File: ./figures//cm_excluded_0.png Graphic file (type png)
 <use ./figures//cm_excluded_0.png>
-Package pdftex.def Info: ./figures//cm_excluded_0.png  used on input line 1159.
+Package pdftex.def Info: ./figures//cm_excluded_0.png  used on input line 1160.
 
 (pdftex.def)             Requested size: 142.26378pt x 107.67995pt.
-<./figures//cm_excluded_2.png, id=861, 363.3575pt x 275.0275pt>
+<./figures//cm_excluded_2.png, id=856, 363.3575pt x 275.0275pt>
 File: ./figures//cm_excluded_2.png Graphic file (type png)
 <use ./figures//cm_excluded_2.png>
-Package pdftex.def Info: ./figures//cm_excluded_2.png  used on input line 1161.
+Package pdftex.def Info: ./figures//cm_excluded_2.png  used on input line 1162.
 
 (pdftex.def)             Requested size: 142.26378pt x 107.67995pt.
-<./figures//cm_excluded_4.png, id=862, 363.3575pt x 275.0275pt>
+<./figures//cm_excluded_4.png, id=857, 363.3575pt x 275.0275pt>
 File: ./figures//cm_excluded_4.png Graphic file (type png)
 <use ./figures//cm_excluded_4.png>
-Package pdftex.def Info: ./figures//cm_excluded_4.png  used on input line 1163.
+Package pdftex.def Info: ./figures//cm_excluded_4.png  used on input line 1164.
 
 (pdftex.def)             Requested size: 142.26378pt x 107.67995pt.
-<./figures//status_removed_full_epoch_1000_fold_0.png, id=864, 546.04pt x 373.3
+<./figures//status_removed_full_epoch_1000_fold_0.png, id=859, 546.04pt x 373.3
 95pt>
 File: ./figures//status_removed_full_epoch_1000_fold_0.png Graphic file (type p
 ng)
 <use ./figures//status_removed_full_epoch_1000_fold_0.png>
 Package pdftex.def Info: ./figures//status_removed_full_epoch_1000_fold_0.png  
-used on input line 1190.
+used on input line 1191.
 (pdftex.def)             Requested size: 142.26378pt x 97.27982pt.
-<./figures//status_removed_full_epoch_1000_fold_1.png, id=865, 510.90875pt x 36
+<./figures//status_removed_full_epoch_1000_fold_1.png, id=860, 510.90875pt x 36
 4.36125pt>
 File: ./figures//status_removed_full_epoch_1000_fold_1.png Graphic file (type p
 ng)
 <use ./figures//status_removed_full_epoch_1000_fold_1.png>
 Package pdftex.def Info: ./figures//status_removed_full_epoch_1000_fold_1.png  
-used on input line 1192.
+used on input line 1193.
 (pdftex.def)             Requested size: 142.26378pt x 101.45335pt.
-<./figures//status_removed_full_epoch_1000_fold_2.png, id=866, 515.9275pt x 370
+<./figures//status_removed_full_epoch_1000_fold_2.png, id=861, 515.9275pt x 370
 .38374pt>
 File: ./figures//status_removed_full_epoch_1000_fold_2.png Graphic file (type p
 ng)
 <use ./figures//status_removed_full_epoch_1000_fold_2.png>
 Package pdftex.def Info: ./figures//status_removed_full_epoch_1000_fold_2.png  
-used on input line 1194.
+used on input line 1195.
 (pdftex.def)             Requested size: 142.26378pt x 102.12994pt.
-<./figures//status_removed_full_epoch_1000_fold_3.png, id=867, 517.935pt x 368.
+<./figures//status_removed_full_epoch_1000_fold_3.png, id=862, 517.935pt x 368.
 37625pt>
 File: ./figures//status_removed_full_epoch_1000_fold_3.png Graphic file (type p
 ng)
 <use ./figures//status_removed_full_epoch_1000_fold_3.png>
 Package pdftex.def Info: ./figures//status_removed_full_epoch_1000_fold_3.png  
-used on input line 1196.
+used on input line 1197.
 (pdftex.def)             Requested size: 142.26378pt x 101.18292pt.
-<./figures//status_removed_full_epoch_1000_fold_4.png, id=868, 520.94624pt x 37
+<./figures//status_removed_full_epoch_1000_fold_4.png, id=863, 520.94624pt x 37
 2.39125pt>
 File: ./figures//status_removed_full_epoch_1000_fold_4.png Graphic file (type p
 ng)
 <use ./figures//status_removed_full_epoch_1000_fold_4.png>
 Package pdftex.def Info: ./figures//status_removed_full_epoch_1000_fold_4.png  
-used on input line 1198.
+used on input line 1199.
 (pdftex.def)             Requested size: 142.26378pt x 101.69478pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1203--1205
+Underfull \hbox (badness 10000) in paragraph at lines 1204--1206
 
  []
 
@@ -1429,97 +1434,97 @@ m_included_4.png>] [40 <./figures//linear_regression_status_exclude_full_fold_0
 n_status_exclude_full_fold_3.png> <./figures//linear_regression_status_exclude_
 full_fold_4.png> <./figures//cm_excluded_0.png> <./figures//cm_excluded_2.png> 
 <./figures//cm_excluded_4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1206--1208
+Underfull \hbox (badness 10000) in paragraph at lines 1207--1209
 
  []
 
-<./figures//status_ws_removed_full_epoch_1000_fold_0.png, id=906, 523.9575pt x 
+<./figures//status_ws_removed_full_epoch_1000_fold_0.png, id=901, 523.9575pt x 
 368.37625pt>
 File: ./figures//status_ws_removed_full_epoch_1000_fold_0.png Graphic file (typ
 e png)
 <use ./figures//status_ws_removed_full_epoch_1000_fold_0.png>
 Package pdftex.def Info: ./figures//status_ws_removed_full_epoch_1000_fold_0.pn
-g  used on input line 1211.
+g  used on input line 1212.
 (pdftex.def)             Requested size: 142.26378pt x 100.01938pt.
-<./figures//status_ws_removed_full_epoch_1000_fold_1.png, id=907, 515.9275pt x 
+<./figures//status_ws_removed_full_epoch_1000_fold_1.png, id=902, 515.9275pt x 
 370.38374pt>
 File: ./figures//status_ws_removed_full_epoch_1000_fold_1.png Graphic file (typ
 e png)
 <use ./figures//status_ws_removed_full_epoch_1000_fold_1.png>
 Package pdftex.def Info: ./figures//status_ws_removed_full_epoch_1000_fold_1.pn
-g  used on input line 1213.
+g  used on input line 1214.
 (pdftex.def)             Requested size: 142.26378pt x 102.12994pt.
-<./figures//status_ws_removed_full_epoch_1000_fold_2.png, id=908, 514.92375pt x
+<./figures//status_ws_removed_full_epoch_1000_fold_2.png, id=903, 514.92375pt x
  369.38pt>
 File: ./figures//status_ws_removed_full_epoch_1000_fold_2.png Graphic file (typ
 e png)
 <use ./figures//status_ws_removed_full_epoch_1000_fold_2.png>
 Package pdftex.def Info: ./figures//status_ws_removed_full_epoch_1000_fold_2.pn
-g  used on input line 1215.
+g  used on input line 1216.
 (pdftex.def)             Requested size: 142.26378pt x 102.05043pt.
-<./figures//status_ws_removed_full_epoch_1000_fold_3.png, id=909, 516.93124pt x
+<./figures//status_ws_removed_full_epoch_1000_fold_3.png, id=904, 516.93124pt x
  365.365pt>
 File: ./figures//status_ws_removed_full_epoch_1000_fold_3.png Graphic file (typ
 e png)
 <use ./figures//status_ws_removed_full_epoch_1000_fold_3.png>
 Package pdftex.def Info: ./figures//status_ws_removed_full_epoch_1000_fold_3.pn
-g  used on input line 1217.
+g  used on input line 1218.
 (pdftex.def)             Requested size: 142.26378pt x 100.55095pt.
-<./figures//status_ws_removed_full_epoch_1000_fold_4.png, id=910, 509.905pt x 3
+<./figures//status_ws_removed_full_epoch_1000_fold_4.png, id=905, 509.905pt x 3
 70.38374pt>
 File: ./figures//status_ws_removed_full_epoch_1000_fold_4.png Graphic file (typ
 e png)
 <use ./figures//status_ws_removed_full_epoch_1000_fold_4.png>
 Package pdftex.def Info: ./figures//status_ws_removed_full_epoch_1000_fold_4.pn
-g  used on input line 1219.
+g  used on input line 1220.
 (pdftex.def)             Requested size: 142.26378pt x 103.33939pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1224--1226
+Underfull \hbox (badness 10000) in paragraph at lines 1225--1227
 
  []
 
-<./figures//status_ws_removed_full_no_freeze_fold_0.png, id=912, 533.995pt x 37
+<./figures//status_ws_removed_full_no_freeze_fold_0.png, id=907, 533.995pt x 37
 3.395pt>
 File: ./figures//status_ws_removed_full_no_freeze_fold_0.png Graphic file (type
  png)
 <use ./figures//status_ws_removed_full_no_freeze_fold_0.png>
 Package pdftex.def Info: ./figures//status_ws_removed_full_no_freeze_fold_0.png
-  used on input line 1231.
+  used on input line 1232.
 (pdftex.def)             Requested size: 142.26378pt x 99.47906pt.
-<./figures//status_ws_removed_full_no_freeze_fold_1.png, id=913, 517.935pt x 36
+<./figures//status_ws_removed_full_no_freeze_fold_1.png, id=908, 517.935pt x 36
 9.38pt>
 File: ./figures//status_ws_removed_full_no_freeze_fold_1.png Graphic file (type
  png)
 <use ./figures//status_ws_removed_full_no_freeze_fold_1.png>
 Package pdftex.def Info: ./figures//status_ws_removed_full_no_freeze_fold_1.png
-  used on input line 1233.
+  used on input line 1234.
 (pdftex.def)             Requested size: 142.26378pt x 101.45862pt.
-<./figures//status_ws_removed_full_no_freeze_fold_2.png, id=914, 520.94624pt x 
+<./figures//status_ws_removed_full_no_freeze_fold_2.png, id=909, 520.94624pt x 
 374.39874pt>
 File: ./figures//status_ws_removed_full_no_freeze_fold_2.png Graphic file (type
  png)
 <use ./figures//status_ws_removed_full_no_freeze_fold_2.png>
 Package pdftex.def Info: ./figures//status_ws_removed_full_no_freeze_fold_2.png
-  used on input line 1235.
+  used on input line 1236.
 (pdftex.def)             Requested size: 142.26378pt x 102.243pt.
-<./figures//status_ws_removed_full_no_freeze_fold_3.png, id=915, 537.00626pt x 
+<./figures//status_ws_removed_full_no_freeze_fold_3.png, id=910, 537.00626pt x 
 380.42125pt>
 File: ./figures//status_ws_removed_full_no_freeze_fold_3.png Graphic file (type
  png)
 <use ./figures//status_ws_removed_full_no_freeze_fold_3.png>
 Package pdftex.def Info: ./figures//status_ws_removed_full_no_freeze_fold_3.png
-  used on input line 1237.
+  used on input line 1238.
 (pdftex.def)             Requested size: 142.26378pt x 100.78212pt.
-<./figures//status_ws_removed_full_no_freeze_fold_4.png, id=916, 516.93124pt x 
+<./figures//status_ws_removed_full_no_freeze_fold_4.png, id=911, 516.93124pt x 
 368.37625pt>
 File: ./figures//status_ws_removed_full_no_freeze_fold_4.png Graphic file (type
  png)
 <use ./figures//status_ws_removed_full_no_freeze_fold_4.png>
 Package pdftex.def Info: ./figures//status_ws_removed_full_no_freeze_fold_4.png
-  used on input line 1239.
+  used on input line 1240.
 (pdftex.def)             Requested size: 142.26378pt x 101.37965pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1246--1248
+Underfull \hbox (badness 10000) in paragraph at lines 1247--1249
 
  []
 
@@ -1537,207 +1542,207 @@ poch_1000_fold_4.png> <./figures//status_ws_removed_full_no_freeze_fold_0.png>
 <./figures//status_ws_removed_full_no_freeze_fold_1.png> <./figures//status_ws_
 removed_full_no_freeze_fold_2.png> <./figures//status_ws_removed_full_no_freeze
 _fold_3.png> <./figures//status_ws_removed_full_no_freeze_fold_4.png>]
-<./figures//status_basic_no_bs_dropout_0.png, id=959, 534.99875pt x 377.41pt>
+<./figures//status_basic_no_bs_dropout_0.png, id=954, 534.99875pt x 377.41pt>
 File: ./figures//status_basic_no_bs_dropout_0.png Graphic file (type png)
 <use ./figures//status_basic_no_bs_dropout_0.png>
 Package pdftex.def Info: ./figures//status_basic_no_bs_dropout_0.png  used on i
-nput line 1251.
+nput line 1252.
 (pdftex.def)             Requested size: 142.26378pt x 100.35869pt.
-<./figures//status_basic_no_bs_dropout_1.png, id=960, 551.05875pt x 369.38pt>
+<./figures//status_basic_no_bs_dropout_1.png, id=955, 551.05875pt x 369.38pt>
 File: ./figures//status_basic_no_bs_dropout_1.png Graphic file (type png)
 <use ./figures//status_basic_no_bs_dropout_1.png>
 Package pdftex.def Info: ./figures//status_basic_no_bs_dropout_1.png  used on i
-nput line 1253.
+nput line 1254.
 (pdftex.def)             Requested size: 142.26378pt x 95.36017pt.
-<./figures//status_basic_no_bs_dropout_2.png, id=961, 533.995pt x 372.39125pt>
+<./figures//status_basic_no_bs_dropout_2.png, id=956, 533.995pt x 372.39125pt>
 File: ./figures//status_basic_no_bs_dropout_2.png Graphic file (type png)
 <use ./figures//status_basic_no_bs_dropout_2.png>
 Package pdftex.def Info: ./figures//status_basic_no_bs_dropout_2.png  used on i
-nput line 1255.
+nput line 1256.
 (pdftex.def)             Requested size: 142.26378pt x 99.21165pt.
-<./figures//status_basic_no_bs_dropout_3.png, id=962, 530.98375pt x 372.39125pt
+<./figures//status_basic_no_bs_dropout_3.png, id=957, 530.98375pt x 372.39125pt
 >
 File: ./figures//status_basic_no_bs_dropout_3.png Graphic file (type png)
 <use ./figures//status_basic_no_bs_dropout_3.png>
 Package pdftex.def Info: ./figures//status_basic_no_bs_dropout_3.png  used on i
-nput line 1257.
+nput line 1258.
 (pdftex.def)             Requested size: 142.26378pt x 99.77419pt.
-<./figures//status_basic_no_bs_dropout_4.png, id=963, 516.93124pt x 363.3575pt>
+<./figures//status_basic_no_bs_dropout_4.png, id=958, 516.93124pt x 363.3575pt>
 
 File: ./figures//status_basic_no_bs_dropout_4.png Graphic file (type png)
 <use ./figures//status_basic_no_bs_dropout_4.png>
 Package pdftex.def Info: ./figures//status_basic_no_bs_dropout_4.png  used on i
-nput line 1259.
+nput line 1260.
 (pdftex.def)             Requested size: 142.26378pt x 99.99846pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1264--1266
+Underfull \hbox (badness 10000) in paragraph at lines 1265--1267
 
  []
 
-<./figures//vanish0.png, id=965, 392.46625pt x 260.975pt>
+<./figures//vanish0.png, id=960, 392.46625pt x 260.975pt>
 File: ./figures//vanish0.png Graphic file (type png)
 <use ./figures//vanish0.png>
-Package pdftex.def Info: ./figures//vanish0.png  used on input line 1269.
+Package pdftex.def Info: ./figures//vanish0.png  used on input line 1270.
 (pdftex.def)             Requested size: 142.26378pt x 94.60002pt.
-<./figures//vanish1.png, id=966, 387.4475pt x 260.975pt>
+<./figures//vanish1.png, id=961, 387.4475pt x 260.975pt>
 File: ./figures//vanish1.png Graphic file (type png)
 <use ./figures//vanish1.png>
-Package pdftex.def Info: ./figures//vanish1.png  used on input line 1271.
+Package pdftex.def Info: ./figures//vanish1.png  used on input line 1272.
 (pdftex.def)             Requested size: 142.26378pt x 95.82652pt.
-<./figures//vanish2.png, id=967, 392.46625pt x 260.975pt>
+<./figures//vanish2.png, id=962, 392.46625pt x 260.975pt>
 File: ./figures//vanish2.png Graphic file (type png)
 <use ./figures//vanish2.png>
-Package pdftex.def Info: ./figures//vanish2.png  used on input line 1273.
+Package pdftex.def Info: ./figures//vanish2.png  used on input line 1274.
 (pdftex.def)             Requested size: 142.26378pt x 94.60002pt.
-<./figures//vanish3.png, id=968, 387.4475pt x 260.975pt>
+<./figures//vanish3.png, id=963, 387.4475pt x 260.975pt>
 File: ./figures//vanish3.png Graphic file (type png)
 <use ./figures//vanish3.png>
-Package pdftex.def Info: ./figures//vanish3.png  used on input line 1275.
+Package pdftex.def Info: ./figures//vanish3.png  used on input line 1276.
 (pdftex.def)             Requested size: 142.26378pt x 95.82652pt.
-<./figures//vanish4.png, id=969, 387.4475pt x 260.975pt>
+<./figures//vanish4.png, id=964, 387.4475pt x 260.975pt>
 File: ./figures//vanish4.png Graphic file (type png)
 <use ./figures//vanish4.png>
-Package pdftex.def Info: ./figures//vanish4.png  used on input line 1277.
+Package pdftex.def Info: ./figures//vanish4.png  used on input line 1278.
 (pdftex.def)             Requested size: 142.26378pt x 95.82652pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1282--1284
+Underfull \hbox (badness 10000) in paragraph at lines 1283--1285
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1285--1287
+Underfull \hbox (badness 10000) in paragraph at lines 1286--1288
 
  []
 
 [43 <./figures//status_basic_no_bs_dropout_0.png> <./figures//status_basic_no_b
 s_dropout_1.png> <./figures//status_basic_no_bs_dropout_2.png> <./figures//stat
 us_basic_no_bs_dropout_3.png> <./figures//status_basic_no_bs_dropout_4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1288--1290
+Underfull \hbox (badness 10000) in paragraph at lines 1289--1291
 
  []
 
-<./figures//status_overfitting0.png, id=990, 495.8525pt x 372.39125pt>
+<./figures//status_overfitting0.png, id=985, 495.8525pt x 372.39125pt>
 File: ./figures//status_overfitting0.png Graphic file (type png)
 <use ./figures//status_overfitting0.png>
 Package pdftex.def Info: ./figures//status_overfitting0.png  used on input line
- 1293.
+ 1294.
 (pdftex.def)             Requested size: 142.26378pt x 106.84288pt.
-<./figures//status_overfitting1.png, id=991, 495.8525pt x 372.39125pt>
+<./figures//status_overfitting1.png, id=986, 495.8525pt x 372.39125pt>
 File: ./figures//status_overfitting1.png Graphic file (type png)
 <use ./figures//status_overfitting1.png>
 Package pdftex.def Info: ./figures//status_overfitting1.png  used on input line
- 1295.
+ 1296.
 (pdftex.def)             Requested size: 142.26378pt x 106.84288pt.
-<./figures//status_overfitting2.png, id=992, 495.8525pt x 372.39125pt>
+<./figures//status_overfitting2.png, id=987, 495.8525pt x 372.39125pt>
 File: ./figures//status_overfitting2.png Graphic file (type png)
 <use ./figures//status_overfitting2.png>
 Package pdftex.def Info: ./figures//status_overfitting2.png  used on input line
- 1297.
+ 1298.
 (pdftex.def)             Requested size: 142.26378pt x 106.84288pt.
-<./figures//status_overfitting3.png, id=993, 495.8525pt x 372.39125pt>
+<./figures//status_overfitting3.png, id=988, 495.8525pt x 372.39125pt>
 File: ./figures//status_overfitting3.png Graphic file (type png)
 <use ./figures//status_overfitting3.png>
 Package pdftex.def Info: ./figures//status_overfitting3.png  used on input line
- 1299.
+ 1300.
 (pdftex.def)             Requested size: 142.26378pt x 106.84288pt.
-<./figures//status_overfitting4.png, id=994, 495.8525pt x 372.39125pt>
+<./figures//status_overfitting4.png, id=989, 495.8525pt x 372.39125pt>
 File: ./figures//status_overfitting4.png Graphic file (type png)
 <use ./figures//status_overfitting4.png>
 Package pdftex.def Info: ./figures//status_overfitting4.png  used on input line
- 1301.
+ 1302.
 (pdftex.def)             Requested size: 142.26378pt x 106.84288pt.
-<./figures//status_append_ws_removed_full_no_freeze_fold_0.png, id=995, 515.927
+<./figures//status_append_ws_removed_full_no_freeze_fold_0.png, id=990, 515.927
 5pt x 371.3875pt>
 File: ./figures//status_append_ws_removed_full_no_freeze_fold_0.png Graphic fil
 e (type png)
 <use ./figures//status_append_ws_removed_full_no_freeze_fold_0.png>
 Package pdftex.def Info: ./figures//status_append_ws_removed_full_no_freeze_fol
-d_0.png  used on input line 1308.
+d_0.png  used on input line 1309.
 (pdftex.def)             Requested size: 142.26378pt x 102.40671pt.
-<./figures//status_append_ws_removed_full_no_freeze_fold_1.png, id=996, 536.002
+<./figures//status_append_ws_removed_full_no_freeze_fold_1.png, id=991, 536.002
 5pt x 380.42125pt>
 File: ./figures//status_append_ws_removed_full_no_freeze_fold_1.png Graphic fil
 e (type png)
 <use ./figures//status_append_ws_removed_full_no_freeze_fold_1.png>
 Package pdftex.def Info: ./figures//status_append_ws_removed_full_no_freeze_fol
-d_1.png  used on input line 1310.
+d_1.png  used on input line 1311.
 (pdftex.def)             Requested size: 142.26378pt x 100.96786pt.
-<./figures//status_append_ws_removed_full_no_freeze_fold_2.png, id=997, 534.998
+<./figures//status_append_ws_removed_full_no_freeze_fold_2.png, id=992, 534.998
 75pt x 375.4025pt>
 File: ./figures//status_append_ws_removed_full_no_freeze_fold_2.png Graphic fil
 e (type png)
 <use ./figures//status_append_ws_removed_full_no_freeze_fold_2.png>
 Package pdftex.def Info: ./figures//status_append_ws_removed_full_no_freeze_fol
-d_2.png  used on input line 1312.
+d_2.png  used on input line 1313.
 (pdftex.def)             Requested size: 142.26378pt x 99.82487pt.
-<./figures//status_append_ws_removed_full_no_freeze_fold_3.png, id=998, 511.912
+<./figures//status_append_ws_removed_full_no_freeze_fold_3.png, id=993, 511.912
 5pt x 374.39874pt>
 File: ./figures//status_append_ws_removed_full_no_freeze_fold_3.png Graphic fil
 e (type png)
 <use ./figures//status_append_ws_removed_full_no_freeze_fold_3.png>
 Package pdftex.def Info: ./figures//status_append_ws_removed_full_no_freeze_fol
-d_3.png  used on input line 1314.
+d_3.png  used on input line 1315.
 (pdftex.def)             Requested size: 142.26378pt x 104.04826pt.
-<./figures//status_append_ws_removed_full_no_freeze_fold_4.png, id=999, 511.912
+<./figures//status_append_ws_removed_full_no_freeze_fold_4.png, id=994, 511.912
 5pt x 368.37625pt>
 File: ./figures//status_append_ws_removed_full_no_freeze_fold_4.png Graphic fil
 e (type png)
 <use ./figures//status_append_ws_removed_full_no_freeze_fold_4.png>
 Package pdftex.def Info: ./figures//status_append_ws_removed_full_no_freeze_fol
-d_4.png  used on input line 1316.
+d_4.png  used on input line 1317.
 (pdftex.def)             Requested size: 142.26378pt x 102.37456pt.
-<./figures//cm_dropout2.png, id=1000, 363.3575pt x 275.0275pt>
+<./figures//cm_dropout2.png, id=995, 363.3575pt x 275.0275pt>
 File: ./figures//cm_dropout2.png Graphic file (type png)
 <use ./figures//cm_dropout2.png>
-Package pdftex.def Info: ./figures//cm_dropout2.png  used on input line 1323.
+Package pdftex.def Info: ./figures//cm_dropout2.png  used on input line 1324.
 (pdftex.def)             Requested size: 284.52756pt x 215.36409pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1328--1330
+Underfull \hbox (badness 10000) in paragraph at lines 1329--1331
 
  []
 
-<./figures//status_v3_fold_0.png, id=1002, 498.86375pt x 372.39125pt>
+<./figures//status_v3_fold_0.png, id=997, 498.86375pt x 372.39125pt>
 File: ./figures//status_v3_fold_0.png Graphic file (type png)
 <use ./figures//status_v3_fold_0.png>
 Package pdftex.def Info: ./figures//status_v3_fold_0.png  used on input line 13
-33.
+34.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_v3_fold_1.png, id=1003, 498.86375pt x 372.39125pt>
+<./figures//status_v3_fold_1.png, id=998, 498.86375pt x 372.39125pt>
 File: ./figures//status_v3_fold_1.png Graphic file (type png)
 <use ./figures//status_v3_fold_1.png>
 Package pdftex.def Info: ./figures//status_v3_fold_1.png  used on input line 13
-35.
+36.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_v3_fold_2.png, id=1004, 498.86375pt x 372.39125pt>
+<./figures//status_v3_fold_2.png, id=999, 498.86375pt x 372.39125pt>
 File: ./figures//status_v3_fold_2.png Graphic file (type png)
 <use ./figures//status_v3_fold_2.png>
 Package pdftex.def Info: ./figures//status_v3_fold_2.png  used on input line 13
-37.
+38.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_v3_fold_3.png, id=1005, 498.86375pt x 372.39125pt>
+<./figures//status_v3_fold_3.png, id=1000, 498.86375pt x 372.39125pt>
 File: ./figures//status_v3_fold_3.png Graphic file (type png)
 <use ./figures//status_v3_fold_3.png>
 Package pdftex.def Info: ./figures//status_v3_fold_3.png  used on input line 13
-39.
+40.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_v3_fold_4.png, id=1006, 498.86375pt x 372.39125pt>
+<./figures//status_v3_fold_4.png, id=1001, 498.86375pt x 372.39125pt>
 File: ./figures//status_v3_fold_4.png Graphic file (type png)
 <use ./figures//status_v3_fold_4.png>
 Package pdftex.def Info: ./figures//status_v3_fold_4.png  used on input line 13
-41.
+42.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1346--1348
+Underfull \hbox (badness 10000) in paragraph at lines 1347--1349
 
  []
 
-<./figures//cm_tuned.png, id=1009, 367.3725pt x 279.0425pt>
+<./figures//cm_tuned.png, id=1004, 367.3725pt x 279.0425pt>
 File: ./figures//cm_tuned.png Graphic file (type png)
 <use ./figures//cm_tuned.png>
-Package pdftex.def Info: ./figures//cm_tuned.png  used on input line 1351.
+Package pdftex.def Info: ./figures//cm_tuned.png  used on input line 1352.
 (pdftex.def)             Requested size: 284.52756pt x 216.13222pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1356--1358
+Underfull \hbox (badness 10000) in paragraph at lines 1357--1359
 
  []
 
@@ -1752,133 +1757,133 @@ no_freeze_fold_3.png> <./figures//status_append_ws_removed_full_no_freeze_fold_
 4.png>] [46 <./figures//cm_dropout2.png> <./figures//status_v3_fold_0.png> <./f
 igures//status_v3_fold_1.png> <./figures//status_v3_fold_2.png> <./figures//sta
 tus_v3_fold_3.png> <./figures//status_v3_fold_4.png>]
-<./figures//status_v4_fold_0.png, id=1070, 498.86375pt x 372.39125pt>
+<./figures//status_v4_fold_0.png, id=1065, 498.86375pt x 372.39125pt>
 File: ./figures//status_v4_fold_0.png Graphic file (type png)
 <use ./figures//status_v4_fold_0.png>
 Package pdftex.def Info: ./figures//status_v4_fold_0.png  used on input line 13
-61.
+62.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_v4_fold_1.png, id=1071, 498.86375pt x 372.39125pt>
+<./figures//status_v4_fold_1.png, id=1066, 498.86375pt x 372.39125pt>
 File: ./figures//status_v4_fold_1.png Graphic file (type png)
 <use ./figures//status_v4_fold_1.png>
 Package pdftex.def Info: ./figures//status_v4_fold_1.png  used on input line 13
-63.
+64.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_v4_fold_2.png, id=1072, 498.86375pt x 372.39125pt>
+<./figures//status_v4_fold_2.png, id=1067, 498.86375pt x 372.39125pt>
 File: ./figures//status_v4_fold_2.png Graphic file (type png)
 <use ./figures//status_v4_fold_2.png>
 Package pdftex.def Info: ./figures//status_v4_fold_2.png  used on input line 13
-65.
+66.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_v4_fold_3.png, id=1073, 498.86375pt x 372.39125pt>
+<./figures//status_v4_fold_3.png, id=1068, 498.86375pt x 372.39125pt>
 File: ./figures//status_v4_fold_3.png Graphic file (type png)
 <use ./figures//status_v4_fold_3.png>
 Package pdftex.def Info: ./figures//status_v4_fold_3.png  used on input line 13
-67.
+68.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_v4_fold_4.png, id=1074, 498.86375pt x 372.39125pt>
+<./figures//status_v4_fold_4.png, id=1069, 498.86375pt x 372.39125pt>
 File: ./figures//status_v4_fold_4.png Graphic file (type png)
 <use ./figures//status_v4_fold_4.png>
 Package pdftex.def Info: ./figures//status_v4_fold_4.png  used on input line 13
-69.
+70.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//cm_fewer.png, id=1075, 367.3725pt x 279.0425pt>
+<./figures//cm_fewer.png, id=1070, 367.3725pt x 279.0425pt>
 File: ./figures//cm_fewer.png Graphic file (type png)
 <use ./figures//cm_fewer.png>
-Package pdftex.def Info: ./figures//cm_fewer.png  used on input line 1376.
+Package pdftex.def Info: ./figures//cm_fewer.png  used on input line 1377.
 (pdftex.def)             Requested size: 256.0748pt x 194.51942pt.
  [47 <./figures//cm_tuned.png> <./figures//status_v4_fold_0.png> <./figures//st
 atus_v4_fold_1.png> <./figures//status_v4_fold_2.png> <./figures//status_v4_fol
 d_3.png> <./figures//status_v4_fold_4.png>]
-<./figures//status_bias_005_fold_0.png, id=1095, 498.86375pt x 372.39125pt>
+<./figures//status_bias_005_fold_0.png, id=1090, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_005_fold_0.png Graphic file (type png)
 <use ./figures//status_bias_005_fold_0.png>
 Package pdftex.def Info: ./figures//status_bias_005_fold_0.png  used on input l
-ine 1385.
+ine 1386.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_bias_005_fold_1.png, id=1096, 498.86375pt x 372.39125pt>
+<./figures//status_bias_005_fold_1.png, id=1091, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_005_fold_1.png Graphic file (type png)
 <use ./figures//status_bias_005_fold_1.png>
 Package pdftex.def Info: ./figures//status_bias_005_fold_1.png  used on input l
-ine 1387.
+ine 1388.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_bias_005_fold_2.png, id=1097, 498.86375pt x 372.39125pt>
+<./figures//status_bias_005_fold_2.png, id=1092, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_005_fold_2.png Graphic file (type png)
 <use ./figures//status_bias_005_fold_2.png>
 Package pdftex.def Info: ./figures//status_bias_005_fold_2.png  used on input l
-ine 1389.
+ine 1390.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_bias_005_fold_3.png, id=1098, 498.86375pt x 372.39125pt>
+<./figures//status_bias_005_fold_3.png, id=1093, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_005_fold_3.png Graphic file (type png)
 <use ./figures//status_bias_005_fold_3.png>
 Package pdftex.def Info: ./figures//status_bias_005_fold_3.png  used on input l
-ine 1391.
+ine 1392.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_bias_005_fold_4.png, id=1099, 498.86375pt x 375.4025pt>
+<./figures//status_bias_005_fold_4.png, id=1094, 498.86375pt x 375.4025pt>
 File: ./figures//status_bias_005_fold_4.png Graphic file (type png)
 <use ./figures//status_bias_005_fold_4.png>
 Package pdftex.def Info: ./figures//status_bias_005_fold_4.png  used on input l
-ine 1393.
+ine 1394.
 (pdftex.def)             Requested size: 142.26378pt x 107.05383pt.
-<./figures//status_bias_01_fold_0.png, id=1100, 498.86375pt x 372.39125pt>
+<./figures//status_bias_01_fold_0.png, id=1095, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_01_fold_0.png Graphic file (type png)
 <use ./figures//status_bias_01_fold_0.png>
 Package pdftex.def Info: ./figures//status_bias_01_fold_0.png  used on input li
-ne 1400.
+ne 1401.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_bias_01_fold_1.png, id=1101, 498.86375pt x 372.39125pt>
+<./figures//status_bias_01_fold_1.png, id=1096, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_01_fold_1.png Graphic file (type png)
 <use ./figures//status_bias_01_fold_1.png>
 Package pdftex.def Info: ./figures//status_bias_01_fold_1.png  used on input li
-ne 1402.
+ne 1403.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_bias_01_fold_2.png, id=1102, 498.86375pt x 372.39125pt>
+<./figures//status_bias_01_fold_2.png, id=1097, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_01_fold_2.png Graphic file (type png)
 <use ./figures//status_bias_01_fold_2.png>
 Package pdftex.def Info: ./figures//status_bias_01_fold_2.png  used on input li
-ne 1404.
+ne 1405.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_bias_01_fold_3.png, id=1103, 498.86375pt x 372.39125pt>
+<./figures//status_bias_01_fold_3.png, id=1098, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_01_fold_3.png Graphic file (type png)
 <use ./figures//status_bias_01_fold_3.png>
 Package pdftex.def Info: ./figures//status_bias_01_fold_3.png  used on input li
-ne 1406.
+ne 1407.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_bias_01_fold_4.png, id=1104, 498.86375pt x 372.39125pt>
+<./figures//status_bias_01_fold_4.png, id=1099, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_01_fold_4.png Graphic file (type png)
 <use ./figures//status_bias_01_fold_4.png>
 Package pdftex.def Info: ./figures//status_bias_01_fold_4.png  used on input li
-ne 1408.
+ne 1409.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_bias_015_fold_0.png, id=1105, 498.86375pt x 372.39125pt>
+<./figures//status_bias_015_fold_0.png, id=1100, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_015_fold_0.png Graphic file (type png)
 <use ./figures//status_bias_015_fold_0.png>
 Package pdftex.def Info: ./figures//status_bias_015_fold_0.png  used on input l
-ine 1415.
+ine 1416.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_bias_015_fold_1.png, id=1106, 498.86375pt x 372.39125pt>
+<./figures//status_bias_015_fold_1.png, id=1101, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_015_fold_1.png Graphic file (type png)
 <use ./figures//status_bias_015_fold_1.png>
 Package pdftex.def Info: ./figures//status_bias_015_fold_1.png  used on input l
-ine 1417.
+ine 1418.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_bias_015_fold_2.png, id=1107, 498.86375pt x 372.39125pt>
+<./figures//status_bias_015_fold_2.png, id=1102, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_015_fold_2.png Graphic file (type png)
 <use ./figures//status_bias_015_fold_2.png>
 Package pdftex.def Info: ./figures//status_bias_015_fold_2.png  used on input l
-ine 1419.
+ine 1420.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_bias_015_fold_3.png, id=1108, 498.86375pt x 372.39125pt>
+<./figures//status_bias_015_fold_3.png, id=1103, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_015_fold_3.png Graphic file (type png)
 <use ./figures//status_bias_015_fold_3.png>
 Package pdftex.def Info: ./figures//status_bias_015_fold_3.png  used on input l
-ine 1421.
+ine 1422.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
-<./figures//status_bias_015_fold_4.png, id=1109, 498.86375pt x 372.39125pt>
+<./figures//status_bias_015_fold_4.png, id=1104, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_015_fold_4.png Graphic file (type png)
 <use ./figures//status_bias_015_fold_4.png>
 Package pdftex.def Info: ./figures//status_bias_015_fold_4.png  used on input l
-ine 1423.
+ine 1424.
 (pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
  [48 <./figures//cm_fewer.png> <./figures//status_bias_005_fold_0.png> <./figur
 es//status_bias_005_fold_1.png> <./figures//status_bias_005_fold_2.png> <./figu
@@ -1890,182 +1895,182 @@ figures//status_bias_015_fold_1.png> <./figures//status_bias_015_fold_2.png> <.
 /figures//status_bias_015_fold_3.png> <./figures//status_bias_015_fold_4.png>]
 File: ./figures//cm_fewer.png Graphic file (type png)
 <use ./figures//cm_fewer.png>
-Package pdftex.def Info: ./figures//cm_fewer.png  used on input line 1432.
+Package pdftex.def Info: ./figures//cm_fewer.png  used on input line 1433.
 (pdftex.def)             Requested size: 213.39566pt x 162.0917pt.
-<./figures//cm_005_fold_1.png, id=1157, 367.3725pt x 279.0425pt>
+<./figures//cm_005_fold_1.png, id=1152, 367.3725pt x 279.0425pt>
 File: ./figures//cm_005_fold_1.png Graphic file (type png)
 <use ./figures//cm_005_fold_1.png>
-Package pdftex.def Info: ./figures//cm_005_fold_1.png  used on input line 1434.
+Package pdftex.def Info: ./figures//cm_005_fold_1.png  used on input line 1435.
 
 (pdftex.def)             Requested size: 213.39566pt x 162.0917pt.
-<./figures//cm_01_fold_4.png, id=1158, 367.3725pt x 279.0425pt>
+<./figures//cm_01_fold_4.png, id=1153, 367.3725pt x 279.0425pt>
 File: ./figures//cm_01_fold_4.png Graphic file (type png)
 <use ./figures//cm_01_fold_4.png>
-Package pdftex.def Info: ./figures//cm_01_fold_4.png  used on input line 1436.
+Package pdftex.def Info: ./figures//cm_01_fold_4.png  used on input line 1437.
 (pdftex.def)             Requested size: 213.39566pt x 162.0917pt.
-<./figures//cm_015_fold_2.png, id=1159, 367.3725pt x 279.0425pt>
+<./figures//cm_015_fold_2.png, id=1154, 367.3725pt x 279.0425pt>
 File: ./figures//cm_015_fold_2.png Graphic file (type png)
 <use ./figures//cm_015_fold_2.png>
-Package pdftex.def Info: ./figures//cm_015_fold_2.png  used on input line 1438.
+Package pdftex.def Info: ./figures//cm_015_fold_2.png  used on input line 1439.
 
 (pdftex.def)             Requested size: 213.39566pt x 162.0917pt.
  [50 <./figures//cm_005_fold_1.png> <./figures//cm_01_fold_4.png> <./figures//c
 m_015_fold_2.png>]
-<./figures//status_exclude_fold_0.png, id=1178, 514.92375pt x 372.39125pt>
+<./figures//status_exclude_fold_0.png, id=1173, 514.92375pt x 372.39125pt>
 File: ./figures//status_exclude_fold_0.png Graphic file (type png)
 <use ./figures//status_exclude_fold_0.png>
 Package pdftex.def Info: ./figures//status_exclude_fold_0.png  used on input li
-ne 1469.
+ne 1470.
 (pdftex.def)             Requested size: 142.26378pt x 102.88237pt.
-<./figures//status_exclude_fold_1.png, id=1179, 502.87875pt x 363.3575pt>
+<./figures//status_exclude_fold_1.png, id=1174, 502.87875pt x 363.3575pt>
 File: ./figures//status_exclude_fold_1.png Graphic file (type png)
 <use ./figures//status_exclude_fold_1.png>
 Package pdftex.def Info: ./figures//status_exclude_fold_1.png  used on input li
-ne 1471.
+ne 1472.
 (pdftex.def)             Requested size: 142.26378pt x 102.79283pt.
-<./figures//status_exclude_fold_2.png, id=1180, 514.92375pt x 376.40625pt>
+<./figures//status_exclude_fold_2.png, id=1175, 514.92375pt x 376.40625pt>
 File: ./figures//status_exclude_fold_2.png Graphic file (type png)
 <use ./figures//status_exclude_fold_2.png>
 Package pdftex.def Info: ./figures//status_exclude_fold_2.png  used on input li
-ne 1473.
+ne 1474.
 (pdftex.def)             Requested size: 142.26378pt x 103.99161pt.
-<./figures//status_exclude_fold_3.png, id=1181, 505.89pt x 370.38374pt>
+<./figures//status_exclude_fold_3.png, id=1176, 505.89pt x 370.38374pt>
 File: ./figures//status_exclude_fold_3.png Graphic file (type png)
 <use ./figures//status_exclude_fold_3.png>
 Package pdftex.def Info: ./figures//status_exclude_fold_3.png  used on input li
-ne 1475.
+ne 1476.
 (pdftex.def)             Requested size: 142.26378pt x 104.15886pt.
-<./figures//status_exclude_fold_4.png, id=1182, 505.89pt x 368.37625pt>
+<./figures//status_exclude_fold_4.png, id=1177, 505.89pt x 368.37625pt>
 File: ./figures//status_exclude_fold_4.png Graphic file (type png)
 <use ./figures//status_exclude_fold_4.png>
 Package pdftex.def Info: ./figures//status_exclude_fold_4.png  used on input li
-ne 1477.
+ne 1478.
 (pdftex.def)             Requested size: 142.26378pt x 103.59431pt.
-<./figures//status_exclude_bias_005_fold_0.png, id=1183, 521.95pt x 376.40625pt
+<./figures//status_exclude_bias_005_fold_0.png, id=1178, 521.95pt x 376.40625pt
 >
 File: ./figures//status_exclude_bias_005_fold_0.png Graphic file (type png)
 <use ./figures//status_exclude_bias_005_fold_0.png>
 Package pdftex.def Info: ./figures//status_exclude_bias_005_fold_0.png  used on
- input line 1484.
+ input line 1485.
 (pdftex.def)             Requested size: 142.26378pt x 102.59595pt.
-<./figures//status_exclude_bias_005_fold_1.png, id=1184, 520.94624pt x 369.38pt
+<./figures//status_exclude_bias_005_fold_1.png, id=1179, 520.94624pt x 369.38pt
 >
 File: ./figures//status_exclude_bias_005_fold_1.png Graphic file (type png)
 <use ./figures//status_exclude_bias_005_fold_1.png>
 Package pdftex.def Info: ./figures//status_exclude_bias_005_fold_1.png  used on
- input line 1486.
+ input line 1487.
 (pdftex.def)             Requested size: 142.26378pt x 100.87245pt.
-<./figures//status_exclude_bias_005_fold_2.png, id=1185, 544.0325pt x 369.38pt>
+<./figures//status_exclude_bias_005_fold_2.png, id=1180, 544.0325pt x 369.38pt>
 
 File: ./figures//status_exclude_bias_005_fold_2.png Graphic file (type png)
 <use ./figures//status_exclude_bias_005_fold_2.png>
 Package pdftex.def Info: ./figures//status_exclude_bias_005_fold_2.png  used on
- input line 1488.
+ input line 1489.
 (pdftex.def)             Requested size: 142.26378pt x 96.59451pt.
-<./figures//status_exclude_bias_005_fold_3.png, id=1186, 532.99126pt x 369.38pt
+<./figures//status_exclude_bias_005_fold_3.png, id=1181, 532.99126pt x 369.38pt
 >
 File: ./figures//status_exclude_bias_005_fold_3.png Graphic file (type png)
 <use ./figures//status_exclude_bias_005_fold_3.png>
 Package pdftex.def Info: ./figures//status_exclude_bias_005_fold_3.png  used on
- input line 1490.
+ input line 1491.
 (pdftex.def)             Requested size: 142.26378pt x 98.58977pt.
-<./figures//status_exclude_bias_005_fold_4.png, id=1187, 519.9425pt x 369.38pt>
+<./figures//status_exclude_bias_005_fold_4.png, id=1182, 519.9425pt x 369.38pt>
 
 File: ./figures//status_exclude_bias_005_fold_4.png Graphic file (type png)
 <use ./figures//status_exclude_bias_005_fold_4.png>
 Package pdftex.def Info: ./figures//status_exclude_bias_005_fold_4.png  used on
- input line 1492.
+ input line 1493.
 (pdftex.def)             Requested size: 142.26378pt x 101.06409pt.
-<./figures//status_exclude_bias_01_fold_0.png, id=1188, 525.965pt x 368.37625pt
+<./figures//status_exclude_bias_01_fold_0.png, id=1183, 525.965pt x 368.37625pt
 >
 File: ./figures//status_exclude_bias_01_fold_0.png Graphic file (type png)
 <use ./figures//status_exclude_bias_01_fold_0.png>
 Package pdftex.def Info: ./figures//status_exclude_bias_01_fold_0.png  used on 
-input line 1499.
+input line 1500.
 (pdftex.def)             Requested size: 142.26378pt x 99.63716pt.
-<./figures//status_exclude_bias_01_fold_1.png, id=1189, 517.935pt x 369.38pt>
+<./figures//status_exclude_bias_01_fold_1.png, id=1184, 517.935pt x 369.38pt>
 File: ./figures//status_exclude_bias_01_fold_1.png Graphic file (type png)
 <use ./figures//status_exclude_bias_01_fold_1.png>
 Package pdftex.def Info: ./figures//status_exclude_bias_01_fold_1.png  used on 
-input line 1501.
+input line 1502.
 (pdftex.def)             Requested size: 142.26378pt x 101.45862pt.
-<./figures//status_exclude_bias_01_fold_2.png, id=1190, 509.905pt x 378.41376pt
+<./figures//status_exclude_bias_01_fold_2.png, id=1185, 509.905pt x 378.41376pt
 >
 File: ./figures//status_exclude_bias_01_fold_2.png Graphic file (type png)
 <use ./figures//status_exclude_bias_01_fold_2.png>
 Package pdftex.def Info: ./figures//status_exclude_bias_01_fold_2.png  used on 
-input line 1503.
+input line 1504.
 (pdftex.def)             Requested size: 142.26378pt x 105.5798pt.
-<./figures//status_exclude_bias_01_fold_3.png, id=1191, 501.875pt x 365.365pt>
+<./figures//status_exclude_bias_01_fold_3.png, id=1186, 501.875pt x 365.365pt>
 File: ./figures//status_exclude_bias_01_fold_3.png Graphic file (type png)
 <use ./figures//status_exclude_bias_01_fold_3.png>
 Package pdftex.def Info: ./figures//status_exclude_bias_01_fold_3.png  used on 
-input line 1505.
+input line 1506.
 (pdftex.def)             Requested size: 142.26378pt x 103.56702pt.
-<./figures//status_exclude_bias_01_fold_4.png, id=1192, 498.86375pt x 364.36125
+<./figures//status_exclude_bias_01_fold_4.png, id=1187, 498.86375pt x 364.36125
 pt>
 File: ./figures//status_exclude_bias_01_fold_4.png Graphic file (type png)
 <use ./figures//status_exclude_bias_01_fold_4.png>
 Package pdftex.def Info: ./figures//status_exclude_bias_01_fold_4.png  used on 
-input line 1507.
+input line 1508.
 (pdftex.def)             Requested size: 142.26378pt x 103.90518pt.
-<./figures//status_exclude_bias_015_fold_0.png, id=1193, 512.91624pt x 375.4025
+<./figures//status_exclude_bias_015_fold_0.png, id=1188, 512.91624pt x 375.4025
 pt>
 File: ./figures//status_exclude_bias_015_fold_0.png Graphic file (type png)
 <use ./figures//status_exclude_bias_015_fold_0.png>
 Package pdftex.def Info: ./figures//status_exclude_bias_015_fold_0.png  used on
- input line 1514.
+ input line 1515.
 (pdftex.def)             Requested size: 142.26378pt x 104.121pt.
-<./figures//status_exclude_bias_015_fold_1.png, id=1194, 510.90875pt x 372.3912
+<./figures//status_exclude_bias_015_fold_1.png, id=1189, 510.90875pt x 372.3912
 5pt>
 File: ./figures//status_exclude_bias_015_fold_1.png Graphic file (type png)
 <use ./figures//status_exclude_bias_015_fold_1.png>
 Package pdftex.def Info: ./figures//status_exclude_bias_015_fold_1.png  used on
- input line 1516.
+ input line 1517.
 (pdftex.def)             Requested size: 142.26378pt x 103.68924pt.
-<./figures//status_exclude_bias_015_fold_2.png, id=1195, 504.88625pt x 368.3762
+<./figures//status_exclude_bias_015_fold_2.png, id=1190, 504.88625pt x 368.3762
 5pt>
 File: ./figures//status_exclude_bias_015_fold_2.png Graphic file (type png)
 <use ./figures//status_exclude_bias_015_fold_2.png>
 Package pdftex.def Info: ./figures//status_exclude_bias_015_fold_2.png  used on
- input line 1518.
+ input line 1519.
 (pdftex.def)             Requested size: 142.26378pt x 103.79666pt.
-<./figures//status_exclude_bias_015_fold_3.png, id=1196, 514.92375pt x 375.4025
+<./figures//status_exclude_bias_015_fold_3.png, id=1191, 514.92375pt x 375.4025
 pt>
 File: ./figures//status_exclude_bias_015_fold_3.png Graphic file (type png)
 <use ./figures//status_exclude_bias_015_fold_3.png>
 Package pdftex.def Info: ./figures//status_exclude_bias_015_fold_3.png  used on
- input line 1520.
+ input line 1521.
 (pdftex.def)             Requested size: 142.26378pt x 103.71431pt.
-<./figures//status_exclude_bias_015_fold_4.png, id=1197, 510.90875pt x 369.38pt
+<./figures//status_exclude_bias_015_fold_4.png, id=1192, 510.90875pt x 369.38pt
 >
 File: ./figures//status_exclude_bias_015_fold_4.png Graphic file (type png)
 <use ./figures//status_exclude_bias_015_fold_4.png>
 Package pdftex.def Info: ./figures//status_exclude_bias_015_fold_4.png  used on
- input line 1522.
+ input line 1523.
 (pdftex.def)             Requested size: 142.26378pt x 102.85078pt.
-<./figures//cm_exclude_0.png, id=1198, 371.3875pt x 276.03125pt>
+<./figures//cm_exclude_0.png, id=1193, 371.3875pt x 276.03125pt>
 File: ./figures//cm_exclude_0.png Graphic file (type png)
 <use ./figures//cm_exclude_0.png>
-Package pdftex.def Info: ./figures//cm_exclude_0.png  used on input line 1529.
+Package pdftex.def Info: ./figures//cm_exclude_0.png  used on input line 1530.
 (pdftex.def)             Requested size: 142.26378pt x 105.73955pt.
-<./figures//cm_exclude_005_0.png, id=1199, 367.3725pt x 279.0425pt>
+<./figures//cm_exclude_005_0.png, id=1194, 367.3725pt x 279.0425pt>
 File: ./figures//cm_exclude_005_0.png Graphic file (type png)
 <use ./figures//cm_exclude_005_0.png>
 Package pdftex.def Info: ./figures//cm_exclude_005_0.png  used on input line 15
-31.
+32.
 (pdftex.def)             Requested size: 142.26378pt x 108.05972pt.
-<./figures//cm_exclude_01_4.png, id=1200, 363.3575pt x 275.0275pt>
+<./figures//cm_exclude_01_4.png, id=1195, 363.3575pt x 275.0275pt>
 File: ./figures//cm_exclude_01_4.png Graphic file (type png)
 <use ./figures//cm_exclude_01_4.png>
 Package pdftex.def Info: ./figures//cm_exclude_01_4.png  used on input line 153
-3.
+4.
 (pdftex.def)             Requested size: 142.26378pt x 107.67995pt.
-<./figures//cm_exclude_015_4.png, id=1201, 363.3575pt x 275.0275pt>
+<./figures//cm_exclude_015_4.png, id=1196, 363.3575pt x 275.0275pt>
 File: ./figures//cm_exclude_015_4.png Graphic file (type png)
 <use ./figures//cm_exclude_015_4.png>
 Package pdftex.def Info: ./figures//cm_exclude_015_4.png  used on input line 15
-35.
+36.
 (pdftex.def)             Requested size: 142.26378pt x 107.67995pt.
  [51 <./figures//status_exclude_fold_0.png> <./figures//status_exclude_fold_1.p
 ng> <./figures//status_exclude_fold_2.png> <./figures//status_exclude_fold_3.pn
@@ -2083,20 +2088,20 @@ _fold_4.png> <./figures//cm_exclude_0.png> <./figures//cm_exclude_005_0.png> <.
 /figures//cm_exclude_01_4.png> <./figures//cm_exclude_015_4.png>]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1563--1565
+Underfull \hbox (badness 10000) in paragraph at lines 1564--1566
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1566--1568
+Underfull \hbox (badness 10000) in paragraph at lines 1567--1569
 
  []
 
-<./figures//uk_distribution.png, id=1270, 1001.7425pt x 1347.0325pt>
+<./figures//uk_distribution.png, id=1265, 1001.7425pt x 1347.0325pt>
 File: ./figures//uk_distribution.png Graphic file (type png)
 <use ./figures//uk_distribution.png>
 Package pdftex.def Info: ./figures//uk_distribution.png  used on input line 157
-3.
+4.
 (pdftex.def)             Requested size: 438.17227pt x 589.20197pt.
 (./main.bbl (./main.brf)
 \tf@brf=\write5
@@ -2109,15 +2114,15 @@ Package pdftex.def Info: ./figures//uk_distribution.png  used on input line 157
 ])
 [57] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9B20B24637185A1862288546C6AD2E64;11099.
+(rerunfilecheck)             Checksum: ABDCA4D1D8F83E3373A008B34E95005C;10915.
 Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: EE7DBF09190A1D21A39D8B267FA94016;1093.
+(rerunfilecheck)             Checksum: 5B07A6FEFD3F6C768EDA597A26E669B9;1088.
  ) 
 Here is how much of TeX's memory you used:
- 15729 strings out of 478268
- 302049 string characters out of 5846347
- 537085 words of memory out of 5000000
- 33307 multiletter control sequences out of 15000+600000
+ 15727 strings out of 478268
+ 302027 string characters out of 5846347
+ 537081 words of memory out of 5000000
+ 33306 multiletter control sequences out of 15000+600000
  504551 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,10n,80p,1283b,477s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2131,10 +2136,10 @@ e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (64 pages, 12475104 bytes).
+Output written on main.pdf (64 pages, 12475202 bytes).
 PDF statistics:
- 1418 PDF objects out of 1440 (max. 8388607)
- 985 compressed objects within 10 object streams
- 402 named destinations out of 1000 (max. 500000)
- 1267 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1413 PDF objects out of 1440 (max. 8388607)
+ 980 compressed objects within 10 object streams
+ 401 named destinations out of 1000 (max. 500000)
+ 1259 words of extra memory for PDF output out of 10000 (max. 10000000)
 
