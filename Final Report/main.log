@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  11 AUG 2022 18:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  12 AUG 2022 14:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2116,7 +2116,7 @@ Package rerunfilecheck Info: File `main.brf' has not changed.
 Here is how much of TeX's memory you used:
  15729 strings out of 478268
  302049 string characters out of 5846347
- 537081 words of memory out of 5000000
+ 537085 words of memory out of 5000000
  33307 multiletter control sequences out of 15000+600000
  504551 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2131,7 +2131,7 @@ e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (64 pages, 12474788 bytes).
+Output written on main.pdf (64 pages, 12475142 bytes).
 PDF statistics:
  1418 PDF objects out of 1440 (max. 8388607)
  985 compressed objects within 10 object streams
