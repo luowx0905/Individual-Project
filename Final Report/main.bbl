@@ -1,4 +1,4 @@
-\begin{thebibliography}{20}
+\begin{thebibliography}{21}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -86,12 +86,6 @@ Vincenza Chiarazzo, Leonardo Caggiani, Mario Marinelli, and Michele
 \newblock \emph{Transportation Research Procedia}, 3:\penalty0 810--817, 2014.
 \newblock ISSN 2352-1465.
 
-\bibitem[Fandango(2017)]{RN4}
-Armando Fandango.
-\newblock \emph{Python Data Analysis}.
-\newblock Packt Publishing Ltd, 2017.
-\newblock ISBN 1787127923.
-
 \bibitem[Richardson(2007)]{RN10}
 Leonard Richardson.
 \newblock Beautiful soup documentation.
@@ -111,6 +105,12 @@ Wes McKinney.
   and IPython}.
 \newblock " O'Reilly Media, Inc.", 2012.
 \newblock ISBN 1449323618.
+
+\bibitem[Fandango(2017)]{RN4}
+Armando Fandango.
+\newblock \emph{Python Data Analysis}.
+\newblock Packt Publishing Ltd, 2017.
+\newblock ISBN 1787127923.
 
 \bibitem[Géron(2019)]{RN7}
 Aurélien Géron.
@@ -136,5 +136,12 @@ Michael~L Waskom.
 \newblock \emph{Journal of Open Source Software}, 6\penalty0 (60):\penalty0
   3021, 2021.
 \newblock ISSN 2475-9066.
+
+\bibitem[Agrawal(2021)]{RN38}
+Tanay Agrawal.
+\newblock \emph{Hyperparameter Optimization in Machine Learning: Make Your
+  Machine Learning and Deep Learning Models More Efficient}.
+\newblock Springer, 2021.
+\newblock ISBN 1484265793.
 
 \end{thebibliography}

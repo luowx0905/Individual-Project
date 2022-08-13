@@ -952,6 +952,7 @@ Figure \ref{all_full_epoch_1000_outlier_removed} depicts the training and valida
 \end{table}
 
 \subsection{Complex Model: Predicting Prices}
+\label{complex_price}
 The training and validation losses of this model are depicted in figure \ref{all_complex_full_epoch_1000}. The predictions made by the model in fold two are displayed in table \ref{complex_model_prediction_price}, along with its metrics, $MAE = 193166$, $MSE = 70788722849$, and $R^2 = -1.11$. Clearly, the complex model is not learning, and this might be caused by error hyperparameters. Therefore, the model is tuned so that its performance could be improved. 
 \\
 \begin{figure*}[!htbp]
@@ -1001,6 +1002,8 @@ The training and validation losses of this model are depicted in figure \ref{all
 \end{table}
 
 The hyperparameters tuned to enhance the performance are number of epochs, learning rate, number of layers and neurons in each layer. 
+
+
 
 \subsection{Residual Network: Predicting Prices}
 Figure \ref{all_resnet_full_epoch_1000} illustrates the training and validation losses for residual networks, and the model from fold one is selected for evaluation due to its low loss. Some predicted prices are displayed in table \ref{resnet_prediction_price}; its metrics are $MAE = 35607$, $MSE = 4515004136$, and $R^2 = 0.86$. 
@@ -1455,6 +1458,13 @@ Folds three, two, and four are selected for evaluation when bias is 0.05, 0.1, a
 
 Furthermore, when comparing the models with biases are 0 and 0.05, the correct prediction of the class \textit{Completed} increases from 57\% to 60\%, but the accuracy for the \textit{Not Completed} drops from 95\% to 91\%, indicating that a bias of 0.05 is not worthwhile. Using the same approach when biases are 0 and 0.15, the corrected predicted \textit{Completed} class increases by 20\%, while the precision and the overall performance decline significantly. When comparing models with biases of 0 and 0.1, the correct prediction of the \textit{Completed} transactions increases by more than 10\%, and a decrease in the overall performance and precision can be acceptable. 
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=\textheight]{basic_status_final_layout}
+	\caption{The layout of the basic model for status (dropout and BN included)}
+	\label{basic_status_final_layout}
+\end{figure}
+
 \subsection{Basic Model: Price Excluded}
 Based on the training process in \ref{basic_status_training_included}, this model is directly trained with biases of 0, 0.05, 0.1, and 0.15. The corresponding losses are depicted in figures \ref{basic_status_exclude_0} to \ref{basic_status_exclude_015}. Folds zero, one, zero, and three of each bias are selected for evaluation due to the low loss. Figure \ref{cm_exclude} and table \ref{metrics_exclude} illustrate the confusion matrices and metrics of each model trained with various biases. Apparently, adding bias to these models cannot improve the performance significantly, and the metrics are comparable.
 
@@ -1568,6 +1578,9 @@ Furthermore, London is the largest city in the UK, with distinct infrastructure 
 	\caption{The distribution of the properties used in this project}
 	\label{uk_distribution}
 \end{figure}
+
+\subsection{Training the models}
+The hyperparameters were tuned sequentially when training the complex model for predicting prices (section \ref{complex_price}) due to the time limitation. A similar approach for tuning employs nested loops so that the optimal combination of hyperparameters can be determined, whereas its problem is that it requires significant time and hardware resources. Grid search is superior, which selects hyperparameters randomly and then trains the model. This method may not obtain the optimal combination of hyperparameters, but it is less expensive than the first approach \citep{RN38}. Bayesian optimization selects new hyperparameters based on the previous performance \citep{RN38}. It is regarded as the best method for tuning since the optimal combination can be obtained at the lowest cost. 
 
 \subsection{Models}
 In this project, only neural networks were developed, and their performance was comparable to those created by \citet{RN37}. However, there are other available ML algorithms. \citet{RN17} stated that the random forest has the best performance in their study, whereas \citet{RN20} argued that XGBoost is the model with the highest accuracy instead of random forest. The models utilized in their research and the models reviewed in section \ref{model_review} should be attempted so that the accuracy of predicting the property transaction can be improved. 
