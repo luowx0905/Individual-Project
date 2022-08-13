@@ -1,3 +1,9 @@
+"""
+TrainValidate class in this script is developed based on the two textbooks,
+1. Daniel Voigt Godoy. Deep Learning with PyTorch Step-by-Step: A Beginner’s Guide.
+2. V Kishore Ayyadevara, Yeshwanth Reddy. Modern Computer Version with Pytorch
+"""
+
 import numpy as np
 import torch
 from torch import nn
