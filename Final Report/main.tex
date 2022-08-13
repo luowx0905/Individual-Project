@@ -1562,18 +1562,18 @@ Moreover, only the layouts and facilities of properties are used for prediction.
 
 Furthermore, London is the largest city in the UK, with distinct infrastructure and landmarks, and there are various online dataset about London. Therefore, the properties in this area could be analyzed separately. For instance, other attributes, such as the nearest tube station and the features provided by \citet{RN26}, can be inserted into the current dataset for training the model, resulting in more accurate predictions for London. 
 
-\subsection{Models}
-In this project, only neural networks were developed, and their performance was comparable to those created by \citet{RN37}. However, there are other available ML algorithms. \citet{RN17} stated that the random forest has the best performance in their study, whereas \citet{RN20} argued that XGBoost is the model with the highest accuracy instead of random forest. The models utilized in their research and the models reviewed in section \ref{model_review} should be attempted so that the accuracy of predicting the property transaction can be improved. 
-
-\begin{figure}[tb]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{uk_distribution}
 	\caption{The distribution of the properties used in this project}
 	\label{uk_distribution}
 \end{figure}
 
+\subsection{Models}
+In this project, only neural networks were developed, and their performance was comparable to those created by \citet{RN37}. However, there are other available ML algorithms. \citet{RN17} stated that the random forest has the best performance in their study, whereas \citet{RN20} argued that XGBoost is the model with the highest accuracy instead of random forest. The models utilized in their research and the models reviewed in section \ref{model_review} should be attempted so that the accuracy of predicting the property transaction can be improved. 
+
 \section{Conclusion}
-This project aims to develop a ML model for predicting the property transaction, and the main objective has been accomplished. The raw dataset was preprocessed, including removing missing values, encoding categorical feature, data standardization and splitting dataset. Then, the training data was input to the models for predicting prices, which were evaluated by several metrics. The result demonstrated that the best performance can be 86\% accurate. Then the model with the highest accuracy was used during the training other models for predicting properry transactions. The final result was that approximately 83\% property transactions can be correctly predicted. 
+This project aims to develop an ML model for predicting property transactions, and the main objective has been accomplished. The raw dataset was preprocessed by removing missing values, encoding categorical features, standardizing the data, and splitting datasets. Then, the training data was used as the input for price prediction models, which were evaluated based on multiple metrics. The result demonstrated that an accuracy of 86\% could be achieved. The model with the highest accuracy was then employed to predict prices for all the properties, which was one of the inputs to forecasting the transaction status. After training and testing the models for predicting status, the final result was that approximately 83\% of real estate transactions could be precisely predicted. 
 
 %% bibliography
 \bibliographystyle{unsrtnat}

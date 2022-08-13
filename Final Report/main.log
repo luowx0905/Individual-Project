@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  12 AUG 2022 17:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  13 AUG 2022 14:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -430,9 +430,17 @@ File: hpdftex.def 2022-02-21 v7.00n Hyperref driver for pdfTeX
 \c@bookmark@seq@number=\count300
 \Hy@SectionHShift=\skip77
 )
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 47.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 47.
-Package hyperref Info: Option `colorlinks' set `true' on input line 47.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count301
+\float@exts=\toks27
+\float@box=\box60
+\@float@everytoks=\toks28
+\@floatcapt=\box61
+)
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 48.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 48.
+Package hyperref Info: Option `colorlinks' set `true' on input line 48.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/oberdiek/hypcap.sty
 Package: hypcap 2016/05/16 v1.12 Adjusting the anchors of captions (HO)
@@ -444,8 +452,8 @@ LaTeX Font Info:    Trying to load font information for OT1+bch on input line 2
 File: ot1bch.fd 2004/10/18 font definitions for OT1/bch.
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count301
-\l__pdf_internal_box=\box60
+\l__color_backend_stack_int=\count302
+\l__pdf_internal_box=\box62
 ) (./main.aux)
 \openout1 = `main.aux'.
 
@@ -503,22 +511,23 @@ LaTeX Font Info:    ... okay on input line 24.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: hypcap package is loaded.
 Package caption Info: End \AtBeginDocument code.
 (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count302
+\scratchcounter=\count303
 \scratchdimen=\dimen187
-\scratchbox=\box61
-\nofMPsegments=\count303
-\nofMParguments=\count304
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count305
+\scratchbox=\box63
+\nofMPsegments=\count304
+\nofMParguments=\count305
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count306
 \MPscratchDim=\dimen188
-\MPnumerator=\count306
-\makeMPintoPDFobject=\count307
-\everyMPtoPDFconversion=\toks28
+\MPnumerator=\count307
+\makeMPintoPDFobject=\count308
+\everyMPtoPDFconversion=\toks30
 )
 Package backref Info: ** backref set up for natbib ** on input line 24.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/color.sty
@@ -541,7 +550,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count308
+\c@section@level=\count309
 )
 LaTeX Info: Redefining \ref on input line 24.
 LaTeX Info: Redefining \pageref on input line 24.
@@ -2087,33 +2096,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 1560--1562
 
  []
 
-[54
-
-]
-<./figures//uk_distribution.png, id=1276, 1001.7425pt x 1347.0325pt>
+<./figures//uk_distribution.png, id=1266, 1001.7425pt x 1347.0325pt>
 File: ./figures//uk_distribution.png Graphic file (type png)
 <use ./figures//uk_distribution.png>
-Package pdftex.def Info: ./figures//uk_distribution.png  used on input line 157
-0.
+Package pdftex.def Info: ./figures//uk_distribution.png  used on input line 156
+7.
 (pdftex.def)             Requested size: 438.17227pt x 589.20197pt.
- (./main.bbl (./main.brf)
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [54
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [55 <./figures//uk_distribution.png>] (./main.bbl (./main.brf)
 \tf@brf=\write5
 \openout5 = `main.brf'.
 
- [55] [56 <./figures//uk_distribution.png>]
-[57
+ [56] [57
 
-]) [58] (./main.aux)
+]) [58]
+(./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5C4DBBAF5B847990F882B8CCF9926C7A;10992.
+(rerunfilecheck)             Checksum: 032367AF2152E596B27F3F93C66E58ED;10992.
 Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: BF2908FEA9B13CD61BEF8965B293D273;1239.
+(rerunfilecheck)             Checksum: BA26BA884582D73FE78D7094726C8B64;1239.
  ) 
 Here is how much of TeX's memory you used:
- 15727 strings out of 478268
- 302040 string characters out of 5846347
- 537106 words of memory out of 5000000
- 33308 multiletter control sequences out of 15000+600000
+ 15792 strings out of 478268
+ 303154 string characters out of 5846347
+ 538640 words of memory out of 5000000
+ 33369 multiletter control sequences out of 15000+600000
  504551 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,10n,80p,1269b,477s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2127,7 +2141,7 @@ e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (65 pages, 12475184 bytes).
+Output written on main.pdf (65 pages, 12475311 bytes).
 PDF statistics:
  1422 PDF objects out of 1440 (max. 8388607)
  988 compressed objects within 10 object streams
