@@ -323,6 +323,7 @@ The second member function is \textit{\textbf{get\_rest\_room}}. It is identical
 
 \subsection{Manipulate Categorical Keywords}
 In the dataset, four features are characterized by categorical keywords, including parking, heating, accessibility, and outdoor spaces. Figure \ref{parking_dataset} is a snippet of the parking dataset that is used as an example to illustrate the manipulation of the keywords. The first three rows indicate that there is a parking space for the first property, which is \textbf{allocated} \textbf{off-street} parking for \textbf{residents}, the second has none, and the third property has one \textbf{on-street} parking space. This principle applies to other rows as well. In this situation, feature encoding cannot be applied since there are multiple columns of keywords describing a feature, and the order and quantity of the keywords have no effect.
+\\
 
 \begin{figure}[!htbp]
 	\centering
@@ -332,9 +333,11 @@ In the dataset, four features are characterized by categorical keywords, includi
 \end{figure}
 
 Figure \ref{uml_generalize_dataset} illustrates the UML diagram of the class \textit{\textbf{GeneralizeDataset}}, which is developed to determine how these features of each property are described and the number of keywords within the description. The core of this class is member function \textit{\textbf{get\_feature\_types}}, and its flowchart is displayed in figure \ref{generalize_dataset_get_feature_types}. In addition, function \textbf{\textit{get\_feature\_num}} can be used to determine the number of keywords for each property. 
+\\
+
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=5cm]{uml_generalize_dataset}
+	\includegraphics[width=6cm]{uml_generalize_dataset}
 	\caption{The UML diagram of \textit{GeneralizeDataset}}
 	\label{uml_generalize_dataset}
 \end{figure}
@@ -368,6 +371,9 @@ This technique is applicable to categorical features in the dataset, including p
 \subsubsection{Manage Missing Values}
 The datasets used in this project contain a significant number of missing values. For example, approximately 30\% of the room layout and more than 40\% of the council tax band are missing. Under this situation, it is impossible to replace them with the mean value since it causes the model to focus on the average and result in low performance. Therefore, another approach is applied, which is removing the missing values in the datasets. 
 
+\subsubsection{Classy Approach}
+After the information in HTML texts and categorical keywords are extracted, it is combined with other columns in the dataset to produce a clean dataset for the model input.  Figure \ref{uml_create_input_dataset} is the UML diagram of \textit{\textbf{CreateInputDataset}}, which is a class developed for this objective, and the flow diagram of producing an input dataset is displayed in figure \ref{create_input_dataset}.
+
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[height=6cm]{uml_create_input_dataset}
@@ -375,12 +381,9 @@ The datasets used in this project contain a significant number of missing values
 	\label{uml_create_input_dataset}
 \end{figure}
 
-\subsubsection{Classy Approach}
-After the information in HTML texts and categorical keywords are extracted, it is combined with other columns in the dataset to produce a clean dataset for the model input.  Figure \ref{uml_create_input_dataset} is the UML diagram of \textit{\textbf{CreateInputDataset}}, which is a class developed for this objective, and the flow diagram of producing an input dataset is displayed in figure \ref{create_input_dataset}.
-
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[height=7cm]{create_input_dataset}
+	\includegraphics[height=10cm]{create_input_dataset}
 	\caption{The flow diagram of producing  input dataset}
 	\label{create_input_dataset}
 \end{figure}
