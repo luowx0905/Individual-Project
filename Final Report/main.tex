@@ -390,39 +390,38 @@ After the information in HTML texts and categorical keywords are extracted, it i
 
 \section{Model Construction}
 
-\subsection{Linear Regression: Predict Price}
-\label{linear_regression_model_construction}
-Prior to the construction of any neural networks, a linear regression model with a single linear layer is developed. Its input size is the same as the number of features, and the output is the price. If this model can accurately predict the price, it eliminates the need to build more complex neural networks with multiple layers, which is the motivation for its creation. 
-
 \subsection{Basic Model: Output Sale Status and Price}
 \label{basic_model_price_status_construction}
 The architecture of this model solely consists of linear layers and activation functions, as depicted in figure \ref{basic_model_layout}. There are two outputs of the model, which are prices and the status of transactions. Therefore, the activation functions of the output layers are ReLU and sigmoid, respectively.
 \\
 
-The status should be converted into 0 or 1, given that it is either completed or not in the datasets. Therefore, a threshold of 0.5 is established. If the probability exceeds the threshold, then it is converted to 1. Otherwise, it is set to 0.
-
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[height=10cm]{basic_model_layout}
+	\includegraphics[height=12cm]{basic_model_layout}
 	\caption{The architecture of the basic model}
 	\label{basic_model_layout}
 \end{figure}
 
-\subsection{Basic Model: Predicting Prices}
-The structure of this model is demonstrated in figure \ref{basic_model_price}. Its hidden layers are identical to the model for predicting status and prices, whereas the status output is removed.
+\subsection{Linear Regression: Predict Price}
+\label{linear_regression_model_construction}
+Prior to the construction of any neural networks for predicting prices, a linear regression model with a single linear layer is developed. Its input size is the same as the number of features, and the output is the price. If this model can accurately predict the price, it eliminates the need to build more complex neural networks with multiple layers, which is the motivation for its creation. 
 
-\begin{figure}[!htbp]
+\subsection{Basic Model: Predicting Prices}
+The structure of this model is demonstrated in figure \ref{basic_model_price}. Its hidden layers are identical to the model for predicting status and prices (section \ref{basic_model_price_status_construction}), whereas the status output is removed.
+
+\begin{figure}[h]
 	\centering
-	\includegraphics[height=10cm]{basic_model_price}
+	\includegraphics[height=13cm]{basic_model_price}
 	\caption{The structure of the basic model for predicting prices}
 	\label{basic_model_price}
 \end{figure}
 
 \subsection{Complex Model: Predicting Prices}
-The layout of a more complex model is similar to that of figure \ref{basic_model_price}, but it contains ten linear layers. The model is constructed for an obvious reason. Intuitively, more complex models are more capable to learn from the input dataset, resulting in enhanced performance. 
+\label{complex_model_construct}
+The layout of a more complex model is similar to that of figure \ref{basic_model_price}, but it contains ten linear layers and there are 512 neurons in each layer. The model is constructed for an obvious reason. Intuitively, more complex models are more capable to learn from the input dataset, resulting in enhanced performance. 
 
 \subsection{Residual Network: Predicting Prices}
-The second complex model is developed which utilized residual connections. The architecture of the residual blocks and the network are illustrated in figure \ref{resnet}. This model is developed because the performance of the first complex model is not significantly enhanced despite having more layers and neurons. In addition, tuning the hyperparameters is time consuming and the improvement of the accuracy is limited. 
+The second complex model is developed which utilized residual connections. The architecture of the residual blocks and the network are illustrated in figure \ref{resnet}. This model is developed because the performance of the first complex model (section \ref{complex_model_construct}) is not significantly enhanced despite having more layers and neurons. In addition, tuning the hyperparameters is time consuming and the improvement of the accuracy is limited. 
 
 \begin{figure*}[!htbp]
 	\centering
