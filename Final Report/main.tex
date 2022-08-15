@@ -1001,7 +1001,7 @@ The training and validation losses of this model are depicted in figure \ref{all
 	\end{tabular}
 \end{table}
 
-Several hyperparameters, including the number of epochs, learning rate, number of neurons in each layer, and activate functions, are tuned sequentially to enhance the performance, and the result is depicted in \ref{tune}. Therefore, the complex model is trained by 300 epochs, the learning rate is 0.0001, the activate function is ReLU, and each layer consists of 256 neurons. 
+Several hyperparameters, including the number of epochs, learning rate, number of neurons in each layer, and activate functions, are tuned sequentially to enhance the performance, and the result is depicted in \ref{tune}. Therefore, the complex model is trained by 300 epochs, the learning rate is 0.0001, the activate function is ReLU, and each layer consists of 256 neurons. The metrics of this model are as follows, $MAE = 38202$, $MSE = 4754801560$, and $R^2 = 0.85$
 
 \begin{figure*}[!htbp]
 	\centering
@@ -1083,7 +1083,7 @@ Table \ref{metrics_basic_model} summarizes the metrics of all the models for pre
 		\hline
 		Basic Model (Outliers removed) & 35391 & 4580892828 & 0.87 \\
 		\hline
-		Complex Model & & & \\
+		Complex Model & 38202 & 4754801560 & 0.85 \\
 		\hline
 		Residual Network & 35607 & 4515004136 & 0.86 \\
 		\hline
@@ -1091,6 +1091,7 @@ Table \ref{metrics_basic_model} summarizes the metrics of all the models for pre
 \end{table}
 
 \subsection{Linear Regression: Predict Status of Transactions}
+\label{linear_regression_status}
 \subsubsection{Actual and Predicted Prices Included}
 The training and validation losses of the model are depicted in figure \ref{linear_regression_status_include_full}, and all the models can converge and the losses of the last three models are comparable. Therefore, they are utilized for evaluation, and the threshold for converting numerical values into status is set to 0.5. Figure \ref{cm_included} displays the confusion matrics of three models, and their metrics are listed in table \ref{metrics_linear_regression_status_included}.
 \\
@@ -1386,6 +1387,7 @@ Figure \ref{status_fewer} depicts the training and validation losses, where the 
 \end{figure}
 
 From the evaluation results, it is obvious that the overall performance has enhanced, but the issue of predicting the completed transactions still exists. The imbalanced dataset could be the cause of this problem. Although the WRS is applied during training, resulting in the balanced mini-batches, the \textit{Completed} class is the minority and is therefore insufficient for the model to extract its patterns. Consequently, a bias is considered to modify the sampling weight so that the number of completed transactions can be increased in each mini-batch which is anticipated to improve the accuracy of predictions. The attempted biases are 0.05, 0.1 and 0.15, with the corresponding losses shown in figures \ref{status_005}, \ref{status_01}, and \ref{status_015}. 
+\\
 
 \begin{figure*}[!htbp]
 	\centering
@@ -1570,8 +1572,35 @@ Based on the training process in \ref{basic_status_training_included}, this mode
 	\end{tabular}
 \end{table}
 
+\subsection{Ablation Study}
+Section \ref{linear_regression_status} demonstrates that the models should be trained with prices included and excluded to accurately predict the transaction status. As part of the ablation study, models without prices are trained, and other features, such as the number of various rooms, postcode are also tested so that the most significant attribute can be determined. The metrics of removing one of the features is shown in table 
+
+\begin{table}[H]
+	\centering
+	\caption{Metrics after removing one of the input features}
+	\label{ablation_status}
+	\begin{tabular}{| c | c | c | c | c | }
+		\hline
+		Feature & Accuracy & Recall & Precision & F1 Score \\
+		\hline
+		None & 0.8266 & 0.8614 & 0.8894 & 0.8752 \\
+		\hline
+		Postcode & 0.8211 & 0.8697 & 0.8682 & 0.8689 \\
+		\hline
+		Bedroom Number & 0.8144 & 0.8648 & 0.8634 & 0.8641 \\
+		\hline
+		Kitchen Number & 0.8211 & 0.8637 & 0.8764 & 0.8700 \\
+		\hline
+		Living Room Number & 0.8177 & 0.8596 & 0.8764 & 0.8679 \\
+		\hline
+	\end{tabular}
+\end{table}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion and Future Work}
+\section{Ethics}
+The project developed various ML models which strongly relay on datasets. The collection and usage of the property data may cause privacy issues for sellers, buyers and agents. 
+
 \section{Future Work}
 \subsection{Dataset}
 This project aims to develop a model to predict if a property can be sold across the UK. The distribution of the properties used for training is shown in figure \ref{uk_distribution}. A significant number of properties are located in England, and the data outside of England are located in Cardiff, Edinburgh, Glasgow, and Aberdeen. Therefore, the result will be unreliable if a property is not located in these areas, such as Belfast. In addition, the raw dataset contains approximately 35000 records, whereas a significant number of missing values lead to the dataset for training and testing containing less than 9000 records.
@@ -1590,7 +1619,7 @@ Furthermore, London is the largest city in the UK, with distinct infrastructure 
 \end{figure}
 
 \subsection{Training the Models}
-The hyperparameters were tuned sequentially when training the complex model for predicting prices (section \ref{complex_price}) due to the time limitation. A similar approach for tuning employs nested loops so that the optimal combination of hyperparameters can be determined, whereas its problem is that it requires significant time and hardware resources. Grid search is superior, which selects hyperparameters randomly and then trains the model. This method may not obtain the optimal combination of hyperparameters, but it is less expensive than the first approach \citep{RN38}. Bayesian optimization selects new hyperparameters based on the previous performance \citep{RN38}. It is regarded as the best method for tuning since the optimal combination can be obtained at the lowest cost. 
+The hyperparameters were tuned sequentially when training the complex model for predicting prices (section \ref{complex_price}) due to the time limitation. Although this approach is unlikely to obtain the optimal combination of hyperparameters, the performance can still be improved. A similar approach for tuning employs nested loops, whereas its problem is that it requires significant time and hardware resources. Grid search is superior, which selects hyperparameters randomly and then trains the model. This method may not obtain the optimal combination of hyperparameters, but it is less expensive than the first approach \citep{RN38}. Bayesian optimization selects new hyperparameters based on the previous performance \citep{RN38}. It is regarded as the best method for tuning since the optimal combination can be obtained at the lowest cost. 
 
 \subsection{Models}
 In this project, only neural networks were developed, and their performance was comparable to those created by \citet{RN37}. However, there are other available ML algorithms. \citet{RN17} stated that the random forest has the best performance in their study, whereas \citet{RN20} argued that XGBoost is the model with the highest accuracy instead of random forest. The models utilized in their research and the models reviewed in section \ref{model_review} should be attempted so that the accuracy of predicting the property transaction can be improved. 
