@@ -36,7 +36,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-Your abstract.
+The real estate market is one of the critical aspect of the economy, and its crisis has a wide range of influence. Therefore, an accurate and non-bias algorithm should be developed to predict the property prices and transaction status. In this project, various artificial neural networks are created for predicting prices. Then 
 \end{abstract}
 
 \cleardoublepage
@@ -463,7 +463,7 @@ The architecture of this model is identical to the model developed in section \r
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Testing \& Experimental Results}
-Comprehensive testing and analyzing were conducted throughout the implementation but it is documented in this separate chapter for the sake of illuatration. 
+Comprehensive testing and analyzing were conducted throughout the development but it is documented in this separate chapter for the sake of illuatration. 
 
 \section{Data Preprocessing}
 
@@ -1477,100 +1477,8 @@ Furthermore, when comparing the models with biases are 0 and 0.05, the correct p
 	\label{basic_status_final_layout}
 \end{figure}
 
-\subsection{Basic Model: Price Excluded}
-Based on the training process in \ref{basic_status_training_included}, this model is directly trained with biases of 0, 0.05, 0.1, and 0.15. The corresponding losses are depicted in figures \ref{basic_status_exclude_0} to \ref{basic_status_exclude_015}. Folds zero, one, zero, and three of each bias are selected for evaluation due to the low loss. Figure \ref{cm_exclude} and table \ref{metrics_exclude} illustrate the confusion matrices and metrics of each model trained with various biases. Apparently, adding bias to these models cannot improve the performance significantly, and the metrics are comparable.
 
-\begin{figure*}[!htbp]
-	\centering
-	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_exclude_fold_0}}
-	\hfill
-	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_exclude_fold_1}}
-	\hfill
-	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_exclude_fold_2}}
-	\hfil
-	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_exclude_fold_3}}
-	\hfil
-	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_exclude_fold_4}}
-	\caption{Training \& validation loss of basic model without prices (bias = 0)}
-	\label{basic_status_exclude_0}
-\end{figure*}
 
-\begin{figure*}[!htbp]
-	\centering
-	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_exclude_bias_005_fold_0}}
-	\hfill
-	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_exclude_bias_005_fold_1}}
-	\hfill
-	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_exclude_bias_005_fold_2}}
-	\hfil
-	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_exclude_bias_005_fold_3}}
-	\hfil
-	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_exclude_bias_005_fold_4}}
-	\caption{Training \& validation loss of basic model without prices (bias = 0.05)}
-	\label{basic_status_exclude_005}
-\end{figure*}
-
-\begin{figure*}[!htbp]
-	\centering
-	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_exclude_bias_01_fold_0}}
-	\hfill
-	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_exclude_bias_01_fold_1}}
-	\hfill
-	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_exclude_bias_01_fold_2}}
-	\hfil
-	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_exclude_bias_01_fold_3}}
-	\hfil
-	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_exclude_bias_01_fold_4}}
-	\caption{Training \& validation loss of basic model without prices (bias = 0.1)}
-	\label{basic_status_exclude_01}
-\end{figure*}
-
-\begin{figure*}[!htbp]
-	\centering
-	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_exclude_bias_015_fold_0}}
-	\hfill
-	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_exclude_bias_015_fold_1}}
-	\hfill
-	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_exclude_bias_015_fold_2}}
-	\hfil
-	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_exclude_bias_015_fold_3}}
-	\hfil
-	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_exclude_bias_015_fold_4}}
-	\caption{Training \& validation loss of basic model without prices (bias = 0.15)}
-	\label{basic_status_exclude_015}
-\end{figure*}
-
-\begin{figure*}[!htbp]
-	\centering
-	\subfigure[bias = 0]{\includegraphics[width=5cm]{cm_exclude_0}}
-	\hfill
-	\subfigure[bias = 0.05]{\includegraphics[width=5cm]{cm_exclude_005_0}}
-	\hfill
-	\subfigure[bias = 0.1]{\includegraphics[width=5cm]{cm_exclude_01_4}}
-	\hfil
-	\subfigure[bias = 0.15]{\includegraphics[width=5cm]{cm_exclude_015_4}}
-	\caption{Confusion matrices of model with various biases (without prices)}
-	\label{cm_exclude}
-\end{figure*}
-
-\begin{table}[!htbp]
-	\centering
-	\caption{Metrics of models with various biases (without price)}
-	\label{metrics_exclude}
-	\begin{tabular}{| c | c | c | c | c |}
-		\hline
-		Bias & Accuracy & Recall & Precision & F1 Score \\
-		\hline
-		0.00 & 0.8177 & 0.8421 & 0.9024 & 0.8712 \\
-		\hline
-		0.05 & 0.8133 & 0.8443 & 0.8910 & 0.8670 \\
-		\hline
-		0.10 & 0.8077 & 0.8389 & 0.8894 & 0.8634 \\
-		\hline
-		0.15 & 0.7955 & 0.8515 & 0.8487 & 0.8501 \\
-		\hline
-	\end{tabular}
-\end{table}
 
 \subsection{Ablation Study}
 Section \ref{linear_regression_status} demonstrates that the models should be trained with prices included and excluded to accurately predict the transaction status. As part of the ablation study, models without prices are trained, and other features, such as the number of various rooms, postcode are also tested so that the most significant attribute can be determined. The metrics of removing one of the features is shown in table 
@@ -1581,7 +1489,7 @@ Section \ref{linear_regression_status} demonstrates that the models should be tr
 	\label{ablation_status}
 	\begin{tabular}{| c | c | c | c | c | }
 		\hline
-		Feature & Accuracy & Recall & Precision & F1 Score \\
+		Removed Feature & Accuracy & Recall & Precision & F1 Score \\
 		\hline
 		None & 0.8266 & 0.8614 & 0.8894 & 0.8752 \\
 		\hline
@@ -1592,6 +1500,10 @@ Section \ref{linear_regression_status} demonstrates that the models should be tr
 		Kitchen Number & 0.8211 & 0.8637 & 0.8764 & 0.8700 \\
 		\hline
 		Living Room Number & 0.8177 & 0.8596 & 0.8764 & 0.8679 \\
+		\hline
+		Bathroom Number & 0.8244 & 0.8667 & 0.8780 & 0.8723 \\
+		\hline
+		Dining Room Number & 0.8155 & 0.8615 & 0.8699 & 0.8656 \\
 		\hline
 	\end{tabular}
 \end{table}

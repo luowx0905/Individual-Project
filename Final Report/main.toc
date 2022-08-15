@@ -74,12 +74,11 @@
 \contentsline {subsubsection}{Actual and Predicted Prices Excluded}{40}{section*.186}%
 \contentsline {subsection}{\numberline {4.2.8}Transfer-baesd Model: Predict Status}{41}{subsection.198}%
 \contentsline {subsection}{\numberline {4.2.9}Basic Model: Price Included}{42}{subsection.217}%
-\contentsline {subsection}{\numberline {4.2.10}Basic Model: Price Excluded}{53}{subsection.282}%
-\contentsline {subsection}{\numberline {4.2.11}Ablation Study}{53}{subsection.313}%
-\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{57}{chapter.315}%
-\contentsline {section}{\numberline {5.1}Ethics}{57}{section.316}%
-\contentsline {section}{\numberline {5.2}Future Work}{57}{section.317}%
-\contentsline {subsection}{\numberline {5.2.1}Dataset}{57}{subsection.318}%
-\contentsline {subsection}{\numberline {5.2.2}Training the Models}{59}{subsection.320}%
-\contentsline {subsection}{\numberline {5.2.3}Models}{59}{subsection.321}%
-\contentsline {section}{\numberline {5.3}Conclusion}{59}{section.322}%
+\contentsline {subsection}{\numberline {4.2.10}Ablation Study}{53}{subsection.282}%
+\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{54}{chapter.284}%
+\contentsline {section}{\numberline {5.1}Ethics}{54}{section.285}%
+\contentsline {section}{\numberline {5.2}Future Work}{54}{section.286}%
+\contentsline {subsection}{\numberline {5.2.1}Dataset}{54}{subsection.287}%
+\contentsline {subsection}{\numberline {5.2.2}Training the Models}{56}{subsection.289}%
+\contentsline {subsection}{\numberline {5.2.3}Models}{56}{subsection.290}%
+\contentsline {section}{\numberline {5.3}Conclusion}{56}{section.291}%
