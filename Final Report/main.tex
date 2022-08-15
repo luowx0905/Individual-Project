@@ -305,7 +305,7 @@ A class, \textit{\textbf{ExtractRooms}}, is developed to acquire and integrate t
 	\label{uml_extract_rooms}
 \end{figure}
 
-There are two essential member functions, the first is \textit{\textbf{get\_rooms}}, and its flow diagram is shown in figure \ref{extract_room_get_rooms} and the arguments are listed below. 
+There are two essential member functions, the first one is \textit{\textbf{get\_rooms}}, and its flow diagram is shown in figure \ref{extract_room_get_rooms} and the arguments are listed below. 
 \begin{enumerate}
 	\item args: It should be noted that this is a variable-length argument, which means that it can accept as many arguments as possible, and it is used to select room names from \textit{room\_set}. For instance, \textit{*args = [living, reception]} will select all names containing \textit{living} or \textit{reception}. 
 	\item operation: The argument determines the types of the final result and the valid inputs include \textit{sum}, \textit{mean}, \textit{split}, and \textit{number}. For example, if args is \textit{bedroom}, then the function can return the sum of bedroom areas, the average bedroom area, the area of each bedroom and the number of bedrooms. 
@@ -654,19 +654,20 @@ In the initial test, an exception can be thrown if an invalid feature is entered
 During preprocessing, both filling the mean value and removing outliers are attempted. The distributions of the prices after applying two methods are demonstrated in figures \ref{price_filled} and \ref{price_removed}. For filling the average value, it is apparent that the left-hand spike is diminished, meaning that there is no price of zero. A new peak in the middle suggests that the original distribution has been modified. If zero prices are removed, the peak on the left would also be reduced, and the distribution would remain unchanged. 
 \\
 
-Therefore, removing zero prices is applied to create input datasets for models as it retains the original distribution, whereas filling the mean value causes the data alternation. Consequently, the model will learn more from average, which results in poor performance. 
-
-\begin{figure}[h]
+\begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=5cm]{price_all_mean}
+	\includegraphics[height=4cm]{price_all_mean}
 	\caption{The distribution of prices with mean value filled}
 	\label{price_filled}
 \end{figure}
 
+Therefore, removing zero prices is applied to create input datasets for models as it retains the original distribution, whereas filling the mean value causes the data alternation. Consequently, the model will learn more from average, which results in poor performance. 
+
 \begin{figure*}[h]
 	\centering
-	\subfigure[Sale Prices]{\includegraphics[width=5cm]{price_sale_remove}\label{price_sale_remove}}
-	\subfigure[Rental Prices]{\includegraphics[width=5cm]{price_rental_remove}\label{price_rental_remove}}
+	\subfigure[Sale Prices]{\includegraphics[height=4cm]{price_sale_remove}\label{price_sale_remove}}
+	\hfil
+	\subfigure[Rental Prices]{\includegraphics[height=4cm]{price_rental_remove}\label{price_rental_remove}}
 	\caption{The distribution of prices with zero prices removed}
 	\label{price_removed}
 \end{figure*}
@@ -686,56 +687,6 @@ For general information, the first ten rows after preprocessing and their corres
 \end{figure*}
 
 \section{Model Construction}
-\subsection{Linear Regression: Predict Price}
-The training and validation losses of this model are depicted in figure \ref{linear_regression_fold_5}, and the model trained in fold two has been chosen for evaluation since it has the best performance. 
-\\
-\begin{figure*}[!htbp]
-	\centering
-	\subfigure[Fold 0]{\includegraphics[width=5cm]{linear_regression_fold_0}\label{linear_regression_fold_0}}
-	\hfill
-	\subfigure[Fold 1]{\includegraphics[width=5cm]{linear_regression_fold_1}\label{linear_regression_fold_1}}
-	\hfill
-	\subfigure[Fold 2]{\includegraphics[width=5cm]{linear_regression_fold_2}\label{linear_regression_fold_2}}
-	\hfil
-	\subfigure[Fold 3]{\includegraphics[width=5cm]{linear_regression_fold_3}\label{linear_regression_fold_3}}
-	\hfil
-	\subfigure[Fold 4]{\includegraphics[width=5cm]{linear_regression_fold_4}\label{linear_regression_fold_4}}
-	\caption{The training \& validation loss for different folds (linear regression model)}
-	\label{linear_regression_fold_5}
-\end{figure*}
-
-\begin{table}[!htbp]
-	\centering
-	\caption{Comparison between truth and model predictions}
-	\label{linear_regression_predictions}
-	\begin{tabular}{| c | c | c |}
-		\hline
-		Predicted Price & Price & Price Error  / \%\\ 
-		\hline
-		940 & 695 & 35.37 \\
-		\hline
-		4150 & 350000 & 98.81 \\
-		\hline
-		1790 & 130000 & 98.62 \\
-		\hline
-		-2101 & 475 & 542.46 \\
-		\hline
-		1829 & 105000 & 98.25 \\
-		\hline
-		3058 & 450000 & 99.32 \\
-		\hline
-		-4289 & 460 & 1032.47 \\
-		\hline
-		855 & 325000 & 99.74 \\
-		\hline
-		3255 & 585000 & 99.44 \\
-		\hline
-		1071 & 900 & 19.10 \\
-		\hline
-	\end{tabular}
-\end{table}
-
-The first ten predictions and the actual prices are displayed in table \ref{linear_regression_predictions}, and it is evident that there are significant differences between the predictions and the truth. Moreover, the model's metrics are as follows, $MAE = 179836$, $MSE = 66601086343$ and $R^2 = -0.9136$. These results demonstrate that a linear regression model cannot extract patterns from the dataset and that neural networks with multiple layers are compulsory.
 
 \subsection{Basic Model: Output Sale Status and Price}
 The training and validation losses against epochs for each fold are displayed in figure \ref{sale_fold_5}. For fold zero, the model is overfitting as the training loss is approximately the same after 60 epochs, whereas the validation loss is increasing. If the training stops earlier, then the performance of this model may be the best. For fold one, the model is underfitting as the validation loss keeps decreasing and its performance might be better if it is trained for more epochs. For the next two folds, the performance of the models are the best and should be selected for testing. The model trained from the last fold does not learn anything since both training and validation loss oscillate significantly. 
@@ -804,6 +755,57 @@ One of the possible causes of the error results are loss functions. The complete
 		\hline
 	\end{tabular}
 \end{table}
+
+\subsection{Linear Regression: Predict Price}
+The training and validation losses of this model are depicted in figure \ref{linear_regression_fold_5}, and the model trained in fold two has been chosen for evaluation since it has the best performance. 
+\\
+\begin{figure*}[!htbp]
+	\centering
+	\subfigure[Fold 0]{\includegraphics[width=5cm]{linear_regression_fold_0}\label{linear_regression_fold_0}}
+	\hfill
+	\subfigure[Fold 1]{\includegraphics[width=5cm]{linear_regression_fold_1}\label{linear_regression_fold_1}}
+	\hfill
+	\subfigure[Fold 2]{\includegraphics[width=5cm]{linear_regression_fold_2}\label{linear_regression_fold_2}}
+	\hfil
+	\subfigure[Fold 3]{\includegraphics[width=5cm]{linear_regression_fold_3}\label{linear_regression_fold_3}}
+	\hfil
+	\subfigure[Fold 4]{\includegraphics[width=5cm]{linear_regression_fold_4}\label{linear_regression_fold_4}}
+	\caption{The training \& validation loss for different folds (linear regression model)}
+	\label{linear_regression_fold_5}
+\end{figure*}
+
+\begin{table}[!htbp]
+	\centering
+	\caption{Comparison between truth and model predictions}
+	\label{linear_regression_predictions}
+	\begin{tabular}{| c | c | c |}
+		\hline
+		Predicted Price & Price & Price Error  / \%\\ 
+		\hline
+		940 & 695 & 35.37 \\
+		\hline
+		4150 & 350000 & 98.81 \\
+		\hline
+		1790 & 130000 & 98.62 \\
+		\hline
+		-2101 & 475 & 542.46 \\
+		\hline
+		1829 & 105000 & 98.25 \\
+		\hline
+		3058 & 450000 & 99.32 \\
+		\hline
+		-4289 & 460 & 1032.47 \\
+		\hline
+		855 & 325000 & 99.74 \\
+		\hline
+		3255 & 585000 & 99.44 \\
+		\hline
+		1071 & 900 & 19.10 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+The first ten predictions and the actual prices are displayed in table \ref{linear_regression_predictions}, and it is evident that there are significant differences between the predictions and the truth. Moreover, the model's metrics are as follows, $MAE = 179836$, $MSE = 66601086343$ and $R^2 = -0.9136$. These results demonstrate that a linear regression model cannot extract patterns from the dataset and that neural networks with multiple layers are compulsory.
 
 \subsection{Basic Model: Predicting Prices}
 Initially, the training \& validation losses of this model is displayed in figure \ref{all_full_epoch_1000}, and the model from fold one is selected for the evaluation because of its performance. The first ten predictions are shown in table \ref{first_model_predictions}, and the metrics of this model are as follows, $MAE = 36538$, $MSE = 4918700785$, and $R^2 = 0.85$. 
