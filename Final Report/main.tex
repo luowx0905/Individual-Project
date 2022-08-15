@@ -193,6 +193,42 @@ Most of the research focused on predicting the prices for real estate, and vario
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Implementation}
+
+\section{Methodology}
+\subsubsection{Data Preparation}
+The raw data should be preprocessed, and the steps are as follows. 
+\begin{enumerate}
+	\item Handling missing values: They must be handled appropriately before being passed to the model. The possible methods include removing missing values and replacing them with the default value.
+	\item Standardization: In real life, different features usually have different ranges, which will cause a problem in ML, which is that high magnitude features would have more weight than low magnitude features \citep{RN4}. One of the solutions is standardization, which could scale all the features to the same magnitude.
+	\item Feature encoding: ML models require numerical values, whereas the categorical features in the dataset do not satisfy this requirement. Therefore, these features should be converted into numerical values.
+\end{enumerate}
+
+The datasets created during preprocessing are split into training and testing sets, representing 90\% and 10\% of the total dataset, respectively. In the meantime, the datasets are also shuffled as they may contain intrinsic patterns.
+
+\subsubsection{Training models}
+Due to the limited training data for this project, cross validation is employed to train the model with different portions of training data. There are two model outputs, including prices and the status of transactions. The loss function for prices is mean squared error (MSE) as they are positive values. However, the status of transactions is either one or zero, hence its loss function is binary cross entropy (BCE). 
+\\
+
+The optimizer used for training is Adam, which could compute a learning rate for each parameter and has a low computing time. The learning rate is initially set to $1 \times 10^{-3}$ and would be updated if necessary.
+\\
+
+The performance is illustrated after cross validation by plotting training and validation losses against epoch. Based on these graphs, the model with the best performance can be selected for the evaluation phase. 
+
+\subsubsection{Evaluation}
+The model performance should be evaluated on unseen data. Otherwise, it would be useless. Various metrics are used to quantify the performance of the model in this project. 
+\\
+
+As the measurements for predicted prices, MSE, mean absolute error (MAE), and coefficient of determination ($R^2$) are applied.  The lower the MAE and MSE, the better the performance. $R^2$ values are typically between 0 to 1. A model with $R^2 = 0$ means the model cannot make accurate predictions, while $R^2 = 1$ indicates that the model can precisely predict the results. In rare instances, the $R^2$ can be negative, indicating that the model does not match the trend of the data, which is the worst performance. 
+\\
+
+The confusion matrix is initially obtained to access the predictions regarding the status of transactions. A confusion matrix summarizes the classification results, indicating where the model outputs wrong predictions and the types of errors. Based on the confusion matrix, various metrics are calculated, and they are shown as follows, 
+\begin{itemize}
+	\item \textbf{Accuracy}: It is the number of correct predictions divided by the total number of predictions. The best accuracy is one and zero is the worst. 
+	\item \textbf{Precision}: It is the number of correct positive predictions divided by the total number of positive predictions. High precision suggests that predictions on positive can be guaranteed.
+	\item \textbf{Recall}: The ratio of correct positive predictions to the total number of positive examples, and the high recall indicates that the positive class is correctly identified. 
+	\item \textbf{F1 Score}: This is a harmonic mean of both recall and precision which can be used to evaluate performance independently. 
+\end{itemize}
+
 \section{Data Source and Collection}
 The datasets used in this project are provided by EweMove, and transactions from 2018 to 2022 are included. There are 34591 records with 36 parameters describing each property after merging these datasets. Some parameters, such as postcodes, and room information, are independent variables that would be the model input. In contrast, the price and status of the transaction are dependent variables that serve as labels of supervised learning. The features that are used in this project are listed in table \ref{model_input_features}. 
 
@@ -353,34 +389,6 @@ After the information in HTML texts and categorical keywords are extracted, it i
 \end{figure}
 
 \section{Model Construction}
-
-\subsection{Development Steps}
-\subsubsection{Data Preparation}
-The datasets created during preprocessing are initially loaded. Then they are split into training and testing sets, which represent 80\% and 20\% of the total dataset, respectively. In the meantime, the datasets are also shuffled as they may contain intrinsic patterns.
-
-\subsubsection{Training models}
-Due to the limited training data for this project, cross validation is employed to train the model with different portions of training data. There are two model outputs, including prices and the status of transactions. The loss function for prices is mean squared error (MSE) as they are positive values. However, the status of transactions is either one or zero, hence its loss function is binary cross entropy (BCE). 
-\\
-
-The optimizer used for training is Adam, which could compute a learning rate for each parameter and has a low computing time. The learning rate is initially set to $1 \times 10^{-3}$ and would be updated if necessary.
-\\
-
-The performance is illustrated after cross validation by plotting training and validation losses against epoch. Based on these graphs, the model with the best performance can be selected for the evaluation phase. 
-
-\subsubsection{Evaluation}
-The model performance should be evaluated on unseen data. Otherwise, it would be useless. Various metrics are used to quantify the performance of the model in this project. 
-\\
-
-As the measurements for predicted prices, MSE, mean absolute error (MAE), and coefficient of determination ($R^2$) are applied.  The lower the MAE and MSE, the better the performance. $R^2$ values are typically between 0 to 1. A model with $R^2 = 0$ means the model cannot make accurate predictions, while $R^2 = 1$ indicates that the model can precisely predict the results. In rare instances, the $R^2$ can be negative, indicating that the model does not match the trend of the data, which is the worst performance. 
-\\
-
-The confusion matrix is initially obtained to access the predictions regarding the status of transactions. A confusion matrix summarizes the classification results, indicating where the model outputs wrong predictions and the types of errors. Based on the confusion matrix, various metrics are calculated, and they are shown as follows, 
-\begin{itemize}
-	\item \textbf{Accuracy}: It is the number of correct predictions divided by the total number of predictions. The best accuracy is one and zero is the worst. 
-	\item \textbf{Precision}: It is the number of correct positive predictions divided by the total number of positive predictions. High precision suggests that predictions on positive can be guaranteed.
-	\item \textbf{Recall}: The ratio of correct positive predictions to the total number of positive examples, and the high recall indicates that the positive class is correctly identified. 
-	\item \textbf{F1 Score}: This is a harmonic mean of both recall and precision which can be used to evaluate performance independently. 
-\end{itemize}
 
 \subsection{Linear Regression: Predict Price}
 \label{linear_regression_model_construction}

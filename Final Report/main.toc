@@ -29,56 +29,56 @@
 \contentsline {subsubsection}{Library Usage}{8}{section*.30}%
 \contentsline {section}{\numberline {2.3}Research Gap}{9}{section.31}%
 \contentsline {chapter}{\numberline {3}Implementation}{10}{chapter.32}%
-\contentsline {section}{\numberline {3.1}Data Source and Collection}{10}{section.33}%
-\contentsline {section}{\numberline {3.2}Data Preprocessing}{11}{section.35}%
-\contentsline {subsection}{\numberline {3.2.1}Handle Room Descriptions (HTML)}{11}{subsection.36}%
-\contentsline {subsubsection}{Acquire room name and dimension}{11}{section*.37}%
-\contentsline {subsubsection}{Generalize room information}{12}{section*.40}%
-\contentsline {subsection}{\numberline {3.2.2}Manipulate Categorical Keywords}{14}{subsection.46}%
-\contentsline {subsection}{\numberline {3.2.3}Manage Outliers}{15}{subsection.50}%
-\contentsline {subsection}{\numberline {3.2.4}Create Input Dataset}{15}{subsection.55}%
-\contentsline {subsubsection}{Feature Encoding}{15}{section*.56}%
-\contentsline {subsubsection}{Manage Missing Values}{15}{section*.57}%
-\contentsline {subsubsection}{Classy Approach}{16}{section*.59}%
-\contentsline {section}{\numberline {3.3}Model Construction}{17}{section.61}%
-\contentsline {subsection}{\numberline {3.3.1}Development Steps}{17}{subsection.62}%
-\contentsline {subsubsection}{Data Preparation}{17}{section*.63}%
-\contentsline {subsubsection}{Training models}{17}{section*.64}%
-\contentsline {subsubsection}{Evaluation}{17}{section*.65}%
-\contentsline {subsection}{\numberline {3.3.2}Linear Regression: Predict Price}{18}{subsection.66}%
-\contentsline {subsection}{\numberline {3.3.3}Basic Model: Output Sale Status and Price}{18}{subsection.67}%
-\contentsline {subsection}{\numberline {3.3.4}Basic Model: Predicting Prices}{18}{subsection.69}%
-\contentsline {subsection}{\numberline {3.3.5}Complex Model: Predicting Prices}{18}{subsection.71}%
-\contentsline {subsection}{\numberline {3.3.6}Residual Network: Predicting Prices}{20}{subsection.72}%
-\contentsline {subsection}{\numberline {3.3.7}Linear Regression: Predict Status of Transactions}{20}{subsection.76}%
-\contentsline {subsection}{\numberline {3.3.8}Transfer-baesd Model: Predict Status}{22}{subsection.78}%
-\contentsline {subsection}{\numberline {3.3.9}Basic Model: Price Included}{23}{subsection.80}%
-\contentsline {subsection}{\numberline {3.3.10}Basic Model: Price Excluded}{23}{subsection.82}%
-\contentsline {chapter}{\numberline {4}Testing \& Experimental Results}{24}{chapter.83}%
-\contentsline {section}{\numberline {4.1}Data Preprocessing}{24}{section.84}%
-\contentsline {subsection}{\numberline {4.1.1}Handle Room Descriptions (HTML)}{24}{subsection.85}%
-\contentsline {subsubsection}{Acquire room name and dimension}{24}{section*.86}%
-\contentsline {subsubsection}{Generalize room information}{26}{section*.92}%
-\contentsline {subsection}{\numberline {4.1.2}Manipulate Categorical Keywords}{26}{subsection.99}%
-\contentsline {subsection}{\numberline {4.1.3}Manage Outliers}{27}{subsection.101}%
-\contentsline {subsection}{\numberline {4.1.4}Create Input Dataset}{27}{subsection.106}%
-\contentsline {section}{\numberline {4.2}Model Construction}{28}{section.110}%
-\contentsline {subsection}{\numberline {4.2.1}Linear Regression: Predict Price}{28}{subsection.111}%
-\contentsline {subsection}{\numberline {4.2.2}Basic Model: Output Sale Status and Price}{30}{subsection.119}%
-\contentsline {subsection}{\numberline {4.2.3}Basic Model: Predicting Prices}{32}{subsection.128}%
-\contentsline {subsection}{\numberline {4.2.4}Complex Model: Predicting Prices}{35}{subsection.150}%
-\contentsline {subsection}{\numberline {4.2.5}Residual Network: Predicting Prices}{37}{subsection.163}%
-\contentsline {subsection}{\numberline {4.2.6}Comparing models for predicting prices}{38}{subsection.171}%
-\contentsline {subsection}{\numberline {4.2.7}Linear Regression: Predict Status of Transactions}{38}{subsection.173}%
-\contentsline {subsubsection}{Actual and Predicted Prices Included}{38}{section*.174}%
-\contentsline {subsubsection}{Actual and Predicted Prices Excluded}{40}{section*.186}%
-\contentsline {subsection}{\numberline {4.2.8}Transfer-baesd Model: Predict Status}{41}{subsection.198}%
-\contentsline {subsection}{\numberline {4.2.9}Basic Model: Price Included}{42}{subsection.217}%
-\contentsline {subsection}{\numberline {4.2.10}Ablation Study}{53}{subsection.282}%
-\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{54}{chapter.284}%
-\contentsline {section}{\numberline {5.1}Ethics}{54}{section.285}%
-\contentsline {section}{\numberline {5.2}Future Work}{54}{section.286}%
-\contentsline {subsection}{\numberline {5.2.1}Dataset}{54}{subsection.287}%
-\contentsline {subsection}{\numberline {5.2.2}Training the Models}{56}{subsection.289}%
-\contentsline {subsection}{\numberline {5.2.3}Models}{56}{subsection.290}%
-\contentsline {section}{\numberline {5.3}Conclusion}{56}{section.291}%
+\contentsline {section}{\numberline {3.1}Methodology}{10}{section.33}%
+\contentsline {subsubsection}{Data Preparation}{10}{section*.34}%
+\contentsline {subsubsection}{Training models}{10}{section*.38}%
+\contentsline {subsubsection}{Evaluation}{11}{section*.39}%
+\contentsline {section}{\numberline {3.2}Data Source and Collection}{11}{section.40}%
+\contentsline {section}{\numberline {3.3}Data Preprocessing}{12}{section.42}%
+\contentsline {subsection}{\numberline {3.3.1}Handle Room Descriptions (HTML)}{12}{subsection.43}%
+\contentsline {subsubsection}{Acquire room name and dimension}{12}{section*.44}%
+\contentsline {subsubsection}{Generalize room information}{13}{section*.47}%
+\contentsline {subsection}{\numberline {3.3.2}Manipulate Categorical Keywords}{15}{subsection.53}%
+\contentsline {subsection}{\numberline {3.3.3}Manage Outliers}{15}{subsection.57}%
+\contentsline {subsection}{\numberline {3.3.4}Create Input Dataset}{16}{subsection.62}%
+\contentsline {subsubsection}{Feature Encoding}{16}{section*.63}%
+\contentsline {subsubsection}{Manage Missing Values}{16}{section*.64}%
+\contentsline {subsubsection}{Classy Approach}{17}{section*.66}%
+\contentsline {section}{\numberline {3.4}Model Construction}{17}{section.68}%
+\contentsline {subsection}{\numberline {3.4.1}Linear Regression: Predict Price}{17}{subsection.69}%
+\contentsline {subsection}{\numberline {3.4.2}Basic Model: Output Sale Status and Price}{18}{subsection.70}%
+\contentsline {subsection}{\numberline {3.4.3}Basic Model: Predicting Prices}{18}{subsection.72}%
+\contentsline {subsection}{\numberline {3.4.4}Complex Model: Predicting Prices}{19}{subsection.74}%
+\contentsline {subsection}{\numberline {3.4.5}Residual Network: Predicting Prices}{19}{subsection.75}%
+\contentsline {subsection}{\numberline {3.4.6}Linear Regression: Predict Status of Transactions}{19}{subsection.79}%
+\contentsline {subsection}{\numberline {3.4.7}Transfer-baesd Model: Predict Status}{21}{subsection.81}%
+\contentsline {subsection}{\numberline {3.4.8}Basic Model: Price Included}{23}{subsection.83}%
+\contentsline {subsection}{\numberline {3.4.9}Basic Model: Price Excluded}{23}{subsection.85}%
+\contentsline {chapter}{\numberline {4}Testing \& Experimental Results}{24}{chapter.86}%
+\contentsline {section}{\numberline {4.1}Data Preprocessing}{24}{section.87}%
+\contentsline {subsection}{\numberline {4.1.1}Handle Room Descriptions (HTML)}{24}{subsection.88}%
+\contentsline {subsubsection}{Acquire room name and dimension}{24}{section*.89}%
+\contentsline {subsubsection}{Generalize room information}{26}{section*.95}%
+\contentsline {subsection}{\numberline {4.1.2}Manipulate Categorical Keywords}{26}{subsection.102}%
+\contentsline {subsection}{\numberline {4.1.3}Manage Outliers}{27}{subsection.104}%
+\contentsline {subsection}{\numberline {4.1.4}Create Input Dataset}{27}{subsection.109}%
+\contentsline {section}{\numberline {4.2}Model Construction}{28}{section.113}%
+\contentsline {subsection}{\numberline {4.2.1}Linear Regression: Predict Price}{28}{subsection.114}%
+\contentsline {subsection}{\numberline {4.2.2}Basic Model: Output Sale Status and Price}{30}{subsection.122}%
+\contentsline {subsection}{\numberline {4.2.3}Basic Model: Predicting Prices}{32}{subsection.131}%
+\contentsline {subsection}{\numberline {4.2.4}Complex Model: Predicting Prices}{35}{subsection.153}%
+\contentsline {subsection}{\numberline {4.2.5}Residual Network: Predicting Prices}{37}{subsection.166}%
+\contentsline {subsection}{\numberline {4.2.6}Comparing models for predicting prices}{38}{subsection.174}%
+\contentsline {subsection}{\numberline {4.2.7}Linear Regression: Predict Status of Transactions}{38}{subsection.176}%
+\contentsline {subsubsection}{Actual and Predicted Prices Included}{38}{section*.177}%
+\contentsline {subsubsection}{Actual and Predicted Prices Excluded}{40}{section*.189}%
+\contentsline {subsection}{\numberline {4.2.8}Transfer-baesd Model: Predict Status}{41}{subsection.201}%
+\contentsline {subsection}{\numberline {4.2.9}Basic Model: Price Included}{42}{subsection.220}%
+\contentsline {subsection}{\numberline {4.2.10}Ablation Study}{53}{subsection.285}%
+\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{54}{chapter.287}%
+\contentsline {section}{\numberline {5.1}Ethics}{54}{section.288}%
+\contentsline {section}{\numberline {5.2}Future Work}{54}{section.289}%
+\contentsline {subsection}{\numberline {5.2.1}Dataset}{54}{subsection.290}%
+\contentsline {subsection}{\numberline {5.2.2}Training the Models}{56}{subsection.292}%
+\contentsline {subsection}{\numberline {5.2.3}Models}{56}{subsection.293}%
+\contentsline {section}{\numberline {5.3}Conclusion}{56}{section.294}%
