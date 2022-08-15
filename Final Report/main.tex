@@ -1197,7 +1197,7 @@ In table \ref{metrics_linear_regression_status_excluded}, the recall is the high
 \end{table}
 
 \subsection{Transfer-baesd Model: Predict Status}
-Figure \ref{transfer_based_status} illustrates the training and validation losses. The model in fold three is selected for the evaluation, and predictions are completed regardless of the actual status. This error may be caused by the imbalanced dataset since there are 3088 complete transactions, whereas more than twice as many incomplete transactions. 
+Figure \ref{transfer_based_status} illustrates the training and validation losses. The model in fold three is selected for the evaluation, and predictions are \textit{completed} regardless of the actual status. This error may be caused by the imbalanced dataset since there are 3088 complete transactions, whereas more than twice as many incomplete transactions. 
 
 \begin{figure*}[!htbp]
 	\centering
@@ -1271,7 +1271,7 @@ The training and validation losses are displayed in figure \ref{basic_status}. E
 	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_basic_no_bs_dropout_3}}
 	\hfil
 	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_basic_no_bs_dropout_4}}
-	\caption{Training \& validation loss of basic model}
+	\caption{Training \& validation loss of basic model for predicting status (with prices)}
 	\label{basic_status}
 \end{figure*}
 
@@ -1475,16 +1475,16 @@ Folds three, two, and four are selected for evaluation when bias is 0.05, 0.1, a
 \end{table}
 
 Furthermore, when comparing the models with biases are 0 and 0.05, the correct prediction of the class \textit{Completed} increases from 57\% to 60\%, but the accuracy for the \textit{Not Completed} drops from 95\% to 91\%, indicating that a bias of 0.05 is not worthwhile. Using the same approach when biases are 0 and 0.15, the corrected predicted \textit{Completed} class increases by 20\%, while the precision and the overall performance decline significantly. When comparing models with biases of 0 and 0.1, the correct prediction of the \textit{Completed} transactions increases by more than 10\%, and a decrease in the overall performance and precision can be acceptable. 
+\\
+
+After tuning hyperparameters and modifying the architecture, the final layout of the basic model for predicting transaction status is demonstrated in figure \ref{basic_status_final_layout}. 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[height=\textheight]{basic_status_final_layout}
-	\caption{The layout of the basic model for status (dropout and BN included)}
+	\caption{The final layout of the basic model for status (with prices)}
 	\label{basic_status_final_layout}
 \end{figure}
-
-
-
 
 \subsection{Ablation Study}
 Section \ref{linear_regression_status} demonstrates that the models should be trained with prices included and excluded to accurately predict the transaction status. As part of the ablation study, models without prices are trained, and other features, such as the number of various rooms, postcode are also tested so that the most significant attribute can be determined. The metrics of removing one of the features is shown in table 
