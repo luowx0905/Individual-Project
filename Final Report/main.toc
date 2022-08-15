@@ -38,20 +38,20 @@
 \contentsline {subsection}{\numberline {3.3.1}Handle Room Descriptions (HTML)}{12}{subsection.43}%
 \contentsline {subsubsection}{Acquire room name and dimension}{12}{section*.44}%
 \contentsline {subsubsection}{Generalize room information}{13}{section*.47}%
-\contentsline {subsection}{\numberline {3.3.2}Manipulate Categorical Keywords}{15}{subsection.53}%
-\contentsline {subsection}{\numberline {3.3.3}Manage Outliers}{15}{subsection.57}%
+\contentsline {subsection}{\numberline {3.3.2}Manipulate Categorical Keywords}{14}{subsection.53}%
+\contentsline {subsection}{\numberline {3.3.3}Manage Outliers}{16}{subsection.57}%
 \contentsline {subsection}{\numberline {3.3.4}Create Input Dataset}{16}{subsection.62}%
 \contentsline {subsubsection}{Feature Encoding}{16}{section*.63}%
 \contentsline {subsubsection}{Manage Missing Values}{16}{section*.64}%
-\contentsline {subsubsection}{Classy Approach}{17}{section*.66}%
+\contentsline {subsubsection}{Classy Approach}{16}{section*.66}%
 \contentsline {section}{\numberline {3.4}Model Construction}{17}{section.68}%
 \contentsline {subsection}{\numberline {3.4.1}Linear Regression: Predict Price}{17}{subsection.69}%
 \contentsline {subsection}{\numberline {3.4.2}Basic Model: Output Sale Status and Price}{18}{subsection.70}%
 \contentsline {subsection}{\numberline {3.4.3}Basic Model: Predicting Prices}{18}{subsection.72}%
-\contentsline {subsection}{\numberline {3.4.4}Complex Model: Predicting Prices}{19}{subsection.74}%
+\contentsline {subsection}{\numberline {3.4.4}Complex Model: Predicting Prices}{18}{subsection.74}%
 \contentsline {subsection}{\numberline {3.4.5}Residual Network: Predicting Prices}{19}{subsection.75}%
 \contentsline {subsection}{\numberline {3.4.6}Linear Regression: Predict Status of Transactions}{19}{subsection.79}%
-\contentsline {subsection}{\numberline {3.4.7}Transfer-baesd Model: Predict Status}{21}{subsection.81}%
+\contentsline {subsection}{\numberline {3.4.7}Transfer-baesd Model: Predict Status}{22}{subsection.81}%
 \contentsline {subsection}{\numberline {3.4.8}Basic Model: Price Included}{23}{subsection.83}%
 \contentsline {subsection}{\numberline {3.4.9}Basic Model: Price Excluded}{23}{subsection.85}%
 \contentsline {chapter}{\numberline {4}Testing \& Experimental Results}{24}{chapter.86}%

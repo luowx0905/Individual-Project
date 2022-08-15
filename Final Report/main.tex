@@ -232,7 +232,7 @@ The confusion matrix is initially obtained to access the predictions regarding t
 \section{Data Source and Collection}
 The datasets used in this project are provided by EweMove, and transactions from 2018 to 2022 are included. There are 34591 records with 36 parameters describing each property after merging these datasets. Some parameters, such as postcodes, and room information, are independent variables that would be the model input. In contrast, the price and status of the transaction are dependent variables that serve as labels of supervised learning. The features that are used in this project are listed in table \ref{model_input_features}. 
 
-\begin{table}[!htbp]
+\begin{table}[H]
 	\centering
 	\caption{The features used to train the model}
 	\label{model_input_features}
@@ -274,7 +274,7 @@ The datasets used in this project are provided by EweMove, and transactions from
 \subsection{Handle Room Descriptions (HTML)}
 \subsubsection{Acquire room name and dimension}
 The structure of the HTML texts containing the room information in a property is shown in figure \ref{html_structure}. The rooms are separated by tag \textit{$<$li$>$}, and the room name and its dimension are denoted by \textit{$<$strong$>$} and \textit{$<$i$>$} tags, respectively. Therefore, a function (\textit{\textbf{EweMove\_Description\_S3\_Rooms}}) is implemented to split the HTML texts by utilizing \textit{Beautiful soup}, and its flowchart is shown in figure \ref{html_room_info}.
-\begin{figure}[!htbp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{html_structure}
 	\caption{The layout of HTML texts}
@@ -305,24 +305,21 @@ A class, \textit{\textbf{ExtractRooms}}, is developed to acquire and integrate t
 	\label{uml_extract_rooms}
 \end{figure}
 
-Key member functions
-\begin{itemize}
-	\item get\_rooms \\
-	The flow diagram of this method is shown in figure \ref{extract_room_get_rooms} and the arguments are listed below.
-	\begin{enumerate}
-		\item args: It should be noted that this is a variable-length argument, which means that it can accept as many arguments as possible, and it is used to select room names from \textit{room\_set}. For instance, \textit{*args = [living, reception]} will select all names containing \textit{living} or \textit{reception}. 
-		\item operation: The argument determines the types of the final result and the valid inputs include \textit{sum}, \textit{mean}, \textit{split}, and \textit{number}. For example, if args is \textit{bedroom}, then the function can return the sum of bedroom areas, the average bedroom area, the area of each bedroom and the number of bedrooms. 
-		\item handle\_na: This parameter specifies how to manage missing values, either by ignoring them or by filling the mean value if the input is \textit{None} or \textit{mean}, respectively. 
-	\end{enumerate} 
-	\begin{figure}[!htbp]
-		\centering
-		\includegraphics[height=11cm]{extract_room_get_rooms}
-		\caption{Flowchart of \textit{get\_rooms}}
-		\label{extract_room_get_rooms}
-	\end{figure}
-	\item get\_rest\_room: \\
-	This method is identical to \textit{\textbf{get\_room}} with two exceptions. The parameter \textit{\textbf{*args}} is used to disgard the room names containing the keywords, and only the number and the total areas of other rooms are returned. 
-\end{itemize}
+There are two essential member functions, the first is \textit{\textbf{get\_rooms}}, and its flow diagram is shown in figure \ref{extract_room_get_rooms} and the arguments are listed below. 
+\begin{enumerate}
+	\item args: It should be noted that this is a variable-length argument, which means that it can accept as many arguments as possible, and it is used to select room names from \textit{room\_set}. For instance, \textit{*args = [living, reception]} will select all names containing \textit{living} or \textit{reception}. 
+	\item operation: The argument determines the types of the final result and the valid inputs include \textit{sum}, \textit{mean}, \textit{split}, and \textit{number}. For example, if args is \textit{bedroom}, then the function can return the sum of bedroom areas, the average bedroom area, the area of each bedroom and the number of bedrooms. 
+	\item handle\_na: This parameter specifies how to manage missing values, either by ignoring them or by filling the mean value if the input is \textit{None} or \textit{mean}, respectively. 
+\end{enumerate} 
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=\linewidth]{extract_room_get_rooms}
+	\caption{Flowchart of \textit{get\_rooms}}
+	\label{extract_room_get_rooms}
+\end{figure}
+
+The second member function is \textit{\textbf{get\_rest\_room}}. It is identical to \textit{get\_room} with two exceptions. The parameter \textit{\textbf{*args}} is used to disgard the room names containing the keywords, and only the number and the total areas of other rooms are returned. 
 
 \subsection{Manipulate Categorical Keywords}
 In the dataset, four features are characterized by categorical keywords, including parking, heating, accessibility, and outdoor spaces. Figure \ref{parking_dataset} is a snippet of the parking dataset that is used as an example to illustrate the manipulation of the keywords. The first three rows indicate that there is a parking space for the first property, which is \textbf{allocated} \textbf{off-street} parking for \textbf{residents}, the second has none, and the third property has one \textbf{on-street} parking space. This principle applies to other rows as well. In this situation, feature encoding cannot be applied since there are multiple columns of keywords describing a feature, and the order and quantity of the keywords have no effect.
