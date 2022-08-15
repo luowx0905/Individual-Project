@@ -66,7 +66,7 @@
 \contentsline {subsection}{\numberline {4.2.2}Linear Regression: Predict Price}{30}{subsection.122}%
 \contentsline {subsection}{\numberline {4.2.3}Basic Model: Predicting Prices}{32}{subsection.130}%
 \contentsline {subsection}{\numberline {4.2.4}Complex Model: Predicting Prices}{35}{subsection.152}%
-\contentsline {subsection}{\numberline {4.2.5}Residual Network: Predicting Prices}{36}{subsection.165}%
+\contentsline {subsection}{\numberline {4.2.5}Residual Network: Predicting Prices}{37}{subsection.165}%
 \contentsline {subsection}{\numberline {4.2.6}Comparing models for predicting prices}{38}{subsection.173}%
 \contentsline {subsection}{\numberline {4.2.7}Linear Regression: Predict Status of Transactions}{38}{subsection.175}%
 \contentsline {subsubsection}{Actual and Predicted Prices Included}{38}{section*.176}%

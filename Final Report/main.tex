@@ -718,7 +718,7 @@ Figure \ref{confusion_matrix_basic_model} illustrates the confusion matrix of pr
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=10cm]{confusion_matrix_basic_model}
+	\includegraphics[width=9cm]{confusion_matrix_basic_model}
 	\caption{The confusion matrix of the basic model}
 	\label{confusion_matrix_basic_model}
 \end{figure}
@@ -757,7 +757,7 @@ One of the possible causes of the error results are loss functions. The complete
 \end{table}
 
 \subsection{Linear Regression: Predict Price}
-The training and validation losses of this model are depicted in figure \ref{linear_regression_fold_5}, and the model trained in fold two has been chosen for evaluation since it has the best performance. 
+The training and validation losses of this model are depicted in figure \ref{linear_regression_fold_5}, and the model trained in fold two has been chosen for evaluation since it has the lowest validation loss. 
 \\
 \begin{figure*}[!htbp]
 	\centering
@@ -805,7 +805,7 @@ The training and validation losses of this model are depicted in figure \ref{lin
 	\end{tabular}
 \end{table}
 
-The first ten predictions and the actual prices are displayed in table \ref{linear_regression_predictions}, and it is evident that there are significant differences between the predictions and the truth. Moreover, the model's metrics are as follows, $MAE = 179836$, $MSE = 66601086343$ and $R^2 = -0.9136$. These results demonstrate that a linear regression model cannot extract patterns from the dataset and that neural networks with multiple layers are compulsory.
+The first ten predictions and the actual prices are displayed in table \ref{linear_regression_predictions}, and it is evident that there are significant differences between the predictions and the truth. Moreover, the model's metrics are as follows, $MAE = 179836$, $MSE = 66601086343$ and $R^2 = -0.91$. These results demonstrate that a linear regression model cannot extract patterns from the dataset and that neural networks with multiple layers are compulsory.
 
 \subsection{Basic Model: Predicting Prices}
 Initially, the training \& validation losses of this model is displayed in figure \ref{all_full_epoch_1000}, and the model from fold one is selected for the evaluation because of its performance. The first ten predictions are shown in table \ref{first_model_predictions}, and the metrics of this model are as follows, $MAE = 36538$, $MSE = 4918700785$, and $R^2 = 0.85$. 
@@ -821,7 +821,7 @@ Initially, the training \& validation losses of this model is displayed in figur
 	\subfigure[Fold 3]{\includegraphics[width=5cm]{all_full_epoch_1000_fold_3}}
 	\hfil
 	\subfigure[Fold 4]{\includegraphics[width=5cm]{all_full_epoch_1000_fold_4}}
-	\caption{Training \& validation loss (Model for predicting prices)}
+	\caption{Training \& validation loss of basic model for predicting prices}
 	\label{all_full_epoch_1000}
 \end{figure*}
 
