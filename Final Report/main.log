@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  16 AUG 2022 16:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  16 AUG 2022 17:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1993,14 +1993,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]) [58]
 (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 19D92A35C0441BEB37A20D38C1A288D8;10939.
+(rerunfilecheck)             Checksum: 61847EAE9AEED8EADA5A07C8F56DE62A;10965.
 Package rerunfilecheck Info: File `main.brf' has not changed.
 (rerunfilecheck)             Checksum: 9E686B72220CD4B705A76C7A2C17E976;1411.
  ) 
 Here is how much of TeX's memory you used:
  15583 strings out of 478268
  293839 string characters out of 5846347
- 536969 words of memory out of 5000000
+ 536970 words of memory out of 5000000
  33176 multiletter control sequences out of 15000+600000
  504551 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2015,7 +2015,7 @@ e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (65 pages, 9210916 bytes).
+Output written on main.pdf (65 pages, 9210728 bytes).
 PDF statistics:
  1371 PDF objects out of 1440 (max. 8388607)
  975 compressed objects within 10 object streams
