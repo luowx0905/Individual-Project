@@ -710,7 +710,7 @@ The training and validation losses against epochs for each fold are displayed in
 Based on the performance plot, the model trained in fold three is selected. The first ten predictions and true values are shown in table \ref{first_model_predictions}. It is evident that the model only predict one for status regardless of the truth values, whereas the predicted prices are better.  
 \\
 
-The metrics for price prediction are as follows, $MAE = 57527$, $MSE = 7559964776$ and $R^2 = 0.54$. Comparing this model to the linear regression model demonstrates that the neural network is able to extract patterns from the dataset, resulting in superior performance. 
+The metrics for price prediction are as follows, $MSE = 7559964776$ and $R^2 = 0.54$. Comparing this model to the linear regression model demonstrates that the neural network is able to extract patterns from the dataset, resulting in superior performance. 
 \\
 
 Figure \ref{confusion_matrix_basic_model} illustrates the confusion matrix of predicting completeness, from which the accuracy, precision, recall, and F1 score are calculated to be 0.638, 0.638, 1, and 0.78, respectively. 
@@ -805,10 +805,10 @@ The training and validation losses of this model are depicted in figure \ref{lin
 	\end{tabular}
 \end{table}
 
-The first ten predictions and the actual prices are displayed in table \ref{linear_regression_predictions}, and it is evident that there are significant differences between the predictions and the truth. Moreover, the model's metrics are as follows, $MAE = 179836$, $MSE = 66601086343$ and $R^2 = -0.91$. These results demonstrate that a linear regression model cannot extract patterns from the dataset and that neural networks with multiple layers are compulsory.
+The first ten predictions and the actual prices are displayed in table \ref{linear_regression_predictions}, and it is evident that there are significant differences between the predictions and the truth. Moreover, the model's metrics are as follows, $MSE = 66601086343$ and $R^2 = -0.91$. These results demonstrate that a linear regression model cannot extract patterns from the dataset and that neural networks with multiple layers are compulsory.
 
 \subsection{Basic Model: Predicting Prices}
-Initially, the training \& validation losses of this model is displayed in figure \ref{all_full_epoch_1000}, and the model from fold one is selected for the evaluation because of its performance. The first ten predictions are shown in table \ref{first_model_predictions}, and the metrics of this model are as follows, $MAE = 36538$, $MSE = 4918700785$, and $R^2 = 0.85$. 
+Initially, the training \& validation losses of this model is displayed in figure \ref{all_full_epoch_1000}, and the model from fold one is selected for the evaluation because of its performance. The first ten predictions are shown in table \ref{first_model_predictions}, and the metrics of this model are as follows, $MSE = 4918700785$, and $R^2 = 0.85$. 
 
 \begin{figure*}[!htbp]
 	\centering
@@ -859,7 +859,7 @@ Initially, the training \& validation losses of this model is displayed in figur
  It is evident from table \ref{basic_model_prediction_price} that the rental prices which are around few hundreds are all predicted to be zero, whereas the error for some sale prices can be acceptable. This could be caused by the imbalanced dataset, which contains twice as many sale data as rental data. Therefore, the weighted random sampler (WRS), which can ensure that the number of distinct classes in a mini-batch are approximately the same, is utilized to address the issue .
  \\
  
-Figure \ref{all_full_epoch_1000_ws} illustrates the training \& validation losses after applying WRS. Base on these figures, the model trained in fold two is selected for the evaluation, and the first ten predicted prices are displayed in table \ref{basic_model_prediction_price_ws}. The metrics of this model are $MAE = 34099$, $MSE = 4635616774$, and $R^2 = 0.86$. 
+Figure \ref{all_full_epoch_1000_ws} illustrates the training \& validation losses after applying WRS. Base on these figures, the model trained in fold two is selected for the evaluation, and the first ten predicted prices are displayed in table \ref{basic_model_prediction_price_ws}. The metrics of this model are $MSE = 4635616774$, and $R^2 = 0.86$. 
 
 \begin{figure*}[!htbp]
 	\centering
@@ -910,7 +910,7 @@ Figure \ref{all_full_epoch_1000_ws} illustrates the training \& validation losse
 The predicted rental prices in table \ref{basic_model_prediction_price_ws} are not zero, but it should be noted that one of the actual prices is an outlier which has the potential to impact the performance significantly. Therefore, all the outliers (actual prices less than 100) are removed from the dataset, and the model is retrained.
 \\
 
-Figure \ref{all_full_epoch_1000_outlier_removed} depicts the training and validation losses after removing the outliers, and the model trained on fold one is chosen for evaluation based on its performance. Some actual and predicted prices are displayed in table \ref{basic_model_prediction_price_outlier_removed}. This model has following metrics, $MAE = 35391$, $MSE = 4580892828$, and $R^2 = 0.87$. 
+Figure \ref{all_full_epoch_1000_outlier_removed} depicts the training and validation losses after removing the outliers, and the model trained on fold one is chosen for evaluation based on its performance. Some actual and predicted prices are displayed in table \ref{basic_model_prediction_price_outlier_removed}. This model has following metrics, $MSE = 4580892828$, and $R^2 = 0.87$. 
 \begin{figure*}[!htbp]
 	\centering
 	\subfigure[Fold 0]{\includegraphics[width=5cm]{all_removed_weighted_sampler_full_epoch_1000_fold_0}}
@@ -959,7 +959,7 @@ Figure \ref{all_full_epoch_1000_outlier_removed} depicts the training and valida
 
 \subsection{Complex Model: Predicting Prices}
 \label{complex_price}
-The training and validation losses of this model are depicted in figure \ref{all_complex_full_epoch_1000}. The predictions made by the model in fold two are displayed in table \ref{complex_model_prediction_price}, along with its metrics, $MAE = 193166$, $MSE = 70788722849$, and $R^2 = -1.11$. Clearly, the complex model is not learning, and this might be caused by error hyperparameters. Therefore, the model is tuned so that its performance could be improved. 
+The training and validation losses of this model are depicted in figure \ref{all_complex_full_epoch_1000}. The predictions made by the model in fold two are displayed in table \ref{complex_model_prediction_price}, along with its metrics, $MSE = 70788722849$, and $R^2 = -1.11$. Clearly, the complex model is not learning, and this might be caused by error hyperparameters. Therefore, the model is tuned so that its performance could be improved. 
 \\
 \begin{figure*}[!htbp]
 	\centering
@@ -1007,7 +1007,7 @@ The training and validation losses of this model are depicted in figure \ref{all
 	\end{tabular}
 \end{table}
 
-Several hyperparameters, including the number of epochs, learning rate, number of neurons in each layer, and activate functions, are tuned sequentially to enhance the performance, and the result is depicted in \ref{tune}. Therefore, the complex model is trained by 300 epochs, the learning rate is 0.0001, the activate function is ReLU, and each layer consists of 256 neurons. The metrics of this model are as follows, $MAE = 38202$, $MSE = 4754801560$, and $R^2 = 0.85$
+Several hyperparameters, including the number of epochs, learning rate, number of neurons in each layer, and activate functions, are tuned sequentially to enhance the performance, and the result is depicted in \ref{tune}. Therefore, the complex model is trained by 300 epochs, the learning rate is 0.0001, the activate function is ReLU, and each layer consists of 256 neurons. The metrics of this model are as follows, $MSE = 4754801560$, and $R^2 = 0.85$
 
 \begin{figure*}[!htbp]
 	\centering
@@ -1022,7 +1022,7 @@ Several hyperparameters, including the number of epochs, learning rate, number o
 \end{figure*}
 
 \subsection{Residual Network: Predicting Prices}
-Figure \ref{all_resnet_full_epoch_1000} illustrates the training and validation losses for residual networks, and the model from fold one is selected for evaluation due to its low loss. Some predicted prices are displayed in table \ref{resnet_prediction_price}; its metrics are $MAE = 35607$, $MSE = 4515004136$, and $R^2 = 0.86$. 
+Figure \ref{all_resnet_full_epoch_1000} illustrates the training and validation losses for residual networks, and the model from fold one is selected for evaluation due to its low loss. Some predicted prices are displayed in table \ref{resnet_prediction_price}; its metrics are $MSE = 4515004136$, and $R^2 = 0.86$. 
 \begin{figure*}[!htbp]
 	\centering
 	\subfigure[Fold 0]{\includegraphics[width=5cm]{all_resnet_full_epoch_1000_fold_0}}
@@ -1075,23 +1075,23 @@ Table \ref{metrics_basic_model} summarizes the metrics of all the models for pre
 	\centering
 	\caption{Metrics of various models for predicting prices}
 	\label{metrics_basic_model}
-	\begin{tabular}{| l | c | c | c |}
+	\begin{tabular}{| l | c | c |}
 		\hline
-		& MAE & MSE & $R^2$ \\
+		& MSE & $R^2$ \\
 		\hline
-		Linear Regression Model & 179836 & 66601086343 & -0.91 \\
+		Linear Regression Model & 66601086343 & -0.91 \\
 		\hline
-		Basic Model (Price and Status) & 57527 & 7559964776 & 0.54 \\
+		Basic Model (Price and Status) & 7559964776 & 0.54 \\
 		\hline
-		Basic Model (Price only) & 36538 & 4918700785 & 0.85 \\
+		Basic Model (Price only) & 4918700785 & 0.85 \\
 		\hline
-		Basic Model (WRS applied)& 34099 & 4635616774 & 0.86 \\
+		Basic Model (WRS applied) & 4635616774 & 0.86 \\
 		\hline
-		Basic Model (Outliers removed) & 35391 & 4580892828 & 0.87 \\
+		Basic Model (Outliers removed) & 4580892828 & 0.87 \\
 		\hline
-		Complex Model & 38202 & 4754801560 & 0.85 \\
+		Complex Model & 4754801560 & 0.85 \\
 		\hline
-		Residual Network & 35607 & 4515004136 & 0.86 \\
+		Residual Network & 4515004136 & 0.86 \\
 		\hline
 	\end{tabular}
 \end{table}
