@@ -36,7 +36,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-The real estate market is one of the critical aspect of the economy, and its crisis has a wide range of influence. Therefore, an accurate and non-bias algorithm should be developed to predict the property prices and transaction status. In this project, various artificial neural networks are created for predicting prices. Then 
+The real estate market is one of the critical aspect of the economy, and the transactions not only affect sellers, buyers and agents, but also it can influence investors and government policies. Therefore, an accurate and non-bias algorithm should be developed to predict if the property transactions can be completed. In this project, the estate information is provided by EweMove and the transaction between 2018 and 2022 are covered. To accurately forecast the transaction status, several artificial neural networks are created initially, then the predicted prices and actual prices, along with the property information are used to train the neural networks for predicting transaction status. To evaluate the performance of models, the mean squared error and coefficient of determination are employed for price predictions. The confusion matrix, accuracy, recall, precision and F1 score are utilized for status predictions, and the model can forecast status with an accuracy of 82.7\%. 
 \end{abstract}
 
 \cleardoublepage
@@ -218,7 +218,7 @@ The performance is illustrated after cross validation by plotting training and v
 The model performance should be evaluated on unseen data. Otherwise, it would be useless. Various metrics are used to quantify the performance of the model in this project. 
 \\
 
-As the measurements for predicted prices, MSE, mean absolute error (MAE), and coefficient of determination ($R^2$) are applied.  The lower the MAE and MSE, the better the performance. $R^2$ values are typically between 0 to 1. A model with $R^2 = 0$ means the model cannot make accurate predictions, while $R^2 = 1$ indicates that the model can precisely predict the results. In rare instances, the $R^2$ can be negative, indicating that the model does not match the trend of the data, which is the worst performance. 
+As the measurements for predicted prices, MSE, and coefficient of determination ($R^2$) are applied.  The lower the MSE, the better the performance. $R^2$ values are typically between 0 to 1. A model with $R^2 = 0$ means the model cannot make accurate predictions, while $R^2 = 1$ indicates that the model can precisely predict the results. In rare instances, the $R^2$ can be negative, indicating that the model does not match the trend of the data, which is the worst performance. 
 \\
 
 The confusion matrix is initially obtained to access the predictions regarding the status of transactions. A confusion matrix summarizes the classification results, indicating where the model outputs wrong predictions and the types of errors. Based on the confusion matrix, various metrics are calculated, and they are shown as follows, 
@@ -1488,7 +1488,7 @@ After tuning hyperparameters and modifying the architecture, the final layout of
 
 \subsection{Ablation Study}
 \subsubsection{Transaction Status}
-Section \ref{linear_regression_status} demonstrates that the models should be trained with prices included and excluded to accurately predict the transaction status. As part of the ablation study, models without prices are trained, and other features, such as the number of various rooms, postcode are also tested so that the most significant attribute can be determined. The metrics of removing one of the features is shown in table 
+Section \ref{linear_regression_status} demonstrates that the models should be trained with prices included and excluded to accurately predict the transaction status. As part of the ablation study, models without prices are trained, and other features, such as the number of various rooms, postcode are also tested so that the most significant attribute can be determined. The metrics of removing one of the features are shown in table \ref{ablation_status}.
 
 \begin{table}[H]
 	\centering

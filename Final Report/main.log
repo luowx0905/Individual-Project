@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  16 AUG 2022 14:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  16 AUG 2022 14:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1967,7 +1967,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1530--1532
 
  []
 
-<./figures//uk_distribution.png, id=1213, 1001.7425pt x 1347.0325pt>
+<./figures//uk_distribution.png, id=1214, 1001.7425pt x 1347.0325pt>
 File: ./figures//uk_distribution.png Graphic file (type png)
 <use ./figures//uk_distribution.png>
 Package pdftex.def Info: ./figures//uk_distribution.png  used on input line 153
@@ -2012,10 +2012,10 @@ e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (65 pages, 9210729 bytes).
+Output written on main.pdf (65 pages, 9211186 bytes).
 PDF statistics:
- 1369 PDF objects out of 1440 (max. 8388607)
- 973 compressed objects within 10 object streams
+ 1370 PDF objects out of 1440 (max. 8388607)
+ 974 compressed objects within 10 object streams
  383 named destinations out of 1000 (max. 500000)
  1180 words of extra memory for PDF output out of 10000 (max. 10000000)
 
