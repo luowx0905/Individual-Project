@@ -1482,11 +1482,12 @@ After tuning hyperparameters and modifying the architecture, the final layout of
 \begin{figure}[H]
 	\centering
 	\includegraphics[height=\textheight]{basic_status_final_layout}
-	\caption{The final layout of the basic model for status (with prices)}
+	\caption{The final layout of the basic model for status (with price)}
 	\label{basic_status_final_layout}
 \end{figure}
 
 \subsection{Ablation Study}
+\subsubsection{Transaction Status}
 Section \ref{linear_regression_status} demonstrates that the models should be trained with prices included and excluded to accurately predict the transaction status. As part of the ablation study, models without prices are trained, and other features, such as the number of various rooms, postcode are also tested so that the most significant attribute can be determined. The metrics of removing one of the features is shown in table 
 
 \begin{table}[H]
@@ -1511,14 +1512,16 @@ Section \ref{linear_regression_status} demonstrates that the models should be tr
 		\hline
 		Dining Room Number & 0.8155 & 0.8615 & 0.8699 & 0.8656 \\
 		\hline
+		Other Room Number & 0.8055 & 0.8630 & 0.8504 & 0.8566 \\
+		\hline
+		Predicted Price & 0.8044 & 0.8616 & 0.8504 & 0.8559 \\
 	\end{tabular}
 \end{table}
 
+\subsubsection{Property Prices}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion and Future Work}
-\section{Ethics}
-The project developed various ML models which strongly relay on datasets. The collection and usage of the property data may cause privacy issues for sellers, buyers and agents. 
-
 \section{Future Work}
 \subsection{Dataset}
 This project aims to develop a model to predict if a property can be sold across the UK. The distribution of the properties used for training is shown in figure \ref{uk_distribution}. A significant number of properties are located in England, and the data outside of England are located in Cardiff, Edinburgh, Glasgow, and Aberdeen. Therefore, the result will be unreliable if a property is not located in these areas, such as Belfast. In addition, the raw dataset contains approximately 35000 records, whereas a significant number of missing values lead to the dataset for training and testing containing less than 9000 records.
@@ -1541,6 +1544,9 @@ The hyperparameters were tuned sequentially when training the complex model for 
 
 \subsection{Models}
 In this project, only neural networks were developed, and their performance was comparable to those created by \citet{RN37}. However, there are other available ML algorithms. \citet{RN17} stated that the random forest has the best performance in their study, whereas \citet{RN20} argued that XGBoost is the model with the highest accuracy instead of random forest. The models utilized in their research and the models reviewed in section \ref{model_review} should be attempted so that the accuracy of predicting the property transaction can be improved. 
+
+\section{Ethics}
+EweMove provided the datasets used in this project. No humans were involved in the data preparation phase, and all the data in the datasets were anonymous and unidentifiable, meaning there were no potential privacy concerns. In addition, the General Data Protection Regulation (EU) was adhered to throughout the development of the project to prevent data abuse and leakage. 
 
 \section{Conclusion}
 This project aims to develop an ML model for predicting property transactions, and the main objective has been accomplished. The raw dataset was preprocessed by removing missing values, encoding categorical features, standardizing the data, and splitting datasets. Then, the training data was used as the input for price prediction models, which were evaluated based on multiple metrics. The result demonstrated that an accuracy of 86\% could be achieved. The model with the highest accuracy was then employed to predict prices for all the properties, which was one of the inputs to forecasting the transaction status. After training and testing the models for predicting status, the final result was that approximately 83\% of real estate transactions could be precisely predicted. 
