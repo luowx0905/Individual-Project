@@ -1488,11 +1488,11 @@ After tuning hyperparameters and modifying the architecture, the final layout of
 
 \subsection{Ablation Study}
 \subsubsection{Transaction Status}
-Section \ref{linear_regression_status} demonstrates that the models should be trained with prices included and excluded to accurately predict the transaction status. As part of the ablation study, models without prices are trained, and other features, such as the number of various rooms, postcode are also tested so that the most significant attribute can be determined. The metrics of removing one of the features are shown in table \ref{ablation_status}.
+Section \ref{linear_regression_status} demonstrates that the models should be trained with prices included and excluded to predict the transaction status accurately. As part of the ablation study, models without prices are developed. Other features, such as the number of different types of rooms and postcode, are also tested so that the most significant attribute can be determined. The metrics of removing one of the features are shown in table \ref{ablation_status}. The accuracy decreases dramatically if the actual prices are removed, indicating that this is the most influential factor. In addition, removing predicted prices, price qualifiers, council tax band, and the number of other rooms results in the accuracy declining by more than 2\%, demonstrating that they are also essential in predicting the transaction status. However, the number of bathrooms is the least important factor as the accuracy reduces the least.
 
 \begin{table}[H]
 	\centering
-	\caption{Metrics after removing one of the input features}
+	\caption{Metrics after removing one of the features for predicting status}
 	\label{ablation_status}
 	\begin{tabular}{| c | c | c | c | c | }
 		\hline
