@@ -102,10 +102,10 @@ The distinct advantage of this dataset is that it overcomes the limitation of th
 K nearest neighbor (KNN) is one of the classification algorithms for supervised learning, which stores all the training data \citep{RN33}. During forecasting, the distances between input and all the training data are calculated, and the prediction would be the class of the training data closest to the input data. The noticeable advantage of this algorithm is that it is simple to implement. In contrast, the disadvantage is obvious; the prediction could be time-consuming due to the computation of the distances to all the training data. 
 
 \subsubsection{Decision Tree}
-Decision Tree is another supervised learning algorithm that can be used for classification and regression \citep{RN33}. When training this model,  the data is partitioned into smaller groups recursively based on several metrics, such as information entropy (classification) and variance reduction (regression). One of the benefits of a decision tree is that the outliers cannot significantly influence the performance compared to other algorithms since split conditions generally cause the outliers to be a class by themselves \citep{RN31}. The limitation of the decision tree is that this model is unstable, meaning that its size can be challenging to manage, and changes in the training data may cause substantial modification in the model structure \citep{RN33}. 
+Decision Tree is another supervised learning algorithm for classification and regression \citep{RN33}. When training this model,  the data is partitioned into smaller groups recursively based on several metrics, such as information entropy (classification) and variance reduction (regression). One of the benefits of a decision tree is that the outliers cannot significantly influence the performance compared to other algorithms since they are classified into a separate class \citep{RN31}. The limitation of the decision tree is that this model is unstable, meaning that its size can be challenging to manage, and changes in the training data may cause substantial modification in the model structure \citep{RN33}. 
 \\
 
-There are several variants of the decision tree, one of which is random forest. It consists of multiple decision trees that partition random training data with a random subset of features, resulting in a series of trees capable of producing different predictions \citep{RN34}. Each tree in the forest produces a result when forecasting, and the majority of the predictions are considered the correct result. Another variant is gradient boosting, which is comprised of multiple decision trees. Unlike random forest, a loss function is determined before training. Then the base predictors, i.e., decision trees, are trained with selected metrics to ensure performance. Next, the tree is inserted into the forest if the overall performance can be enhanced \citep{RN35}. 
+There are several variants of the decision tree, one of which is random forest. It consists of multiple decision trees that partition random training data with a random subset of features, resulting in a series of trees capable of producing different predictions \citep{RN34}. Each tree in the forest produces a result when forecasting, and the majority of the predictions are considered the correct result. Another variant is gradient boosting, which is comprised of multiple decision trees. Unlike random forest, a loss function is determined before training. Then the base predictors, i.e., decision trees, are trained with selected metrics to ensure performance. Next, the tree is inserted into the model if the overall performance can be enhanced \citep{RN35}. 
 
 \subsubsection{Neural Network}
 The neural network is a typical algorithm for ML which simulates the principle of biological neural networks and consists of three fundamental concepts, including artificial neurons, network architecture, and learning \citep{RN36}. Similar to biological neurons, artificial neurons determine how to process data based on the inputs and their weights. The architecture of neural networks varies on the number of layers and neurons in each layer. The network is learning by updating its weights to minimize the loss when training data are provided. The remarkable advantage of applying neural networks is that they can extract patterns and insights from a vast amount of data, which is impossible to handle manually. In contrast, the limitation of the neural network is that it generally contains a significant number of parameters that are updated during training which is time-consuming. 
@@ -122,13 +122,6 @@ In another research, \citet{RN20} developed a ML model for forecasting property 
 \section{Related Tools}
 Python is one of the most popular programming languages in the world since it is simple to develop, and there are extensive packages for various functionalities. In this project, Python and its packages would be used for loading data, preprocessing data, and constructing and evaluating ML models. 
 
-%\begin{enumerate}
-	%\item Data Preprocessing: Some data from the dataset may be missing, and these values must be handled appropriately before being passed to the model. 
-	%\item Standardization: In real life, different features usually have different ranges, and this will cause a problem in ML, which is that high magnitude features would have more weight than low magnitude features \citep{RN4}. One of the solutions is standardization, which could scale all the features to the same magnitude.
-	%\item Feature encoding: ML models require numerical values, whereas the categorical features in the dataset do not satisfy this requirement. Therefore, these features should be converted into numerical values. 
-	%\item Training \& Testing: The parameters of the model are updated, and it is expected that the loss will converge during training. The performance of the model is validated when testing.
-%\end{enumerate}
-
 \subsection{Handle Text Information}
 The format of texts in this project could be classified as HTML and plaintext. Although Python standard libraries provide some string processing capabilities, they are insufficient for this situation. 
 
@@ -139,24 +132,24 @@ The format of texts in this project could be classified as HTML and plaintext. A
 The \textit{\textbf{format}} function in the Python standard library formats a string, whereas the \textit{\textbf{parse}} module provides functions with an oppositse effect, i.e., extract information from formatted strings.
 
 \subsubsection{Regular Expression}
-A regular expression is a sequence of ordinary and special characters representing textual patterns. The ordinary characters are identical throughout the expressions and texts, while the special characters specify the pattern, including number, location, and type of characters  \citep{RN14}. One of the primary disadvantages of the regular expression is its obscure syntax, which results in difficulty specifying a pattern. 
+A regular expression is a sequence of normal and special characters representing textual patterns. The normal characters are identical throughout the expressions and texts, while the special characters specify the pattern, including number, location, and type of characters  \citep{RN14}. One of the primary disadvantages of the regular expression is its obscure syntax, which results in difficulty specifying a pattern. 
 
 \subsubsection{Library Usage}
-In this project, HTML texts are used extensively in the raw dataset to describe property summaries, property layouts, and council tax. This is the optimal scenario for \textit{Beautiful Soup} which is employed to extract plaintext by specifying tags. Then, \textit{parse} is applied to obtain the information, such as room names, from the plaintexts since they are in the same format. In addition, due to its limitations, the regular expression is only used to acquire numerical values in this project. 
+In this project, HTML texts are used extensively in the raw dataset to describe property summaries, property layouts, and council tax. This is the optimal scenario for \textit{Beautiful Soup} which is employed to extract plaintext by specifying tags. Then, \textit{parse} is applied to obtain the information, such as room names, from the formatted strings. In addition, due to its limitations, the regular expression is only used to acquire numerical values in this project. 
 
 
 \subsection{Data Manipulation}
 \subsubsection{NumPy}
-Numerical Python (\textit{\textbf{NumPy}}) is a scientific computing package designed to support large multidimensional matrices. It uses an optimized \textit{C/C++} API to reduce computation time compared to pure Python computations \citep{RN6}. A substantial number of complex tasks of data analytics can be simplified by numerous \textit{numpy} features. For example, it provides robust matrix operations, facilitates the construction of multidimensional objects, and serves as the foundation of other packages, including \textit{matplotlib} and \textit{seaborn}.
+Numerical Python (\textit{\textbf{NumPy}}) is a scientific computing package designed to support large multidimensional matrices. It uses an optimized \textit{C/C++} API to reduce computation time compared to pure Python computations \citep{RN6}. A substantial number of complex tasks of data analytics can be simplified by numerous \textit{numpy} features. For example, it provides robust matrix operations, facilitates the construction of multidimensional objects, and serves as the foundation of other packages, including \textbf{\textit{matplotlib}} and \textbf{\textit{seaborn}}.
 
 \subsubsection{Pandas}
-The \textbf{\textit{pandas}} is an open-source and compelling package that was developed primarily for data analysis and data manipulation and is built on \textit{numpy}. It is capable of handling data of various types (numerical values, strings, and time) and from a variety of sources (CSV, Excel, and MqSQL database). \textbf{\textit{DataFrame}} is one of the \textit{pandas} data structures that is appropriate for handling tabular data with columns of different types. Additionally, it could manage various operations, such as manipulating missing values, creating pivot tables, and grouping data from different columns \citep{RN4}. 
+The \textbf{\textit{pandas}} is an open-source and compelling package that was developed primarily for data analysis and data manipulation and is built on \textit{Numpy}. It is capable of handling data of various types (numerical values, strings, and time) and from a variety of sources (CSV, Excel, and MqSQL database). \textbf{\textit{DataFrame}} is one of the \textit{pandas} data structures that is appropriate for handling tabular data with columns of different types. Additionally, it could manage various operations, such as manipulating missing values, creating pivot tables, and grouping data from different columns \citep{RN4}. 
 
 \subsubsection{Library Usage}
-In this project, the dataset provided is in CSV format hence it could be loaded by \textbf{\textit{Pandas}} since it is suitable for tabular data. Then the package is utilized for preprocessing, such as handling missing values and grouping columns of data. 
+In this project, the dataset provided is in CSV format hence it could be loaded by \textit{pandas} since it is suitable for tabular data. Then the package is utilized for preprocessing, such as handling missing values and grouping columns of data. 
 \\
 
-\textit{\textbf{Numpy}} is appropriate for manipulating numerical data and acts as an intermediary between various packages. Therefore, it could be employed to evaluate the performance of ML models and transmit data to plotting packages. 
+\textit{Numpy} is appropriate for manipulating numerical data and acts as an intermediary between various packages. Therefore, it could be employed to evaluate the performance of ML models and transmit data to plotting packages. 
 
 
 \subsection{ML Frameworks}
@@ -173,10 +166,10 @@ Furthermore, it can be beneficial to construct and train a model with \textit{Py
 \textit{\textbf{TensorFlow}} is another ML framework produced by Google that specializes in deep learning and neural networks. It provides approximately the same components as \textit{PyTorch} and also supports automatic differentiation and GPU acceleration. One of the appealing characteristics of \textit{TensorFlow} is called \textit{\textbf{TensorBoard}}, which is an interactive visualization system that can display the flowchart of the data manipulation and plot the tendency of the performance \citep{RN15}. 
 
 \subsubsection{Library Usage}
-This project aims to construct a neural network which means \textit{scikit-learn} is not applicable at this stage. Although \textit{TensorFlow} provides the same capabilities as \textit{PyTorch} and is superior in visualization, the model construction and training will use \textit{PyTorch} due to its Pythonic syntax and compatibility with \textit{TensorBoard}. 
+This project aims to construct neural networks which means \textit{scikit-learn} is not applicable at this stage. Although \textit{TensorFlow} provides the same capabilities as \textit{PyTorch} and is superior in visualization, the model construction and training will use \textit{PyTorch} due to its Pythonic syntax and compatibility with \textit{TensorBoard}. 
 \\
 
-However, \textit{scikit-learn} can be used to preprocess datasets and evaluate performance. It provides various utilities that can be helpful before training, for example, encoding categorical features and splitting the dataset into training and validation. In addition, it offers features for model evaluation, such as confusion matrix, accuracy, and recall. 
+However, \textit{scikit-learn} can be used to preprocess datasets and evaluate performance. It provides various utilities that can be helpful before training, for example, encoding categorical features and splitting the dataset into training and validation sets. In addition, it offers features for model evaluation, such as confusion matrix, accuracy, and recall. 
 
 \subsection{Data Visualization}
 \subsubsection{Matplotlib}
@@ -1492,7 +1485,7 @@ Section \ref{linear_regression_status} demonstrates that the models should be tr
 
 \begin{table}[H]
 	\centering
-	\caption{Metrics after removing one of the features for predicting status}
+	\caption{Results of ablation study for predicting status}
 	\label{ablation_status}
 	\begin{tabular}{| c | c | c | c | c | }
 		\hline
@@ -1526,6 +1519,22 @@ Section \ref{linear_regression_status} demonstrates that the models should be tr
 \end{table}
 
 \subsubsection{Property Prices}
+The same approach is also applied to determine the most significant factor in forecasting the prices. 
+
+\begin{table}[H]
+	\centering
+	\caption{Results of ablation study for predicting prices}
+	\label{ablation_price}
+	\begin{tabular}{| c | c | c |}
+		\hline
+		Removed Feature & MSE & $R^2$ \\
+		\hline
+		None & 4580892828 & 0.87 \\
+		\hline
+		Postcode & 34869695113 & -0.01 \\
+		\hline
+	\end{tabular}
+\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion and Future Work}
