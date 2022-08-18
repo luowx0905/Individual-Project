@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  17 AUG 2022 17:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  18 AUG 2022 16:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1958,48 +1958,52 @@ g> <./figures//cm_01_fold_4.png> <./figures//cm_015_fold_2.png>]
 Overfull \vbox (23.59999pt too high) has occurred while \output is active []
 
 
-[52 <./figures//basic_status_final_layout.png>] [53]
+[52 <./figures//basic_status_final_layout.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [53]
+[54]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1547--1549
+Underfull \hbox (badness 10000) in paragraph at lines 1557--1559
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1550--1552
+Underfull \hbox (badness 10000) in paragraph at lines 1560--1562
 
  []
 
-<./figures//uk_distribution.png, id=1216, 1001.7425pt x 1347.0325pt>
+<./figures//uk_distribution.png, id=1221, 1001.7425pt x 1347.0325pt>
 File: ./figures//uk_distribution.png Graphic file (type png)
 <use ./figures//uk_distribution.png>
-Package pdftex.def Info: ./figures//uk_distribution.png  used on input line 155
+Package pdftex.def Info: ./figures//uk_distribution.png  used on input line 156
 7.
 (pdftex.def)             Requested size: 438.17227pt x 589.20197pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [54
+ [55
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [55 <./figures//uk_distribution.png>] (./main.bbl (./main.brf)
+ [56 <./figures//uk_distribution.png>] (./main.bbl (./main.brf)
 \tf@brf=\write5
 \openout5 = `main.brf'.
 
- [56] [57
+ [57] [58
 
-]) [58]
+]) [59]
 (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 2044DC26A96D5E67E952152A59300A7F;10965.
 Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: 2A42CE31F422676F0D5F8EA7D1E537E3;1411.
+(rerunfilecheck)             Checksum: E0E1AFAE41D10BBB46D8E9A8577507BE;1411.
  ) 
 Here is how much of TeX's memory you used:
- 15585 strings out of 478268
- 293872 string characters out of 5846347
+ 15586 strings out of 478268
+ 293879 string characters out of 5846347
  537052 words of memory out of 5000000
  33177 multiletter control sequences out of 15000+600000
  504551 words of font info for 78 fonts, out of 8000000 for 9000
@@ -2015,10 +2019,10 @@ e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (65 pages, 9211642 bytes).
+Output written on main.pdf (66 pages, 9212407 bytes).
 PDF statistics:
- 1372 PDF objects out of 1440 (max. 8388607)
- 976 compressed objects within 10 object streams
- 384 named destinations out of 1000 (max. 500000)
+ 1377 PDF objects out of 1440 (max. 8388607)
+ 980 compressed objects within 10 object streams
+ 385 named destinations out of 1000 (max. 500000)
  1180 words of extra memory for PDF output out of 10000 (max. 10000000)
 
