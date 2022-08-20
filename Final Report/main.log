@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  20 AUG 2022 14:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  20 AUG 2022 16:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1986,14 +1986,28 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [57 <./figures//uk_distribution.png>] [58] (./main.bbl (./main.brf)
+ [57 <./figures//uk_distribution.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1587--1589
+
+ []
+
+[58]
+Underfull \hbox (badness 10000) in paragraph at lines 1590--1592
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1593--1595
+
+ []
+
+(./main.bbl (./main.brf)
 \tf@brf=\write5
 \openout5 = `main.brf'.
 
  [59] [60
 
-]) [61]
-(./main.aux)
+]) [61] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: DEA58CCFD9752B681F712C3725A14D7D;11565.
 Package rerunfilecheck Info: File `main.brf' has not changed.
@@ -2017,7 +2031,7 @@ e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (68 pages, 9215284 bytes).
+Output written on main.pdf (68 pages, 9216039 bytes).
 PDF statistics:
  1409 PDF objects out of 1440 (max. 8388607)
  1009 compressed objects within 11 object streams

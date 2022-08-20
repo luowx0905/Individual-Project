@@ -1584,7 +1584,16 @@ The ablation study in this project only utilized some of the dataset's features 
 EweMove provided the datasets used in this project. No humans were involved in the data preparation phase, and all the data in the datasets were anonymous and unidentifiable, meaning there were no potential privacy concerns. In addition, the General Data Protection Regulation (EU) was adhered to throughout the development of the project to prevent data abuse and leakage. 
 
 \section{Conclusion}
-This project aims to develop an ML model for predicting property transactions, and it has been accomplished. The raw dataset was preprocessed by removing missing values, encoding categorical features, standardizing the data, and splitting datasets. Then, the training data was used as the input for price prediction models, which were evaluated based on multiple metrics. The result demonstrated that an accuracy of 86\% could be achieved. The model with the highest accuracy was then employed to predict prices for all the properties, which was one of the inputs to forecasting the transaction status. After training and testing the models for predicting status, the final result was that approximately 83\% of real estate transactions could be precisely predicted. 
+This project analyzed the real estate data using ML, and all the aims and objectives have been accomplished. Data was preprocessed by removing missing values, encoding categorical features, and standardizing the data, resulting in a clean dataset containing 8995 records. Then, it was divided into training and testing sets for developing models. 
+\\
+
+The first neural network developed in this project can output both prices and status. It could predict prices with 54\% accuracy but failed to forecast the transaction status since the loss function caused it to focus on estimating prices. Therefore, separate models should be used to forecast these two outputs. Next, a linear regression model with only one linear layer was used to predict prices, and its failure indicated that it could not gain insights from the dataset. Therefore, a basic neural network was developed that can estimate prices with 87\% accuracy when the WRS is applied, and outliers are removed. Additionally, another neural network with more layers and a residual network were created, but they could not outperform the basic model. 
+\\
+
+Moreover, another linear regression model was used to predict transaction status, and its performance demonstrated that more complex models were required. Before developing models for predicting status, the predicted price of each property was inserted into the original dataset. Then, a neural network with BN and dropout was created, achieving 82\% accuracy. 
+\\
+
+Although the ablation study in this project could not investigate all the attributes because of the time limitation, it could still identify the attributes with greater significance. The postcode is more crucial for predicting prices than other features, and the actual prices are more critical when predicting transaction status.
 
 %% bibliography
 \bibliographystyle{unsrtnat}
