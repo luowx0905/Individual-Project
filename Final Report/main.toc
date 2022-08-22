@@ -19,7 +19,7 @@
 \contentsline {subsubsection}{Library Usage}{7}{section*.20}%
 \contentsline {subsection}{\numberline {2.2.2}Data Manipulation}{7}{subsection.21}%
 \contentsline {subsubsection}{NumPy}{7}{section*.22}%
-\contentsline {subsubsection}{Pandas}{7}{section*.23}%
+\contentsline {subsubsection}{Pandas}{8}{section*.23}%
 \contentsline {subsubsection}{Library Usage}{8}{section*.24}%
 \contentsline {subsection}{\numberline {2.2.3}ML Frameworks}{8}{subsection.25}%
 \contentsline {subsubsection}{Scikit-learn}{8}{section*.26}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  20 AUG 2022 16:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  22 AUG 2022 19:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -438,9 +438,26 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks28
 \@floatcapt=\box61
 )
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 48.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 48.
-Package hyperref Info: Option `colorlinks' set `true' on input line 48.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+)
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 52.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 52.
+Package hyperref Info: Option `colorlinks' set `true' on input line 52.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/oberdiek/hypcap.sty
 Package: hypcap 2016/05/16 v1.12 Adjusting the anchors of captions (HO)
@@ -530,17 +547,8 @@ Package caption Info: End \AtBeginDocument code.
 \everyMPtoPDFconversion=\toks30
 )
 Package backref Info: ** backref set up for natbib ** on input line 24.
- (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2021/12/07 v1.3c Standard LaTeX Color (DPC)
-
-(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: pdftex.def on input line 149.
-)
 Package hyperref Info: Link coloring ON on input line 24.
-
-(/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
@@ -674,6 +682,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 162--164
 [8]
 Underfull \hbox (badness 10000) in paragraph at lines 171--173
 
+ []
+
+
+Overfull \hbox (1.49991pt too wide) in paragraph at lines 184--185
+\OT1/bch/m/n/12 be in-spected, hence \OT1/bch/m/it/12 seaborn \OT1/bch/m/n/12 c
+ould be an op-ti-mal choice since the in-put is a \OT1/bch/m/it/12 DataFrame
  []
 
 [9] [10]
@@ -2014,13 +2028,13 @@ Package rerunfilecheck Info: File `main.brf' has not changed.
 (rerunfilecheck)             Checksum: 89E2C2E2BC89C94AE3FF3C7512C58F72;1417.
  ) 
 Here is how much of TeX's memory you used:
- 15596 strings out of 478268
- 293990 string characters out of 5846347
- 539119 words of memory out of 5000000
- 33181 multiletter control sequences out of 15000+600000
+ 15996 strings out of 478268
+ 298434 string characters out of 5846347
+ 548675 words of memory out of 5000000
+ 33579 multiletter control sequences out of 15000+600000
  504551 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,10n,80p,1269b,477s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,10n,80p,1278b,477s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/local/texl
 ive/2022/texmf-dist/fonts/type1/bitstrea/charter/bchbi8a.pfb></usr/local/texliv
@@ -2031,7 +2045,7 @@ e/2022/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (68 pages, 9216039 bytes).
+Output written on main.pdf (68 pages, 9215962 bytes).
 PDF statistics:
  1409 PDF objects out of 1440 (max. 8388607)
  1009 compressed objects within 11 object streams
