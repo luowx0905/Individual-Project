@@ -193,18 +193,18 @@ Most of the research focused on predicting the prices for real estate, and vario
 \subsubsection{Data Preparation}
 The raw data should be preprocessed, and the steps are as follows. 
 \begin{enumerate}
-	\item Handling missing values: They must be handled appropriately before being passed to the model. The possible methods include removing missing values and replacing them with the default value.
-	\item Standardization: In real life, different features usually have different ranges, which will cause a problem in ML, which is that high magnitude features would have more weight than low magnitude features \citep{RN4}. One of the solutions is standardization, which could scale all the features to the same magnitude.
-	\item Feature encoding: ML models require numerical values, whereas the categorical features in the dataset do not satisfy this requirement. Therefore, these features should be converted into numerical values.
+	\item Handling missing values: They must be managed appropriately before being passed to the model. The possible methods include removing missing values and replacing them with the default value.
+	\item Standardization: In real life, different features usually have different ranges, and it will cause a problem in ML, which is that high magnitude features would have more weight than low magnitude features \citep{RN4}. One of the solutions is standardization, which can scale all the features to the same magnitude.
+	\item Feature encoding: ML models require numerical values, whereas the categorical features in the dataset do not satisfy this requirement. Therefore, these features should be converted into numerical values by encoding.
 \end{enumerate}
 
-The datasets created during preprocessing are split into training and testing sets, representing 90\% and 10\% of the total dataset, respectively. In the meantime, the datasets are also shuffled as they may contain intrinsic patterns.
+The dataset created during preprocessing is split into training and testing sets, representing 90\% and 10\% of the total dataset. In the meantime, it is also shuffled as it may contain intrinsic patterns.
 
 \subsubsection{Training models}
-Due to the limited training data for this project, cross validation is employed to train the model with different portions of training data. There are two model outputs, including prices and the status of transactions. The loss function for prices is mean squared error (MSE) as they are positive values. However, the status of transactions is either one or zero, hence its loss function is binary cross entropy (BCE). 
+Cross validation is employed to train the model due to the limited training data for this project. There are two model outputs, including prices and the transaction status. The loss function for prices is mean squared error (MSE) as they are positive values. However, the transaction status is either one or zero, hence its loss function is binary cross entropy (BCE). 
 \\
 
-The optimizer used for training is Adam, which could compute a learning rate for each parameter and has a low computing time. The learning rate is initially set to $1 \times 10^{-3}$ and would be updated if necessary.
+The optimizer used for training is Adam, which could compute a learning rate for each parameter and has a low computing time. The learning rate is initially set to $1 \times 10^{-3}$ and will be updated if necessary.
 \\
 
 The performance is illustrated after cross validation by plotting training and validation losses against epoch. Based on these graphs, the model with the best performance can be selected for the evaluation phase. 
@@ -213,21 +213,15 @@ The performance is illustrated after cross validation by plotting training and v
 The model performance should be evaluated on unseen data. Otherwise, it would be useless. Various metrics are used to quantify the performance of the model in this project. 
 \\
 
-As the measurements for predicted prices, MSE and coefficient of determination ($R^2$) are applied.  The lower the MSE, the better the performance. $R^2$ values are typically between 0 to 1. A model with $R^2 = 0$ means the model cannot make accurate predictions, while $R^2 = 1$ indicates that the model can precisely predict the results. In rare instances, the $R^2$ can be negative, indicating that the model does not match the trend of the data, which is the worst performance. 
+As the measurements for predicted prices, MSE and coefficient of determination ($R^2$) are applied.  The lower the MSE, the better the performance. $R^2$ values are typically between 0 to 1. A model with $R^2 = 0$ cannot make accurate predictions, while $R^2 = 1$ indicates that the results are reliable. In rare instances, the $R^2$ can be negative, indicating that the model does not gain insights into the data, which is the worst performance. 
 \\
 
-The confusion matrix is initially obtained to access the predictions regarding the status of transactions. A confusion matrix summarizes the classification results, indicating where the model outputs wrong predictions and the types of errors. Based on the confusion matrix, various metrics are calculated, and they are shown as follows, 
-\begin{itemize}
-	\item \textbf{Accuracy}: It is the number of correct predictions divided by the total number of predictions. The best accuracy is one, and zero is the worst. 
-	\item \textbf{Precision}: It is the number of correct positive predictions divided by the total number of positive predictions. High precision suggests that predictions on positive can be guaranteed.
-	\item \textbf{Recall}: The ratio of correct positive predictions to the total number of positive examples and the high recall indicates that the positive class is correctly identified. 
-	\item \textbf{F1 Score}: This is a harmonic mean of both recall and precision which can be used to evaluate performance independently. 
-\end{itemize}
+Confusion matrices, which indicate the type of errors and the areas where the models produce wrong estimations, can be employed to show classification results. They are initially obtained to access the predictions regarding the status of transactions. Based on the confusion matrix, various metrics are calculated, such as accuracy, precision, recall, and F1 score. 
 
 \section{Data Source and Collection}
 The datasets used in this project are provided by EweMove, and transactions from 2018 to 2022 are included. There are 34591 records with 36 parameters describing each property after merging these datasets. Some parameters, such as postcodes, and room information, are independent variables that would be the model input. In contrast, the price and status of the transaction are dependent variables that serve as labels of supervised learning. The features that are used in this project are listed in table \ref{model_input_features}. 
 
-\begin{table}[H]
+\begin{table}[h]
 	\centering
 	\caption{The features used to train the model}
 	\label{model_input_features}
@@ -268,7 +262,7 @@ The datasets used in this project are provided by EweMove, and transactions from
 
 \subsection{Handle Room Descriptions (HTML)}
 \subsubsection{Acquire room name and dimension}
-The structure of the HTML texts containing the room information in a property is shown in figure \ref{html_structure}. The rooms are separated by tag \textit{$<$li$>$}, and the room name and its dimension are denoted by \textit{$<$strong$>$} and \textit{$<$i$>$} tags, respectively. Therefore, a function (\textit{\textbf{EweMove\_Description\_S3\_Rooms}}) is implemented to split the HTML texts by utilizing \textit{Beautiful soup}, and its flowchart is shown in figure \ref{html_room_info}.
+The structure of the HTML texts containing the room information in a property is shown in figure \ref{html_structure}. The rooms are separated by tag \code{\textit{$<$li$>$}}, and the room name and its dimension are denoted by \code{\textit{$<$strong$>$}} and \code{\textit{$<$i$>$}} tags, respectively. Therefore, a function (\code{\textit{EweMove\_Description\_S3\_Rooms}}) is implemented to split the HTML texts by utilizing \textit{Beautiful soup}, and its flowchart is shown in figure \ref{html_room_info}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{html_structure}
@@ -283,38 +277,38 @@ The structure of the HTML texts containing the room information in a property is
 	\label{html_room_info}
 \end{figure}
 
-The names of rooms are analyzed after the room descriptions in the dataset have been processed. As a consequence, there are over 200 unique room names for approximately 36000 records, some of which are exceptionally uncommon across the entire dataset. For instance, only two properties have cinema rooms, and one has a lift, which is less than 0.1\% of all entries.  
+The names of rooms are analyzed after the room descriptions in the dataset have been processed. As a consequence, there are over 200 unique room names for approximately 35000 records, some of which are exceptionally uncommon across the entire dataset. For instance, only two properties have cinema rooms, and one has a lift, which is less than 0.1\% of all entries.  
 \\
 
 Due to the large number of room names, it is impossible to use it as the input of the model. Therefore, the rooms are divided into six categories: bedrooms, bathrooms, kitchens, living/reception rooms, dining rooms, and other rooms so that the data can be generalized. 
 \\
 
 \subsubsection{Generalize room information}
-A class, \textit{\textbf{ExtractRooms}}, is developed to acquire and integrate the room information, especially the area in square meters, and its UML diagram is shown in figure \ref{uml_extract_rooms}. The member variable \textit{rooms} is a list containing the result of invoking \textit{EweMove\_Description\_S3\_Rooms}, \textit{room\_set} comprises all the room names, \textit{current\_rooms} consists of the room names that have been processed, and \textit{extract\_area} is a formatted string for acquiring room area. 
+A class, \code{\textit{ExtractRooms}}, is developed to acquire and integrate the room information, especially the area in square meters, and its UML diagram is shown in \mbox{figure \ref{uml_extract_rooms}}. The member variable \code{\textit{rooms}} is a list containing the result of invoking \code{\textit{EweMove\_Description\_S3\_Rooms}}, \code{\textit{room\_set}} comprises all the room names, \colorbox{light-gray}{\textit{current\_rooms}} consists of the room names that have been processed, and \colorbox{light-gray}{\textit{extract\_area}} is a formatted string for acquiring room area. 
 \\
 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=10cm]{uml_extract_rooms}
-	\caption{The UML diagram of the class (\textit{ExtractRooms})}
+	\caption{The UML diagram of the class (\code{\textit{ExtractRooms}})}
 	\label{uml_extract_rooms}
 \end{figure}
 
-There are two essential member functions, the first one is \textit{\textbf{get\_rooms}}, and its flow diagram is shown in figure \ref{extract_room_get_rooms}, and the arguments are listed below. 
+There are two essential member functions, the first one is \code{\textit{get\_rooms}}, and its flow diagram is shown in figure \ref{extract_room_get_rooms}, and the arguments are listed below. 
 \begin{enumerate}
-	\item args: It should be noted that this is a variable-length argument, which means that it can accept as many arguments as possible, and it is used to select room names from \textit{room\_set}. For instance, \textit{*args = [living, reception]} will select all names containing \textit{living} or \textit{reception}. 
-	\item operation: The argument determines the types of the final result and the valid inputs include \textit{sum}, \textit{mean}, \textit{split}, and \textit{number}. For example, if args is \textit{bedroom}, then the function can return the sum of bedroom areas, the average bedroom area, the area of each bedroom, and the number of bedrooms. 
-	\item handle\_na: This parameter specifies how to manage missing values, either by ignoring them or by filling the mean value if the input is \textit{None} or \textit{mean}, respectively. 
+	\item \code{\textit{args}}: It should be noted that this is a variable-length argument, which means that it can accept as many arguments as possible, and it is used to select room names from \code{\textit{room\_set}}. For instance, \textit{*args = [living, reception]} will select all names containing \textit{living} or \textit{reception}. 
+	\item \code{\textit{operation}}: The argument determines the types of the final result and the valid inputs include \textit{sum}, \textit{mean}, \textit{split}, and \textit{number}. For example, if \code{\textit{args}} is \textit{bedroom}, then the function can return the sum of bedroom areas, the average bedroom area, the area of each bedroom, and the number of bedrooms. 
+	\item \code{\textit{handle\_na}}: This parameter specifies how to manage missing values, either by ignoring them or by filling the mean value if the input is \textit{None} or \textit{mean}, respectively. 
 \end{enumerate} 
 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=\linewidth]{extract_room_get_rooms}
-	\caption{Flowchart of \textit{get\_rooms}}
+	\caption{Flowchart of \code{\textit{get\_rooms}}}
 	\label{extract_room_get_rooms}
 \end{figure}
 
-The second member function is \textit{\textbf{get\_rest\_room}}. It is identical to \textit{get\_room} with two exceptions. The parameter \textit{\textbf{*args}} is used to discard the room names containing the keywords, and only the number and the total areas of other rooms are returned. 
+The second member function is \code{\textit{get\_rest\_room}}. It is identical to \code{\textit{get\_room}} with two exceptions. The parameter \code{\textit{*args}} is used to discard the room names containing the keywords, and only the number and the total areas of other rooms are returned. 
 
 \subsection{Manipulate Categorical Keywords}
 In the dataset, four features are characterized by categorical keywords, including parking, heating, accessibility, and outdoor spaces. Figure \ref{parking_dataset} is a snippet of the parking dataset that is used as an example to illustrate the manipulation of the keywords. The first three rows indicate that there is a parking space for the first property, which is \textbf{allocated} \textbf{off-street} parking for \textbf{residents}, the second has none, and the third property has one \textbf{on-street} parking space. This principle applies to other rows as well. In this situation, feature encoding cannot be applied since there are multiple columns of keywords describing a feature, and the order and quantity of the keywords have no effect.
@@ -327,20 +321,20 @@ In the dataset, four features are characterized by categorical keywords, includi
 	\label{parking_dataset}
 \end{figure}
 
-Figure \ref{uml_generalize_dataset} illustrates the UML diagram of the class \textit{\textbf{GeneralizeDataset}}, which is developed to determine how these features of each property are described and the number of keywords within the description. The core of this class is member function \textit{\textbf{get\_feature\_types}}, and its flowchart is displayed in figure \ref{generalize_dataset_get_feature_types}. In addition, the function \textbf{\textit{get\_feature\_num}} can be used to determine the number of keywords for each property. 
+Figure \ref{uml_generalize_dataset} illustrates the UML diagram of the class \code{\textit{GeneralizeDataset}}, which is developed to determine how these features of each property are described and the number of keywords within the description. The core of this class is member function \code{\textit{get\_feature\_types}}, and its flowchart is displayed in figure \ref{generalize_dataset_get_feature_types}. In addition, the function \code{\textit{get\_feature\_num}} can be used to determine the number of keywords for each property. 
 \\
 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=6cm]{uml_generalize_dataset}
-	\caption{The UML diagram of \textit{GeneralizeDataset}}
+	\caption{The UML diagram of \code{\textit{GeneralizeDataset}}}
 	\label{uml_generalize_dataset}
 \end{figure}
 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\linewidth]{generalize_dataset_get_feature_types}
-	\caption{Flowchart of \textit{get\_feature\_types}}
+	\caption{Flowchart of \code{\textit{get\_feature\_types}}}
 	\label{generalize_dataset_get_feature_types}
 \end{figure}
 
@@ -361,31 +355,31 @@ The price is crucial to the project, and the distribution of the raw data is ins
 \subsection{Create Input Dataset}
 \label{create_input_dataset_section}
 \subsubsection{Feature Encoding}
-This technique is applicable to categorical features in the dataset, including price qualifier, council tax band, and property condition. The label encoding is employed, which is capable of converting the feature into numeric values between 0 and N - 1, where N is the number of distinct classes in a column.
+This technique is applicable to categorical features in the dataset, such as price qualifier, council tax band, and property condition. The label encoding is employed, which is capable of converting the feature into numeric values between 0 and N - 1, where N is the number of distinct classes in a column.
 
 \subsubsection{Manage Missing Values}
 The datasets used in this project contain a significant number of missing values. For example, approximately 30\% of the room layout and more than 40\% of the council tax band are missing. Under this situation, it is impossible to replace them with the mean value since it causes the model to focus on the average and results in low performance. Therefore, another approach is applied, which is removing the missing values in the datasets. 
 
 \subsubsection{Classy Approach}
-After the information in HTML texts and categorical keywords are extracted, it is combined with other columns in the dataset to produce a clean dataset for the model input.  Figure \ref{uml_create_input_dataset} is the UML diagram of \textit{\textbf{CreateInputDataset}}, which is a class developed for this objective, and the flow diagram of producing an input dataset is displayed in figure \ref{create_input_dataset}.
+After the information in HTML texts and categorical keywords are extracted, it is combined with other columns in the dataset to produce a clean dataset for the model input.  Figure \ref{uml_create_input_dataset} is the UML diagram of \code{\textit{CreateInputDataset}}, which is a class developed for this objective, and the flow diagram of producing an input dataset is displayed in figure \ref{create_input_dataset}.
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[height=6cm]{uml_create_input_dataset}
-	\caption{The UML diagram of \textit{CreateInputDataset}}
+	\includegraphics[height=7cm]{uml_create_input_dataset}
+	\caption{The UML diagram of \code{\textit{CreateInputDataset}}}
 	\label{uml_create_input_dataset}
 \end{figure}
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[height=12cm]{create_input_dataset}
+	\includegraphics[height=14cm]{create_input_dataset}
 	\caption{The flow diagram of producing the input dataset}
 	\label{create_input_dataset}
 \end{figure}
 
 \section{Model Construction}
 
-\subsection{Basic Model: Output Sale Status and Price}
+\subsection{Basic Model: Transaction Status and Price}
 \label{basic_model_price_status_construction}
 The architecture of this model solely consists of linear layers and activation functions, as depicted in figure \ref{basic_model_layout}. There are two outputs of the model, which are prices and the status of transactions. Therefore, the activation functions of the output layers are ReLU and sigmoid, respectively.
 \\
@@ -397,11 +391,11 @@ The architecture of this model solely consists of linear layers and activation f
 	\label{basic_model_layout}
 \end{figure}
 
-\subsection{Linear Regression: Predict Price}
+\subsection{Linear Regression: Prices}
 \label{linear_regression_model_construction}
 Prior to the construction of any neural networks for predicting prices, a linear regression model with a single linear layer is developed. Its input size is the same as the number of features, and the output is the price. If this model can accurately predict the price, it eliminates the need to build more complex neural networks with multiple layers, which is the motivation for its creation. 
 
-\subsection{Basic Model: Predicting Prices}
+\subsection{Basic Model: Prices}
 The structure of this model is demonstrated in figure \ref{basic_model_price}. Its hidden layers are identical to the model for predicting status and prices (section \ref{basic_model_price_status_construction}), whereas the status output is removed.
 
 \begin{figure}[h]
@@ -411,12 +405,12 @@ The structure of this model is demonstrated in figure \ref{basic_model_price}. I
 	\label{basic_model_price}
 \end{figure}
 
-\subsection{Complex Model: Predicting Prices}
+\subsection{Complex Model: Prices}
 \label{complex_model_construct}
-The layout of a more complex model is similar to that of figure \ref{basic_model_price}, but it contains ten linear layers, and there are 512 neurons in each layer. The model is constructed for an obvious reason. Intuitively, more complex models are more capable of learning from the input dataset, resulting in enhanced performance. 
+The layout of a more complex model is similar to figure \ref{basic_model_price}, but it contains ten linear layers, and there are 512 neurons in each layer. The model is constructed for an obvious reason. Intuitively, more complex models are more capable of learning from the input dataset, resulting in enhanced performance. 
 
-\subsection{Residual Network: Predicting Prices}
-The second complex model is developed, which utilized residual connections. The architecture of the residual blocks and the network are illustrated in figure \ref{resnet}. This model is developed because the performance of the first complex model (section \ref{complex_model_construct}) is not significantly enhanced despite having more layers and neurons. In addition, tuning the hyperparameters is time-consuming and the improvement of the accuracy is limited. 
+\subsection{Residual Network: Prices}
+The second complex model is developed, which utilizes residual connections. The architecture of the residual blocks and the network are illustrated in figure \ref{resnet}. This model is developed because the performance of the first complex model (\mbox{section \ref{complex_model_construct}}) is not significantly enhanced despite having more layers and neurons. In addition, tuning the hyperparameters is time-consuming and the improvement of the accuracy is limited. 
 
 \begin{figure*}[!htbp]
 	\centering
@@ -427,8 +421,8 @@ The second complex model is developed, which utilized residual connections. The 
 	\label{resnet}
 \end{figure*}
 
-\subsection{Linear Regression: Predict Status of Transactions}
-Before constructing models, the correlation between the status and other attributes is obtained and depicted in figure \ref{correlation_status}. As shown in the bottom right of the graph, the correlation between actual and predicted prices is approximately -0.3. However, they were still considered model inputs because close proximity between prices increases the likelihood of a completed transaction. For example, if the predicted price is 1000 pounds/month, but the actual price is 100 pounds/month, this would be considered fraud resulting in an incomplete transaction. 
+\subsection{Linear Regression: Status of Transactions}
+Before constructing models, the correlation between the status and other attributes is obtained and depicted in figure \ref{correlation_status}. As shown in the bottom right of the graph, the correlation between the status and actual and predicted prices is approximately -0.3. However, they were still considered model inputs because close proximity between prices increases the likelihood of a completed transaction. For example, if the predicted price is 1000 pounds/month, but the actual price is 100 pounds/month, this would be considered fraud resulting in an incomplete transaction. 
 
 \begin{figure}[!htbp]
 	\centering
@@ -439,7 +433,7 @@ Before constructing models, the correlation between the status and other attribu
 
 For the same reason as predicting prices, another linear regression model is developed to determine whether a single linear layer is sufficient for the prediction. In this case, the model is trained using two datasets, with the actual and predicted prices included in the first but excluded in the second. 
 
-\subsection{Transfer-based Model: Predict Status}
+\subsection{Transfer-based Model: Status}
 There are multiple models developed previously, and their performance can be acceptable. Hence, transfer learning may be one of the practical approaches to building a model for predicting status. The selected model is the one to which WRS and outlier removal have been applied. It is loaded initially, and its parameters are frozen. Its output, along with all the attributes and actual prices, is utilized by subsequent layers for forecasting status. The complete architecture of this model is illustrated in figure \ref{transfer_layout}, and the layout of the selected model (indicated in the red rectangle) is displayed in figure \ref{basic_model_price}.
 
 \begin{figure}[!htbp]

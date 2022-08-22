@@ -37,24 +37,24 @@
 \contentsline {subsubsection}{Training models}{11}{section*.41}%
 \contentsline {subsubsection}{Evaluation}{12}{section*.42}%
 \contentsline {section}{\numberline {3.2}Data Source and Collection}{12}{section.43}%
-\contentsline {section}{\numberline {3.3}Data Preprocessing}{13}{section.45}%
-\contentsline {subsection}{\numberline {3.3.1}Handle Room Descriptions (HTML)}{13}{subsection.46}%
-\contentsline {subsubsection}{Acquire room name and dimension}{13}{section*.47}%
+\contentsline {section}{\numberline {3.3}Data Preprocessing}{12}{section.45}%
+\contentsline {subsection}{\numberline {3.3.1}Handle Room Descriptions (HTML)}{12}{subsection.46}%
+\contentsline {subsubsection}{Acquire room name and dimension}{12}{section*.47}%
 \contentsline {subsubsection}{Generalize room information}{14}{section*.50}%
 \contentsline {subsection}{\numberline {3.3.2}Manipulate Categorical Keywords}{15}{subsection.56}%
-\contentsline {subsection}{\numberline {3.3.3}Manage Outliers}{17}{subsection.60}%
+\contentsline {subsection}{\numberline {3.3.3}Manage Outliers}{16}{subsection.60}%
 \contentsline {subsection}{\numberline {3.3.4}Create Input Dataset}{17}{subsection.65}%
 \contentsline {subsubsection}{Feature Encoding}{17}{section*.66}%
 \contentsline {subsubsection}{Manage Missing Values}{17}{section*.67}%
 \contentsline {subsubsection}{Classy Approach}{17}{section*.68}%
 \contentsline {section}{\numberline {3.4}Model Construction}{19}{section.71}%
-\contentsline {subsection}{\numberline {3.4.1}Basic Model: Output Sale Status and Price}{19}{subsection.72}%
-\contentsline {subsection}{\numberline {3.4.2}Linear Regression: Predict Price}{19}{subsection.74}%
-\contentsline {subsection}{\numberline {3.4.3}Basic Model: Predicting Prices}{20}{subsection.75}%
-\contentsline {subsection}{\numberline {3.4.4}Complex Model: Predicting Prices}{20}{subsection.77}%
-\contentsline {subsection}{\numberline {3.4.5}Residual Network: Predicting Prices}{20}{subsection.78}%
-\contentsline {subsection}{\numberline {3.4.6}Linear Regression: Predict Status of Transactions}{21}{subsection.82}%
-\contentsline {subsection}{\numberline {3.4.7}Transfer-based Model: Predict Status}{22}{subsection.84}%
+\contentsline {subsection}{\numberline {3.4.1}Basic Model: Transaction Status and Price}{19}{subsection.72}%
+\contentsline {subsection}{\numberline {3.4.2}Linear Regression: Prices}{19}{subsection.74}%
+\contentsline {subsection}{\numberline {3.4.3}Basic Model: Prices}{20}{subsection.75}%
+\contentsline {subsection}{\numberline {3.4.4}Complex Model: Prices}{20}{subsection.77}%
+\contentsline {subsection}{\numberline {3.4.5}Residual Network: Prices}{20}{subsection.78}%
+\contentsline {subsection}{\numberline {3.4.6}Linear Regression: Status of Transactions}{21}{subsection.82}%
+\contentsline {subsection}{\numberline {3.4.7}Transfer-based Model: Status}{22}{subsection.84}%
 \contentsline {subsection}{\numberline {3.4.8}Basic Model: Price Included}{24}{subsection.86}%
 \contentsline {chapter}{\numberline {4}Testing \& Experimental Results}{25}{chapter.88}%
 \contentsline {section}{\numberline {4.1}Data Preprocessing}{25}{section.89}%
