@@ -128,7 +128,7 @@ Python is one of the most popular programming languages in the world since it is
 The format of texts in this project can be classified as HTML and plaintext. Although Python standard libraries provide some string processing capabilities, they are insufficient for this situation. 
 
 \subsubsection{Beautiful Soup}
-\textit{\textbf{Beautiful Soup}} is a Python library for extracting data from markup languages, such as HTML and XML. It can accomplish this with a user-specified parser, for example, \textbf{\textit{html.parser}}, to navigate, search and modify the parse tree, which would save considerable time \citep{RN10}. 
+\textit{\textbf{Beautiful Soup}} is a Python package designed to extract data from markup languages, including HTML and XML. It can accomplish this with a user-specified parser, such as \textbf{\textit{html.parser}}, to navigate, search and modify the parse tree, which would save considerable time \citep{RN10}. 
 
 \subsubsection{parse}
 The \textit{\textbf{format}} function in the Python standard library formats a string, whereas the \textit{\textbf{parse}} module provides functions with an opposite effect, i.e., extracting information from formatted strings.
@@ -178,7 +178,7 @@ However, \textit{scikit-learn} can be used to preprocess datasets and evaluate p
 \textbf{\textit{Matplotlib}} is a Python package for plotting figures, and the figures can then be saved in multiple formats, including PNG and JPEG. It can also generate numerous types of graphs, such as line plots, scatter plots, and pie plots.
 
 \subsubsection{Seaborn}
-\textbf{\textit{Seaborn}} is another Python library for generating graphs that integrates with \textit{pandas} to offer a high-level interface to \textit{matploblib}. If a dataset is provided, \textit{seaborn} can automatically generate the figure with appropriate plotting attributes, such as color and legend. Additionally, it is capable of generating comprehensive graphics with a single function call and a minimum number of arguments \citep{RN16}.
+\textbf{\textit{Seaborn}} is another Python library for generating graphs, and its integration with \textit{pandas} enables it to offer more powerful functionalities than \textit{matploblib} \citep{RN16}. Therefore, if a dataset is provided, \textit{seaborn} can automatically generate the figure with appropriate plotting attributes, such as color and legend.
 
 \subsubsection{Library Usage}
 In this project, data visualization can be beneficial during preprocessing data and performance evaluation. For preprocessing, the distribution of the raw data should be inspected, hence \textit{seaborn} could be an optimal choice since the input is a \textit{DataFrame} and its syntax is concise. During the evaluation, the model output will be converted to \textit{Numpy} arrays. Therefore, \textit{matplotlib} can be used in this case, as it is interactive, and the figure can be further adjusted to illustrate the performance. 
