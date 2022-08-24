@@ -36,7 +36,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-The real estate market is a critical aspect of the economy, and its transactions affect sellers, buyers, agents, investors, and government policies. Therefore, an accurate and unbiased algorithm should be developed to predict whether real estate transactions can be completed. In this project, EweMove provides the estate information, covering the data between January 2018 and December 2022. As prices are one of the most influential factors affecting the transaction status, several neural networks are initially developed to predict them. Mean squared error and coefficient of determination are employed to evaluate the models in this stage. The predicted prices and other property information are then used to train neural networks to forecast transaction status. Confusion matrices are obtained as the basis for computing accuracy, recall, precision, and F1 score to assess the performance of these models, and 82.6\% of transaction status can be correctly predicted. Finally, an ablation study is conducted to identify the most significant factor in predicting the prices and transaction status. 
+The real estate market is a critical aspect of the economy, and its transactions affect sellers, buyers, agents, investors, and government policies. Under this situation, an accurate and unbiased algorithm should be developed to predict whether real estate transactions can be completed. In this project, EweMove provides the estate information, covering the data between January 2018 and December 2022. As prices are one of the most influential factors affecting the transaction status, several neural networks are initially developed to predict them. Mean squared error and coefficient of determination are employed to evaluate the models in this stage. The predicted prices and other property information are then used to train neural networks to forecast transaction status. Confusion matrices are obtained as the basis for computing accuracy, recall, precision, and F1 score to assess the performance of these models, and 82.6\% of transaction status can be correctly predicted. Finally, an ablation study is conducted to identify the most significant factor in predicting the prices and transaction status. 
 \end{abstract}
 
 \cleardoublepage
@@ -178,7 +178,7 @@ However, \textit{scikit-learn} can be used to preprocess datasets and evaluate p
 \textbf{\textit{Matplotlib}} is a Python package for plotting figures, and the figures can then be saved in multiple formats, including PNG and JPEG. It can also generate numerous types of graphs, such as line plots, scatter plots, and pie plots.
 
 \subsubsection{Seaborn}
-\textbf{\textit{Seaborn}} is another Python library for generating graphs, and its integration with \textit{pandas} enables it to offer more powerful functionalities than \textit{matploblib} \citep{RN16}. Therefore, if a dataset is provided, \textit{seaborn} can automatically generate the figure with appropriate plotting attributes, such as color and legend.
+\textbf{\textit{Seaborn}} is another Python library for generating graphs, and its integration with \textit{pandas} enables it to offer more powerful functionalities than \textit{matploblib} \citep{RN16}. Therefore, if a \textit{DataFrame} is provided, its contents can be visualized with appropriate plotting characteristics, such as color and legend.
 
 \subsubsection{Library Usage}
 In this project, data visualization can be beneficial during preprocessing data and performance evaluation. For preprocessing, the distribution of the raw data should be inspected, hence \textit{seaborn} could be an optimal choice since the input is a \textit{DataFrame} and its syntax is concise. During the evaluation, the model output will be converted to \textit{Numpy} arrays. Therefore, \textit{matplotlib} can be used in this case, as it is interactive, and the figure can be further adjusted to illustrate the performance. 
@@ -1457,7 +1457,7 @@ Folds three, two, and four are selected for evaluation when bias is 0.05, 0.1, a
 	\end{tabular}
 \end{table}
 
-Furthermore, when comparing the models with biases of 0 and 0.05, the correct prediction of the class \textit{Completed} increases from 57\% to 60\%. However, the accuracy for \textit{Not Completed} drops from 95\% to 91\%, indicating a bias of 0.05 is not worthwhile. Using the same strategy when biases are 0 and 0.15, the correctly predicted \textit{Completed} class increases by 20\%, while the precision and the overall performance decline significantly. When comparing models with biases of 0 and 0.1, the correct prediction of the \textit{Completed} transactions increases by more than 10\%, and a decrease in the overall performance and precision can be acceptable. 
+Furthermore, when comparing the models with biases of 0 and 0.05, the correct prediction of the class \textit{Completed} increases from 57\% to 60\%. However, the accuracy for \textit{Not Completed} drops from 95\% to 91\%, indicating a bias of 0.05 is not worthwhile. The same strategy is used when biases are 0 and 0.15, the correctly predicted \textit{Completed} class increases by 20\%, while the precision and the overall performance decline significantly. When comparing models with biases of 0 and 0.1, the correct prediction of the \textit{Completed} transactions increases by more than 10\%, and a decrease in the overall performance and precision can be acceptable. 
 \\
 
 After tuning hyperparameters and modifying the architecture, the final layout of the basic model for predicting transaction status is demonstrated in figure \ref{basic_status_final_layout}. 
@@ -1508,6 +1508,34 @@ Section \ref{linear_regression_status} demonstrates that the models should be tr
 	\end{tabular}
 \end{table}
 
+
+\begin{table*}[!htbp]
+	\centering
+	\caption{Impact of modifying inputs on transaction status}
+	\label{ablation_input_status}
+	\subtable[Actual Prices]{
+		\begin{tabular}{| c | c | c | c | c | c | c | c | }
+			\hline
+			Actual Prices & -0.15\% & -0.10\% & -0.05\% & 0 & 0.05\% & 0.10\% & 0.15\% \\
+			\hline
+			Status & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+			\hline
+		\end{tabular}
+	}
+	\hfill
+	\subtable[Number of Bedrooms]{
+		\begin{tabular}{| c | c | c | c | c | c |}
+			\hline
+			Bedroom & -2 & -1 & 0 & 1 & 2\\
+			\hline
+			Status & 0 & 0 & 1 & 1 & 1 \\
+			\hline
+		\end{tabular}
+	}
+\end{table*}
+
+Another type of ablation study is performed. The model trained in section \ref{basic_status_training_included} is loaded, and the input features are altered to assess their impact on predictions. The result is shown in table \ref{ablation_input_status}. The status changes to zero when the actual price increases by 15\%, and it remains unchanged for other modifications. The status of zero also results from having fewer bedrooms, while having more bedrooms does not influence the status.
+
 \subsubsection{Property Prices}
 The same method is also used to identify the most influential feature in forecasting prices, and the result is shown in table \ref{ablation_price}. The overall performance decreases dramatically when the postcode is excluded, i.e., the $R^2$ decreases by 0.03, indicating that the location is the most significant element for a property. Moreover, the number of bedrooms, kitchens, bathrooms, and other rooms causes the $R^2$ to decrease by 0.02, demonstrating their comparable significance when predicting prices. However, the number of living rooms and dining rooms leads to a 0.01 decrease in $R^2$, suggesting they are the least critical characteristics. 
 
@@ -1540,6 +1568,33 @@ The same method is also used to identify the most influential feature in forecas
 	\end{tabular}
 \end{table}
 
+Moreover, the impact of the input attributes on the predicted prices are conducted, and the result is demonstrated in table \ref{ablation_input_price}. The predicted prices increases when there are more bedrooms in a property, whereas the number of other rooms have no significant influence. 
+
+\begin{table*}[!htbp]
+	\centering
+	\caption{Impact of modifying inputs on price}
+	\label{ablation_input_price}
+	\subtable[Number of bedrooms]{
+		\begin{tabular}{| c | c | c | c | c | c |}
+			\hline
+			Bedroom & +0 & +1 & +2 & +3 & +4 \\
+			\hline
+			Price & 1515 & 1551 & 1645 & 1647 & 2746 \\
+			\hline
+		\end{tabular}
+	}
+	\hfill
+	\subtable[Number of Other Rooms]{
+		\begin{tabular}{| c | c | c | c | c | c |}
+			\hline
+			Other Rooms & +0 & +1 & +2 & +3 & +4\\
+			\hline
+			Price & 1515 & 1195 & 1107 & 1112 & 1109 \\
+			\hline
+		\end{tabular}
+	}
+\end{table*}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion and Future Work}
 \section{Future Work}
@@ -1566,7 +1621,7 @@ The hyperparameters were tuned sequentially when training the complex model for 
 In this project, only neural networks were developed, and their performance was comparable to those created by \citet{RN37}. However, there are other available ML algorithms. \citet{RN17} stated that the random forest has the best performance in their study, whereas \citet{RN20} argued that XGBoost is the model with the highest accuracy instead of the random forest. The models utilized in their research and the models reviewed in section \ref{model_review} should be attempted so that the accuracy of predicting the property transaction can be improved. 
 
 \subsection{Ablation Study}
-The ablation study in this project only utilized some of the dataset's features due to time constraints. Other features such as parking and outside spaces can be investigated in future research. Additionally, another type of ablation study can be undertaken, which uses the same model but different values of input features to inspect how the predictions alter as the inputs change. This kind of ablation study can be advantageous. For example, when a transaction cannot be completed at present, an agent can determine what changes in price may enable it to be completed in the future.
+The ablation studies in this project only utilized some of the dataset's features due to time constraints. Other features such as parking and outside spaces can be investigated in future research. Furthermore, the second type of ablation study on status can be extremely advantageous. For example, when a transaction cannot be completed at present, an agent can determine what changes in price may enable it to be completed. However, it was conducted with only two features, and future research can evaluate the impact of other features on the transaction status. 
 
 \section{Ethics}
 EweMove provided the datasets used in this project. No humans were involved in the data preparation phase, and all the data in the datasets were anonymous and unidentifiable, meaning there were no potential privacy concerns. In addition, the General Data Protection Regulation (EU) was adhered to throughout the development of the project to prevent data abuse and leakage. 
