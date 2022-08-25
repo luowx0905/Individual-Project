@@ -125,10 +125,10 @@ In another research, \citet{RN20} developed an ML model for forecasting if selli
 Python is one of the most popular programming languages in the world since it is simple to develop, and there are extensive packages for various functionalities. In this project, Python and its packages are used for loading data, preprocessing data, and constructing and evaluating ML models. 
 
 \subsection{Handle Text Information}
-The format of texts in this project can be classified as HTML and plaintext. Although Python standard libraries provide some string processing capabilities, they are insufficient for this situation. 
+The format of texts in this project can be classified as HTML and plain text. Although Python standard libraries provide some string processing capabilities, they are insufficient for this situation. 
 
 \subsubsection{Beautiful Soup}
-\textit{\textbf{Beautiful Soup}} is a Python package designed to extract data from markup languages, including HTML and XML. It can accomplish this with a user-specified parser, such as \textbf{\textit{html.parser}}, to navigate, search and modify the parse tree, which would save considerable time \citep{RN10}. 
+\textit{\textbf{Beautiful Soup}} is a Python package designed to extract data from markup languages, including HTML and XML. It can accomplish this with a parser specified by users, such as \textbf{\textit{html.parser}}, to navigate, search and modify the parse tree, which would save considerable time \citep{RN10}. 
 
 \subsubsection{parse}
 The \textit{\textbf{format}} function in the Python standard library formats a string, whereas the \textit{\textbf{parse}} module provides functions with an opposite effect, i.e., extracting information from formatted strings.
@@ -145,7 +145,7 @@ In this project, HTML texts are used extensively in the raw dataset to describe 
 Numerical Python (\textit{\textbf{NumPy}}) is a scientific computing package designed to support large multidimensional matrices. It exploits an optimized \textit{C/C++} API to reduce computation time compared to pure Python computations \citep{RN6}. Numerous \textit{Numpy} capabilities can simplify a large number of challenging data analytics tasks. For example, it provides robust matrix operations, facilitates the construction of multidimensional objects, and serves as the foundation of other packages, including \textbf{\textit{matplotlib}} and \textbf{\textit{seaborn}}.
 
 \subsubsection{Pandas}
-The \textbf{\textit{pandas}} is an open-source and compelling package developed primarily for data analysis and is built on \textit{Numpy}. It is capable of handling data of various types (numerical values, strings, and time) and from various sources (CSV, Excel, and MySQL databases). \textbf{\textit{DataFrame}} is one of the \textit{pandas} data structures that is appropriate for handling tabular data with columns of different types. Additionally, it could manage various operations, such as manipulating missing values, creating pivot tables, and grouping data from different columns \citep{RN4}. 
+The \textbf{\textit{pandas}} is an open-source and versatile package developed primarily for data analysis and is built on \textit{Numpy}. Various types of data, including numerical values, strings, and times are supported, and they can originate from a variety of sources, such as CSV, Excel files, and MySQL databases. \textbf{\textit{DataFrame}} is one of the \textit{pandas} data structures that is appropriate for handling tabular data containing multiple types of data. Additionally, it could manage various operations, such as manipulating missing values, creating pivot tables, and grouping data from different columns \citep{RN4}. 
 
 \subsubsection{Library Usage}
 In this project, the dataset provided is in CSV format, hence it can be loaded by \textit{pandas} since it is suitable for tabular data. Then the package is utilized for preprocessing, such as handling missing values and grouping columns of data. 
@@ -156,16 +156,16 @@ In this project, the dataset provided is in CSV format, hence it can be loaded b
 
 \subsection{ML Frameworks}
 \subsubsection{Scikit-learn}
-\textit{\textbf{Scikit-learn}} is a popular open-source ML framework that employs \textit{Numpy}. It contains traditional ML algorithms, including clustering, classification, and regression, as well as a variety of utilities that can be applied to preprocess data and evaluate the performance \citep{RN7}. The drawback of this library is that it does not natively support GPU acceleration and is not a neural network framework. 
+\textit{\textbf{Scikit-learn}} is a popular open-source ML framework that employs \textit{Numpy}. It contains traditional ML algorithms, including clustering, classification, and regression, as well as a variety of utilities that can be applied to preprocess data and evaluate performance \citep{RN7}. The drawback of this library is that it does not natively support GPU acceleration and is not a framework for developing neural networks. 
 
 \subsubsection{PyTorch}
-\textbf{\textit{PyTorch}} is one of the popular ML frameworks developed by Facebook, which is designed to implement neural networks with flexibility and speed \citep{RN5}. It provides various components for model construction and training. For instance, there are numerous types of modules that comprise a model, such as linear layers, dropout, and activation functions, as well as a variety of loss functions and optimizers that can be employed in model training. 
+\textbf{\textit{PyTorch}} is a remarkable ML framework developed by Facebook, which is designed to implement neural networks with flexibility and speed \citep{RN5}. It provides various components for model construction and training. For instance, numerous types of modules serve as the foundation for creating a model, such as linear layers, dropout, and activation functions, as well as a variety of loss functions and optimizers that can be employed in model training. 
 \\
 
-Furthermore, it can be beneficial to construct and train a model with \textit{Pytorch}. It has a Pythonic nature which means that its syntax is similar to Python, making it more straightforward for Python programmers to develop neural networks than other ML frameworks. Moreover, it is a rapidly expanding framework for developing neural networks with a vast ecosystem, meaning that a substantial number of utilities have been developed on top of it \citep{RN5}. Additionally, \textit{PyTorch} supports automatic differentiation and GPU acceleration which can be advantageous for model training.
+Furthermore, it can be beneficial to construct and train a model with \textit{Pytorch}. Because of its Pythonic character, it is more straightforward for Python programmers to develop neural networks than with other ML frameworks. Moreover, it is a rapidly evolving framework for constructing neural networks with a vast ecosystem and serves as the foundation for a considerable number of utilities \citep{RN5}. Additionally, \textit{PyTorch} supports automatic differentiation and GPU acceleration which can be advantageous for model training.
 
 \subsubsection{TensorFlow}
-\textit{\textbf{TensorFlow}} is another ML framework produced by Google that specializes in deep learning and neural networks. It provides approximately the same components as \textit{PyTorch} and  supports automatic differentiation and GPU acceleration. One of the appealing characteristics of \textit{TensorFlow} is called \textit{\textbf{TensorBoard}}, which is an interactive visualization system that can display the flowchart of the data manipulation and plot the tendency of the performance \citep{RN15}. 
+\textit{\textbf{TensorFlow}} is another powerful ML framework produced by Google that specializes in deep learning and neural networks. It provides approximately the same components as \textit{PyTorch} and  supports automatic differentiation and GPU acceleration. One of the appealing characteristics of \textit{TensorFlow} is called \textit{\textbf{TensorBoard}}, which is an interactive visualization system that can display the flowchart of the data manipulation and plot the tendency of the performance \citep{RN15}. 
 
 \subsubsection{Library Usage}
 This project aims to construct neural networks, which means \textit{scikit-learn} is not applicable at this stage. Although \textit{TensorFlow} provides the same capabilities as \textit{PyTorch} and is superior in visualization, the model construction and training will use \textit{PyTorch} due to its Pythonic syntax and compatibility with \textit{TensorBoard}. 
@@ -175,7 +175,7 @@ However, \textit{scikit-learn} can be used to preprocess datasets and evaluate p
 
 \subsection{Data Visualization}
 \subsubsection{Matplotlib}
-\textbf{\textit{Matplotlib}} is a Python package for plotting figures, and the figures can then be saved in multiple formats, including PNG and JPEG. It can also generate numerous types of graphs, such as line plots, scatter plots, and pie plots.
+\textbf{\textit{Matplotlib}} is a Python package for plotting figures which can be saved in multiple formats, including PNG and JPEG. It can also generate numerous types of graphs, such as line plots, scatter plots, and pie plots.
 
 \subsubsection{Seaborn}
 \textbf{\textit{Seaborn}} is another Python library for generating graphs, and its integration with \textit{pandas} enables it to offer more powerful functionalities than \textit{matploblib} \citep{RN16}. Therefore, if a \textit{DataFrame} is provided, its contents can be visualized with appropriate plotting characteristics, such as color and legend.
