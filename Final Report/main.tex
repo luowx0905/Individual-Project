@@ -194,6 +194,7 @@ Most of the research focused on predicting the prices for real estate, and vario
 The raw data should be preprocessed, and the steps are as follows. 
 \begin{enumerate}
 	\item Handling missing values: They must be managed appropriately before being passed to the model. The possible methods include removing missing values and replacing them with the default value.
+	\item Removing outliers: They are providing incorrect information to models during the training, resulting in unreliable performance. Hence, these values must be eliminated.
 	\item Standardization: In real life, different features usually have different ranges, and it will cause a problem in ML, which is that high magnitude features would have more weight than low magnitude features \citep{RN4}. One of the solutions is standardization, which can scale all the features to the same magnitude.
 	\item Feature encoding: ML models require numerical values, whereas the categorical features in the dataset do not satisfy this requirement. Therefore, these features should be converted into numerical values by encoding.
 \end{enumerate}
@@ -204,16 +205,13 @@ The dataset created during preprocessing is split into training and testing sets
 Cross validation is employed to train the model due to the limited training data for this project. There are two model outputs, including prices and the transaction status. The loss function for prices is mean squared error (MSE) as they are positive values. However, the transaction status is either one or zero, hence its loss function is binary cross entropy (BCE). 
 \\
 
-The optimizer used for training is Adam, which could compute a learning rate for each parameter and has a low computing time. The learning rate is initially set to $1 \times 10^{-3}$ and will be updated if necessary.
-\\
-
-The performance is illustrated after cross validation by plotting training and validation losses against epoch. Based on these graphs, the model with the best performance can be selected for the evaluation phase. 
+The optimizer used for training is Adam, which could compute a learning rate for each parameter \citep{RN5}. The learning rate is initially set to $1 \times 10^{-3}$ and will be updated if necessary. The performance is illustrated after cross validation by plotting training and validation losses against epoch. Based on these graphs, the model with the best performance can be selected for the evaluation phase. 
 
 \subsubsection{Evaluation}
 The model performance should be evaluated on unseen data. Otherwise, it would be useless. Various metrics are used to quantify the performance of the model in this project. 
 \\
 
-As the measurements for predicted prices, MSE and coefficient of determination ($R^2$) are applied.  The lower the MSE, the better the performance. $R^2$ values are typically between 0 to 1. A model with $R^2 = 0$ cannot make accurate predictions, while $R^2 = 1$ indicates that the results are reliable. In rare instances, the $R^2$ can be negative, indicating that the model does not gain insights into the data, which is the worst performance. 
+As the measurements for predicted prices, MSE and coefficient of determination ($R^2$) are applied.  The lower the MSE, the better the performance. $R^2$ values are typically between 0 to 1. A model with $R^2 = 0$ cannot accurately estimate the result, while $R^2 = 1$ indicates that the results are reliable. In rare instances, the $R^2$ can be negative, indicating that the model does not gain insights into the data, which is the worst performance. 
 \\
 
 Confusion matrices, which indicate the type of errors and the areas where the models produce wrong estimations, can be employed to show classification results. They are initially obtained to access the predictions regarding the status of transactions. Based on the confusion matrix, various metrics are calculated, such as accuracy, precision, recall, and F1 score. 
@@ -326,7 +324,7 @@ Figure \ref{uml_generalize_dataset} illustrates the UML diagram of the class \co
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=6cm]{uml_generalize_dataset}
+	\includegraphics[width=5cm]{uml_generalize_dataset}
 	\caption{The UML diagram of \code{\textit{GeneralizeDataset}}}
 	\label{uml_generalize_dataset}
 \end{figure}
@@ -339,7 +337,7 @@ Figure \ref{uml_generalize_dataset} illustrates the UML diagram of the class \co
 \end{figure}
 
 \subsection{Manage Outliers}
-The price is crucial to the project, and the distribution of the raw data is inspected, as shown in figure \ref{price_raw}. The spike on the left side of the figure indicates that numerous properties have zero prices, which is illogical. Therefore, these abnormal values should be addressed as they could significantly impact the performance of the model.
+The distribution of prices in the raw dataset is inspected since they are crucial in this project, and the result is illustrated in figure \ref{price_raw}. The spike on the left side of the figure indicates that numerous properties have zero prices, which is illogical. Therefore, these abnormal values should be addressed as they could significantly impact the performance of the model.
 
 \begin{figure*}[!htbp]
 	\centering
@@ -370,12 +368,16 @@ After the information in HTML texts and categorical keywords are extracted, it i
 	\label{uml_create_input_dataset}
 \end{figure}
 
-\begin{figure}[!htbp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[height=14cm]{create_input_dataset}
 	\caption{The flow diagram of producing the input dataset}
 	\label{create_input_dataset}
 \end{figure}
+
+\subsection{Standardize Data}
+The input dataset should be standardized before being input to the models. The \code{StandardScaler} in \textit{scikit-learn} is utilized to standardize the features by transferring the original distribution to a normal distribution, meaning that the mean is zero and the variance is one after standardization. 
+\clearpage 
 
 \section{Model Construction}
 
@@ -529,27 +531,24 @@ This test utilized two HTML texts, which are illustrated in figure \ref{html_roo
 The data obtained from HTML texts (figure \ref{html_room_info_test}) is used to access the behavior of \code{\textit{ExtractRooms}}, particularly its member function \code{\textit{get\_rooms}}. During testing, the selected type is the bedroom, and all the operations of \code{\textit{get\_room}} are inspected. Additionally, the other rooms are used to test the function \code{\textit{get\_rest\_rooms}}. 
 \\
 
-The results of calling \code{\textit{get\_rooms}} are displayed in tables \ref{bedroom_info_split} and \ref{bedroom_info_all}. It is obvious that all the bedrooms and their respective areas in tables \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2} are successfully extracted. Moreover, the numerical values could also be obtained without error if the operations are appropriately configured. These behaviors demonstrate that the functionality and design are identical. In addition, the result of invoking \code{\textit{get\_rest\_rooms}} is displayed in table \ref{other_room_info}. It is clear that there is no statistical inconsistency using the information from tables \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2}. Hence this function can pass the test. 
-
-\begin{table}[!htbp]
-	\centering
-	\captionof{table}{Room information (\textit{split})}
-	\label{bedroom_info_split}
-	\begin{tabular}{| c | c | c | c |}
-		\hline
-		& Bedroom 1 & Bedroom 2 & Bedroom 3 \\
-		\hline
-		0 & 8.2 & 6.2 & 0.0 \\
-		\hline
-		1 & 13.1 & 7.7 & 10.4 \\
-		\hline
-	\end{tabular}
-\end{table}
+The results of calling \code{\textit{get\_rooms}} are displayed in table \ref{bedroom_info}. It is obvious that all the bedrooms and their respective areas in tables \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2} are successfully extracted. Moreover, the numerical values could also be obtained without error if the operations are appropriately configured. These behaviors demonstrate that the functionality and design are identical. In addition, the result of invoking \code{\textit{get\_rest\_rooms}} is displayed in table \ref{other_room_info}. It is clear that there is no statistical inconsistency using the information from tables \ref{html_room_info_expect_1} and \ref{html_room_info_expect_2}. Hence this function can pass the test. 
 
 \begin{table*}[!htbp]
 	\centering
 	\caption{Bedroom information integrated by different operations}
-	\label{bedroom_info_all}
+	\label{bedroom_info}
+	\subtable[Split]{
+		\begin{tabular}{| c | c | c | c |}
+			\hline
+			& Bedroom 1 & Bedroom 2 & Bedroom 3 \\
+			\hline
+			0 & 8.2 & 6.2 & 0.0 \\
+			\hline
+			1 & 13.1 & 7.7 & 10.4 \\
+			\hline
+		\end{tabular}
+	}
+	\\
 	\subtable[Mean]{
 		\begin{tabular}{| c | c |}
 			\hline
@@ -560,7 +559,7 @@ The results of calling \code{\textit{get\_rooms}} are displayed in tables \ref{b
 			1 & 10.4 \\ 
 			\hline
 		\end{tabular}
-		\label{bedroom_info_mean}
+		%\label{bedroom_info_mean}
 	}
 	\hfill
 	\subtable[Sum]{
@@ -573,7 +572,7 @@ The results of calling \code{\textit{get\_rooms}} are displayed in tables \ref{b
 			1 & 31.2 \\ 
 			\hline
 		\end{tabular}
-		\label{bedroom_info_sum}
+		%\label{bedroom_info_sum}
 	}
 	\hfill
 	\subtable[Number]{
@@ -586,27 +585,30 @@ The results of calling \code{\textit{get\_rooms}} are displayed in tables \ref{b
 			1 & 3 \\ 
 			\hline
 		\end{tabular}
-		\label{bedroom_info_number}
-	}
-	\subtable[Other rooms]{
-		\begin{tabular}{| c | c | c |}
-			\hline
-			& Number & Area \\
-			\hline
-			0 & 6 & 34.8 \\
-			\hline
-			1 & 5 & 34.3 \\
-			\hline
-		\end{tabular}
-		\label{other_room_info}
+		%\label{bedroom_info_number}
 	}
 \end{table*}
+
+\begin{table}[!htbp]
+	\centering
+	\caption{The information of other rooms}
+	\label{other_room_info}
+	\begin{tabular}{| c | c | c |}
+		\hline
+		& Number & Area \\
+		\hline
+		0 & 6 & 34.8 \\
+		\hline
+		1 & 5 & 34.3 \\
+		\hline
+	\end{tabular}
+\end{table}
 
 \subsection{Manipulate Categorical Keywords}
 The data utilized for this test is displayed in figure \ref{parking_dataset}. Initially, an invalid feature, \textit{Distance to School}, is input into the function \code{\textit{get\_feature\_types}}, and the feature is then set to \textit{parking}. With the same data, the member function \code{\textit{get\_feature\_num}} is evaluated.
 \\
 
-In the initial test, an exception can be thrown if an invalid feature is entered, in this case, \textit{Distance to School}. Next, the result of calling function \code{\textit{get\_feature\_types}} is shown in table \ref{parking_types}. Since there are ten properties in the snippets and six keywords in total, this table has ten rows and six columns which is correct, and its elements are consistent with the dataset snippet. For the first property with an \textbf{allocated} \textbf{off-street} parking space for \textbf{residents}, the three keywords in the first row are set to one while the others are zero, and this conclusion holds true for the remaining properties. In addition, the number of keywords associated with each property can be obtained accurately by calling \code{\textit{get\_feature\_num}}. 
+In the initial test, an exception can be thrown if an invalid feature is entered, in this case, \textit{Distance to School}. Next, the result of calling function \code{\textit{get\_feature\_types}} is shown in table \ref{parking_types}. Since there are ten properties in the snippets and six keywords in total, this table has ten rows and six columns which is correct, and its elements are consistent with the dataset snippet. For the first property with an \textbf{allocated} \textbf{off-street} parking space for \textbf{residents}, the three keywords in the first row are set to one while the others are zero, and this conclusion holds true for the remaining properties. In addition, the number of keywords associated with each property can be obtained accurately by calling \code{\textit{get\_feature\_num}}. Hence, this class can pass the test. 
 
 \begin{table}[!htbp]
 	\centering
@@ -645,7 +647,7 @@ During preprocessing, both filling the mean value and removing outliers are atte
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[height=4cm]{price_all_mean}
+	\includegraphics[height=5cm]{price_all_mean}
 	\caption{The distribution of prices with mean value filled}
 	\label{price_filled}
 \end{figure}
@@ -654,9 +656,9 @@ Therefore, removing zero prices is applied to create input datasets for models a
 
 \begin{figure*}[h]
 	\centering
-	\subfigure[Sale Prices]{\includegraphics[height=4cm]{price_sale_remove}\label{price_sale_remove}}
+	\subfigure[Sale Prices]{\includegraphics[height=5cm]{price_sale_remove}\label{price_sale_remove}}
 	\hfil
-	\subfigure[Rental Prices]{\includegraphics[height=4cm]{price_rental_remove}\label{price_rental_remove}}
+	\subfigure[Rental Prices]{\includegraphics[height=5cm]{price_rental_remove}\label{price_rental_remove}}
 	\caption{The distribution of prices with zero prices removed}
 	\label{price_removed}
 \end{figure*}
@@ -674,6 +676,16 @@ For general information, the first ten rows after preprocessing and their corres
 	\caption{Comparison  between original and preprocessed dataset}
 	\label{general_info}
 \end{figure*}
+
+\subsection{Standardize Data}
+The result of standardization is shown in figure \ref{preprocessed_dataset}. Comparing with figure \ref{general_input}, it is evident that the values in the column of postcode decrease drametidcally, and the distributions of other features also modified. Therefore, it can be used as model input.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=\linewidth]{normalized}
+	\caption{The dataset after standardization}
+	\label{preprocessed_dataset}
+\end{figure}
 
 \section{Model Construction}
 
@@ -696,10 +708,10 @@ The training and validation losses against epochs for each fold are displayed in
 	\label{sale_fold_5}
 \end{figure*}
 
-Based on the performance plot, the model trained in fold three is selected. The first ten predictions and true values are shown in table \ref{first_model_predictions}, and the metrics are $MSE = 7559964776$ and $R^2 = 0.54$. However, the model only predicts one for status regardless of the truth values. Figure \ref{confusion_matrix_basic_model} illustrates the confusion matrix of predicting completeness, from which the accuracy, precision, recall, and F1 score are calculated to be 0.638, 0.638, 1, and 0.78, respectively. 
+Based on the performance plot, the model trained in fold three is selected. The first ten predictions and true values are shown in table \ref{first_model_predictions}, and the metrics are $MSE = 7559964776$ and $R^2 = 0.54$. However, the model only predicts one for status regardless of the truth values. Figure \ref{confusion_matrix_basic_model} illustrates the confusion matrix of predicting status, from which the accuracy, precision, recall, and F1 score are calculated to be 0.638, 0.638, 1, and 0.78, respectively. 
 \\
 
-\begin{table}[!htbp]
+\begin{table}[h]
 	\centering
 	\caption{Comparison between truth and model predictions}
 	\label{first_model_predictions}
@@ -730,9 +742,9 @@ Based on the performance plot, the model trained in fold three is selected. The 
 	\end{tabular}
 \end{table}
 
-\begin{figure}[!htbp]
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=9cm]{confusion_matrix_basic_model}
+	\includegraphics[width=10cm]{confusion_matrix_basic_model}
 	\caption{The confusion matrix of the basic model}
 	\label{confusion_matrix_basic_model}
 \end{figure}
@@ -742,7 +754,7 @@ The loss function is one of the potential sources of the error results. BCE loss
 \subsection{Linear Regression: Price}
 The training and validation losses of this model are depicted in figure \ref{linear_regression_fold_5}, and the model trained in fold two has been chosen for evaluation since it has the lowest validation loss. 
 \\
-\begin{figure*}[!htbp]
+\begin{figure*}[h]
 	\centering
 	\subfigure[Fold 0]{\includegraphics[width=5cm]{linear_regression_fold_0}\label{linear_regression_fold_0}}
 	\hfill
@@ -757,7 +769,7 @@ The training and validation losses of this model are depicted in figure \ref{lin
 	\label{linear_regression_fold_5}
 \end{figure*}
 
-\begin{table}[!htbp]
+\begin{table}[H]
 	\centering
 	\caption{Truth and predictions of linear regression model}
 	\label{linear_regression_predictions}
@@ -942,7 +954,7 @@ Figure \ref{all_full_epoch_1000_outlier_removed} depicts the training and valida
 
 \subsection{Complex Model: Prices}
 \label{complex_price}
-The training and validation losses of this model are depicted in figure \ref{all_complex_full_epoch_1000}. The predictions made by the model in fold two are displayed in table \ref{complex_model_prediction_price}, along with its metrics, $MSE = 70788722849$, and $R^2 = -1.11$. Clearly, the complex model is not learning, and this might be caused by error hyperparameters. Therefore, the model is tuned so that its performance can be improved. 
+The training and validation losses of this model are depicted in figure \ref{all_complex_full_epoch_1000}. The prices predicted by the model in fold two are displayed in table \ref{complex_model_prediction_price}, along with its metrics, $MSE = 70788722849$, and $R^2 = -1.11$. Clearly, the complex model is not learning, and this might be caused by error hyperparameters. Therefore, the model is tuned so that its performance can be improved. 
 \\
 \begin{figure*}[!htbp]
 	\centering
@@ -1085,7 +1097,7 @@ The metrics of all the models for predicting prices are listed in table \ref{met
 The training and validation losses of the model are depicted in figure \ref{linear_regression_status_include_full}, and all the models can converge and the losses of the last three models are comparable. Therefore, they are utilized for evaluation, and the threshold for converting numerical values into status is set to 0.5. Figure \ref{cm_included} displays the confusion matrics of three models, and their metrics are listed in table \ref{metrics_linear_regression_status_included}.
 \\
 
-From table \ref{metrics_linear_regression_status_included}, the recall has the highest values, which is approximately 0.7. However, the precision and F1 score are around 0.3, which means that the performance of these models is unacceptable. 
+From table \ref{metrics_linear_regression_status_included}, the recall has the highest values, which is approximately 0.7. However, the precision and F1 score are around 0.4, which means that the performance of these models is unacceptable. 
 \begin{figure*}[!htbp]
 	\centering
 	\subfigure[Fold 0]{\includegraphics[width=5cm]{linear_regression_status_include_full_fold_0}}
@@ -1225,15 +1237,15 @@ Figure \ref{transfer_based_status_no_freeze} displays the training and validatio
 
 \begin{figure*}[!htbp]
 	\centering
-	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_ws_removed_full_no_freeze_fold_0}}
+	\subfigure[Fold 0]{\includegraphics[height=3cm]{status_ws_removed_full_no_freeze_fold_0}}
 	\hfill
-	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_ws_removed_full_no_freeze_fold_1}}
+	\subfigure[Fold 1]{\includegraphics[height=3cm]{status_ws_removed_full_no_freeze_fold_1}}
 	\hfill
-	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_ws_removed_full_no_freeze_fold_2}}
+	\subfigure[Fold 2]{\includegraphics[height=3cm]{status_ws_removed_full_no_freeze_fold_2}}
 	\hfil
-	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_ws_removed_full_no_freeze_fold_3}}
+	\subfigure[Fold 3]{\includegraphics[height=3cm]{status_ws_removed_full_no_freeze_fold_3}}
 	\hfil
-	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_ws_removed_full_no_freeze_fold_4}}
+	\subfigure[Fold 4]{\includegraphics[height=3cm]{status_ws_removed_full_no_freeze_fold_4}}
 	\caption{Training \& validation loss of transfer-based model (no frozen parameters)}
 	\label{transfer_based_status_no_freeze}
 \end{figure*}
@@ -1243,17 +1255,17 @@ Figure \ref{transfer_based_status_no_freeze} displays the training and validatio
 The training and validation losses are displayed in figure \ref{basic_status}. Even though all the losses can converge from these graphs, the models would only output a value of approximately 0.5 regardless of the actual status.
 \\
 
-\begin{figure*}[!htbp]
+\begin{figure*}[h]
 	\centering
-	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_basic_no_bs_dropout_0}}
+	\subfigure[Fold 0]{\includegraphics[height=3cm]{status_basic_no_bs_dropout_0}}
 	\hfill
-	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_basic_no_bs_dropout_1}}
+	\subfigure[Fold 1]{\includegraphics[height=3cm]{status_basic_no_bs_dropout_1}}
 	\hfill
-	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_basic_no_bs_dropout_2}}
+	\subfigure[Fold 2]{\includegraphics[height=3cm]{status_basic_no_bs_dropout_2}}
+	\\
+	\subfigure[Fold 3]{\includegraphics[height=3cm]{status_basic_no_bs_dropout_3}}
 	\hfil
-	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_basic_no_bs_dropout_3}}
-	\hfil
-	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_basic_no_bs_dropout_4}}
+	\subfigure[Fold 4]{\includegraphics[height=3cm]{status_basic_no_bs_dropout_4}}
 	\caption{Training \& validation loss of basic model for predicting status (with prices)}
 	\label{basic_status}
 \end{figure*}
@@ -1424,6 +1436,7 @@ From the evaluation results, it is obvious that the overall performance has enha
 \end{figure*}
 
 Folds three, two, and four are selected for evaluation when bias is 0.05, 0.1, and 0.15, respectively. Figure \ref{status_bias_cm} and table \ref{status_bias_metrics} depicts their confusion matrices and metrics along with the model that bias is not applied. The accuracy of predicting the \textit{Completed} class improves with the bias increases, which is the same as the expectation. However, as a trade-off, the precision in table \ref{status_bias_metrics} is decreasing, indicating that the correctness of predicting the other class decreases, resulting in the decline of the overall performance.
+\\
 
 \begin{figure*}[!htbp]
 	\centering
@@ -1599,7 +1612,7 @@ Moreover, the impact of the input attributes on the predicted prices are conduct
 \chapter{Conclusion and Future Work}
 \section{Future Work}
 \subsection{Dataset}
-This project aims to develop a model to predict the status of property transactions across the UK. The distribution of the properties used for training is shown in figure \ref{uk_distribution}. A significant number of properties are located in England, and the data outside of England are located in Cardiff, Edinburgh, Glasgow, and Aberdeen. Therefore, the result will be unreliable if a property is not located in these areas, such as Belfast. In addition, the raw dataset contains approximately 35000 records, whereas a significant number of missing values lead to the dataset for training and testing containing less than 9000 records.
+This project aims to develop a model to predict the status of property transactions across the UK. The distribution of the properties used for training is shown in \mbox{figure \ref{uk_distribution}}. A significant number of properties are situated in England, and the data outside of England are in Cardiff, Edinburgh, Glasgow, and Aberdeen. Therefore, the result will be unreliable if a property is not located in these areas, such as Belfast. In addition, the raw dataset contains approximately 35000 records, whereas a significant number of missing values lead to the dataset for training and testing containing less than 9000 records.
 \\
 
 Moreover, only the layouts and facilities of properties are used for prediction. However, in the research conducted by \citet{RN20}, the local economic data was collected and used with property data to forecast prices. Therefore, the dataset utilized in the current project can be incorporated with economical attributes, including GDP and CPI, to obtain a more robust performance. In addition, the COVID-19 pandemic has had a significant impact on all aspects of daily life, and \citet{RN24} have studied the influence of the virus on the real estate market in HK. Similar research could be conducted to determine the impact of the pandemic on the British real estate market. 
@@ -1609,13 +1622,13 @@ Furthermore, London is the largest city in the UK, with distinct infrastructure 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{uk_distribution}
+	\includegraphics[width=13cm]{uk_distribution}
 	\caption{The distribution of the properties used in this project}
 	\label{uk_distribution}
 \end{figure}
 
 \subsection{Training the Models}
-The hyperparameters were tuned sequentially when training the complex model for predicting prices (section \ref{complex_price}) due to the time limitation. Although this approach is unlikely to obtain the optimal combination of hyperparameters, the performance can still be improved. A similar approach for tuning employs nested loops, whereas its problem is that it requires significant time and hardware resources. Grid search is superior, which selects hyperparameters randomly and then trains the model. This method may not obtain the optimal combination of hyperparameters, but it is less expensive than the first approach \citep{RN38}. Bayesian optimization selects new hyperparameters based on the previous performance \citep{RN38}. It is regarded as the best method for tuning since the optimal combination can be obtained at the lowest cost. 
+The hyperparameters were tuned sequentially when training the complex model for predicting prices (section \ref{complex_price}) due to the time limitation. Although this approach is unlikely to obtain the optimal combination of hyperparameters, the performance can still be improved. A similar approach for tuning employs nested loops, whereas its problem is that it requires significant time and hardware resources. Bayesian optimization selects new hyperparameters based on the previous performance \citep{RN38}. It is regarded as the best method for tuning since the optimal combination can be obtained at a lower cost. 
 
 \subsection{Models}
 In this project, only neural networks were developed, and their performance was comparable to those created by \citet{RN37}. However, there are other available ML algorithms. \citet{RN17} stated that the random forest has the best performance in their study, whereas \citet{RN20} argued that XGBoost is the model with the highest accuracy instead of the random forest. The models utilized in their research and the models reviewed in section \ref{model_review} should be attempted so that the accuracy of predicting the property transaction can be improved. 
@@ -1625,6 +1638,7 @@ The ablation studies in this project only utilized some of the dataset's feature
 
 \section{Ethics}
 EweMove provided the datasets used in this project. No humans were involved in the data preparation phase, and all the data in the datasets were anonymous and unidentifiable, meaning there were no potential privacy concerns. In addition, the General Data Protection Regulation (EU) was adhered to throughout the development of the project to prevent data abuse and leakage. 
+\clearpage
 
 \section{Conclusion}
 This project analyzed the real estate data using ML, and all the aims and objectives have been accomplished. Raw dataset was preprocessed by removing missing values, encoding categorical features, and standardizing the data, resulting in a clean dataset containing 8995 records. Then, it was divided into training and testing sets for developing models. 
