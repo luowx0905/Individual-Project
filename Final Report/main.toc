@@ -78,14 +78,14 @@
 \contentsline {subsubsection}{Actual and Predicted Prices Excluded}{40}{section*.195}%
 \contentsline {subsection}{\numberline {4.2.8}Transfer-based Model: Transaction Status}{41}{subsection.207}%
 \contentsline {subsection}{\numberline {4.2.9}Basic Model: Transaction Status}{44}{subsection.226}%
-\contentsline {subsection}{\numberline {4.2.10}Ablation Study}{54}{subsection.291}%
-\contentsline {subsubsection}{Transaction Status}{54}{section*.292}%
-\contentsline {subsubsection}{Property Prices}{55}{section*.297}%
-\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{56}{chapter.302}%
-\contentsline {section}{\numberline {5.1}Future Work}{56}{section.303}%
-\contentsline {subsection}{\numberline {5.1.1}Dataset}{56}{subsection.304}%
-\contentsline {subsection}{\numberline {5.1.2}Training the Models}{58}{subsection.306}%
-\contentsline {subsection}{\numberline {5.1.3}Models}{58}{subsection.307}%
-\contentsline {subsection}{\numberline {5.1.4}Ablation Study}{58}{subsection.308}%
-\contentsline {section}{\numberline {5.2}Ethics}{58}{section.309}%
-\contentsline {section}{\numberline {5.3}Conclusion}{59}{section.310}%
+\contentsline {subsection}{\numberline {4.2.10}Ablation Study}{53}{subsection.291}%
+\contentsline {subsubsection}{Transaction Status}{53}{section*.292}%
+\contentsline {subsubsection}{Property Prices}{54}{section*.297}%
+\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{55}{chapter.302}%
+\contentsline {section}{\numberline {5.1}Future Work}{55}{section.303}%
+\contentsline {subsection}{\numberline {5.1.1}Dataset}{55}{subsection.304}%
+\contentsline {subsection}{\numberline {5.1.2}Training the Models}{57}{subsection.306}%
+\contentsline {subsection}{\numberline {5.1.3}Models}{57}{subsection.307}%
+\contentsline {subsection}{\numberline {5.1.4}Ablation Study}{57}{subsection.308}%
+\contentsline {section}{\numberline {5.2}Ethics}{57}{section.309}%
+\contentsline {section}{\numberline {5.3}Conclusion}{58}{section.310}%

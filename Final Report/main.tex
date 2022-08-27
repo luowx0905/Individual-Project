@@ -356,7 +356,7 @@ The distribution of prices in the raw dataset is inspected since they are crucia
 This technique is applicable to categorical features in the dataset, such as price qualifier, council tax band, and property condition. The label encoding is employed, which is capable of converting the feature into numeric values between 0 and N - 1, where N is the number of distinct classes in a column.
 
 \subsubsection{Manage Missing Values}
-The datasets used in this project contain a significant number of missing values. For example, approximately 30\% of the room layout and more than 40\% of the council tax band are missing. Under this situation, it is impossible to replace them with the mean value since it causes the model to focus on the average and results in low performance. Therefore, another approach is applied, which is removing the missing values in the datasets. 
+The datasets used in this project contain a significant number of missing values. For example, approximately 30\% of the room layout and more than 40\% of the council tax band are missing. In this situation, it is impossible to replace them with the mean value since it causes the model to focus on the average and results in low performance. Therefore, another approach is applied, which is removing the missing values in the datasets. 
 
 \subsubsection{Classy Approach}
 After the information in HTML texts and categorical keywords are extracted, it is combined with other columns in the dataset to produce a clean dataset for the model input.  Figure \ref{uml_create_input_dataset} is the UML diagram of \code{\textit{CreateInputDataset}}, which is a class developed for this objective, and the flow diagram of producing an input dataset is displayed in figure \ref{create_input_dataset}.
@@ -667,7 +667,7 @@ Therefore, removing zero prices is applied to create input datasets for models a
 The first step in evaluating the behavior of this class is to determine if the categorical features are encoded, and the second test is to inspect whether the missing values are eliminated.
 \\
 
-For general information, the first ten rows after preprocessing and their corresponding rows in the original dataset are displayed in figure \ref{general_info}. The categorical features, such as postcode and council tax band, are encoded as numerical values allowing the first test to be passed. In addition, it is evident that the indices in the new dataset are not continuous, indicating that the rows with missing values have been removed. Hence it can pass the second test. 
+For general information, the first ten rows after preprocessing and the original dataset are displayed in figure \ref{general_info}. The categorical features, such as postcode and council tax band, are encoded as numerical values allowing the first test to be passed. In addition, it is evident that the indices in the new dataset are not continuous, indicating that the rows with missing values have been removed. Hence it can pass the second test. 
 
 \begin{figure*}[!htbp]
 	\centering
@@ -803,7 +803,7 @@ The training and validation losses of this model are depicted in figure \ref{lin
 The first ten predictions and the actual prices are displayed in table \ref{linear_regression_predictions}, and it is evident that there are significant differences between the predictions and the truth. Moreover, the model's metrics are as follows, $MSE = 66601086343$ and $R^2 = -0.91$. These results demonstrate that a linear regression model cannot extract patterns from the dataset and that neural networks with multiple layers are compulsory.
 
 \subsection{Basic Model: Prices}
-Initially, the training \& validation losses of this model are displayed in figure \ref{all_full_epoch_1000}, and the model from fold one is selected for the evaluation because of its performance. The first ten predictions are shown in table \ref{basic_model_prediction_price}, and the metrics of this model are as follows, $MSE = 4918700785$ and $R^2 = 0.85$. 
+Initially, the training and validation losses of this model are displayed in figure \ref{all_full_epoch_1000}, and the model from fold one is selected for the evaluation because of its performance. The first ten predictions are shown in table \ref{basic_model_prediction_price}, and the metrics of this model are as follows, $MSE = 4918700785$ and $R^2 = 0.85$. 
 
 \begin{figure*}[!htbp]
 	\centering
@@ -1148,7 +1148,7 @@ Figure \ref{linear_regression_status_exclude_full} illustrates the training and 
 In table \ref{metrics_linear_regression_status_excluded}, the recall is the highest, while the precision and F1 score are low, suggesting that although the loss can converge, the performance of models is unreliable. Moreover, there are approximately 300 completed and 600 incompleted transactions in the testing dataset. Hence, the accuracy of the model should be 66.6\% even if it only outputs incompleted, whereas none of the linear regression models can exceed this threshold. Therefore, more complex neural networks are required for robust performance. 
 \\
 
-\begin{figure*}[!htbp]
+\begin{figure*}[h]
 	\centering
 	\subfigure[Fold 0]{\includegraphics[width=5cm]{linear_regression_status_exclude_full_fold_0}}
 	\hfill
@@ -1291,7 +1291,7 @@ To identify the source of this error, the outputs of the hidden layers are obtai
 Therefore, the problem causing the models to output 0.5 is the vanishing gradient, and there are two solutions. The first method is the initialization scheme. It is used to initialize the weights of each linear layer, and the incorrect initialization may lead to the vanishing gradient. The second approach is batch normalization (BN), which can standardize the input to a layer in neural networks. In this project, BN is applied to address the issue since it is simple to implement and can rescue the result of an erroneous initialization scheme \citep{RN5}. 
 \\
 
-The results of inserting BN are displayed in figure \ref{status_overfitting}. The models are overfitting since the validation losses continue to increase while the training losses remain constant. Therefore, regularization should be applied so that overfitting can be prevented. In this project, dropout, a type of regularization that can avoid the neural network relying on a single neuron, is inserted into the model between BN and activation functions at a ratio of 0.5. 
+The results of inserting BN are displayed in figure \ref{status_overfitting}. The models are overfitting since the validation losses continue to increase while the training losses remain constant. Therefore, regularization should be applied so that overfitting can be prevented. In this project, dropout, a type of regularization that can avoid the neural network relying on specific neurons, is inserted into the model between BN and activation functions at a ratio of 0.5. 
 \\
 
 Figure \ref{status_dropout} demonstrates the effect of applying dropout. The overfitting is avoided, but the losses oscillate around 0.7 with neither decreasing nor increasing trend. Despite these defects, the models have the lowest losses for predicting status. Therefore, they are evaluated. The model from the second fold is chosen for evaluation because it has the lowest loss and oscillation range based on these loss plots. The confusion matrix are depicted in figure \ref{status_dropout_prediction}, and its metrics are as follows, $accuracy = 0.7188$, $precision = 0.8113$, $recall = 0.7845$ and $F1 score = 0.7977$.
@@ -1357,7 +1357,7 @@ The model in fold three is selected due to its low loss and narrow oscillation. 
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=10cm]{cm_tuned}
+	\includegraphics[width=8cm]{cm_tuned}
 	\caption{The confusion matrix of the model after tuning hyperparameters}
 	\label{status_tuned_prediction}
 \end{figure}
@@ -1372,7 +1372,7 @@ Figure \ref{status_fewer} depicts the training and validation losses, where the 
 	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_v4_fold_1}}
 	\hfill
 	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_v4_fold_2}}
-	\hfil
+	\\
 	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_v4_fold_3}}
 	\hfil
 	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_v4_fold_4}}
@@ -1392,45 +1392,45 @@ From the evaluation results, it is obvious that the overall performance has enha
 
 \begin{figure*}[!htbp]
 	\centering
-	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_bias_005_fold_0}}
+	\subfigure[Fold 0]{\includegraphics[height=3cm]{status_bias_005_fold_0}}
 	\hfill
-	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_bias_005_fold_1}}
+	\subfigure[Fold 1]{\includegraphics[height=3cm]{status_bias_005_fold_1}}
 	\hfill
-	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_bias_005_fold_2}}
+	\subfigure[Fold 2]{\includegraphics[height=3cm]{status_bias_005_fold_2}}
+	\\
+	\subfigure[Fold 3]{\includegraphics[height=3cm]{status_bias_005_fold_3}}
 	\hfil
-	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_bias_005_fold_3}}
-	\hfil
-	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_bias_005_fold_4}}
+	\subfigure[Fold 4]{\includegraphics[height=3cm]{status_bias_005_fold_4}}
 	\caption{Training \& validation losses (prices included and bias = 0.05)}
 	\label{status_005}
 \end{figure*}
 
 \begin{figure*}[!htbp]
 	\centering
-	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_bias_01_fold_0}}
+	\subfigure[Fold 0]{\includegraphics[height=3cm]{status_bias_01_fold_0}}
 	\hfill
-	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_bias_01_fold_1}}
+	\subfigure[Fold 1]{\includegraphics[height=3cm]{status_bias_01_fold_1}}
 	\hfill
-	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_bias_01_fold_2}}
+	\subfigure[Fold 2]{\includegraphics[height=3cm]{status_bias_01_fold_2}}
+	\\
+	\subfigure[Fold 3]{\includegraphics[height=3cm]{status_bias_01_fold_3}}
 	\hfil
-	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_bias_01_fold_3}}
-	\hfil
-	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_bias_01_fold_4}}
+	\subfigure[Fold 4]{\includegraphics[height=3cm]{status_bias_01_fold_4}}
 	\caption{Training \& validation losses (prices included and bias = 0.1)}
 	\label{status_01}
 \end{figure*}
 
 \begin{figure*}[!htbp]
 	\centering
-	\subfigure[Fold 0]{\includegraphics[width=5cm]{status_bias_015_fold_0}}
+	\subfigure[Fold 0]{\includegraphics[height=3cm]{status_bias_015_fold_0}}
 	\hfill
-	\subfigure[Fold 1]{\includegraphics[width=5cm]{status_bias_015_fold_1}}
+	\subfigure[Fold 1]{\includegraphics[height=3cm]{status_bias_015_fold_1}}
 	\hfill
-	\subfigure[Fold 2]{\includegraphics[width=5cm]{status_bias_015_fold_2}}
+	\subfigure[Fold 2]{\includegraphics[height=3cm]{status_bias_015_fold_2}}
+	\\
+	\subfigure[Fold 3]{\includegraphics[height=3cm]{status_bias_015_fold_3}}
 	\hfil
-	\subfigure[Fold 3]{\includegraphics[width=5cm]{status_bias_015_fold_3}}
-	\hfil
-	\subfigure[Fold 4]{\includegraphics[width=5cm]{status_bias_015_fold_4}}
+	\subfigure[Fold 4]{\includegraphics[height=3cm]{status_bias_015_fold_4}}
 	\caption{Training \& validation losses (prices included and bias = 0.15)}
 	\label{status_015}
 \end{figure*}
@@ -1477,7 +1477,7 @@ After tuning hyperparameters and modifying the architecture, the final layout of
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[height=\textheight]{basic_status_final_layout}
+	\includegraphics[height=15cm]{basic_status_final_layout}
 	\caption{The final layout of the basic model for status (with price)}
 	\label{basic_status_final_layout}
 \end{figure}

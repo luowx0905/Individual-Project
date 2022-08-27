@@ -459,6 +459,8 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Fold 4}}}{49}{figure.caption.259}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {4.30}{\ignorespaces The confusion matrix of the model (fewer epochs and adjusted dropout)\relax }}{49}{figure.caption.265}\protected@file@percent }
 \newlabel{status_fewer_prediction}{{4.30}{49}{The confusion matrix of the model (fewer epochs and adjusted dropout)\relax }{figure.caption.265}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.16}{\ignorespaces Metrics of models with various biases (price included)\relax }}{49}{table.caption.289}\protected@file@percent }
+\newlabel{status_bias_metrics}{{4.16}{49}{Metrics of models with various biases (price included)\relax }{table.caption.289}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.31}{\ignorespaces Training \& validation losses (prices included and bias = 0.05)\relax }}{50}{figure.caption.266}\protected@file@percent }
 \newlabel{status_005}{{4.31}{50}{Training \& validation losses (prices included and bias = 0.05)\relax }{figure.caption.266}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Fold 0}}}{50}{figure.caption.266}\protected@file@percent }
@@ -480,59 +482,57 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Fold 2}}}{51}{figure.caption.278}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Fold 3}}}{51}{figure.caption.278}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Fold 4}}}{51}{figure.caption.278}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.16}{\ignorespaces Metrics of models with various biases (price included)\relax }}{51}{table.caption.289}\protected@file@percent }
-\newlabel{status_bias_metrics}{{4.16}{51}{Metrics of models with various biases (price included)\relax }{table.caption.289}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.34}{\ignorespaces Confusion matrices of models with various biases (price included)\relax }}{52}{figure.caption.284}\protected@file@percent }
-\newlabel{status_bias_cm}{{4.34}{52}{Confusion matrices of models with various biases (price included)\relax }{figure.caption.284}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {bias = 0}}}{52}{figure.caption.284}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {bias = 0.05}}}{52}{figure.caption.284}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {bias = 0.1}}}{52}{figure.caption.284}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {bias = 0.15}}}{52}{figure.caption.284}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.35}{\ignorespaces The final layout of the basic model for status (with price)\relax }}{53}{figure.caption.290}\protected@file@percent }
-\newlabel{basic_status_final_layout}{{4.35}{53}{The final layout of the basic model for status (with price)\relax }{figure.caption.290}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.10}Ablation Study}{54}{subsection.291}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Transaction Status}{54}{section*.292}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.17}{\ignorespaces Results of ablation study for predicting the status\relax }}{54}{table.caption.293}\protected@file@percent }
-\newlabel{ablation_status}{{4.17}{54}{Results of ablation study for predicting the status\relax }{table.caption.293}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.18}{\ignorespaces Impact of modifying inputs on transaction status\relax }}{54}{table.caption.294}\protected@file@percent }
-\newlabel{ablation_input_status}{{4.18}{54}{Impact of modifying inputs on transaction status\relax }{table.caption.294}{}}
-\@writefile{lot}{\contentsline {subtable}{\numberline{(a)}{\ignorespaces {Actual Prices}}}{54}{subtable.296}\protected@file@percent }
-\@writefile{lot}{\contentsline {subtable}{\numberline{(b)}{\ignorespaces {Number of Bedrooms}}}{54}{subtable.296}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Property Prices}{55}{section*.297}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.19}{\ignorespaces Results of ablation study for predicting prices\relax }}{55}{table.caption.298}\protected@file@percent }
-\newlabel{ablation_price}{{4.19}{55}{Results of ablation study for predicting prices\relax }{table.caption.298}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.20}{\ignorespaces Impact of modifying inputs on price\relax }}{55}{table.caption.299}\protected@file@percent }
-\newlabel{ablation_input_price}{{4.20}{55}{Impact of modifying inputs on price\relax }{table.caption.299}{}}
-\@writefile{lot}{\contentsline {subtable}{\numberline{(a)}{\ignorespaces {Number of bedrooms}}}{55}{subtable.301}\protected@file@percent }
-\@writefile{lot}{\contentsline {subtable}{\numberline{(b)}{\ignorespaces {Number of Other Rooms}}}{55}{subtable.301}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.34}{\ignorespaces Confusion matrices of models with various biases (price included)\relax }}{51}{figure.caption.284}\protected@file@percent }
+\newlabel{status_bias_cm}{{4.34}{51}{Confusion matrices of models with various biases (price included)\relax }{figure.caption.284}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {bias = 0}}}{51}{figure.caption.284}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {bias = 0.05}}}{51}{figure.caption.284}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {bias = 0.1}}}{51}{figure.caption.284}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {bias = 0.15}}}{51}{figure.caption.284}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.35}{\ignorespaces The final layout of the basic model for status (with price)\relax }}{52}{figure.caption.290}\protected@file@percent }
+\newlabel{basic_status_final_layout}{{4.35}{52}{The final layout of the basic model for status (with price)\relax }{figure.caption.290}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.10}Ablation Study}{53}{subsection.291}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Transaction Status}{53}{section*.292}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.17}{\ignorespaces Results of ablation study for predicting the status\relax }}{53}{table.caption.293}\protected@file@percent }
+\newlabel{ablation_status}{{4.17}{53}{Results of ablation study for predicting the status\relax }{table.caption.293}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.18}{\ignorespaces Impact of modifying inputs on transaction status\relax }}{53}{table.caption.294}\protected@file@percent }
+\newlabel{ablation_input_status}{{4.18}{53}{Impact of modifying inputs on transaction status\relax }{table.caption.294}{}}
+\@writefile{lot}{\contentsline {subtable}{\numberline{(a)}{\ignorespaces {Actual Prices}}}{53}{subtable.296}\protected@file@percent }
+\@writefile{lot}{\contentsline {subtable}{\numberline{(b)}{\ignorespaces {Number of Bedrooms}}}{53}{subtable.296}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Property Prices}{54}{section*.297}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.19}{\ignorespaces Results of ablation study for predicting prices\relax }}{54}{table.caption.298}\protected@file@percent }
+\newlabel{ablation_price}{{4.19}{54}{Results of ablation study for predicting prices\relax }{table.caption.298}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.20}{\ignorespaces Impact of modifying inputs on price\relax }}{54}{table.caption.299}\protected@file@percent }
+\newlabel{ablation_input_price}{{4.20}{54}{Impact of modifying inputs on price\relax }{table.caption.299}{}}
+\@writefile{lot}{\contentsline {subtable}{\numberline{(a)}{\ignorespaces {Number of bedrooms}}}{54}{subtable.301}\protected@file@percent }
+\@writefile{lot}{\contentsline {subtable}{\numberline{(b)}{\ignorespaces {Number of Other Rooms}}}{54}{subtable.301}\protected@file@percent }
 \citation{RN20}
 \citation{RN24}
 \citation{RN26}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{56}{chapter.302}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{55}{chapter.302}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Future Work}{56}{section.303}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Dataset}{56}{subsection.304}\protected@file@percent }
-\@writefile{brf}{\backcite{RN20}{{56}{5.1.1}{subsection.304}}}
-\@writefile{brf}{\backcite{RN24}{{56}{5.1.1}{subsection.304}}}
-\@writefile{brf}{\backcite{RN26}{{56}{5.1.1}{subsection.304}}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Future Work}{55}{section.303}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Dataset}{55}{subsection.304}\protected@file@percent }
+\@writefile{brf}{\backcite{RN20}{{55}{5.1.1}{subsection.304}}}
+\@writefile{brf}{\backcite{RN24}{{55}{5.1.1}{subsection.304}}}
+\@writefile{brf}{\backcite{RN26}{{55}{5.1.1}{subsection.304}}}
 \citation{RN38}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces The distribution of the properties used in this project\relax }}{57}{figure.caption.305}\protected@file@percent }
-\newlabel{uk_distribution}{{5.1}{57}{The distribution of the properties used in this project\relax }{figure.caption.305}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces The distribution of the properties used in this project\relax }}{56}{figure.caption.305}\protected@file@percent }
+\newlabel{uk_distribution}{{5.1}{56}{The distribution of the properties used in this project\relax }{figure.caption.305}{}}
 \citation{RN37}
 \citation{RN17}
 \citation{RN20}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Training the Models}{58}{subsection.306}\protected@file@percent }
-\@writefile{brf}{\backcite{RN38}{{58}{5.1.2}{subsection.306}}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Models}{58}{subsection.307}\protected@file@percent }
-\@writefile{brf}{\backcite{RN37}{{58}{5.1.3}{subsection.307}}}
-\@writefile{brf}{\backcite{RN17}{{58}{5.1.3}{subsection.307}}}
-\@writefile{brf}{\backcite{RN20}{{58}{5.1.3}{subsection.307}}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.4}Ablation Study}{58}{subsection.308}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Ethics}{58}{section.309}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Training the Models}{57}{subsection.306}\protected@file@percent }
+\@writefile{brf}{\backcite{RN38}{{57}{5.1.2}{subsection.306}}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Models}{57}{subsection.307}\protected@file@percent }
+\@writefile{brf}{\backcite{RN37}{{57}{5.1.3}{subsection.307}}}
+\@writefile{brf}{\backcite{RN17}{{57}{5.1.3}{subsection.307}}}
+\@writefile{brf}{\backcite{RN20}{{57}{5.1.3}{subsection.307}}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.4}Ablation Study}{57}{subsection.308}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Ethics}{57}{section.309}\protected@file@percent }
 \bibstyle{unsrtnat}
 \bibdata{proposal}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Conclusion}{59}{section.310}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Conclusion}{58}{section.310}\protected@file@percent }
 \bibcite{RN22}{{1}{2020}{{Skribans et~al.}}{{Skribans, Jurušs, Demianchuk, Maslii, and Pastory}}}
 \bibcite{RN26}{{2}{2022}{{Lepetit et~al.}}{{Lepetit, Viguie, and Liotta}}}
 \bibcite{RN29}{{3}{2021}{{Balemi et~al.}}{{Balemi, Füss, and Weigand}}}
@@ -554,4 +554,4 @@
 \bibcite{RN15}{{19}{2018}{{Shukla and Fricklas}}{{}}}
 \bibcite{RN16}{{20}{2021}{{Waskom}}{{}}}
 \bibcite{RN38}{{21}{2021}{{Agrawal}}{{}}}
-\gdef \@abspage@last{68}
+\gdef \@abspage@last{67}

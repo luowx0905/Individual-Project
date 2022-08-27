@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  26 AUG 2022 17:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  27 AUG 2022 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -950,6 +950,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 667--669
 
  []
 
+
+Overfull \hbox (2.856pt too wide) in paragraph at lines 670--671
+[]\OT1/bch/m/n/12 For gen-eral in-for-ma-tion, the first ten rows af-ter pre-pr
+o-cess-ing and the orig-i-nal dataset
+ []
+
 <./figures//general_raw.png, id=668, 904.37875pt x 259.97125pt>
 File: ./figures//general_raw.png Graphic file (type png)
 <use ./figures//general_raw.png>
@@ -1809,7 +1815,7 @@ old_3.png> <./figures//status_v3_fold_4.png>]
 File: ./figures//cm_tuned.png Graphic file (type png)
 <use ./figures//cm_tuned.png>
 Package pdftex.def Info: ./figures//cm_tuned.png  used on input line 1360.
-(pdftex.def)             Requested size: 284.52756pt x 216.13222pt.
+(pdftex.def)             Requested size: 227.62204pt x 172.8981pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1365--1367
 
@@ -1860,93 +1866,119 @@ File: ./figures//status_bias_005_fold_0.png Graphic file (type png)
 <use ./figures//status_bias_005_fold_0.png>
 Package pdftex.def Info: ./figures//status_bias_005_fold_0.png  used on input l
 ine 1395.
-(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
+(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
 <./figures//status_bias_005_fold_1.png, id=1142, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_005_fold_1.png Graphic file (type png)
 <use ./figures//status_bias_005_fold_1.png>
 Package pdftex.def Info: ./figures//status_bias_005_fold_1.png  used on input l
 ine 1397.
-(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
+(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
 <./figures//status_bias_005_fold_2.png, id=1143, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_005_fold_2.png Graphic file (type png)
 <use ./figures//status_bias_005_fold_2.png>
 Package pdftex.def Info: ./figures//status_bias_005_fold_2.png  used on input l
 ine 1399.
-(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
+(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
 <./figures//status_bias_005_fold_3.png, id=1144, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_005_fold_3.png Graphic file (type png)
 <use ./figures//status_bias_005_fold_3.png>
 Package pdftex.def Info: ./figures//status_bias_005_fold_3.png  used on input l
 ine 1401.
-(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
+(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
 <./figures//status_bias_005_fold_4.png, id=1145, 498.86375pt x 375.4025pt>
 File: ./figures//status_bias_005_fold_4.png Graphic file (type png)
 <use ./figures//status_bias_005_fold_4.png>
 Package pdftex.def Info: ./figures//status_bias_005_fold_4.png  used on input l
 ine 1403.
-(pdftex.def)             Requested size: 142.26378pt x 107.05383pt.
+(pdftex.def)             Requested size: 113.42697pt x 85.35826pt.
 <./figures//status_bias_01_fold_0.png, id=1146, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_01_fold_0.png Graphic file (type png)
 <use ./figures//status_bias_01_fold_0.png>
 Package pdftex.def Info: ./figures//status_bias_01_fold_0.png  used on input li
 ne 1410.
-(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
+(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
 <./figures//status_bias_01_fold_1.png, id=1147, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_01_fold_1.png Graphic file (type png)
 <use ./figures//status_bias_01_fold_1.png>
 Package pdftex.def Info: ./figures//status_bias_01_fold_1.png  used on input li
 ne 1412.
-(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
+(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
 <./figures//status_bias_01_fold_2.png, id=1148, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_01_fold_2.png Graphic file (type png)
 <use ./figures//status_bias_01_fold_2.png>
 Package pdftex.def Info: ./figures//status_bias_01_fold_2.png  used on input li
 ne 1414.
-(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
+(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
 <./figures//status_bias_01_fold_3.png, id=1149, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_01_fold_3.png Graphic file (type png)
 <use ./figures//status_bias_01_fold_3.png>
 Package pdftex.def Info: ./figures//status_bias_01_fold_3.png  used on input li
 ne 1416.
-(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
+(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
 <./figures//status_bias_01_fold_4.png, id=1150, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_01_fold_4.png Graphic file (type png)
 <use ./figures//status_bias_01_fold_4.png>
 Package pdftex.def Info: ./figures//status_bias_01_fold_4.png  used on input li
 ne 1418.
-(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
+(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
 <./figures//status_bias_015_fold_0.png, id=1151, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_015_fold_0.png Graphic file (type png)
 <use ./figures//status_bias_015_fold_0.png>
 Package pdftex.def Info: ./figures//status_bias_015_fold_0.png  used on input l
 ine 1425.
-(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
+(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
 <./figures//status_bias_015_fold_1.png, id=1152, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_015_fold_1.png Graphic file (type png)
 <use ./figures//status_bias_015_fold_1.png>
 Package pdftex.def Info: ./figures//status_bias_015_fold_1.png  used on input l
 ine 1427.
-(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
+(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
 <./figures//status_bias_015_fold_2.png, id=1153, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_015_fold_2.png Graphic file (type png)
 <use ./figures//status_bias_015_fold_2.png>
 Package pdftex.def Info: ./figures//status_bias_015_fold_2.png  used on input l
 ine 1429.
-(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
+(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
 <./figures//status_bias_015_fold_3.png, id=1154, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_015_fold_3.png Graphic file (type png)
 <use ./figures//status_bias_015_fold_3.png>
 Package pdftex.def Info: ./figures//status_bias_015_fold_3.png  used on input l
 ine 1431.
-(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
+(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
 <./figures//status_bias_015_fold_4.png, id=1155, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_015_fold_4.png Graphic file (type png)
 <use ./figures//status_bias_015_fold_4.png>
 Package pdftex.def Info: ./figures//status_bias_015_fold_4.png  used on input l
 ine 1433.
-(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
+(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1438--1440
+
+ []
+
+File: ./figures//cm_fewer.png Graphic file (type png)
+<use ./figures//cm_fewer.png>
+Package pdftex.def Info: ./figures//cm_fewer.png  used on input line 1443.
+(pdftex.def)             Requested size: 213.39566pt x 162.0917pt.
+<./figures//cm_005_fold_1.png, id=1159, 367.3725pt x 279.0425pt>
+File: ./figures//cm_005_fold_1.png Graphic file (type png)
+<use ./figures//cm_005_fold_1.png>
+Package pdftex.def Info: ./figures//cm_005_fold_1.png  used on input line 1445.
+
+(pdftex.def)             Requested size: 213.39566pt x 162.0917pt.
+<./figures//cm_01_fold_4.png, id=1160, 367.3725pt x 279.0425pt>
+File: ./figures//cm_01_fold_4.png Graphic file (type png)
+<use ./figures//cm_01_fold_4.png>
+Package pdftex.def Info: ./figures//cm_01_fold_4.png  used on input line 1447.
+(pdftex.def)             Requested size: 213.39566pt x 162.0917pt.
+<./figures//cm_015_fold_2.png, id=1161, 367.3725pt x 279.0425pt>
+File: ./figures//cm_015_fold_2.png Graphic file (type png)
+<use ./figures//cm_015_fold_2.png>
+Package pdftex.def Info: ./figures//cm_015_fold_2.png  used on input line 1449.
+
+(pdftex.def)             Requested size: 213.39566pt x 162.0917pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1473--1475
 
  []
 
@@ -1958,50 +1990,20 @@ png> <./figures//status_bias_005_fold_2.png> <./figures//status_bias_005_fold_3
 .png> <./figures//status_bias_005_fold_4.png> <./figures//status_bias_01_fold_0
 .png> <./figures//status_bias_01_fold_1.png> <./figures//status_bias_01_fold_2.
 png> <./figures//status_bias_01_fold_3.png> <./figures//status_bias_01_fold_4.p
-ng>]
-File: ./figures//cm_fewer.png Graphic file (type png)
-<use ./figures//cm_fewer.png>
-Package pdftex.def Info: ./figures//cm_fewer.png  used on input line 1443.
-(pdftex.def)             Requested size: 213.39566pt x 162.0917pt.
-<./figures//cm_005_fold_1.png, id=1212, 367.3725pt x 279.0425pt>
-File: ./figures//cm_005_fold_1.png Graphic file (type png)
-<use ./figures//cm_005_fold_1.png>
-Package pdftex.def Info: ./figures//cm_005_fold_1.png  used on input line 1445.
-
-(pdftex.def)             Requested size: 213.39566pt x 162.0917pt.
-<./figures//cm_01_fold_4.png, id=1213, 367.3725pt x 279.0425pt>
-File: ./figures//cm_01_fold_4.png Graphic file (type png)
-<use ./figures//cm_01_fold_4.png>
-Package pdftex.def Info: ./figures//cm_01_fold_4.png  used on input line 1447.
-(pdftex.def)             Requested size: 213.39566pt x 162.0917pt.
-<./figures//cm_015_fold_2.png, id=1214, 367.3725pt x 279.0425pt>
-File: ./figures//cm_015_fold_2.png Graphic file (type png)
-<use ./figures//cm_015_fold_2.png>
-Package pdftex.def Info: ./figures//cm_015_fold_2.png  used on input line 1449.
-
-(pdftex.def)             Requested size: 213.39566pt x 162.0917pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1473--1475
-
- []
-
-<./figures//basic_status_final_layout.png, id=1216, 1264.725pt x 4056.15375pt>
+ng>] [51 <./figures//status_bias_015_fold_0.png> <./figures//status_bias_015_fo
+ld_1.png> <./figures//status_bias_015_fold_2.png> <./figures//status_bias_015_f
+old_3.png> <./figures//status_bias_015_fold_4.png> <./figures//cm_005_fold_1.pn
+g> <./figures//cm_01_fold_4.png> <./figures//cm_015_fold_2.png>]
+<./figures//basic_status_final_layout.png, id=1237, 1264.725pt x 4056.15375pt>
 File: ./figures//basic_status_final_layout.png Graphic file (type png)
 <use ./figures//basic_status_final_layout.png>
 Package pdftex.def Info: ./figures//basic_status_final_layout.png  used on inpu
 t line 1480.
-(pdftex.def)             Requested size: 207.10747pt x 664.23584pt.
+(pdftex.def)             Requested size: 133.06056pt x 426.79134pt.
 
-Underfull \vbox (badness 1735) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51 <./figures//status_bias_015_fold_0.png> <./figures//status_bias_015_fold_1
-.png> <./figures//status_bias_015_fold_2.png> <./figures//status_bias_015_fold_
-3.png> <./figures//status_bias_015_fold_4.png>] [52 <./figures//cm_005_fold_1.p
-ng> <./figures//cm_01_fold_4.png> <./figures//cm_015_fold_2.png>]
-Overfull \vbox (23.59999pt too high) has occurred while \output is active []
-
-
-[53 <./figures//basic_status_final_layout.png>] [54] [55]
+ [52 <./figures//basic_status_final_layout.png>] [53] [54]
 Chapter 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1615--1617
@@ -2013,7 +2015,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1618--1620
 
  []
 
-<./figures//uk_distribution.png, id=1277, 223.38pt x 367.3725pt>
+<./figures//uk_distribution.png, id=1273, 223.38pt x 367.3725pt>
 File: ./figures//uk_distribution.png Graphic file (type png)
 <use ./figures//uk_distribution.png>
 Package pdftex.def Info: ./figures//uk_distribution.png  used on input line 162
@@ -2022,12 +2024,12 @@ Package pdftex.def Info: ./figures//uk_distribution.png  used on input line 162
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [56
+ [55
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [57 <./figures//uk_distribution.png>] [58]
+ [56 <./figures//uk_distribution.png>] [57]
 Underfull \hbox (badness 10000) in paragraph at lines 1644--1646
 
  []
@@ -2046,20 +2048,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 1650--1652
 \tf@brf=\write5
 \openout5 = `main.brf'.
 
- [59
+ [58
 
-] [60
+] [59
 
-]) [61] (./main.aux)
+]) [60] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: F467D4D0E2C180F22FC90D693DA322B8;11365.
 Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: 50A4912034B8751F9AE674234355AEF7;1546.
+(rerunfilecheck)             Checksum: D8D3D48F21874D7DFAC34C56A88824D8;1546.
  ) 
 Here is how much of TeX's memory you used:
- 15995 strings out of 478268
- 298471 string characters out of 5846347
- 548489 words of memory out of 5000000
+ 15994 strings out of 478268
+ 298464 string characters out of 5846347
+ 549489 words of memory out of 5000000
  33570 multiletter control sequences out of 15000+600000
  503069 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2076,10 +2078,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (68 pages, 9319354 bytes).
+Output written on main.pdf (67 pages, 9319215 bytes).
 PDF statistics:
- 1449 PDF objects out of 1728 (max. 8388607)
- 1043 compressed objects within 11 object streams
- 401 named destinations out of 1000 (max. 500000)
+ 1445 PDF objects out of 1728 (max. 8388607)
+ 1040 compressed objects within 11 object streams
+ 400 named destinations out of 1000 (max. 500000)
  1233 words of extra memory for PDF output out of 10000 (max. 10000000)
 
