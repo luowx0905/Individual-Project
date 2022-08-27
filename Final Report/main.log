@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  27 AUG 2022 17:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.29)  27 AUG 2022 19:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1866,61 +1866,61 @@ File: ./figures//status_bias_005_fold_0.png Graphic file (type png)
 <use ./figures//status_bias_005_fold_0.png>
 Package pdftex.def Info: ./figures//status_bias_005_fold_0.png  used on input l
 ine 1395.
-(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
+(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
 <./figures//status_bias_005_fold_1.png, id=1142, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_005_fold_1.png Graphic file (type png)
 <use ./figures//status_bias_005_fold_1.png>
 Package pdftex.def Info: ./figures//status_bias_005_fold_1.png  used on input l
 ine 1397.
-(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
+(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
 <./figures//status_bias_005_fold_2.png, id=1143, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_005_fold_2.png Graphic file (type png)
 <use ./figures//status_bias_005_fold_2.png>
 Package pdftex.def Info: ./figures//status_bias_005_fold_2.png  used on input l
 ine 1399.
-(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
+(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
 <./figures//status_bias_005_fold_3.png, id=1144, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_005_fold_3.png Graphic file (type png)
 <use ./figures//status_bias_005_fold_3.png>
 Package pdftex.def Info: ./figures//status_bias_005_fold_3.png  used on input l
 ine 1401.
-(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
+(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
 <./figures//status_bias_005_fold_4.png, id=1145, 498.86375pt x 375.4025pt>
 File: ./figures//status_bias_005_fold_4.png Graphic file (type png)
 <use ./figures//status_bias_005_fold_4.png>
 Package pdftex.def Info: ./figures//status_bias_005_fold_4.png  used on input l
 ine 1403.
-(pdftex.def)             Requested size: 113.42697pt x 85.35826pt.
+(pdftex.def)             Requested size: 142.26378pt x 107.05383pt.
 <./figures//status_bias_01_fold_0.png, id=1146, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_01_fold_0.png Graphic file (type png)
 <use ./figures//status_bias_01_fold_0.png>
 Package pdftex.def Info: ./figures//status_bias_01_fold_0.png  used on input li
 ne 1410.
-(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
+(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
 <./figures//status_bias_01_fold_1.png, id=1147, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_01_fold_1.png Graphic file (type png)
 <use ./figures//status_bias_01_fold_1.png>
 Package pdftex.def Info: ./figures//status_bias_01_fold_1.png  used on input li
 ne 1412.
-(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
+(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
 <./figures//status_bias_01_fold_2.png, id=1148, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_01_fold_2.png Graphic file (type png)
 <use ./figures//status_bias_01_fold_2.png>
 Package pdftex.def Info: ./figures//status_bias_01_fold_2.png  used on input li
 ne 1414.
-(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
+(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
 <./figures//status_bias_01_fold_3.png, id=1149, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_01_fold_3.png Graphic file (type png)
 <use ./figures//status_bias_01_fold_3.png>
 Package pdftex.def Info: ./figures//status_bias_01_fold_3.png  used on input li
 ne 1416.
-(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
+(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
 <./figures//status_bias_01_fold_4.png, id=1150, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_01_fold_4.png Graphic file (type png)
 <use ./figures//status_bias_01_fold_4.png>
 Package pdftex.def Info: ./figures//status_bias_01_fold_4.png  used on input li
 ne 1418.
-(pdftex.def)             Requested size: 114.34802pt x 85.35826pt.
+(pdftex.def)             Requested size: 142.26378pt x 106.1951pt.
 <./figures//status_bias_015_fold_0.png, id=1151, 498.86375pt x 372.39125pt>
 File: ./figures//status_bias_015_fold_0.png Graphic file (type png)
 <use ./figures//status_bias_015_fold_0.png>
@@ -2078,7 +2078,7 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (67 pages, 9319215 bytes).
+Output written on main.pdf (67 pages, 9319193 bytes).
 PDF statistics:
  1445 PDF objects out of 1728 (max. 8388607)
  1040 compressed objects within 11 object streams
